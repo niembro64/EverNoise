@@ -1,0 +1,29 @@
+{
+  "name": "EverNoise",
+  "subtitle": "Your sound. No time limit.",
+  "primaryLanguage": "en-US",
+  "bundleID": "io.niemo.JustBrownNoise",
+  "sku": "just-brown-noise-ios",
+  "version": "1.0.1",
+  "copyright": "2026 Eric Niemeyer",
+  "primaryCategory": "Utilities",
+  "price": "Free",
+  "description": "Open the app. Find your sound. Lock your screen and get some rest.\n\nAdjust Low, Mid, and High independently with three simple symbol pickers. Keep the original deep brown sound or add more mids and highs. A small hollow circle turns a band off; four growing dots select its intensity. Each active level uses an equal decibel step for smooth control of quieter sounds.\n\nRed represents lows, green mids, and blue highs. A luminous liquid infinity combines your sound's color with six rainbow currents weighted by your mix. Large, faint closed ribbons drift behind the top of the black screen, with the same flowing liquid and soft mist. Pause the sound and the flow eases to rest as the controls fade to grayscale.\n\n\u2022 Three independent frequency controls, each with Off and four intensities\n\u2022 Smooth changes without restarting playback\n\u2022 Remembers all three settings\n\u2022 Starts automatically when you open the app\n\u2022 Keeps playing in the background and with the screen locked\n\u2022 Generates sound on your device, without looping a recording\n\u2022 Works completely offline, with no timer or time limit\n\u2022 Large play/pause button; use your device\u2019s volume buttons\n\u2022 Lock-screen and Control Center playback controls\n\u2022 Turn animations off in the info screen for a still infinity and plain black background\n\u2022 Remembers your animation preference and respects Reduce Motion\n\u2022 Free, with no accounts, ads, subscriptions, or tracking\n\nChoose the largest Low dot with Mid and High off for the original Brown sound. Setting all three bands to Off produces silence and mutes the colors.\n\nPlayback continues until you pause or force-quit the app. iOS can still interrupt audio for calls, Siri, or system events; the app resumes when iOS permits.",
+  "keywords": "brown noise,sleep,low,mid,high,offline,continuous,relax,focus,background,sound,rest",
+  "supportURL": "https://niemo.io/evernoise/",
+  "privacyURL": "https://niemo.io/evernoise/privacy.html",
+  "promotionalText": "Find your sound with separate Low, Mid, and High controls. A black screen, a quiet splash of color, and continuous playback. Free, offline, and no time limit.",
+  "reviewNotes": "No login required. Build 13 adds six rainbow accents weighted by the bands' logarithmic power and two faint closed background ribbons with slow movement and bending. All ribbons share the same Metal material, palette, and animation clock. The info screen now has an Animations switch: turning it off removes background ribbons, leaves a still infinity, disables control fades, and stops scheduled display updates. The preference survives relaunch. Animation respects Reduce Motion and pauses when hidden. No visuals read audio samples or modify playback. All audio and lifecycle sources are unchanged from build 12. Sound starts on launch. Low, Mid, and High each have Off and four intensities at -18, -12, -6, and 0 dB. Settings are remembered; changes fade without restarting playback. Lock the screen or switch apps to verify continuous background audio. Use physical volume buttons. The info icon opens settings, privacy, and support. Free, offline, no accounts, ads, data collection, purchases, recordings, or playback time limit.",
+  "privacy": "Data Not Collected",
+  "ageRatingAnswers": "No objectionable content, advertising, messaging, user-generated content, web browsing, gambling, contests, or purchases. External links are limited to the app support and privacy pages.",
+  "release": "Automatically release after approval",
+  "appStoreConnectID": "6834413344",
+  "ageRating": "4+",
+  "screenshots": [
+    "screenshots/iPhone-6.3-inch.jpg",
+    "screenshots/iPad-13-inch.jpg"
+  ],
+  "availability": "All 175 countries or regions; iPhone and iPad",
+  "buildID": "9a3b2b23-7510-47cf-9177-2f4f637e44e6",
+  "whatsNew": "Rainbow currents now flow through the infinity, with colors weighted by your sound mix. Larger, fainter closed ribbons drift and bend behind the top of the screen. Turn Animations off in the info screen for a still infinity and plain black background. Your choice is remembered. Sound and continuous playback are unchanged."
+}

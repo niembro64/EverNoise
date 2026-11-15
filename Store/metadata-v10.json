@@ -1,0 +1,28 @@
+{
+  "name": "EverNoise",
+  "subtitle": "Your sound. No time limit.",
+  "primaryLanguage": "en-US",
+  "bundleID": "io.niemo.JustBrownNoise",
+  "sku": "just-brown-noise-ios",
+  "version": "1.0",
+  "copyright": "2026 Eric Niemeyer",
+  "primaryCategory": "Utilities",
+  "price": "Free",
+  "description": "Open the app. Find your sound. Lock your screen and get some rest.\n\nAdjust Low, Mid, and High independently with three simple symbol pickers. Keep the original deep brown sound or add more mids and highs. A slashed circle turns a band off; one to four filled bars set its intensity. Each active level uses an equal decibel step for smooth control of quieter sounds.\n\nRed represents lows, green mids, and blue highs. A small infinity mark combines your sound's color on a black screen, with no pulsing or flashing.\n\n• Three independent frequency controls, each with Off and four intensities\n• Smooth changes without restarting playback\n• Remembers all three settings\n• Starts automatically when you open the app\n• Keeps playing in the background and with the screen locked\n• Generates sound on your device, without looping a recording\n• Works completely offline, with no timer or time limit\n• Large play/pause button; use your device’s volume buttons\n• Lock-screen and Control Center playback controls\n• Free, with no accounts, ads, subscriptions, or tracking\n\nFour bars for Low with Mid and High off preserves the original Brown sound. Setting all three bands to Off produces silence.\n\nPlayback continues until you pause or force-quit the app. iOS can still interrupt audio for calls, Siri, or system events; the app resumes when iOS permits.",
+  "keywords": "brown noise,sleep,low,mid,high,offline,continuous,relax,focus,background,sound,rest",
+  "supportURL": "https://niemo.io/evernoise/",
+  "privacyURL": "https://niemo.io/evernoise/privacy.html",
+  "promotionalText": "Find your sound with separate Low, Mid, and High controls. A black screen, a quiet splash of color, and continuous playback. Free, offline, and no time limit.",
+  "reviewNotes": "No login required. Build 10 simplifies the interface: larger title and row labels, a large play/pause button, and symbol-only intensity controls. The slashed circle turns a band off; one through four filled bars select -18, -12, -6, and 0 dB relative to that band’s maximum. The volume slider and redundant status/summary text are removed; use the device volume buttons. Privacy and support remain available from the info icon. The audio implementation is unchanged from build 9. Sound starts on launch. Changes fade smoothly without restarting playback, and all three settings are remembered. All bands off intentionally produces silence; choose four Low bars with Mid and High off for the original Brown sound. Background audio is the core function: lock the screen or switch apps to verify playback continues. Sound is generated locally without a recording loop, timer, or network dependency. No data collection, ads, or purchases.",
+  "privacy": "Data Not Collected",
+  "ageRatingAnswers": "No objectionable content, advertising, messaging, user-generated content, web browsing, gambling, contests, or purchases. External links are limited to the app support and privacy pages.",
+  "release": "Automatically release after approval",
+  "appStoreConnectID": "6834413344",
+  "ageRating": "4+",
+  "screenshots": [
+    "screenshots/iPhone-6.3-inch.jpg",
+    "screenshots/iPad-13-inch.jpg"
+  ],
+  "availability": "All 175 countries or regions; iPhone and iPad",
+  "buildID": "8ca05996-9b13-426e-8c0d-778d033e5a4f"
+}

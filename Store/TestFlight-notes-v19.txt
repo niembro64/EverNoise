@@ -1,0 +1,9 @@
+Build 19: three animation levels
+
+• Low: a still infinity, no background ribbons.
+• Med: an animated infinity, no background ribbons. This is the default.
+• High: the animated infinity and floating background ribbons.
+• The selected level is remembered. A saved old animations-off choice becomes Low.
+• Switching levels leaves your sound playing continuously.
+
+Please try all three levels, reopen the app to check persistence, and confirm Low remains still. Audio generation and playback behavior are unchanged.

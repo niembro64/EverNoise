@@ -1,0 +1,13 @@
+Build 7 replaces the grid with separate Low, Mid, and High pickers. Each has five levels: Off, 1, 2, 3, and 4. The four active levels retain equal 6 dB steps (-18, -12, -6, and 0 dB).
+
+Low is now adjustable too. Your previous balance migrates with Low at 4, so your existing sound stays the same. Low 4 / Mid Off / High Off is the original Brown sound. All three Off intentionally produces silence.
+
+The screen stays black. Red Low buttons, green Mid buttons, and blue High buttons grow brighter with their level. A small infinity mark combines the three colors. No animation or glow.
+
+Changes fade smoothly without restarting audio. All three levels are remembered, including Off. Changing them while paused leaves playback paused. Background and lock-screen playback remain supported.
+
+The installed app now uses the working name Persistent Noise and a new infinity icon. The TestFlight listing may still say Just Brown Noise while we choose the final public name. The pause button remains in this build.
+
+Please try the new low levels and mixed balances on your iPhone speaker, switch levels quickly, and test with the screen locked and the app backgrounded. Report any harshness, distortion, clicks, gaps, or unexpected stops.
+
+Free, offline, and no playback time limit.

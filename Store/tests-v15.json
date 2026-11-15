@@ -1,0 +1,46 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "5B047664-25F8-4885-BAD1-009F2171692F",
+        "deviceName" : "iPhone 17 Pro",
+        "modelName" : "iPhone 17 Pro",
+        "osBuildNumber" : "23C54",
+        "osVersion" : "26.2",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 0,
+      "passedTests" : 20,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "JustBrownNoise · Built with macOS 26.6.2",
+  "expectedFailures" : 0,
+  "failedTests" : 0,
+  "finishTime" : 1794691485.055,
+  "passedTests" : 20,
+  "result" : "Passed",
+  "skippedTests" : 0,
+  "startTime" : 1794691292.019,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+
+  ],
+  "title" : "Test - JustBrownNoise",
+  "topInsights" : [
+    {
+      "category" : "Longest Test Runs",
+      "impact" : "54% of duration",
+      "text" : "1 longest test run with outlier durations exceeding 4.28s (three standard deviations)"
+    }
+  ],
+  "totalTestCount" : 20
+}

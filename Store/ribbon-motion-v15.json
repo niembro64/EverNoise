@@ -1,0 +1,50 @@
+{
+  "device": "Apple M1 Max",
+  "framesPerSecondSampled": 60,
+  "measurements": [
+    {
+      "case": "phone-background",
+      "frames": 609,
+      "gpuMedianMS": 1.3651250046677887,
+      "gpuP95MS": 3.219999998691492,
+      "heightPixels": 863,
+      "identicalPhasePixels": true,
+      "maxFrameDelta": 0.00152587890625,
+      "maxPhaseEndpointDifference": 0.0001220703125,
+      "maxSecondDifference": 0.00054931640625,
+      "widthPixels": 640
+    },
+    {
+      "case": "tablet-background",
+      "frames": 609,
+      "gpuMedianMS": 0.9228749986505136,
+      "gpuP95MS": 2.685583327547647,
+      "heightPixels": 476,
+      "identicalPhasePixels": true,
+      "maxFrameDelta": 0.001556396484375,
+      "maxPhaseEndpointDifference": 6.103515625e-05,
+      "maxSecondDifference": 0.00057220458984375,
+      "widthPixels": 768
+    },
+    {
+      "case": "infinity",
+      "frames": 609,
+      "gpuMedianMS": 0.16366667114198208,
+      "gpuP95MS": 0.7697499968344346,
+      "heightPixels": 270,
+      "identicalPhasePixels": true,
+      "maxFrameDelta": 0.0087890625,
+      "maxPhaseEndpointDifference": 0.00048828125,
+      "maxSecondDifference": 0.005859375,
+      "widthPixels": 480
+    }
+  ],
+  "scope": "Host GPU shader continuity and cost; not physical iPhone cadence or battery qualification",
+  "measuredAtUTC": "2026-11-14T21:27:57.064786+00:00",
+  "sourceSHA256": {
+    "App/RibbonShaders.metal": "f2b206cb6da4dbcc27c0fdbdded74e638f5ca85ee9a8093164fdc53b98b830ac",
+    "App/RibbonSurface.swift": "dd6ea2feb27d0d078d8ff91606567340db964de645555da106bffce04e7210ad",
+    "App/NoisePalette.swift": "1f2a0cbf3d336200d2008c904e2b8f25c5771a11e318de080ab49066751a114f",
+    "scripts/check-ribbon-motion.swift": "4684e995705a99f5200a1c43e0ef628e92f15aaf1c56492bc5d8b5d3dcf5d21b"
+  }
+}

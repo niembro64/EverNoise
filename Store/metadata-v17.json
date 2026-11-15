@@ -1,0 +1,29 @@
+{
+  "name": "EverNoise",
+  "subtitle": "Your sound. No time limit.",
+  "primaryLanguage": "en-US",
+  "bundleID": "io.niemo.JustBrownNoise",
+  "sku": "just-brown-noise-ios",
+  "version": "1.0.1",
+  "copyright": "2026 Eric Niemeyer",
+  "primaryCategory": "Utilities",
+  "price": "Free",
+  "description": "Open the app. Find your sound. Lock your screen and get some rest.\n\nAdjust Low, Mid, and High independently with three simple symbol pickers. Keep the original deep brown sound or add more mids and highs. A small hollow circle turns a band off; four growing dots select its intensity. Each active level uses an equal decibel step for smooth control of quieter sounds.\n\nNative Liquid Glass controls on iOS 26 and calm Avenir Next typography keep the interface simple. Muted rose represents lows, sage mids, and periwinkle highs. A large luminous liquid infinity fills the upper screen and combines your sound's color with six rainbow currents weighted by your mix. Linear-light blending keeps overlapping colors natural, and the darker, translucent rear surface adds depth. Four enormous, faint closed ribbons float across the full black screen, with the same flowing liquid and soft mist. Pause the sound and the flow eases to rest as the controls fade to grayscale.\n\n• Three independent frequency controls, each with Off and four intensities\n• Smooth changes without restarting playback\n• Remembers your sound and stereo settings\n• Starts automatically when you open the app\n• Keeps playing in the background and with the screen locked\n• Generates sound on your device, without looping a recording\n• Works completely offline, with no timer or time limit\n• Large play/pause button; use your device’s volume buttons\n• Lock-screen and Control Center playback controls\n• Optional stereo creates independent left and right signals; on by default\n• Turn animations off in Settings for a still infinity and plain black background\n• Remembers your animation preference and respects Reduce Motion\n• Free, with no accounts, ads, subscriptions, or tracking\n\nChoose the largest Low dot with Mid and High off for the original Brown sound. Setting all three bands to Off produces silence and mutes the colors.\n\nPlayback continues until you pause or force-quit the app. iOS can still interrupt audio for calls, Siri, or system events; the app resumes when iOS permits.",
+  "keywords": "brown noise,sleep,low,mid,high,offline,continuous,relax,focus,background,sound,rest",
+  "supportURL": "https://niemo.io/evernoise/",
+  "privacyURL": "https://niemo.io/evernoise/privacy.html",
+  "promotionalText": "Find your sound with separate Low, Mid, and High controls. A black screen, a quiet splash of color, and continuous playback. Free, offline, and no time limit.",
+  "reviewNotes": "No login required. Build 17 updates visuals and controls. Native iOS 26 glassEffect/GlassEffectContainer controls have a system-material fallback on earlier iOS versions. Avenir Next text uses Dynamic Type. All custom artwork is composited in one Metal canvas using linear-light sRGB, premultiplied source-over, independent alpha and one explicit final sRGB encoding; rear infinity shading/opacity vary smoothly to imply depth. The gear retains an 80-point hit area, playback is 112 points, and selections retain 4-point borders. Audio/DSP/playback lifecycle sources match build 16. No login, ads, tracking, purchases, recordings, network requirement, timer, or time limit. Stereo defaults on while preserving saved choices. Settings has native Stereo and Animations switches. Paused/all-off colors become grayscale; animation can be disabled and respects Reduce Motion. Low/Mid/High use Off and -18/-12/-6/0 dB levels with smooth changes and saved settings. Playback starts on launch and continues in background and with the screen locked.",
+  "privacy": "Data Not Collected",
+  "ageRatingAnswers": "No objectionable content, advertising, messaging, user-generated content, web browsing, gambling, contests, or purchases. External links are limited to the app support and privacy pages.",
+  "release": "Automatically release after approval",
+  "appStoreConnectID": "6834413344",
+  "ageRating": "4+",
+  "screenshots": [
+    "screenshots/iPhone-6.3-inch.jpg",
+    "screenshots/iPad-13-inch.jpg"
+  ],
+  "availability": "All 175 countries or regions; iPhone and iPad",
+  "whatsNew": "Native Liquid Glass buttons on iOS 26, softer Avenir Next typography throughout, and more natural color blending. The infinity and background ribbons now combine light in linear space, with a darker, more transparent rear crossing. The large touch targets and clear selection borders remain. Sound generation and continuous playback are unchanged.",
+  "build": "17"
+}

@@ -1,0 +1,78 @@
+{
+  "checks": [
+    "Opaque source-over",
+    "Transparent source-over and correct union alpha",
+    "Two half-white layers give alpha 0.75",
+    "Alpha is not gamma corrected",
+    "Exact sRGB decoding",
+    "Associative premultiplied composition",
+    "Beer-Lambert transmittance",
+    "Darker translucent rear crossing",
+    "Continuous shared tips"
+  ],
+  "device": "Apple M1 Max",
+  "probesPassed": 9,
+  "tolerance": 2e-06,
+  "values": [
+    [
+      0.5,
+      0,
+      0.5,
+      1
+    ],
+    [
+      0.25,
+      0,
+      0.5,
+      0.75
+    ],
+    [
+      0.75,
+      0.75,
+      0.75,
+      0.75
+    ],
+    [
+      0.5,
+      0.5,
+      0.5,
+      1
+    ],
+    [
+      0.21404112875461578,
+      0.003130804980173707,
+      0.7353569269180298,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0.39346933364868164,
+      0.39346933364868164,
+      0,
+      1
+    ],
+    [
+      0.4200000464916229,
+      0.6200000047683716,
+      0.8999999761581421,
+      1
+    ],
+    [
+      1,
+      0.8999999761581421,
+      0.8999999761581421,
+      1
+    ]
+  ],
+  "sourceSHA256": {
+    "App/RibbonShaders.metal": "8cd01c110be34f4824b33ee0dd707abd3191c8fdc35def76ddeb12912aad184f",
+    "App/LinearLight.swift": "3140645fd8144f4d931d1a5f5bc53b49c1a58e039e7220da04698dd937e8383b",
+    "scripts/check-color-compositing.swift": "e033464e7b85dfbc26e10c0e71b347c83bdc617e48a6731ad6df3a4729297407"
+  },
+  "measuredAtUTC": "2026-11-14T22:42:01.578349+00:00"
+}

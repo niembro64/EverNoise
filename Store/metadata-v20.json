@@ -1,0 +1,29 @@
+{
+  "name": "EverNoise",
+  "subtitle": "Your sound. No time limit.",
+  "primaryLanguage": "en-US",
+  "bundleID": "io.niemo.JustBrownNoise",
+  "sku": "just-brown-noise-ios",
+  "version": "1.0.1",
+  "copyright": "2026 Eric Niemeyer",
+  "primaryCategory": "Utilities",
+  "price": "Free",
+  "description": "Open the app. Find your sound. Lock your screen and get some rest.\n\nAdjust Low, Mid, and High independently with three five-stop sliders. Keep the original deep brown sound or add more mids and highs. Slide or tap a notch on each colored track. The dark left end turns a band off; the bright right end is full strength. Each active level uses an equal decibel step for smooth control of quieter sounds.\n\nNative Liquid Glass controls on iOS 26 and calm Avenir Next typography keep the interface simple. Muted rose represents lows, sage mids, and periwinkle highs. A large luminous liquid infinity fills the upper screen and combines your sound's color with six rainbow currents weighted by your mix. Linear-light blending keeps overlapping colors natural, and the darker, translucent rear surface adds depth. Med, the default animation level, shows a flowing infinity on a black background. High adds four enormous, faint closed ribbons with the same liquid and mist. Low keeps a still infinity on black. Pause the sound and the flow eases to rest as the controls fade to grayscale.\n\n• Three independent frequency controls, each with Off and four intensities\n• Smooth changes without restarting playback\n• Remembers your sound and stereo settings\n• Starts automatically when you open the app\n• Keeps playing in the background and with the screen locked\n• Generates sound on your device, without looping a recording\n• Works completely offline, with no timer or time limit\n• Large play/pause button; use your device’s volume buttons\n• Lock-screen and Control Center playback controls\n• Audio picker: Mono or independent left/right Stereo; Stereo by default\n• Choose Low, Med, or High animations in Settings; Med by default\n• Remembers your animation preference and respects Reduce Motion\n• Free, with no accounts, ads, subscriptions, or tracking\n\nMove Low to the right end and Mid and High to the left end for the original Brown sound. Setting all three bands to Off produces silence and mutes the colors.\n\nPlayback continues until you pause or force-quit the app. iOS can still interrupt audio for calls, Siri, or system events; the app resumes when iOS permits.",
+  "keywords": "brown noise,sleep,low,mid,high,offline,continuous,relax,focus,background,sound,rest",
+  "supportURL": "https://niemo.io/evernoise/",
+  "privacyURL": "https://niemo.io/evernoise/privacy.html",
+  "promotionalText": "Find your sound with separate Low, Mid, and High controls. A black screen, a quiet splash of color, and continuous playback. Free, offline, and no time limit.",
+  "reviewNotes": "Build 20 replaces the main frequency button pickers with native five-stop sliders. The five audio levels remain Off and -18/-12/-6/0 dB with the existing smooth fades; no audio engine or DSP changes. Taps, drags, and VoiceOver adjustment select only those same levels. Rails fade from dark to muted rose, sage, or periwinkle; all controls mute to grayscale when paused. The old button components remain in source. Settings uses a native Audio Mono/Stereo segmented picker, preserving saved preferences and Stereo as the default. Low/Mid/High headings now share the thin Avenir Next title font. Animation levels remain Low/Med/High with Med default. No login, ads, analytics, tracking, purchases, recordings, network requirement, timer, or time limit. Playback starts on launch and continues in background and with screen locked.",
+  "privacy": "Data Not Collected",
+  "ageRatingAnswers": "No objectionable content, advertising, messaging, user-generated content, web browsing, gambling, contests, or purchases. External links are limited to the app support and privacy pages.",
+  "release": "Automatically release after approval",
+  "appStoreConnectID": "6834413344",
+  "ageRating": "4+",
+  "screenshots": [
+    "screenshots/iPhone-6.3-inch.jpg",
+    "screenshots/iPad-13-inch.jpg"
+  ],
+  "availability": "All 175 countries or regions; iPhone and iPad",
+  "whatsNew": "Find your sound with five-stop colored sliders. Tap a notch or slide to adjust Low, Mid, and High using the same sound levels. Settings now has a simple Mono/Stereo Audio picker, and the frequency headings use our thin title font. Your saved sound and continuous playback are preserved.",
+  "build": "20"
+}

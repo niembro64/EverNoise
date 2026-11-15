@@ -1,0 +1,10 @@
+Build 22: glass buttons and a warmer starting balance
+
+• Five buttons return for each Low, Mid, and High row.
+• A reflective glass rim shows the selected intensity, with no checkmark or pointer.
+• Off is a hollow circle; the four growing dots indicate increasing intensity.
+• New installations start on buttons 3 / 3 / 2, counting Off as button 1.
+• Existing saved mixes, Mono/Stereo, and animation preferences remain intact.
+• The sound filters and continuous playback behavior are unchanged.
+
+Please try all five choices, including taps near the edges. Confirm the selection is clear while playing and paused, the paused controls remain grayscale, and your saved balance survives reopening.

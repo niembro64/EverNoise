@@ -1,0 +1,28 @@
+{
+  "name": "EverNoise",
+  "subtitle": "Your sound. No time limit.",
+  "primaryLanguage": "en-US",
+  "bundleID": "io.niemo.JustBrownNoise",
+  "sku": "just-brown-noise-ios",
+  "version": "1.0",
+  "copyright": "2026 Eric Niemeyer",
+  "primaryCategory": "Utilities",
+  "price": "Free",
+  "description": "Open the app. Find your sound. Lock your screen and get some rest.\n\nAdjust Low, Mid, and High independently with three simple five-level pickers. Keep the original deep brown sound or add more mids and highs. Each active level uses an equal decibel step for smooth control of quieter sounds.\n\nRed represents lows, green mids, and blue highs. A small infinity mark combines your sound's color on a black screen, with no pulsing or flashing.\n\n• Three independent frequency controls, each with Off and four intensities\n• Smooth changes without restarting playback\n• Remembers all three settings\n• Starts automatically when you open the app\n• Keeps playing in the background and with the screen locked\n• Generates sound on your device, without looping a recording\n• Works completely offline, with no timer or time limit\n• Simple volume and pause controls\n• Lock-screen and Control Center playback controls\n• Free, with no accounts, ads, subscriptions, or tracking\n\nLow 4 with Mid and High Off preserves the original Brown sound. Setting all three bands to Off produces silence.\n\nPlayback continues until you pause or force-quit the app. iOS can still interrupt audio for calls, Siri, or system events; the app resumes when iOS permits.",
+  "keywords": "brown noise,sleep,low,mid,high,offline,continuous,relax,focus,background,sound,rest",
+  "supportURL": "https://niemo.io/evernoise/",
+  "privacyURL": "https://niemo.io/evernoise/privacy.html",
+  "promotionalText": "Find your sound with separate Low, Mid, and High controls. A black screen, a quiet splash of color, and continuous playback. Free, offline, and no time limit.",
+  "reviewNotes": "No login required. Build 9 names the app EverNoise and uses an RGB infinity app icon. It includes the new Low, Mid, and High pickers from build 7. Each has Off plus four active levels at -18, -12, -6, and 0 dB relative to that band's maximum. Sound starts on launch. Changes fade smoothly without restarting playback, and all three settings are remembered. All bands Off intentionally produces silence; choose Low 4 to hear the original Brown sound. Background audio is the core function: lock the screen or switch apps to verify playback continues. Sound is generated locally without a recording loop, timer, or network dependency. No data collection, ads, or purchases.",
+  "privacy": "Data Not Collected",
+  "ageRatingAnswers": "No objectionable content, advertising, messaging, user-generated content, web browsing, gambling, contests, or purchases. External links are limited to the app support and privacy pages.",
+  "release": "Automatically release after approval",
+  "appStoreConnectID": "6834413344",
+  "ageRating": "4+",
+  "screenshots": [
+    "screenshots/iPhone-6.3-inch.jpg",
+    "screenshots/iPad-13-inch.jpg"
+  ],
+  "availability": "All 175 countries or regions; iPhone and iPad",
+  "buildID": "ec347735-529f-423b-8a81-f38818bb7f13"
+}

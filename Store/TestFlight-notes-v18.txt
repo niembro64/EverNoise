@@ -1,0 +1,10 @@
+Build 18: natural light, native glass, and calmer typography
+
+• All artwork blends in linear light, with exact sRGB conversion and correct transparency.
+• The mist joins smoothly across both halves, including the enlarged iPad view.
+• The rear half of the infinity is darker and more translucent, with continuous depth at the tips.
+• Buttons use native Liquid Glass on iOS 26. The 80-point gear target and thick selection borders remain.
+• Avenir Next is used throughout, with Dynamic Type support.
+• Audio generation, levels, stereo behavior, and background playback are unchanged.
+
+Please check the overlapping ribbons, rear crossing, Settings touch area, and new glass controls. Pause, disable animations, and try larger text sizes. Physical iPhone frame cadence, overnight continuity, and battery consumption have not been measured for this build.

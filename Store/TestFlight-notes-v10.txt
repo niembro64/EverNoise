@@ -1,0 +1,16 @@
+Build 10 makes EverNoise simpler and easier to read.
+
+• Larger title, subtitle, and Low / Mid / High labels.
+• A much larger play/pause button.
+• No in-app volume slider; use your device’s volume buttons.
+• A slashed circle means Off; one to four filled bars indicate intensity.
+• No mix summary, routine playback status, or extra footer text.
+• Privacy and help are available through the small info icon.
+
+Your sound settings are preserved. The four active levels still use equal 6 dB steps. Four Low bars with Mid and High off gives the original Brown sound; all three off is silent. Colors and the infinity icon remain.
+
+The audio generator and playback logic are unchanged from build 9. Playback starts when you open the app and continues in the background or with the screen locked when iOS permits. Changes fade smoothly without restarting playback.
+
+Please try the larger controls and symbols on your iPhone. Check that pause/resume, saved settings, background playback, and locked-screen playback work as expected. Report any clicks, gaps, distortion, or unexpected stops.
+
+Free, offline, and no playback time limit.

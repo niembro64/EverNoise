@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "build": "3",
+  "ipa": "build/AppStore-v3-final/JustBrownNoise.ipa",
+  "ipaSHA256": "18a37e9136f579f3cc5ebdfcbe9b85e7187ec4144a77566bb78bda4f8dd75eed",
+  "sourceSHA256": {
+    "App/AudioService.swift": "e98a75850ffca5ae19b0a94936680866a705d923c4916527a193a241a32c7887",
+    "App/ContentView.swift": "89d20d98590397d3f883d423958d2d8d4ed158416be6090200cc00f07664876f",
+    "App/JustBrownNoiseApp.swift": "e1522be6e4d767b49b9d635afcf3db77d35c095daa2d666e1903dd964a51283e",
+    "App/NoiseAudioDriver.swift": "35287f02dece070b5b4feb84fcc854230d800b422f2eeb1fac6b2a5910e33132",
+    "App/PrivacyView.swift": "c2d007383e90117449509f7d30c48be1a9cd1bcfea2f5f191a4d16d69038beaf",
+    "Sources/BrownNoiseDSP/BNColorFilter.h": "b84e0009dd830d31f26d9011909400fda50e73be7137c8823f6cbf1954c003f8",
+    "Sources/BrownNoiseDSP/BrownNoiseDSP.c": "60dfa1140ef44ae52a360dddec0823bb73f13f1c01462417e1878b4c54a09687",
+    "Sources/BrownNoiseDSP/include/BrownNoiseDSP.h": "64e5cd01ff901aecfa1c7e6f4546acf383c436afda2275d07a57382ac2cb6dd5",
+    "Sources/PlaybackCore/PlaybackController.swift": "f7a924f23a8a82db821be12afe458ba07803f948d7ffea66186e8a02f0a25162",
+    "project.yml": "5ec5531dee542944b048a0df744105216b55e079c7b5ae4326cd1838b8142663"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "EverNoise",
+  "subtitle": "Your sound. No time limit.",
+  "primaryLanguage": "en-US",
+  "bundleID": "io.niemo.JustBrownNoise",
+  "sku": "just-brown-noise-ios",
+  "version": "1.0.1",
+  "copyright": "2026 Eric Niemeyer",
+  "primaryCategory": "Utilities",
+  "price": "Free",
+  "description": "Open the app. Find your sound. Lock your screen and get some rest.\n\nAdjust Low, Mid, and High independently with three simple symbol pickers. Keep the original deep brown sound or add more mids and highs. A small hollow circle turns a band off; four growing dots select its intensity. Each active level uses an equal decibel step for smooth control of quieter sounds.\n\nRed represents lows, green mids, and blue highs. A luminous liquid infinity combines your sound's color. Slow currents and soft mist flow through both loops while you listen. The screen stays black. Pause the sound and the flow eases to rest as the controls fade to grayscale.\n\n\u2022 Three independent frequency controls, each with Off and four intensities\n\u2022 Smooth changes without restarting playback\n\u2022 Remembers all three settings\n\u2022 Starts automatically when you open the app\n\u2022 Keeps playing in the background and with the screen locked\n\u2022 Generates sound on your device, without looping a recording\n\u2022 Works completely offline, with no timer or time limit\n\u2022 Large play/pause button; use your device\u2019s volume buttons\n\u2022 Lock-screen and Control Center playback controls\n\u2022 Respects Reduce Motion\n\u2022 Free, with no accounts, ads, subscriptions, or tracking\n\nChoose the largest Low dot with Mid and High off for the original Brown sound. Setting all three bands to Off produces silence and mutes the colors.\n\nPlayback continues until you pause or force-quit the app. iOS can still interrupt audio for calls, Siri, or system events; the app resumes when iOS permits.",
+  "keywords": "brown noise,sleep,low,mid,high,offline,continuous,relax,focus,background,sound,rest",
+  "supportURL": "https://niemo.io/evernoise/",
+  "privacyURL": "https://niemo.io/evernoise/privacy.html",
+  "promotionalText": "Find your sound with separate Low, Mid, and High controls. A black screen, a quiet splash of color, and continuous playback. Free, offline, and no time limit.",
+  "reviewNotes": "No login required. Build 12 replaces the faint infinity effect with a larger liquid ribbon rendered using native Metal shading: luminous internal currents, soft nearby mist, and a visible over/under crossing. Motion accelerates and decelerates gradually, and colors blend smoothly. Pausing or setting all bands off lets the flow settle to a still grayscale mark. Animation pauses when hidden and honors Reduce Motion. No visual animation reads audio samples or modifies the audio engine. The audio implementation is unchanged from build 11. Sound starts on launch. Low, Mid, and High retain the hollow-circle Off choice and four growing dots, at -18, -12, -6, and 0 dB relative to each band's maximum. Changes fade smoothly without restarting playback and settings are remembered. Background audio is the core function: lock the screen or switch apps to verify playback continues. The largest Low dot with Mid and High off gives the original Brown sound. Use physical volume buttons. Privacy and support are behind the info icon. Free, offline, no data collection, ads, purchases, recordings, or time limit.",
+  "privacy": "Data Not Collected",
+  "ageRatingAnswers": "No objectionable content, advertising, messaging, user-generated content, web browsing, gambling, contests, or purchases. External links are limited to the app support and privacy pages.",
+  "release": "Automatically release after approval",
+  "appStoreConnectID": "6834413344",
+  "ageRating": "4+",
+  "screenshots": [
+    "screenshots/iPhone-6.3-inch.jpg",
+    "screenshots/iPad-13-inch.jpg"
+  ],
+  "availability": "All 175 countries or regions; iPhone and iPad",
+  "buildID": "a34adafa-699a-43f7-b535-9b901cbc245b",
+  "whatsNew": "A living infinity: slow luminous currents flow through a liquid ribbon, with soft mist and gently blending colors. Motion eases in and out as you play or pause, and rests in grayscale when silent. The sound and continuous playback are unchanged."
+}

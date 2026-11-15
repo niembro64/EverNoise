@@ -1,0 +1,134 @@
+{
+  "createdAtUTC": "2026-11-15T05:41:32.775527+00:00",
+  "version": "1.0.1",
+  "build": "21",
+  "bundleIdentifier": "io.niemo.JustBrownNoise",
+  "archive": "build/JustBrownNoise-v21.xcarchive",
+  "ipa": "build/AppStore-v21/JustBrownNoise.ipa",
+  "ipaSHA256": "f39c21ba5f143a76e8c3aa03cec4a03d32c162927dd3eb2ffe2a2d4e3f1fed62",
+  "sourceSHA256": {
+    "App/AnimationLevel.swift": "26baedb6acba73753dba2f8bea812df79b4d59f21c3da19fc887a1b51e094db8",
+    "App/AppTypography.swift": "58a970fd2abc3fbdff7149f2ca81564f0af9ad2081cfbb60b9eee6a1e95673ec",
+    "App/Assets.xcassets/AppIcon.appiconset/AppIcon.png": "8977ff3765e81f0b1f9c6b86fb8da7411e0f525a8f625ef6e681010ec358a48d",
+    "App/Assets.xcassets/AppIcon.appiconset/Contents.json": "6ad2c5c3bbcf972c7f02d217d6afcac3f24a10e30510c7e2d06c582371ed9d22",
+    "App/Assets.xcassets/Background.colorset/Contents.json": "fbc782e28d63fc5447edc4c50ec4ff3aab0840fc10610cd2601ca57a26561bd5",
+    "App/Assets.xcassets/Contents.json": "10e3b5dc202f1cd9fad1f688c8fc9fe9e9669bf3f8295e67d216b10fd99b6f49",
+    "App/Assets.xcassets/NowPlayingArtwork.imageset/Artwork.png": "8977ff3765e81f0b1f9c6b86fb8da7411e0f525a8f625ef6e681010ec358a48d",
+    "App/Assets.xcassets/NowPlayingArtwork.imageset/Contents.json": "1b4f3148ad6856768212dea8678ded11a378cb7eded818295baf1132e78307c1",
+    "App/AudioService.swift": "95f0258a5bc6b7dba3b26b3b7bdc485f1d1e21f08467ec2ab099c52ef2242398",
+    "App/BandNotchPicker.swift": "37ab6ceecec565d05cb4d04a1b6733990db0865bf832a8181e4e64ae01cdd0a9",
+    "App/BandPicker.swift": "5d1e03ee016ebfad6e33139c8df7d9eb66a926af686d9a06ed5cce23a4f5f63e",
+    "App/ContentView.swift": "50022ca63292cd3fd14123a3b2319c2e1edb4701a094364844a94b2188c863da",
+    "App/FluidMotion.swift": "5466f9b6ba7428ece2e868b87b7c3641e32ef3abcff024f76b9f3df4bd83950c",
+    "App/Info.plist": "1c2fcad57f472c0405338191f6e2633b3ee3d881a8747b69a0e1149605d0fb01",
+    "App/JustBrownNoiseApp.swift": "e1522be6e4d767b49b9d635afcf3db77d35c095daa2d666e1903dd964a51283e",
+    "App/LinearLight.swift": "3140645fd8144f4d931d1a5f5bc53b49c1a58e039e7220da04698dd937e8383b",
+    "App/NoiseAudioDriver.swift": "527a19aa7247bdde188721e5a2aaae354e268c83ec86bf73d2ff46b2d8b28f18",
+    "App/NoiseGlass.swift": "8c0cf548cc392a6e7ce3b6e9b755d138808fb8da4626d03691be6825d93ec499",
+    "App/NoisePalette.swift": "24eb98b4c8dab8d5bcfc15c4192221801a7aec986260de052e432db9baa108a2",
+    "App/PrivacyInfo.xcprivacy": "418018c160ded561d379cee1510cfb6e0806573c7221177a5330d76ea4145990",
+    "App/PrivacyView.swift": "7f2c324ada0a09ccb45023b57fde2401ef44c49dbbf714439a50c647c5fab92d",
+    "App/RibbonPalette.swift": "be954e052458f1dc233c0200a64a062a70288ceebde1060ccb9e79180de1a30c",
+    "App/RibbonScene.swift": "1a51cbeb79d19141103b0e569c7eabc051e9b49286e1b854b66ef83134b8b7fb",
+    "App/RibbonShaders.metal": "f2146966021ac7bff5348f772a5d290c508d942678f254e2c5d9dbd44faaf503",
+    "App/RibbonSurface.swift": "e5366d8b7a966803cc5b4acc0a0d3782e74d99b445391e242212fc3191577351",
+    "JustBrownNoise.xcodeproj/project.pbxproj": "51bf4ab14759620da42745320ad9f8902c0b10f8bc306b8970970b1178d15e35",
+    "Package.swift": "3c406dc73c257b6f2b13ca35f16920d1cd9999bcda6d91d475ef63ed3c06afc7",
+    "Sources/BrownNoiseDSP/BNColorFilter.h": "b84e0009dd830d31f26d9011909400fda50e73be7137c8823f6cbf1954c003f8",
+    "Sources/BrownNoiseDSP/BNGrayAirFilter.h": "67354fd6727e66a85a9ef00eced4af6f588dbc0e131ec09d76fd5b34d898a77c",
+    "Sources/BrownNoiseDSP/BNMidFilter.h": "da2e7fae0e982b46e0a7dcfdac4644e85396be431e3f3c4402ebb3ab7ba63839",
+    "Sources/BrownNoiseDSP/BrownNoiseDSP.c": "6be4f159112180fd0439e8cda405760e4226d6b828c0b0ac3ff4372eacd5c690",
+    "Sources/BrownNoiseDSP/include/BrownNoiseDSP.h": "95d05b48612ef146e813bb874a15b996b14915167384921148e3fb8b6cac7bf0",
+    "Sources/PlaybackCore/NoiseMix.swift": "f2b097d417c5deff76ac44c04edff5a047dd3274d3fcfd46606703b78c539c72",
+    "Sources/PlaybackCore/PlaybackController.swift": "f7a924f23a8a82db821be12afe458ba07803f948d7ffea66186e8a02f0a25162",
+    "project.yml": "c712da3218328d4f78f7406141810d42c9dd29fa5fb24da5f2919ee415288ce4"
+  },
+  "testsSHA256": {
+    "IntegrationTests/AnimationPreferencesTests.swift": "f40d414beab5a583b5ad60bc9f56fe4dc2d2fc590a45b40ee0d9fc586809bdc8",
+    "IntegrationTests/AudioDriverTests.swift": "39ee4b2e565c88bca023f822cd72be1f6498f6a7cd8612d58ac8c55fe3c3afa7",
+    "IntegrationTests/AudioPreferencesTests.swift": "61c7476995ff392acd32385baa65ebd8d52dd9ee1dc8dd5173539faacf5b49a0",
+    "IntegrationTests/BandNotchTests.swift": "92a5057ad1abfa1ebadf3d8e56cbc481e37bd890e7b869f3b8121cb4a438b0a9",
+    "IntegrationTests/ChannelConversionTests.swift": "83d0e63f903d15357635535b237603e2297862d368ca265bbccf55038014a261",
+    "IntegrationTests/ColorCompositingTests.swift": "89673c1700332e07b1c05a779fee3d2ddf5b7fdf3bb4ce27484b73a30062de5f",
+    "IntegrationTests/FluidMotionTests.swift": "f97fa8b2323fb3079f78b58611945ee1565b16f1915072b6a88caf488d5f7e06",
+    "IntegrationTests/LinearColorProbe.metal": "54fb7c76aaa9e0752448b98ef6cf0e598c84bea2da0a1707aaa9c672f4901464",
+    "Tests/BrownNoiseCoreTests/GeneratorTests.swift": "818dd8c16154b5598215da5c59d9e859c7280b6e277a4ba48fab1e1eec804210",
+    "Tests/BrownNoiseCoreTests/NoiseMixTests.swift": "3d8e9f6d42f9170e62d8ed3b43caa7781f57db25741754f6d29961cb31ef6dc4",
+    "Tests/BrownNoiseCoreTests/PlaybackTests.swift": "45067040e1717a83ce6d6b989d4c4175fd4538b4da0a3500e9013f06a6622a59",
+    "Tests/BrownNoiseCoreTests/StereoGeneratorTests.swift": "85dc9373ca9424113c5a5c9ca0e23c628fc460cbcc60788a2b34fb5c4b989296",
+    "UITests/JustBrownNoiseUITests.swift": "0179dd1fd7bdb90048b9546809af3c8e33b96d0b4823bb027786e5d2b3b3945a"
+  },
+  "changesFromBuild20": [
+    "App/BandNotchPicker.swift",
+    "App/PrivacyView.swift",
+    "JustBrownNoise.xcodeproj/project.pbxproj",
+    "project.yml"
+  ],
+  "metalLibrarySHA256": "e284458f48a48f76eab6cd1d923a392dc65c4020400b9e2da28e49e52ff0b373",
+  "verification": {
+    "checkedAtUTC": "2026-11-15T05:37:37.714258+00:00",
+    "audioFilesIdenticalToBuild20": [
+      "Sources/BrownNoiseDSP/BNColorFilter.h",
+      "Sources/BrownNoiseDSP/BNGrayAirFilter.h",
+      "Sources/BrownNoiseDSP/BNMidFilter.h",
+      "Sources/BrownNoiseDSP/BrownNoiseDSP.c",
+      "Sources/BrownNoiseDSP/include/BrownNoiseDSP.h",
+      "Sources/PlaybackCore/NoiseMix.swift",
+      "Sources/PlaybackCore/PlaybackController.swift",
+      "App/AudioService.swift",
+      "App/NoiseAudioDriver.swift",
+      "App/JustBrownNoiseApp.swift"
+    ],
+    "originalButtonComponentRetainedUnchanged": true,
+    "build": "21",
+    "version": "1.0.1",
+    "strictSignature": true,
+    "distributionEntitlements": true,
+    "backgroundAudio": true,
+    "compiledMetalIdenticalToBuild20": true,
+    "metalSHA256": "e284458f48a48f76eab6cd1d923a392dc65c4020400b9e2da28e49e52ff0b373",
+    "infinityIconUnchanged": true,
+    "ipaSHA256": "f39c21ba5f143a76e8c3aa03cec4a03d32c162927dd3eb2ffe2a2d4e3f1fed62",
+    "integrationTestsPassed": 25,
+    "uiTestsPassed": 5,
+    "testRuns": "All 30 tests passed in one IntegrationAndUI.xcresult run; no reruns.",
+    "allFifteenCirclesAndClearAperturesPixelVerified": true,
+    "releasePhoneTabletLayoutsVisuallyInspected": true,
+    "pausedGrayscaleVisuallyInspected": true,
+    "freshReleaseDefaultEvidence": "build/release-v21/fresh-defaults.json",
+    "priorShaderAuditBuild": "18",
+    "priorAudioAuditBuild": "14",
+    "physicalDeviceBatteryOrOvernightMeasurement": false,
+    "supportAssetsVerified": 12,
+    "unrelatedSupportFilesPreserved": 177,
+    "portalStatus": "Browser access host unavailable on read-only recheck. App Review replacement and portal notes/screenshots pending; latest files prepared locally."
+  },
+  "screenshots": {
+    "Store/screenshots/iPhone-6.3-inch.jpg": {
+      "size": [
+        1206,
+        2622
+      ],
+      "sha256": "8b21bbfd6a720cd7c976020332eea7c5de8a6c9c963be72d5316c445ddc8f6d1"
+    },
+    "Store/screenshots/iPad-13-inch.jpg": {
+      "size": [
+        2064,
+        2752
+      ],
+      "sha256": "0bd500f4c8c07964bd8b823bdc7399568f103044da8220da46b043c9b13586c4"
+    }
+  },
+  "releaseTextSHA256": {
+    "Store/metadata-v21.json": "cc2d2b56b237b97512aaef1c4bb45784c810754a26a8cf7986a6f76cff389657",
+    "Store/TestFlight-notes-v21.txt": "0c6aff00f6d9b89ccd7fd7ad38eddcac3fda960250004b5d0b9a3d9184535568"
+  },
+  "delivery": {
+    "appReviewSubmitted": false,
+    "publicStorefrontVersion": "1.0",
+    "publicStorefrontPrice": 0.0,
+    "uploadedUTC": "2026-11-15T05:42:32Z",
+    "testFlightReadyUTC": "2026-11-15T05:44:01Z",
+    "testFlightEvidence": "Store/testflight-confirmation-v21.json"
+  }
+}

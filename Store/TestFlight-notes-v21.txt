@@ -1,0 +1,10 @@
+Build 21: visible circle stops and a glass scale window
+
+• Five white circles clearly mark the selectable levels on every track.
+• A clear glass window with an inward downward pointer identifies your selection.
+• The selected circle remains crisp and visible through the window.
+• Tap any circle or drag the window; it settles gently onto a stop without bounce.
+• The entire window remains visible at both ends, with the same generous touch area.
+• Sound levels, saved preferences, and continuous playback are unchanged.
+
+Please try taps and slow/fast drags, especially Off and full strength. Check the pointer aligns with the selected circle, each of the five dots stays visible, and paused controls remain grayscale.

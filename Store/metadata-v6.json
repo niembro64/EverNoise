@@ -1,0 +1,28 @@
+{
+  "name": "Just Brown Noise",
+  "subtitle": "25 balances. No time limit.",
+  "primaryLanguage": "en-US",
+  "bundleID": "io.niemo.JustBrownNoise",
+  "sku": "just-brown-noise-ios",
+  "version": "1.0",
+  "copyright": "2026 Eric Niemeyer",
+  "primaryCategory": "Utilities",
+  "price": "Free",
+  "description": "Open the app. Choose a square. Lock your screen and get some rest.\n\nFind your sound in a simple 5-by-5 grid. Move right for more high frequencies and up for more midrange. The same deep bass stays underneath every choice.\n\nThe colors follow the sound: red represents the steady bass, green increases with mids, and blue increases with highs. A checkmark shows your selected balance.\n\n\u2022 25 sound balances with five levels of mids and highs\n\u2022 Smooth changes without restarting playback\n\u2022 Remembers your last choice\n\u2022 Starts automatically when you open the app\n\u2022 Keeps playing in the background and with the screen locked\n\u2022 Generates sound on your device, without looping a recording\n\u2022 Works completely offline, with no timer or time limit\n\u2022 Simple volume and pause controls\n\u2022 Lock-screen and Control Center playback controls\n\u2022 A quiet, dark interface\n\nFree. No accounts. No ads. No subscriptions. No tracking.\n\nPlayback continues until you pause or force-quit the app. iOS can still interrupt audio for calls, Siri, or system events; the app resumes when iOS permits.",
+  "keywords": "brown noise,sleep,sound grid,mids,highs,offline,continuous,relax,focus,background,rest",
+  "supportURL": "https://niemo.io/just-brown-noise/",
+  "privacyURL": "https://niemo.io/just-brown-noise/privacy.html",
+  "promotionalText": "Find your balance in a 5-by-5 sound grid. More highs to the right, more mids upward, with steady bass throughout. Free, offline, and no time limit.",
+  "reviewNotes": "No login required. Sound starts on launch. Tap any of 25 grid squares: right adds highs, upward adds mids, and the bass layer stays constant. Build 6 changes mids/highs to equal 6 dB steps between the active levels, with zero muting the added layer. The selection is remembered and changes fade smoothly without restarting playback. Background audio is the core function: lock the screen or switch apps to verify playback continues. Sound is generated locally with no recording loop, timer or network dependency. No data collection, ads or purchases.",
+  "privacy": "Data Not Collected",
+  "ageRatingAnswers": "No objectionable content, advertising, messaging, user-generated content, web browsing, gambling, contests, or purchases. External links are limited to the app support and privacy pages.",
+  "release": "Automatically release after approval",
+  "appStoreConnectID": "6834413344",
+  "buildID": "4b181325-0a34-4f78-935c-28f80460350e",
+  "ageRating": "4+",
+  "screenshots": [
+    "screenshots/iPhone-6.3-inch.jpg",
+    "screenshots/iPad-13-inch.jpg"
+  ],
+  "availability": "All 175 countries or regions; iPhone and iPad"
+}

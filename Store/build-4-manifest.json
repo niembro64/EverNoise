@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "build": "4",
+  "ipa": "build/AppStore-v4/JustBrownNoise.ipa",
+  "ipaSHA256": "c3144700e39e782ddff68c51c16871b1e7cf0f2781bb1e4b7eaf29a3d5c64cc3",
+  "sourceSHA256": {
+    "App/AudioService.swift": "3baf041f6d15bc5b2ffd7237d0904532d4e1be3e28df3c1bb7c7a33b5cf7b76f",
+    "App/ContentView.swift": "6040347c33a9843eaef2565460f5a5fbd243a78486829b1c650f0057a593729b",
+    "App/JustBrownNoiseApp.swift": "e1522be6e4d767b49b9d635afcf3db77d35c095daa2d666e1903dd964a51283e",
+    "App/NoiseAudioDriver.swift": "053a7233e053ee869273cce10c9ced03514354153fb55610979a78a76d274e4a",
+    "App/NoiseSound.swift": "213eec4c58373bacfe13990710f574c3cde17fabe2f01c21265e81859dacb940",
+    "App/PrivacyView.swift": "a352918636cf0017fde0ddc540e387d307b9872ea6a7df525af47f417f06e234",
+    "Sources/BrownNoiseDSP/BNColorFilter.h": "b84e0009dd830d31f26d9011909400fda50e73be7137c8823f6cbf1954c003f8",
+    "Sources/BrownNoiseDSP/BNGrayAirFilter.h": "67354fd6727e66a85a9ef00eced4af6f588dbc0e131ec09d76fd5b34d898a77c",
+    "Sources/BrownNoiseDSP/BrownNoiseDSP.c": "283fdea84c20414e9bbcdc14fe6d30bbe091a19e54c69f5c77d9cd012815581c",
+    "Sources/BrownNoiseDSP/include/BrownNoiseDSP.h": "06e26a39c9fac2e47dab2f06985281b942c90e7de4430a36df5f60ed149a145b",
+    "Sources/PlaybackCore/PlaybackController.swift": "f7a924f23a8a82db821be12afe458ba07803f948d7ffea66186e8a02f0a25162",
+    "project.yml": "085d2e2cdb4772dbd43486c6bec5dcb61d5d2e61cf060b2a6babbefad1c5bcb1"
+  },
+  "verification": {
+    "strictCodeSignature": true,
+    "backgroundAudio": true,
+    "getTaskAllow": false
+  }
+}

@@ -1,0 +1,10 @@
+Build 20: five-stop sound sliders
+
+• Low, Mid, and High now use colored sliders with five notches.
+• Tap a notch or drag the native thumb; it settles onto one of the same five sound levels.
+• Dark left end is Off; bright right end is full strength. Paused controls remain grayscale.
+• Thin Low/Mid/High headings match the EverNoise title.
+• Settings → Audio now has Mono / Stereo segments, matching Animations. Saved choices persist; Stereo remains the default.
+• The original five-button components are retained in the project.
+
+Please try tapping and dragging each band, including both ends, and reopening the app to check saved levels and Audio mode. Confirm the sound keeps running during changes and in the background. Audio generation and its existing fades are unchanged.

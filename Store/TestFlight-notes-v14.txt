@@ -1,0 +1,11 @@
+Build 14: larger ribbons and optional stereo
+
+• Four enormous, fainter closed ribbons drift behind the top of the app.
+• The outline gear opens Settings, privacy, and support.
+• Stereo is off by default. Enable it for independent left and right noise, then listen with headphones or stereo speakers.
+• Switching stereo fades smoothly for one second without restarting audio. The choice is remembered; changing it while paused keeps playback paused.
+• The Animations switch still leaves a static infinity and plain black background without affecting sound.
+
+Please check stereo separation, switching while playing, pause/resume, relaunch persistence, and overnight/background playback on your usual output. The original filter shapes and fixed source gains are retained. At 44.1 kHz, the new two-channel conversion path no longer adds Apple's previous 3 dB attenuation, so that route can sound slightly louder than older builds at the same device volume. The tested 48 kHz mono output is unchanged.
+
+No physical-device overnight or battery measurement is claimed for this build.

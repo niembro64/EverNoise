@@ -1,0 +1,11 @@
+Build 9 is now named EverNoise and uses the RGB infinity app icon. The name is updated on the home screen, in the app, and in lock-screen playback controls.
+
+Low, Mid, and High each have five choices: Off, 1, 2, 3, and 4. The active levels use equal 6 dB steps (-18, -12, -6, and 0 dB). Existing settings are preserved. Low 4 / Mid Off / High Off is the original Brown sound; all three Off produces silence.
+
+The background stays black. Red, green, and blue picker buttons and a small infinity mark show the color of your mix. Changes fade smoothly without restarting playback.
+
+The audio generator and playback logic are unchanged from builds 7 and 8. The pause button and system volume controls remain. Playback starts when you open the app and continues in the background or with the screen locked when iOS permits.
+
+Please verify the infinity icon on your home screen and try playback on your iPhone speaker, including locked-screen and overnight use. Report any harshness, distortion, clicks, gaps, or unexpected stops.
+
+Free, offline, and no playback time limit.

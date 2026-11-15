@@ -1,0 +1,165 @@
+{
+  "engineRendersPassed": 199,
+  "stereoMixes": 125,
+  "monoReferenceComparisons": [
+    {
+      "name": "compare-44100-1-400-new",
+      "gainDB": 3.0102999566398125,
+      "maxResidual": 3.866900097349024e-08,
+      "bitIdentical": false
+    },
+    {
+      "name": "compare-44100-1-040-new",
+      "gainDB": 3.0102999566398125,
+      "maxResidual": 8.232752566478263e-09,
+      "bitIdentical": false
+    },
+    {
+      "name": "compare-44100-1-004-new",
+      "gainDB": 3.0102999566398125,
+      "maxResidual": 6.624949391159651e-09,
+      "bitIdentical": false
+    },
+    {
+      "name": "compare-44100-1-444-new",
+      "gainDB": 3.0102999566398125,
+      "maxResidual": 4.0461388073342874e-08,
+      "bitIdentical": false
+    },
+    {
+      "name": "compare-44100-1-123-new",
+      "gainDB": 3.0102999566398125,
+      "maxResidual": 5.53561370700284e-09,
+      "bitIdentical": false
+    },
+    {
+      "name": "compare-44100-2-400-new",
+      "gainDB": 3.0102999566398125,
+      "maxResidual": 3.866900097349024e-08,
+      "bitIdentical": false
+    },
+    {
+      "name": "compare-44100-2-040-new",
+      "gainDB": 3.0102999566398125,
+      "maxResidual": 8.232752566478263e-09,
+      "bitIdentical": false
+    },
+    {
+      "name": "compare-44100-2-004-new",
+      "gainDB": 3.0102999566398125,
+      "maxResidual": 6.624949391159651e-09,
+      "bitIdentical": false
+    },
+    {
+      "name": "compare-44100-2-444-new",
+      "gainDB": 3.0102999566398125,
+      "maxResidual": 4.0461388073342874e-08,
+      "bitIdentical": false
+    },
+    {
+      "name": "compare-44100-2-123-new",
+      "gainDB": 3.0102999566398125,
+      "maxResidual": 5.53561370700284e-09,
+      "bitIdentical": false
+    },
+    {
+      "name": "compare-48000-1-400-new",
+      "gainDB": 0.0,
+      "maxResidual": 0.0,
+      "bitIdentical": true
+    },
+    {
+      "name": "compare-48000-1-040-new",
+      "gainDB": 0.0,
+      "maxResidual": 0.0,
+      "bitIdentical": true
+    },
+    {
+      "name": "compare-48000-1-004-new",
+      "gainDB": 0.0,
+      "maxResidual": 0.0,
+      "bitIdentical": true
+    },
+    {
+      "name": "compare-48000-1-444-new",
+      "gainDB": 0.0,
+      "maxResidual": 0.0,
+      "bitIdentical": true
+    },
+    {
+      "name": "compare-48000-1-123-new",
+      "gainDB": 0.0,
+      "maxResidual": 0.0,
+      "bitIdentical": true
+    },
+    {
+      "name": "compare-48000-2-400-new",
+      "gainDB": 0.0,
+      "maxResidual": 0.0,
+      "bitIdentical": true
+    },
+    {
+      "name": "compare-48000-2-040-new",
+      "gainDB": 0.0,
+      "maxResidual": 0.0,
+      "bitIdentical": true
+    },
+    {
+      "name": "compare-48000-2-004-new",
+      "gainDB": 0.0,
+      "maxResidual": 0.0,
+      "bitIdentical": true
+    },
+    {
+      "name": "compare-48000-2-444-new",
+      "gainDB": 0.0,
+      "maxResidual": 0.0,
+      "bitIdentical": true
+    },
+    {
+      "name": "compare-48000-2-123-new",
+      "gainDB": 0.0,
+      "maxResidual": 0.0,
+      "bitIdentical": true
+    }
+  ],
+  "outputRates": [
+    16000,
+    44100,
+    48000,
+    96000
+  ],
+  "outputChannels": [
+    1,
+    2
+  ],
+  "maximumEstimatedIntersamplePeak": 0.20832291908087963,
+  "headroomDB": 13.62525895219232,
+  "maximumAbsoluteStereoCorrelation": 0.025626077302873387,
+  "maximumLeftRightPowerDifferenceDB": 0.11354294353696084,
+  "bandSpectrumChecks": {
+    "400": {
+      "band": [
+        125,
+        500
+      ],
+      "leftRightBandPowerDifferenceDB": -0.04469193560720208
+    },
+    "040": {
+      "band": [
+        600,
+        3000
+      ],
+      "leftRightBandPowerDifferenceDB": 0.07173912931731269
+    },
+    "004": {
+      "band": [
+        5000,
+        15000
+      ],
+      "leftRightBandPowerDifferenceDB": -0.05189537084512808
+    }
+  },
+  "renderRetries": 0,
+  "scriptSHA256": "ac7ecbc9f18b0090964f07838db134ac3d738c61eebeafb6ea821f25f0b10926"
+}

@@ -1,0 +1,50 @@
+{
+  "createdAtUTC": "2026-11-14T16:11:32.412706+00:00",
+  "version": "1.0",
+  "build": "8",
+  "displayName": "Endless Noise",
+  "bundleIdentifier": "io.niemo.JustBrownNoise",
+  "ipa": "build/AppStore-v8/JustBrownNoise.ipa",
+  "ipaSHA256": "69a54f39197ec6d56ecc679bed37be48046f146e5bb8541ee0e13703019f654b",
+  "sourceSHA256": {
+    "App/Assets.xcassets/AppIcon.appiconset/AppIcon.png": "8977ff3765e81f0b1f9c6b86fb8da7411e0f525a8f625ef6e681010ec358a48d",
+    "App/Assets.xcassets/AppIcon.appiconset/Contents.json": "6ad2c5c3bbcf972c7f02d217d6afcac3f24a10e30510c7e2d06c582371ed9d22",
+    "App/Assets.xcassets/Background.colorset/Contents.json": "fbc782e28d63fc5447edc4c50ec4ff3aab0840fc10610cd2601ca57a26561bd5",
+    "App/Assets.xcassets/Contents.json": "10e3b5dc202f1cd9fad1f688c8fc9fe9e9669bf3f8295e67d216b10fd99b6f49",
+    "App/Assets.xcassets/NowPlayingArtwork.imageset/Artwork.png": "8977ff3765e81f0b1f9c6b86fb8da7411e0f525a8f625ef6e681010ec358a48d",
+    "App/Assets.xcassets/NowPlayingArtwork.imageset/Contents.json": "1b4f3148ad6856768212dea8678ded11a378cb7eded818295baf1132e78307c1",
+    "App/AudioService.swift": "f2098b867a8e692183cb55f75671a62c2c16bf742cc1f2c1e19ef198799a3a39",
+    "App/ContentView.swift": "001a350c6959d89c5da3e7626f3c91d5815f88bc09060719cea8f029d5f9c89d",
+    "App/Info.plist": "229fd3df5ce416af524faff0d48b5a8c1a8ea69f0b39052d78ee1250e709be67",
+    "App/JustBrownNoiseApp.swift": "e1522be6e4d767b49b9d635afcf3db77d35c095daa2d666e1903dd964a51283e",
+    "App/NoiseAudioDriver.swift": "d9b917765669b7458a5f0fe2f41851c6d3b190dc5e467598649831c67fce6111",
+    "App/PrivacyInfo.xcprivacy": "418018c160ded561d379cee1510cfb6e0806573c7221177a5330d76ea4145990",
+    "App/PrivacyView.swift": "e896a8b2400a608b1032165038ac89fe01f2eb0b7835134304e57e5e518d4e32",
+    "JustBrownNoise.xcodeproj/project.pbxproj": "9397d959ab110b2689d9e2f8534aeda6a204ebf2c987cdcd28a773e298c823fa",
+    "Package.swift": "3c406dc73c257b6f2b13ca35f16920d1cd9999bcda6d91d475ef63ed3c06afc7",
+    "Sources/BrownNoiseDSP/BNColorFilter.h": "b84e0009dd830d31f26d9011909400fda50e73be7137c8823f6cbf1954c003f8",
+    "Sources/BrownNoiseDSP/BNGrayAirFilter.h": "67354fd6727e66a85a9ef00eced4af6f588dbc0e131ec09d76fd5b34d898a77c",
+    "Sources/BrownNoiseDSP/BNMidFilter.h": "da2e7fae0e982b46e0a7dcfdac4644e85396be431e3f3c4402ebb3ab7ba63839",
+    "Sources/BrownNoiseDSP/BrownNoiseDSP.c": "1d4dcabdcfdfdeed8121d6894f02c930af0f16c13a7e88183b4355eb85dd43a0",
+    "Sources/BrownNoiseDSP/include/BrownNoiseDSP.h": "2cfd6eb27ca644e1c6bbffec396120f4e37784efcbc53b084b03bcd1142023c7",
+    "Sources/PlaybackCore/NoiseMix.swift": "f2b097d417c5deff76ac44c04edff5a047dd3274d3fcfd46606703b78c539c72",
+    "Sources/PlaybackCore/PlaybackController.swift": "f7a924f23a8a82db821be12afe458ba07803f948d7ffea66186e8a02f0a25162",
+    "project.yml": "a798d7f4ef45291155020d1e890670dac5db5a5f33f8f3095f6daed92cd5bfb6"
+  },
+  "verification": {
+    "strictCodeSignature": true,
+    "backgroundAudio": true,
+    "getTaskAllow": false,
+    "packagedInfinityIconMatchesVerifiedBuild7": true
+  },
+  "changesFromBuild7": [
+    "App/AudioService.swift",
+    "App/ContentView.swift",
+    "App/Info.plist",
+    "App/PrivacyView.swift",
+    "JustBrownNoise.xcodeproj/project.pbxproj",
+    "project.yml"
+  ],
+  "uploadedAtUTC": "2026-11-14T16:12:12.444+00:00",
+  "uploadLog": "build/release-v8/upload.log"
+}

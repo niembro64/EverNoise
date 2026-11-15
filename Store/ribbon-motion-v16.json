@@ -1,0 +1,82 @@
+{
+  "device": "Apple M1 Max",
+  "framesPerSecondSampled": 60,
+  "measurements": [
+    {
+      "case": "phone-background",
+      "frames": 609,
+      "gpuMedianMS": 2.210624996223487,
+      "gpuP95MS": 2.368583343923092,
+      "heightPixels": 1391,
+      "identicalPhasePixels": true,
+      "maxFrameDelta": 0.00360107421875,
+      "maxPhaseEndpointDifference": 0.0001220703125,
+      "maxSecondDifference": 0.00168609619140625,
+      "visiblePixelsByVerticalThird": [
+        120001,
+        214812,
+        188189
+      ],
+      "widthPixels": 640
+    },
+    {
+      "case": "tablet-background",
+      "frames": 609,
+      "gpuMedianMS": 2.327000009245239,
+      "gpuP95MS": 2.496916669770144,
+      "heightPixels": 1024,
+      "identicalPhasePixels": true,
+      "maxFrameDelta": 0.00335693359375,
+      "maxPhaseEndpointDifference": 0.0001220703125,
+      "maxSecondDifference": 0.00146484375,
+      "visiblePixelsByVerticalThird": [
+        160810,
+        189499,
+        189984
+      ],
+      "widthPixels": 768
+    },
+    {
+      "case": "phone-infinity",
+      "frames": 609,
+      "gpuMedianMS": 0.4517499910434708,
+      "gpuP95MS": 0.46012499660719186,
+      "heightPixels": 432,
+      "identicalPhasePixels": true,
+      "maxFrameDelta": 0.0089111328125,
+      "maxPhaseEndpointDifference": 0.00048828125,
+      "maxSecondDifference": 0.00390625,
+      "visiblePixelsByVerticalThird": [
+        0,
+        0,
+        0
+      ],
+      "widthPixels": 768
+    },
+    {
+      "case": "tablet-infinity",
+      "frames": 609,
+      "gpuMedianMS": 0.75720832683146,
+      "gpuP95MS": 0.7912500004749745,
+      "heightPixels": 576,
+      "identicalPhasePixels": true,
+      "maxFrameDelta": 0.0089111328125,
+      "maxPhaseEndpointDifference": 0.00048828125,
+      "maxSecondDifference": 0.00537109375,
+      "visiblePixelsByVerticalThird": [
+        0,
+        0,
+        0
+      ],
+      "widthPixels": 1024
+    }
+  ],
+  "scope": "Host GPU shader continuity and cost. Foreground sRGB and background linear SwiftUI compositing are visually checked separately; not physical iPhone cadence or battery qualification.",
+  "measuredAtUTC": "2026-11-14T21:45:54.159102+00:00",
+  "sourceSHA256": {
+    "App/RibbonShaders.metal": "4209851175cf756b17eb0c9a42f92175cdf83f82dc8abc854ec076556edd89a4",
+    "App/RibbonSurface.swift": "8f30aac7087cca5dd71b204aed199ef3a0b5daae0798c8292a4a78aac2eb9f9c",
+    "App/NoisePalette.swift": "1f2a0cbf3d336200d2008c904e2b8f25c5771a11e318de080ab49066751a114f",
+    "scripts/check-ribbon-motion.swift": "d04e125d69b628005b426a5ca6f0cf35689ab473687a8ee614f03c6c6dc9f9e4"
+  }
+}

@@ -1,0 +1,22 @@
+.build/
+build/
+DerivedData/
+.DS_Store
+*.xcuserstate
+xcuserdata/
+*.xcresult/
+.swiftpm/
+__pycache__/
+*.py[cod]
+*.ipa
+*.xcarchive/
+*.dSYM/
+.env
+.env.*
+*.p8
+*.p12
+*.mobileprovision
+# Local account/delivery evidence; the public release summaries remain tracked.
+Store/*confirmation*.json
+Store/support-deployment*.json
+

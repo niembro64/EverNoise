@@ -1,0 +1,14 @@
+Build 12 brings the infinity to life.
+
+• A larger liquid ribbon with luminous currents moving through both loops.
+• Soft mist stays close to its edges, keeping the black screen calm.
+• Flow gently accelerates when you play and eases to rest when you pause.
+• Colors blend gradually; paused and all-off controls fade to grayscale.
+• Rapid play/pause taps preserve the motion's position, speed, and acceleration.
+• Animation freezes when hidden, resumes from the same position, and respects Reduce Motion.
+
+The dot controls, selected borders, saved settings, and sound remain. The audio generator and playback logic are unchanged from build 11. Animation runs separately from audio.
+
+Please look at the flowing infinity on your iPhone. Try pause/resume and changing your sound color, and check that everything feels smooth. Also check locked-screen and background playback, and report any clicks, gaps, distortion, or unexpected stops.
+
+Free, offline, and no playback time limit.

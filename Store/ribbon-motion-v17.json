@@ -1,0 +1,118 @@
+{
+  "device": "Apple M1 Max",
+  "framesPerSecondSampled": 60,
+  "measurements": [
+    {
+      "case": "phone-background",
+      "frames": 609,
+      "gpuMedianMS": 2.2170000011101365,
+      "gpuP95MS": 3.2997500093188137,
+      "heightPixels": 1391,
+      "identicalPhasePixels": true,
+      "maxFrameDelta": 0.0029296875,
+      "maxPhaseEndpointDifference": 0.0001220703125,
+      "maxSecondDifference": 0.0003662109375,
+      "visiblePixelsByVerticalThird": [
+        111907,
+        196568,
+        179405
+      ],
+      "widthPixels": 640
+    },
+    {
+      "case": "tablet-background",
+      "frames": 609,
+      "gpuMedianMS": 1.3291250070324168,
+      "gpuP95MS": 3.184666667948477,
+      "heightPixels": 1024,
+      "identicalPhasePixels": true,
+      "maxFrameDelta": 0.00274658203125,
+      "maxPhaseEndpointDifference": 0.0001220703125,
+      "maxSecondDifference": 0.0003662109375,
+      "visiblePixelsByVerticalThird": [
+        152204,
+        175153,
+        182996
+      ],
+      "widthPixels": 768
+    },
+    {
+      "case": "phone-infinity",
+      "frames": 609,
+      "gpuMedianMS": 0.19312500080559403,
+      "gpuP95MS": 0.5051250045653433,
+      "heightPixels": 432,
+      "identicalPhasePixels": true,
+      "maxFrameDelta": 0.0098876953125,
+      "maxPhaseEndpointDifference": 0.00048828125,
+      "maxSecondDifference": 0.001220703125,
+      "visiblePixelsByVerticalThird": [
+        0,
+        0,
+        0
+      ],
+      "widthPixels": 768
+    },
+    {
+      "case": "tablet-infinity",
+      "frames": 609,
+      "gpuMedianMS": 0.3234583418816328,
+      "gpuP95MS": 1.0172500042244792,
+      "heightPixels": 576,
+      "identicalPhasePixels": true,
+      "maxFrameDelta": 0.0098876953125,
+      "maxPhaseEndpointDifference": 0.00048828125,
+      "maxSecondDifference": 0.0013427734375,
+      "visiblePixelsByVerticalThird": [
+        0,
+        0,
+        0
+      ],
+      "widthPixels": 1024
+    },
+    {
+      "case": "phone-complete-scene",
+      "frames": 609,
+      "gpuMedianMS": 1.1816250043921173,
+      "gpuP95MS": 2.5137500051641837,
+      "heightPixels": 1670,
+      "identicalPhasePixels": true,
+      "maxFrameDelta": 0.010986328125,
+      "maxPhaseEndpointDifference": 0.00048828125,
+      "maxSecondDifference": 0.00244140625,
+      "visiblePixelsByVerticalThird": [
+        0,
+        0,
+        0
+      ],
+      "widthPixels": 768
+    },
+    {
+      "case": "tablet-complete-scene",
+      "frames": 609,
+      "gpuMedianMS": 1.4810416614636779,
+      "gpuP95MS": 2.2805833286838606,
+      "heightPixels": 1365,
+      "identicalPhasePixels": true,
+      "maxFrameDelta": 0.01123046875,
+      "maxPhaseEndpointDifference": 0.00048828125,
+      "maxSecondDifference": 0.00244140625,
+      "visiblePixelsByVerticalThird": [
+        0,
+        0,
+        0
+      ],
+      "widthPixels": 1024
+    }
+  ],
+  "scope": "Host GPU shader continuity: raw layers use premultiplied linear RGBA; complete scenes use final encoded opaque sRGB. Timings are not physical iPhone cadence or battery qualification.",
+  "measuredAtUTC": "2026-11-14T22:42:01.575294+00:00",
+  "sourceSHA256": {
+    "App/RibbonShaders.metal": "8cd01c110be34f4824b33ee0dd707abd3191c8fdc35def76ddeb12912aad184f",
+    "App/RibbonSurface.swift": "e5366d8b7a966803cc5b4acc0a0d3782e74d99b445391e242212fc3191577351",
+    "App/NoisePalette.swift": "24eb98b4c8dab8d5bcfc15c4192221801a7aec986260de052e432db9baa108a2",
+    "App/RibbonPalette.swift": "be954e052458f1dc233c0200a64a062a70288ceebde1060ccb9e79180de1a30c",
+    "App/LinearLight.swift": "3140645fd8144f4d931d1a5f5bc53b49c1a58e039e7220da04698dd937e8383b",
+    "scripts/check-ribbon-motion.swift": "df559ccbde6cc872078b5eb42c253cd47436ba8733c149085cac938a873deea6"
+  }
+}

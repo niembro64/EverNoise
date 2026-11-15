@@ -1,0 +1,11 @@
+Build 15: calmer palette and smoother ribbons
+
+• Stereo starts on when no preference has been saved. A previously saved Off remains Off.
+• Enabled switches are visibly soft green; disabled switches are gray.
+• EverNoise uses a lighter rounded title font.
+• Muted rose, sage, and periwinkle replace pure RGB. The infinity and background share a balanced six-hue family.
+• Four enormous ribbons now move within one fixed rendering surface, with no animated SwiftUI texture transforms. Flow, drift, and rotation are slower.
+
+Please watch the largest ribbons for any remaining jitter on your iPhone, and check switching, pause/resume, and saved settings. Test with your usual headphones or speakers. The audio filters, gains, and stereo DSP are unchanged from build 14. The known 44.1 kHz conversion-level difference from earlier builds remains documented in the audio audit.
+
+Shader continuity and GPU cost were measured on the Mac; physical iPhone cadence, overnight continuity, and battery consumption are not yet measured for this build.

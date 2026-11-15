@@ -1,0 +1,13 @@
+Build 11 gives EverNoise a quieter, simpler look.
+
+• One growing dot per intensity; a tiny hollow circle means Off.
+• Selection is shown by its border, with no checkmark.
+• Pausing turns the controls and infinity mark grayscale.
+• A subtle mist flows around the infinity mark while sound plays.
+• Animation stops when paused, all bands are off, the app is hidden, or Reduce Motion is enabled.
+
+Your saved settings and sound are preserved. The active levels still use equal 6 dB steps. Choose the largest Low dot with Mid and High off for the original Brown sound. Use your device’s physical volume buttons.
+
+The audio generator and playback logic are unchanged from build 10. Please check that the animation feels calm, the paused screen is grayscale, and audio continues smoothly when you lock the screen or switch apps. Report any clicks, gaps, distortion, or unexpected stops.
+
+Free, offline, and no playback time limit.

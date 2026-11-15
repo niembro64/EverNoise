@@ -1,0 +1,13 @@
+Build 13 adds rainbow currents and drifting background ribbons.
+
+• Six color-wheel hues flow through the infinity. Your sound mix weights their proportions using the bands’ logarithmic power levels, while a trace of every hue remains.
+• Two larger, much fainter closed ribbons drift and bend behind the top of the screen. Deeper ribbons move more slowly.
+• Every ribbon shares the same liquid material, mist, palette, and smooth animation clock.
+• Open the info screen and turn Animations off for a still infinity and plain black background. Your choice is remembered, and all scheduled animation work stops.
+• Paused/all-off visuals settle into grayscale; Reduce Motion and hidden screens are respected.
+
+Audio generation and playback are unchanged from build 12.
+
+Please try different Low/Mid/High combinations, pause/resume, and the new Animations switch. Check that motion stays smooth, the background stays calm, and the preference survives reopening. Also check locked-screen and background playback, and report any clicks, gaps, distortion, or unexpected stops.
+
+Free, offline, and no playback time limit.

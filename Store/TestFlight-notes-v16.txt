@@ -1,0 +1,10 @@
+Build 16: a larger infinity and floating ribbons
+
+• A much larger infinity fills the upper screen, scaling smoothly for iPhone and iPad.
+• Four enormous, faint background ribbons can appear anywhere on screen. They drift a little faster, turn, bend, and gently move through depth.
+• The gear icon keeps its size but has an 80-point touch target. Try tapping around the icon, too.
+• Selected Low/Mid/High borders are twice as thick.
+
+Please check the enlarged animation and floating motion on your iPhone, including any remaining jitter. Check that the controls remain easy to reach and Settings opens when tapping near the gear. Paused visuals remain grayscale; Animations off leaves a still infinity and a plain background.
+
+The audio implementation is unchanged from build 15. Physical iPhone frame cadence, overnight continuity, and battery consumption are not measured for this build.
