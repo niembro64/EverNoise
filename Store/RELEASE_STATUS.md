@@ -1,5 +1,20 @@
 # Release status — November 15, 2026
 
+## Apple silicon Mac and Vision Pro availability enabled
+
+At approximately **16:33 CST (22:33 UTC)**, Mac and Vision Pro App Store availability
+were enabled for the existing **1.0.1 (23)** release. Both TestFlight groups also
+have Mac and Vision Pro testing enabled. The saved public availability switches
+were verified after reloading App Store Connect.
+
+Build 23 was installed through TestFlight on an Apple silicon Mac running macOS
+26.6.2. Launch, play/pause, Settings, and return to the playing state passed a
+manual smoke test. The app remains running. iPad support was already included;
+Watch, TV, and Intel Mac do not yet have separate targets/releases. No new binary
+was built or uploaded, and no audio code changed.
+
+Details and validation limits: [platform availability](PLATFORM_AVAILABILITY.md).
+
 ## Public release confirmed — version 1.0.1, build 23
 
 **EverNoise 1.0.1 (build 23) is live on the App Store for free.** At **15:11:05 CST (21:11:05 UTC)** on November 15, Apple's US lookup service reported version 1.0.1, price $0.00, and release time **14:44:13 CST (20:44:13 UTC)**. App Store Connect separately showed **Ready for Distribution** with build **23** attached.

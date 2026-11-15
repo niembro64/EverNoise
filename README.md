@@ -5,7 +5,10 @@ last sound engine before the power-complementary redesign; see
 [sound history and rollback](Store/SOUND_ENGINE_HISTORY.md). Account-specific
 delivery confirmations, signing material, and generated builds remain local.
 
-A small native SwiftUI app for iPhone and iPad (iOS 17+). Opening it starts
+A small native SwiftUI app for iPhone and iPad (iOS 17+), also distributed as a
+compatible iPad app on Apple silicon Macs (macOS 14+) and Apple Vision Pro.
+See [platform availability and validation](Store/PLATFORM_AVAILABILITY.md).
+Opening it starts
 the last selected balance (buttons 3 / 3 / 2 for a new installation, counting Off as the first button). Locking the screen or switching apps leaves the audio engine
 running. There is no playback deadline, recording to loop, network dependency,
 account, advertising, or subscription.
@@ -48,6 +51,10 @@ their tone and digital output level intentionally change. What to Test notes
 are saved in App Store Connect. On November 15, the internal tester portal
 reported build 23 installed. External TestFlight testing still awaited its
 separate beta review at 15:11 CST; the same build is already public on the App Store.
+
+Mac and Vision Pro testing are enabled for both existing tester groups. Build 23
+was installed and launched through TestFlight on an Apple silicon Mac on
+November 15. Refresh TestFlight if EverNoise still appears under Incompatible.
 
 ## Run on your iPhone
 
