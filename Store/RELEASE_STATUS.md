@@ -1,5 +1,28 @@
 # Release status — November 15, 2026
 
+## Apple TV submitted; Mac installed
+
+**tvOS 1.1 (24) is available in internal TestFlight and submitted for App Review.**
+Apple confirmed TestFlight availability at **17:04:28 CST (23:04:28 UTC)**.
+At approximately **17:11 CST (23:11 UTC)**, App Store Connect confirmed
+**1 Item Submitted** for [submission b7ec2504-b05f-42c6-91ca-1afa920be659](https://appstoreconnect.apple.com/apps/6834413344/distribution/reviewsubmissions/details/b7ec2504-b05f-42c6-91ca-1afa920be659).
+Automatic release after approval is selected. External beta review was also
+submitted for the existing Friends and Family group. TV approval and public
+availability are not yet confirmed.
+
+The TV target reuses the build-23 audio engine and shader unchanged, adding a
+remote-friendly landscape interface, focus, and Siri Remote Play/Pause support.
+All 40 core, 32 iOS integration/UI, and 10 TV integration/UI tests pass.
+The TV UI test confirms background clock advancement without an engine restart.
+Signed package checks and final Release simulator visual inspection pass.
+Physical TV/audio-output and overnight qualification remain unperformed.
+
+The existing **iOS 1.0.1 (23)** release remains public and free. It already supports
+iPad; Apple silicon Mac and Vision Pro availability have been enabled. Build 23
+was installed through TestFlight on this Mac and remained **Playing continuously**
+at the final UI check. Apple Watch is intentionally excluded. See
+[TV release](TV_RELEASE.md) and [platform availability](PLATFORM_AVAILABILITY.md).
+
 ## Apple silicon Mac and Vision Pro availability enabled
 
 At approximately **16:33 CST (22:33 UTC)**, Mac and Vision Pro App Store availability
@@ -9,9 +32,9 @@ were verified after reloading App Store Connect.
 
 Build 23 was installed through TestFlight on an Apple silicon Mac running macOS
 26.6.2. Launch, play/pause, Settings, and return to the playing state passed a
-manual smoke test. The app remains running. iPad support was already included;
-Watch, TV, and Intel Mac do not yet have separate targets/releases. No new binary
-was built or uploaded, and no audio code changed.
+manual smoke test. iPad support was already included. This availability-only
+step used the existing binary and changed no audio code. The TV target was
+added afterward as recorded above; Watch and Intel Mac have no release.
 
 Details and validation limits: [platform availability](PLATFORM_AVAILABILITY.md).
 

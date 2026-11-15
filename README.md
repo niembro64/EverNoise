@@ -7,6 +7,10 @@ delivery confirmations, signing material, and generated builds remain local.
 
 A small native SwiftUI app for iPhone and iPad (iOS 17+), also distributed as a
 compatible iPad app on Apple silicon Macs (macOS 14+) and Apple Vision Pro.
+The **EverNoiseTV** target adds a native Apple TV app for tvOS 17+, sharing the
+same audio engine, sound controls, palette, and Metal artwork. Its landscape
+layout supports remote focus and the Siri Remote Play/Pause button. Apple Watch
+is intentionally outside the supported scope.
 See [platform availability and validation](Store/PLATFORM_AVAILABILITY.md).
 Opening it starts
 the last selected balance (buttons 3 / 3 / 2 for a new installation, counting Off as the first button). Locking the screen or switching apps leaves the audio engine
@@ -55,6 +59,11 @@ separate beta review at 15:11 CST; the same build is already public on the App S
 Mac and Vision Pro testing are enabled for both existing tester groups. Build 23
 was installed and launched through TestFlight on an Apple silicon Mac on
 November 15. Refresh TestFlight if EverNoise still appears under Incompatible.
+Apple confirmed **tvOS 1.1 (24)** ready to test at 17:04:28 CST the same day.
+Open TestFlight on Apple TV with the existing internal tester's Apple Account.
+External TV testing has been submitted for its separate beta review.
+The TV version is also submitted for public App Review, with automatic release
+after approval. It is not yet confirmed publicly available.
 
 ## Run on your iPhone
 
@@ -66,6 +75,12 @@ November 15. Refresh TestFlight if EverNoise still appears under Incompatible.
 The generated project is included. To regenerate it after changing `project.yml`,
 run `xcodegen generate`. There are no external app dependencies; `Package.swift`
 contains only the local DSP and playback modules.
+
+For Apple TV, select the **EverNoiseTV** scheme and an Apple TV simulator or
+registered device. Its test action runs the real audio-engine checks plus remote
+navigation and background-continuity tests. `swift scripts/generate-tv-artwork.swift`
+regenerates its layered app icons and Top Shelf images. See the
+[TV release record](Store/TV_RELEASE.md) for build and distribution evidence.
 
 ## Continuous audio
 
@@ -130,7 +145,8 @@ new sound beside the old favorite at equal total RMS for tone comparison.
 The new default's unnormalized digital RMS is 8.79 dB lower; perceived loudness
 also depends on the spectrum and output device.
 
-The UI and animation code is unchanged from build 22. Build-18
+Build 23's iOS UI and animation code was unchanged from build 22. The TV port
+shares that shader and audio path, with a separate landscape interface. Build-18
 [linear-light and motion audits](Store/LINEAR_LIGHT_GLASS_RELEASE.md) remain the
 shader baseline. Legacy DSP/audit records below describe the previous engine.
 Physical-device listening, battery, Bluetooth, and overnight playback remain

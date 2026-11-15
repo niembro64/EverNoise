@@ -1,7 +1,11 @@
 import AVFoundation
 import XCTest
 import PlaybackCore
+#if os(tvOS)
+@testable import EverNoiseTV
+#else
 @testable import JustBrownNoise
+#endif
 
 @MainActor
 final class AudioDriverTests: XCTestCase {

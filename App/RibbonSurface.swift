@@ -17,8 +17,9 @@ struct RibbonArtwork: View {
 
     var body: some View {
         GeometryReader { geometry in
-            let width = max(1, geometry.size.width)
-            let height = max(1, geometry.size.height)
+            let canvasSize = geometry.size
+            let width = max(1, canvasSize.width)
+            let height = max(1, canvasSize.height)
             // Approximately the same total pixel budget as build 16's two
             // surfaces. Only shader coordinates move; raster dimensions stay fixed.
             let pixelWidth = min(width * displayScale, width < 600 ? 768 : 1024)
@@ -29,7 +30,7 @@ struct RibbonArtwork: View {
                         .float2(raster.size), .float(frame.phase), .float(frame.activity),
                         .float3(frame.color.x, frame.color.y, frame.color.z),
                         .float3(frame.bandPower.x, frame.bandPower.y, frame.bandPower.z),
-                        .float(3), .float(0), .float2(geometry.size),
+                        .float(3), .float(0), .float2(canvasSize),
                         .float3(NoisePalette.linearHues[0].x, NoisePalette.linearHues[0].y, NoisePalette.linearHues[0].z),
                         .float3(NoisePalette.linearHues[1].x, NoisePalette.linearHues[1].y, NoisePalette.linearHues[1].z),
                         .float3(NoisePalette.linearHues[2].x, NoisePalette.linearHues[2].y, NoisePalette.linearHues[2].z),

@@ -10,8 +10,8 @@ existing, released **1.0.1 (23)** binary. No audio or application code changed.
 | Apple silicon Mac | Mac App Store availability enabled; TestFlight enabled | Installed build 23 through TestFlight on macOS 26.6.2; launched successfully |
 | Apple Vision Pro | App Store availability and TestFlight enabled | App Store Connect reports version 1.0.1 compatible; no headset test performed |
 | Intel Mac | No native Mac release | The iOS-on-Mac distribution route requires Apple silicon |
-| Apple TV | No tvOS target or release yet | Requires a separate app target and remote-friendly interface |
-| Apple Watch | No watchOS target or release yet | Requires a separate app target and watchOS audio-session handling |
+| Apple TV | Native tvOS 17+ version 1.1 (24) available in internal TestFlight; submitted for public App Review and external beta review | 8 real-engine and 2 remote/background UI tests pass; Release simulator layout inspected |
+| Apple Watch | Intentionally excluded | User selected iPad, Mac, Vision Pro, and Apple TV |
 
 ## Confirmed changes
 
@@ -39,8 +39,17 @@ The app was left running.
 
 These checks establish installation and UI/playback state transitions. They do
 not establish audible output quality, overnight continuity, hardware sleep
-behavior, or headset/Apple TV/Watch compatibility. The optional App Store Connect
+behavior, or physical-headset/Apple-TV compatibility. The optional App Store Connect
 Mac compatibility attestation was not submitted.
+
+## Apple TV
+
+The native `EverNoiseTV` target shares the existing production audio sources and
+shader unchanged. It adds a landscape layout, remote focus, Play/Pause remote
+support, Settings, layered infinity icons, and Top Shelf artwork. Version 1.1
+(24) uploaded successfully at **23:02:27 UTC (17:02 CST)**. The iOS release stays
+at 1.0.1 (23); the Mac and Vision Pro availability changes use that existing build.
+See the [TV release record](TV_RELEASE.md) for final review status and tests.
 
 ## Distribution references
 
