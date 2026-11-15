@@ -10,7 +10,7 @@ struct StereoGeneratorTests {
         return p
     }
 
-    @Test(arguments: [BNSourceBrown, BNSourceMid, BNSourceGrayAir])
+    @Test(arguments: [BNSourceBrown, BNSourceMid, BNSourceGrayAir, BNSourceComplementaryLow, BNSourceComplementaryMid, BNSourceComplementaryHigh])
     func monoIsTheApprovedSignalAtEveryLevel(kind: BNSourceKind) throws {
         for level in 0...4 {
             let p = try pair(kind, stereo: false, level: level)
@@ -26,7 +26,7 @@ struct StereoGeneratorTests {
         }
     }
 
-    @Test(arguments: [BNSourceBrown, BNSourceMid, BNSourceGrayAir])
+    @Test(arguments: [BNSourceBrown, BNSourceMid, BNSourceGrayAir, BNSourceComplementaryLow, BNSourceComplementaryMid, BNSourceComplementaryHigh])
     func stereoUsesIndependentGeneratorsWithMatchingPower(kind: BNSourceKind) throws {
         let p = try pair(kind, stereo: true)
         let a = try #require(BNCreateSource(kind, 123456789, true))
@@ -46,7 +46,7 @@ struct StereoGeneratorTests {
         #expect(abs(10 * log10(aa / bb)) < 0.5)
     }
 
-    @Test(arguments: [BNSourceBrown, BNSourceMid, BNSourceGrayAir])
+    @Test(arguments: [BNSourceBrown, BNSourceMid, BNSourceGrayAir, BNSourceComplementaryLow, BNSourceComplementaryMid, BNSourceComplementaryHigh])
     func modeChangesPreserveSequenceAndStayWithinBothSignals(kind: BNSourceKind) throws {
         let p = try pair(kind, stereo: false), reference = try pair(kind, stereo: true)
         defer { BNStereoDestroy(p); BNStereoDestroy(reference) }

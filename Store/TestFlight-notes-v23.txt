@@ -1,0 +1,11 @@
+Build 23: a fundamentally new sound engine
+
+• Low, Mid, and High now use complementary bands with a warm pink-weighted base.
+• Equal settings preserve the same continuous base spectrum through the overlaps.
+• The same saved choices intentionally sound different from build 22.
+• Default buttons remain 3 / 3 / 2, counting Off as the first button.
+• Digital output level is lower; use your device volume for a comfortable comparison.
+• Stereo, smooth level changes, and background playback remain.
+• The old sound is preserved in the public Git tag sound-baseline-build-22.
+
+Please compare the new tone on your usual speaker/headphones, try all band levels and Mono/Stereo, and test locked-screen/background playback for longer than eight hours. Report any distortion, clicking, unexpected silence, or interruptions. The 30-hour checks are accelerated software tests; listening and overnight device results are still needed.

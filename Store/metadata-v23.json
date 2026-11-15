@@ -1,0 +1,29 @@
+{
+  "name": "EverNoise",
+  "subtitle": "Your sound. No time limit.",
+  "primaryLanguage": "en-US",
+  "bundleID": "io.niemo.JustBrownNoise",
+  "sku": "just-brown-noise-ios",
+  "version": "1.0.1",
+  "copyright": "2026 Eric Niemeyer",
+  "primaryCategory": "Utilities",
+  "price": "Free",
+  "description": "Open the app. Find your sound. Lock your screen and get some rest.\n\nShape a warm, continuous noise with three rows of five glass buttons for Low, Mid, and High. The frequency bands now blend through a mathematically complementary design: equal settings preserve one balanced base spectrum. A hollow circle turns a band off; four growing dots choose its intensity. A reflective glass rim shows your selection. The active levels use equal decibel steps. New installations start on the third Low button, third Mid button, and second High button, counting Off as the first. Your saved choices are remembered.\n\nNative Liquid Glass controls on iOS 26 and calm Avenir Next typography keep the interface simple. Muted rose represents lows, sage mids, and periwinkle highs. A large luminous liquid infinity fills the upper screen and combines your sound's color with six rainbow currents weighted by your mix. Linear-light blending keeps overlapping colors natural, and the darker, translucent rear surface adds depth. Med, the default animation level, shows a flowing infinity on a black background. High adds four enormous, faint closed ribbons with the same liquid and mist. Low keeps a still infinity on black. Pause the sound and the flow eases to rest as the controls fade to grayscale.\n\n• Three independent frequency controls, each with Off and four intensities\n• Smooth changes without restarting playback\n• Remembers your band levels and stereo settings\n• Starts automatically when you open the app\n• Keeps playing in the background and with the screen locked\n• Generates sound on your device, without looping a recording\n• Works completely offline, with no timer or time limit\n• Large play/pause button; use your device’s volume buttons\n• Lock-screen and Control Center playback controls\n• Audio picker: Mono or independent left/right Stereo; Stereo by default\n• Choose Low, Med, or High animations in Settings; Med by default\n• Remembers your animation preference and respects Reduce Motion\n• Free, with no accounts, ads, subscriptions, or tracking\n\nChoose stronger Low and quieter Mid/High settings for a deeper sound. This update introduces a new sound engine, so the same choices produce a different tone. Setting all three bands to Off produces silence and mutes the colors.\n\nPlayback continues until you pause or force-quit the app. iOS can still interrupt audio for calls, Siri, or system events; the app resumes when iOS permits.",
+  "keywords": "brown noise,sleep,low,mid,high,offline,continuous,relax,focus,background,sound,rest",
+  "supportURL": "https://niemo.io/evernoise/",
+  "privacyURL": "https://niemo.io/evernoise/privacy.html",
+  "promotionalText": "Find your sound with separate Low, Mid, and High controls. A black screen, a quiet splash of color, and continuous playback. Free, offline, and no time limit.",
+  "reviewNotes": "Build 23 fundamentally changes sound generation. The app now uses independent 48 kHz noise layers with complementary Butterworth splits at 200 Hz and 2 kHz, shared pink-weighted coloring, and fixed gain. Equal settings preserve the designed base spectrum. All settings, UI, stereo, animation controls, background mode, and playback lifecycle remain. The same choices intentionally produce a different tone and digital level. 40 core tests, 32 integration/UI tests, 164 new-engine renders, and 30 accelerated hours per paired band pass. There is no limiter, time limit, recording loop, login, tracking, or purchase. The app remains free.",
+  "privacy": "Data Not Collected",
+  "ageRatingAnswers": "No objectionable content, advertising, messaging, user-generated content, web browsing, gambling, contests, or purchases. External links are limited to the app support and privacy pages.",
+  "release": "Automatically release after approval",
+  "appStoreConnectID": "6834413344",
+  "ageRating": "4+",
+  "screenshots": [
+    "screenshots/iPhone-6.3-inch.jpg",
+    "screenshots/iPad-13-inch.jpg"
+  ],
+  "availability": "All 175 countries or regions; iPhone and iPad",
+  "whatsNew": "A new sound engine blends Low, Mid, and High over a warm pink-weighted base. Equal settings preserve one consistent base spectrum. This intentionally changes the tone of the same settings. Your saved levels, independent stereo, and continuous playback remain.",
+  "build": "23"
+}

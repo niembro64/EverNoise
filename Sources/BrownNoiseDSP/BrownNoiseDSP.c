@@ -2,6 +2,7 @@
 #include "BNColorFilter.h"
 #include "BNGrayAirFilter.h"
 #include "BNMidFilter.h"
+#include "BNComplementaryFilter.h"
 #include <stdlib.h>
 #include <stdatomic.h>
 
@@ -18,6 +19,7 @@ struct BNGenerator {
     BNColorFilter filter;
     BNGrayAirFilter airFilter;
     BNMidFilter midFilter;
+    BNComplementaryFilter complementaryFilter;
     double sampleRate;
     double envelope, envelopeStart, envelopeTarget;
     uint32_t envelopePosition, envelopeLength;
@@ -32,7 +34,9 @@ double BNSourceSampleRate(void) { return 8000.0; }
 double BNRateForSource(BNSourceKind kind) {
     switch (kind) {
         case BNSourceBrown: return BNSourceSampleRate();
-        case BNSourceWhite: case BNSourceGrayAir: case BNSourceMid: return 48000.0;
+        case BNSourceWhite: case BNSourceGrayAir: case BNSourceMid:
+        case BNSourceComplementaryLow: case BNSourceComplementaryMid:
+        case BNSourceComplementaryHigh: return 48000.0;
         default: return 0;
     }
 }
@@ -61,6 +65,8 @@ BNGenerator *BNCreateSource(BNSourceKind kind, uint64_t seed, bool selected) {
     g->kind = kind;
     if (kind == BNSourceGrayAir) g->airFilter = BNGrayAirCreate(rate);
     if (kind == BNSourceMid) g->midFilter = BNMidCreate(rate);
+    if (kind >= BNSourceComplementaryLow && kind <= BNSourceComplementaryHigh)
+        g->complementaryFilter = BNComplementaryCreate((int)kind - BNSourceComplementaryLow);
     BNSetSelected(g, selected);
     BNBeginFadeIn(g);
     return g;
@@ -147,6 +153,9 @@ static inline float nextSample(BNGenerator *g) {
         case BNSourceWhite: colored = white * 0.02; break;
         case BNSourceGrayAir: colored = BNGrayAirProcess(&g->airFilter, white); break;
         case BNSourceMid: colored = BNMidProcess(&g->midFilter, white); break;
+        case BNSourceComplementaryLow: case BNSourceComplementaryMid:
+        case BNSourceComplementaryHigh:
+            colored = BNComplementaryProcess(&g->complementaryFilter, white); break;
         default: colored = BNColorProcess(&g->filter, white); break;
     }
     double sample = colored * g->envelope * g->selection;

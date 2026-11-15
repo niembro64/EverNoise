@@ -11,11 +11,14 @@ typedef enum {
     BNSourceBrown = 0,
     BNSourceWhite = 1,
     BNSourceGrayAir = 2,
-    BNSourceMid = 3
+    BNSourceMid = 3,
+    BNSourceComplementaryLow = 4,
+    BNSourceComplementaryMid = 5,
+    BNSourceComplementaryHigh = 6
 } BNSourceKind;
 
-// Three band pickers independently adjust Brown, Mid, and GrayAir from 0 to 4.
-// White and boolean selection remain available for historical audit comparisons.
+// The app uses the three Complementary sources at a shared 48 kHz rate.
+// Brown/White/Mid/GrayAir remain unchanged for legacy audit comparisons.
 double BNRateForSource(BNSourceKind kind);
 BNGenerator *BNCreateSource(BNSourceKind kind, uint64_t seed, bool selected);
 // Lock-free selection command, smoothed over 600 ms on the render thread.

@@ -5,6 +5,18 @@ import PlaybackCore
 
 @MainActor
 final class AudioDriverTests: XCTestCase {
+    func testProductionBandsShareTheComplementary48kHzPath() throws {
+        let driver = NoiseAudioDriver()
+        defer { driver.stop(immediately: true) }
+        try driver.start()
+        let sources = try XCTUnwrap(driver.currentEngine).attachedNodes.compactMap { $0 as? AVAudioSourceNode }
+        XCTAssertEqual(sources.count, 3)
+        for source in sources {
+            XCTAssertEqual(source.outputFormat(forBus: 0).sampleRate, 48000)
+            XCTAssertEqual(source.outputFormat(forBus: 0).channelCount, 2)
+        }
+    }
+
     func testStereoChangesKeepTheSameEngineAndClock() async throws {
         let driver = NoiseAudioDriver(mix: NoiseMix(highs: 3, mids: 2))
         defer { driver.stop(immediately: true) }

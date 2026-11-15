@@ -1,5 +1,5 @@
 // Production paired DSP through AVAudioEngine sample-rate/channel conversion.
-// Usage: rate seconds low,mid,high|rapid|mute output.wav channels mono|stereo|switch|rapid
+// Usage: rate seconds low,mid,high|rapid|mute output.wav channels mono|stereo|switch|rapid [legacy|complementary]
 import AVFoundation
 import Foundation
 
@@ -19,10 +19,15 @@ let channels = AVAudioChannelCount(args[5])!, mode = args[6]
 let coordinates = preset.split(separator: ",").compactMap { Int($0) }
 let levels = coordinates.count == 3 ? coordinates : [4, 4, 4]
 let initialStereo = mode == "stereo"
+let family = args.count > 7 ? args[7] : "legacy"
+precondition(family == "legacy" || family == "complementary")
+let kinds = family == "complementary"
+    ? [BNSourceComplementaryLow, BNSourceComplementaryMid, BNSourceComplementaryHigh]
+    : [BNSourceBrown, BNSourceMid, BNSourceGrayAir]
 let streams = [
-    StereoAuditStream(BNSourceBrown, 123456789, 1987654321, levels[0], stereo: initialStereo),
-    StereoAuditStream(BNSourceMid, 987654321, 246813579, levels[1], stereo: initialStereo),
-    StereoAuditStream(BNSourceGrayAir, 135792468, 975318642, levels[2], stereo: initialStereo)
+    StereoAuditStream(kinds[0], 123456789, 1987654321, levels[0], stereo: initialStereo),
+    StereoAuditStream(kinds[1], 987654321, 246813579, levels[1], stereo: initialStereo),
+    StereoAuditStream(kinds[2], 135792468, 975318642, levels[2], stereo: initialStereo)
 ]
 let format = AVAudioFormat(standardFormatWithSampleRate: rate, channels: channels)!
 let engine = AVAudioEngine()

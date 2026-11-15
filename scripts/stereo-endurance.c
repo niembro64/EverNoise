@@ -1,5 +1,6 @@
 // Stream the production stereo path beyond 32-bit frame counts without files.
 #include "BrownNoiseDSP.h"
+#include "../Sources/BrownNoiseDSP/BNComplementaryCoefficients.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,13 +11,14 @@ int main(int argc, char **argv) {
     if (argc != 3) return 2;
     int index = atoi(argv[1]);
     double hours = strtod(argv[2], NULL);
-    if (index < 0 || index > 3 || !isfinite(hours) || hours <= 0) return 2;
+    if (index < 0 || index > 6 || !isfinite(hours) || hours <= 0) return 2;
     BNSourceKind kind = (BNSourceKind)index;
     double rate = BNRateForSource(kind);
     BNStereoGenerator *g = BNStereoCreateSource(kind, 123456789, 987654321, true);
     if (!g) return 2;
     BNStereoSetLevel(g, 4); BNStereoBeginFadeIn(g);
-    const double bounds[] = {.75, .020001, .109, .100001};
+    const double bounds[] = {.75, .020001, .109, .100001,
+        BNComplementaryAbsoluteBounds[0], BNComplementaryAbsoluteBounds[1], BNComplementaryAbsoluteBounds[2]};
     float left[4096], right[4096];
     uint64_t total = (uint64_t)(hours * 3600 * rate), checked = 0;
     double peak[2] = {0}, squares[2] = {0}, sum[2] = {0}, minRMS[2] = {1, 1};

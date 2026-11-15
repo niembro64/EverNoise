@@ -1,6 +1,6 @@
 # EverNoise
 
-Source history is tracked in Git. The `sound-baseline-build-22` tag preserves the
+Source history is public at [niembro64/EverNoise](https://github.com/niembro64/EverNoise). The `sound-baseline-build-22` tag preserves the
 last sound engine before the power-complementary redesign; see
 [sound history and rollback](Store/SOUND_ENGINE_HISTORY.md). Account-specific
 delivery confirmations, signing material, and generated builds remain local.
@@ -32,7 +32,7 @@ Audio (Mono/Stereo) and
 Animations control: Low keeps a still infinity on black and stops scheduled
 visual updates; Med animates only the infinity; High also shows the background
 ribbons. Med is the default. A saved old animations-off choice migrates to Low;
-otherwise upgrades start on Med. Every new level is remembered. Audio is unchanged.
+otherwise upgrades start on Med. Every new level is remembered. Animation settings do not affect audio.
 The app remembers all three levels and fades smoothly between balances. A large
 play/pause button controls playback; use the physical buttons for volume. Privacy
 and help sit behind an outline gear with a generous 80-point touch target. Lock-screen and Control Center controls
@@ -40,14 +40,12 @@ work too. Reopening the app starts it again.
 
 ## TestFlight
 
-Apple confirmed **1.0.1 (22)** is ready to test at 08:40:00 CST on November 15.
+Apple confirmed **1.0.1 (23)** is ready to test at 09:45:04 CST on November 15.
 Open [TestFlight](https://testflight.apple.com/v1/app/6834413344) and update EverNoise.
-Five direct buttons return for each sound band, with a reflective glass rim for
-selection. New installations use buttons 3 / 3 / 2, counting Off as first;
-your saved choices remain intact. The sound filters and engine are unchanged.
-See `Store/testflight-confirmation-v22.json` for Apple's availability notification.
-Public App Review submission and portal notes/screenshots still await browser
-access. Installation of build 22 has not been observed.
+This build introduces the complementary sound engine. New installations still
+use buttons 3 / 3 / 2, counting Off as first; saved choices remain intact, but
+their tone and digital output level intentionally change. What to Test notes
+are saved in App Store Connect. Installation of build 23 has not been observed.
 
 ## Run on your iPhone
 
@@ -62,39 +60,35 @@ contains only the local DSP and playback modules.
 
 ## Continuous audio
 
+Build 23 is a fundamental change in sound generation. Three independently
+excited, continuously running 48 kHz bands share a warm pink-weighted base and
+complementary Butterworth splits at 200 Hz and 2 kHz. At equal settings their
+powers sum to the designed base curve, with 20 Hz/18 kHz edge rolloffs. The
+current filter math, spectrum, and bounds are documented in the
+[complementary sound audit](Store/POWER_COMPLEMENTARY_RELEASE.md).
+
 `AVAudioSourceNode` asks the C generator for samples on the audio render thread.
-That path has no allocation, locks, file access, networking, or main-thread work.
-Filter and 64-bit random-generator state persist between callbacks. The source
-for Brown runs at 8 kHz; AVAudioEngine's mixer converts to the hardware route's format.
-Build 2 uses a linear 18 Hz leaky integrator, two 35 Hz high-pass stages, and two
-1,400 Hz low-pass stages for a softer, band-limited texture. Its measured slope
-is about -6 dB/octave from 125–500 Hz. A constant gain bounds source samples to
-0.75 without clipping or nonlinear peak shaping. There is no dynamic volume
-normalization. Startup, pause, and resume use smooth fades.
+That path has no allocation, locks, file access, networking, or filter design.
+Random and filter state persist between callbacks, including while a band is
+Off. One fixed common gain bounds the sum below 0.8 full scale before output
+conversion. There is no clipping, limiting, compression, or dynamic normalization.
+Startup, pause, resume, and level changes use the existing smooth fades.
 
-The separate midrange and high-frequency layers run at 48 kHz. All three sources
-keep running in one graph, including when their level is Off. Pickers adjust
-each layer independently using 600 ms smoothstep fades without restarting audio.
-These separately shaped layers overlap smoothly, but do not form a matched
-power-complementary crossover. Equal settings keep a bass-heavy response; see
-the [measured band-overlap audit](Store/BAND_OVERLAP_AUDIT.md).
-All three bands use off, -18, -12, -6, and 0 dB relative to each layer's maximum:
-equal 6 dB steps between active levels, with sample gains `10^(dB/20)`.
-Low 4 / Mid 0 / High 0 exactly preserves Brown; Low 4 / Mid 0 / High 4 preserves
-the previous Gray. Existing grid preferences migrate with Low at 4, preserving
-all 25 old sounds. All three Off intentionally produces silence. Mids use a
-linear band filter with four 600 Hz high-pass stages and four 3 kHz low-pass
-stages, bounded by a constant creation-time gain.
+All three controls retain Off / -18 / -12 / -6 / 0 dB, using sample gains
+`10^(dB/20)`. Changes fade over 600 ms without restarting the engine. Saved
+settings and the default buttons 3 / 3 / 2 remain, but their sound intentionally
+changes with the new generator. All three Off produces exact silence.
 
-Stereo is on when no preference exists, and preserves an explicitly saved Off.
-A permanently allocated pair of independent generators
-for every band supplies both channels. Mono duplicates the original left samples;
-stereo selects the independent right source through a bounded one-second fade.
-The Audio picker does not rebuild the graph or restart sound. Each channel keeps the
-same filters and fixed source gains. The new two-channel conversion path removes
-the old mono converter's 3.01 dB attenuation at 44.1 kHz; that route can sound
-slightly louder than older builds at the same device volume. Tested 48 kHz mono
-engine output is bit-identical. See the build-14 audit for exact comparisons.
+Stereo defaults on and preserves saved choices. Each band has a permanent pair
+of independent left/right generators. Mono duplicates the left signal; the
+one-second convex Mono/Stereo transition keeps its existing bounded behavior.
+It can briefly reduce right-channel power during the switch. No graph rebuild
+is needed. All bands use the same conversion path to the output sample rate.
+
+The legacy generators remain available for comparison. Four actual-engine
+comparisons at 44.1/48 kHz in Mono/Stereo match build 22 bit for bit. The tagged
+baseline reproduces the complete old app, including its 8 kHz Brown source and
+separately shaped Mid/High layers; see [sound history](Store/SOUND_ENGINE_HISTORY.md).
 
 The `.playback` audio session and `UIBackgroundModes = audio` support background
 and lock-screen playback. Mixing allows other apps to play without needlessly
@@ -112,23 +106,26 @@ which may be the speaker. No app can guarantee immunity from system interruption
 
 ## Verification
 
-See the [build-22 glass-button release record](Store/GLASS_BUTTONS_RELEASE.md).
-All **31 distinct integration/UI tests pass** across the full run and a focused
-visual rerun, plus both core preference tests. Coverage includes all 15 button
-choices, edge taps, clear glass selection, saved balances, fresh defaults,
-paused grayscale, Audio/animation preferences, and uninterrupted render counters.
-The visual tolerance correction is documented with the measured native glass
-edge pixels; the infinity still requires exact grayscale and stillness.
+See the [build-23 complementary sound audit](Store/POWER_COMPLEMENTARY_RELEASE.md).
+All **40 core tests and 32 integration/UI tests pass**; the integration/UI suite
+passes in one run. All 125 mixes, 32 output-route cases, rapid/mute transitions,
+and measured spectra pass in 164 new-engine renders. The largest measured
+reconstructed peak is 0.1011 full scale. Each new paired generator passed 30
+accelerated hours and 5.184 billion frames per channel, including 2,916 stereo
+changes. This is not an overnight physical-device qualification.
 
-Nine audio/DSP/lifecycle sources and the compiled Metal library match build 21.
-Only the fresh-install fallback changed in the preference model. Five production
-engine renders measure the [current band overlap](Store/BAND_OVERLAP_AUDIT.md),
-which is smooth but not power-complementary. The build-18
+The actual compiled filters' power sum matches their common spectrum within
+1.21e-13. Adversarial-input and linearity checks confirm the fixed headroom
+bound. The [comparison graph](Store/complementary-spectrum-v23.png) shows the
+new sound beside the old favorite at equal total RMS for tone comparison.
+The new default's unnormalized digital RMS is 8.79 dB lower; perceived loudness
+also depends on the spectrum and output device.
+
+The UI and animation code is unchanged from build 22. Build-18
 [linear-light and motion audits](Store/LINEAR_LIGHT_GLASS_RELEASE.md) remain the
-shader baseline. The build-14 [audio baseline](Store/STEREO_RIBBONS_RELEASE.md)
-includes 37 core tests, 199 engine renders, and 30 accelerated hours per band;
-those extended runs were not repeated for this control/default change.
-Physical-device battery savings and overnight listening remain unmeasured.
+shader baseline. Legacy DSP/audit records below describe the previous engine.
+Physical-device listening, battery, Bluetooth, and overnight playback remain
+unmeasured for the new generator.
 
 The [build-7 picker audit](Store/BAND_PICKERS_AUDIT.md) covers all 125 balances,
 low-band scaling, persistence migration, headroom, and continuity. The
@@ -155,10 +152,10 @@ Version **1.0 (build 11) is publicly listed for free** on the
 [App Store](https://apps.apple.com/us/app/evernoise/id6834413344). Apple approved
 it while the animation update was being prepared.
 
-The last portal-confirmed App Review submission is **1.0.1 (build 15)**.
-Apple confirmed **1 Item Submitted** on November 14, 2026, with automatic
-release after approval. Its live status has not been refreshed; the latest
-visual update is not yet submitted. See
+**1.0.1 (build 23) is submitted for App Review.** Apple confirmed
+**1 Item Submitted** on November 15, 2026. The listing, review notes, and current
+phone/tablet screenshots are saved. Automatic release to all users after
+approval is selected. Approval and public release of 1.0.1 are not yet confirmed. See
 [release evidence](Store/RELEASE_STATUS.md) for the separately tracked states.
 
 Apple references: [background audio](https://developer.apple.com/documentation/avfoundation/configuring-your-app-for-media-playback),

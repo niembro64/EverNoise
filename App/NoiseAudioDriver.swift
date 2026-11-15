@@ -24,20 +24,20 @@ private final class NoiseStream: @unchecked Sendable {
 }
 
 private final class RenderStorage {
-    // All streams keep their clocks/filter state, even while inaudible. Brown
-    // keeps its original 8 kHz path; full-band sources render at 48 kHz.
+    // All complementary streams keep their clocks/filter state, even while
+    // inaudible. A shared 48 kHz rate gives each band the same conversion path.
     let streams: [NoiseStream]
 
     init(mix: NoiseMix, stereoEnabled: Bool) throws {
-        streams = try [BNSourceBrown, BNSourceMid, BNSourceGrayAir].map { kind in
+        streams = try [BNSourceComplementaryLow, BNSourceComplementaryMid, BNSourceComplementaryHigh].map { kind in
             try NoiseStream(kind: kind, level: Self.level(kind, in: mix), stereoEnabled: stereoEnabled)
         }
     }
 
     private static func level(_ kind: BNSourceKind, in mix: NoiseMix) -> Int {
         switch kind {
-        case BNSourceBrown: mix.lows
-        case BNSourceMid: mix.mids
+        case BNSourceComplementaryLow: mix.lows
+        case BNSourceComplementaryMid: mix.mids
         default: mix.highs
         }
     }

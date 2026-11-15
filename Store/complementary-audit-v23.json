@@ -1,0 +1,4195 @@
+{
+  "design": {
+    "design": 1,
+    "sampleRate": 48000.0,
+    "crossoversHz": [
+      200,
+      2000
+    ],
+    "commonHighPassHz": 20,
+    "commonLowPassHz": 18000,
+    "pinkingAnalogPolesHz": [
+      15.158974249230978,
+      76.06050043086661,
+      288.1778570935381,
+      1071.8245918168461,
+      3994.9818529284403,
+      15551.903647251507
+    ],
+    "pinkingAnalogZerosHz": [
+      37.22726567063349,
+      148.90730542954637,
+      555.9439764202084,
+      2067.466942309204,
+      7745.83434500294,
+      21924.67060366246
+    ],
+    "maximumPinkingApproximationErrorDB_20HzTo20kHz": 0.044041484028792155,
+    "frequencyPointsChecked": 290000,
+    "maximumComplementaryPowerError": 4.645173135031655e-13,
+    "unscaledImpulseL1Bounds": [
+      0.8500078228702503,
+      0.2761897926364637,
+      0.09185398999262376
+    ],
+    "infiniteTailBoundsAfter4Seconds": [
+      8.425393696884496e-155,
+      8.508624261087476e-157,
+      8.411605546504233e-161
+    ],
+    "commonGain": 0.6567859657079488,
+    "bandAbsoluteBounds": [
+      0.5582732088031485,
+      0.18139757967541795,
+      0.06032841152143366
+    ],
+    "allBandsWorstCaseAbsoluteBound": 0.7999992,
+    "expectedFullMixRMS": 0.019064032516925507,
+    "expectedDefaultMixRMS": 0.0041738345044197815,
+    "commonSOS": [
+      [
+        0.9981505111904518,
+        -1.9963010223809037,
+        0.9981505111904518,
+        1.0,
+        -1.996297601769122,
+        0.9963044429926857
+      ],
+      [
+        0.4077884149018849,
+        -0.4058060765948245,
+        0.0,
+        1.0,
+        -0.9980176616929396,
+        0.0
+      ],
+      [
+        0.513214217738713,
+        -0.5033072399174021,
+        0.0,
+        1.0,
+        -0.9900930221786891,
+        0.0
+      ],
+      [
+        0.5272739088085371,
+        -0.4902498338839643,
+        0.0,
+        1.0,
+        -0.9629759250754273,
+        0.0
+      ],
+      [
+        0.5499924244687714,
+        -0.41888798870314614,
+        0.0,
+        1.0,
+        -0.8688955642343746,
+        0.0
+      ],
+      [
+        0.6161296873768166,
+        -0.2015803857588049,
+        0.0,
+        1.0,
+        -0.5854506983819882,
+        0.0
+      ],
+      [
+        0.8559537893630773,
+        0.15290194268492502,
+        0.0,
+        1.0,
+        0.008855732048002484,
+        0.0
+      ],
+      [
+        0.5690355937288492,
+        1.1380711874576983,
+        0.5690355937288492,
+        1.0,
+        0.9428090415820632,
+        0.33333333333333326
+      ]
+    ],
+    "crossoverSOS": [
+      [
+        [
+          0.00016822370859146955,
+          0.0003364474171829391,
+          0.00016822370859146955,
+          1.0,
+          -1.9629800893893397,
+          0.9636529842237055
+        ]
+      ],
+      [
+        [
+          0.9816582684032612,
+          -1.9633165368065224,
+          0.9816582684032612,
+          1.0,
+          -1.9629800893893397,
+          0.9636529842237055
+        ],
+        [
+          0.014401440346511215,
+          0.02880288069302243,
+          0.014401440346511215,
+          1.0,
+          -1.632993161855452,
+          0.6905989232414969
+        ]
+      ],
+      [
+        [
+          0.9816582684032612,
+          -1.9633165368065224,
+          0.9816582684032612,
+          1.0,
+          -1.9629800893893397,
+          0.9636529842237055
+        ],
+        [
+          0.8308980212742374,
+          -1.6617960425484748,
+          0.8308980212742374,
+          1.0,
+          -1.632993161855452,
+          0.6905989232414969
+        ]
+      ]
+    ]
+  },
+  "compiledImpulseComplementarityMaximumRelativeError_20HzTo20kHz": 1.20570220474292e-13,
+  "measuredEqualMixVsExpectedPSD95thPercentileErrorDB": 0.3522942670446407,
+  "spectrumMethod": "65 s production stereo renders at 48 kHz; first second excluded; 2 s Hann Welch, 50% overlap; channel mean; 1/12-octave smoothing.",
+  "rawRMS": {
+    "low": 0.011130535901639739,
+    "mid": 0.011111085127735579,
+    "high": 0.010801364219841441,
+    "equal": 0.01907580458896489,
+    "default": 0.004177272968100206,
+    "legacy-default": 0.011491490221434994
+  },
+  "defaultRMSChangeVsBuild22DB": -8.789669924706482,
+  "timbralComparisonNormalization": "Both defaults normalized independently to equal total RMS; not equal perceived loudness or acoustic SPL.",
+  "engineRenders": {
+    "complementaryEngineRendersPassed": 164,
+    "legacyComparisonRendersPassed": 8,
+    "legacySpectrumRendersPassed": 1,
+    "all125MixesPassed": true,
+    "routeRendersPassed": 32,
+    "legacyWaveformComparisons": [
+      {
+        "rate": 44100,
+        "mode": "mono",
+        "bitIdenticalToBuild22": true
+      },
+      {
+        "rate": 44100,
+        "mode": "stereo",
+        "bitIdenticalToBuild22": true
+      },
+      {
+        "rate": 48000,
+        "mode": "mono",
+        "bitIdenticalToBuild22": true
+      },
+      {
+        "rate": 48000,
+        "mode": "stereo",
+        "bitIdenticalToBuild22": true
+      }
+    ],
+    "renders": [
+      {
+        "name": "mix-400",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,0,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.047458668868554946,
+        "rms": [
+          0.011261309336380938,
+          0.011047583483868773
+        ],
+        "correlation": -0.021723348160106362,
+        "leftRightPowerDifferenceDB": 0.16643192296076825,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "2a11762967b23a57dcf44715e62c9cf6017b526fe9e4ad4ec8bfccf77ceca66c"
+      },
+      {
+        "name": "mix-040",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,4,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.04707026277673028,
+        "rms": [
+          0.010947515955786687,
+          0.01111029714513958
+        ],
+        "correlation": -0.018477440229795385,
+        "leftRightPowerDifferenceDB": 0.12820174942798596,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "a82342f2f8464d14c88a384c5158c73cca620a8690ef86b80f5e76c6fc80fded"
+      },
+      {
+        "name": "mix-004",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,0,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.041665738143804254,
+        "rms": [
+          0.010773224113673744,
+          0.010828289719446731
+        ],
+        "correlation": -0.001813507939763091,
+        "leftRightPowerDifferenceDB": 0.04428345293863721,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "cace82dab2da7cd884c67598ca5b7be0309488d3c52e361141f539112e7119f0"
+      },
+      {
+        "name": "mix-000",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,0,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0,
+        "rms": [
+          0.0,
+          0.0
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "a75d5eaf393f65ccb8669335c4cf9e0f09267ed2e5d18ec9f52cd919414d2f0d",
+        "sampleSumMaximumError": 0.0
+      },
+      {
+        "name": "mix-001",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,0,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.005245405323066522,
+        "rms": [
+          0.0013562685602908173,
+          0.0013632009095254916
+        ],
+        "correlation": -0.00181350803145782,
+        "leftRightPowerDifferenceDB": 0.0442834541665377,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "bc5ef19001e0c6d9319f15b3614973416a2388639b93d4e3a379916dab5cc936",
+        "sampleSumMaximumError": 4.55522049767898e-10
+      },
+      {
+        "name": "mix-002",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,0,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.010465960174025499,
+        "rms": [
+          0.0027061115472382575,
+          0.002719943403229003
+        ],
+        "correlation": -0.0018135077924665254,
+        "leftRightPowerDifferenceDB": 0.04428345675013903,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "1ca90fcc147a19af0e10f86302bc9caf4b564e4b5056cd01897a4cbb059f1e2a",
+        "sampleSumMaximumError": 9.138667114716448e-10
+      },
+      {
+        "name": "mix-003",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,0,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.020882335788308073,
+        "rms": [
+          0.005399402389840345,
+          0.005427000571345921
+        ],
+        "correlation": -0.0018135080253433964,
+        "leftRightPowerDifferenceDB": 0.04428345755606602,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "e6a74050a96f66e3e012b38bf3f545eac898ac936066645d9800f7fa03814bac",
+        "sampleSumMaximumError": 1.7209543790031034e-09
+      },
+      {
+        "name": "mix-010",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,1,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.005925795013056083,
+        "rms": [
+          0.001378210603087563,
+          0.0013987035409623908
+        ],
+        "correlation": -0.0184774403820231,
+        "leftRightPowerDifferenceDB": 0.12820175125240382,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "b6c63723271f1b2dc43e7ecffecdae5e1b5b7dff81a6dca958817b77dbcbe355",
+        "sampleSumMaximumError": 4.598710613701318e-10
+      },
+      {
+        "name": "mix-011",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,1,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.008929807303365133,
+        "rms": [
+          0.0019341414678883952,
+          0.0019563920896878773
+        ],
+        "correlation": -0.010222050484424103,
+        "leftRightPowerDifferenceDB": 0.09935323764083304,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "88f1f7671b38fcf4411dcbf1e8fa8dfbbd9fbbd1bfc143f7304b4f71ac631c14",
+        "sampleSumMaximumError": 7.137799431372605e-10
+      },
+      {
+        "name": "mix-012",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,1,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.013599095173068053,
+        "rms": [
+          0.003037506133028581,
+          0.003062673104737727
+        ],
+        "correlation": -0.005200955424778188,
+        "leftRightPowerDifferenceDB": 0.07166962494315303,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "f72f1744693d91a0f6751838aa3d3fcc7c02333b1c2951b31c1fbd6bf864a801",
+        "sampleSumMaximumError": 1.289578794444468e-09
+      },
+      {
+        "name": "mix-013",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,1,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.023288153031486347,
+        "rms": [
+          0.005573228026986356,
+          0.005608885061798483
+        ],
+        "correlation": -0.0028021909549609684,
+        "leftRightPowerDifferenceDB": 0.05539456030970155,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "4d2e4125fd36b18bc0d587dc428e71e6b30e50d6c529ca70118519a29895e33f",
+        "sampleSumMaximumError": 2.2769113608434033e-09
+      },
+      {
+        "name": "mix-014",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,1,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.04262036418729815,
+        "rms": [
+          0.010861745027042896,
+          0.010922900643285818
+        ],
+        "correlation": -0.002063793353832407,
+        "leftRightPowerDifferenceDB": 0.04876758951113869,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "9bf3c135f5124e2bd69004c0761762cea9e71d93c508a335e20e2a63d61bf9cf",
+        "sampleSumMaximumError": 2.123146491950223e-09
+      },
+      {
+        "name": "mix-020",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,2,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.011823515054690932,
+        "rms": [
+          0.0027498916782471273,
+          0.0027907804656555632
+        ],
+        "correlation": -0.018477440525929013,
+        "leftRightPowerDifferenceDB": 0.1282017535758672,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "4d3ba464c6875fc21f643c7d829c99876ca32a100d193835bf82f25c4d18f8ae",
+        "sampleSumMaximumError": 9.012308711808803e-10
+      },
+      {
+        "name": "mix-021",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,2,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.013686444506529047,
+        "rms": [
+          0.0030668074581491436,
+          0.00311002816083691
+        ],
+        "correlation": -0.015157670036005365,
+        "leftRightPowerDifferenceDB": 0.12155621544797103,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "c0147e657169b5a891097301711d1b28540dee53397efc9b4b04f2285b75f570",
+        "sampleSumMaximumError": 1.3213561737834834e-09
+      },
+      {
+        "name": "mix-022",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,2,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.01781730824684497,
+        "rms": [
+          0.0038591195827499224,
+          0.0039035154118820894
+        ],
+        "correlation": -0.010222050418415528,
+        "leftRightPowerDifferenceDB": 0.09935324202530056,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "fb1308ab2bc5b36545eb4b5848c542ca1ed9726ec547102d5d166aacdd8cd302",
+        "sampleSumMaximumError": 1.279009870236436e-09
+      },
+      {
+        "name": "mix-023",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,2,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.027133764734307973,
+        "rms": [
+          0.006060621517609968,
+          0.006110836228444737
+        ],
+        "correlation": -0.0052009559466825485,
+        "leftRightPowerDifferenceDB": 0.07166962581135108,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "0bfddc495d44afcf3f8dbcfa9ae9e2c8a8552016a729a5feab807106658888a1",
+        "sampleSumMaximumError": 2.648880101374651e-09
+      },
+      {
+        "name": "mix-024",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,2,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.04646597430968404,
+        "rms": [
+          0.011120051855626015,
+          0.011191196990288955
+        ],
+        "correlation": -0.0028021908085054297,
+        "leftRightPowerDifferenceDB": 0.05539455785292136,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "8a41d8c69706cd1b9f298d8e18ba0d6edc943bde9dd4f858f0272591939fe35f",
+        "sampleSumMaximumError": 2.532310763858625e-09
+      },
+      {
+        "name": "mix-030",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,3,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.023591014935820966,
+        "rms": [
+          0.005486755235957356,
+          0.005568339092737517
+        ],
+        "correlation": -0.01847744041957875,
+        "leftRightPowerDifferenceDB": 0.12820175382198767,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "e723a66df9d29cd89200ab1b77aaf63816db1eb539c1f58e85d37ebf71e7184d",
+        "sampleSumMaximumError": 1.8236252299907996e-09
+      },
+      {
+        "name": "mix-031",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,3,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.024682087255854756,
+        "rms": [
+          0.0056525929821117996,
+          0.005737212023862821
+        ],
+        "correlation": -0.01747491346573004,
+        "leftRightPowerDifferenceDB": 0.1290636987609786,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "e5768770cdef2db72d7e90532a3eae721958a67604543adb6dfaf004d6a75525",
+        "sampleSumMaximumError": 2.560289900227497e-09
+      },
+      {
+        "name": "mix-032",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,3,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.027308046604951647,
+        "rms": [
+          0.006119085348356334,
+          0.006205321988135768
+        ],
+        "correlation": -0.015157669891585908,
+        "leftRightPowerDifferenceDB": 0.12155621612297338,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "c0520c534b6c599fc6d07ef356c911b15d6174e0ddeb79b6f4b15e2dc0d8538d",
+        "sampleSumMaximumError": 2.6744861464367276e-09
+      },
+      {
+        "name": "mix-033",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,3,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.035550205398955266,
+        "rms": [
+          0.007699955870705966,
+          0.007788537196819067
+        ],
+        "correlation": -0.010222050672455173,
+        "leftRightPowerDifferenceDB": 0.09935324350140076,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "38c57079b03831e8814d0409ce96f4751a33a054ef240e85b5d8844f6d333432",
+        "sampleSumMaximumError": 2.6358591836972423e-09
+      },
+      {
+        "name": "mix-034",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,3,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.05413897769835864,
+        "rms": [
+          0.012092529721782546,
+          0.012192721238154378
+        ],
+        "correlation": -0.005200955752865631,
+        "leftRightPowerDifferenceDB": 0.07166962308023435,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "ad239f8db7ae4c03e631b8c77d49b13812daefb3a7f174e3832dea69aa0acbfe",
+        "sampleSumMaximumError": 3.6862703792217566e-09
+      },
+      {
+        "name": "mix-041",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,4,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.04758403359407255,
+        "rms": [
+          0.011031919723798127,
+          0.011198149312010587
+        ],
+        "correlation": -0.018200559189615766,
+        "leftRightPowerDifferenceDB": 0.12990321962376647,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "72530928d29bf4033a97e7243e5e8eb4a0b9c47caf2435d6590ffe299af90475",
+        "sampleSumMaximumError": 2.0381891591148005e-09
+      },
+      {
+        "name": "mix-042",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,4,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.04924723885471577,
+        "rms": [
+          0.011278405763023277,
+          0.011447242942759728
+        ],
+        "correlation": -0.017474913079171612,
+        "leftRightPowerDifferenceDB": 0.12906369462004258,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "c59f183929627be67adf6f3c77ba420314452f2ae30051db7ff29cdb80ba618e",
+        "sampleSumMaximumError": 2.281770127010585e-09
+      },
+      {
+        "name": "mix-043",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,4,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.054486718752542455,
+        "rms": [
+          0.012209180398712518,
+          0.012381245112488008
+        ],
+        "correlation": -0.015157669730266554,
+        "leftRightPowerDifferenceDB": 0.12155621348457829,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "77483ef80ea560319ea558f3173538f4bc3f976fe77704879a04d0fd0da40380",
+        "sampleSumMaximumError": 3.159978979871969e-09
+      },
+      {
+        "name": "mix-044",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "0,4,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.07093198299157727,
+        "rms": [
+          0.015363431776671606,
+          0.015540174753324016
+        ],
+        "correlation": -0.010222050354318257,
+        "leftRightPowerDifferenceDB": 0.09935324061635767,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "fa71bf1a9c2ad02f0108db608bdfc98dffd4aa0fcb46a641d38db67fd73a48e0",
+        "sampleSumMaximumError": 3.725290298461914e-09
+      },
+      {
+        "name": "mix-100",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,0,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.005974692426205662,
+        "rms": [
+          0.0014177148494283534,
+          0.0013908083588702878
+        ],
+        "correlation": -0.021723348140581956,
+        "leftRightPowerDifferenceDB": 0.16643192213864832,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "e880db8fe4023c70440a9f584805f49032cf555c34fcf43e21a057f5bd726927",
+        "sampleSumMaximumError": 4.5906928258787616e-10
+      },
+      {
+        "name": "mix-101",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,0,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.00893773987659388,
+        "rms": [
+          0.0019621478377812493,
+          0.0019474861757826933
+        ],
+        "correlation": -0.012017228334988818,
+        "leftRightPowerDifferenceDB": 0.06514685241020159,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "4f5afcefea2a4f434f5ef5d2f453539b2e9179705999f1c0a5c6a08b53b8c6e6",
+        "sampleSumMaximumError": 9.176706235181076e-10
+      },
+      {
+        "name": "mix-102",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,0,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.01308861669486673,
+        "rms": [
+          0.003055198965870531,
+          0.003054916598241819
+        ],
+        "correlation": -0.005962691623475672,
+        "leftRightPowerDifferenceDB": 0.0008028044760744222,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "846ba3178bbec9278e00ecb3c746c3d7e32ce1d212d923a8a41f28569af09d8c",
+        "sampleSumMaximumError": 1.2627107345841715e-09
+      },
+      {
+        "name": "mix-103",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,0,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.022161145214976835,
+        "rms": [
+          0.005582654093131615,
+          0.00560239534067922
+        ],
+        "correlation": -0.0030348009724269157,
+        "leftRightPowerDifferenceDB": 0.030660655830063093,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "48f3d162b775abaa44a8ca2b9150fce55b9c62090675e457b4813f355f86b396",
+        "sampleSumMaximumError": 2.309363065361447e-09
+      },
+      {
+        "name": "mix-104",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,0,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0422229265880011,
+        "rms": [
+          0.010866342131033681,
+          0.01091725727355024
+        ],
+        "correlation": -0.002126608827560138,
+        "leftRightPowerDifferenceDB": 0.040603401295213955,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "19433a766d912cc12619cbed4ad04eefd04ed691f7b6722a7afd222e7e039bad",
+        "sampleSumMaximumError": 1.9417492058693142e-09
+      },
+      {
+        "name": "mix-110",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,1,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.009678136879226093,
+        "rms": [
+          0.0019809329630096784,
+          0.0019726962769038114
+        ],
+        "correlation": -0.026210153894047936,
+        "leftRightPowerDifferenceDB": 0.03619107693829034,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "937fc366657c84843820c6b401a921850ed095a7e56736f54852a68a1ca2bb9a",
+        "sampleSumMaximumError": 8.964749532991423e-10
+      },
+      {
+        "name": "mix-111",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,1,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.011641919033764133,
+        "rms": [
+          0.002401286840573829,
+          0.002400555520900128
+        ],
+        "correlation": -0.01825309275104292,
+        "leftRightPowerDifferenceDB": 0.002645718683307207,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "350f1501e84b92ad379bbbd85d23be429e0f55164097088284c5f2fdb57f161c",
+        "sampleSumMaximumError": 1.0978008866541211e-09
+      },
+      {
+        "name": "mix-112",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,1,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.015136970484570115,
+        "rms": [
+          0.003354453765354854,
+          0.003363807509109193
+        ],
+        "correlation": -0.010161405519588195,
+        "leftRightPowerDifferenceDB": 0.02418650752954337,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "62afcd94dc225f03bde24dc5c39e09783da70179efb7f75a0d7c23ce7418f46f",
+        "sampleSumMaximumError": 1.267433397816875e-09
+      },
+      {
+        "name": "mix-113",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,1,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.023275066021170857,
+        "rms": [
+          0.005752222763966285,
+          0.005778832157928825
+        ],
+        "correlation": -0.004613050153720918,
+        "leftRightPowerDifferenceDB": 0.040087688615127424,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "4bbc1dd0e6b8eece2932ead88256d9b08a8027841b18c08f52b2c0c3a81d77c1",
+        "sampleSumMaximumError": 2.3705779908511637e-09
+      },
+      {
+        "name": "mix-114",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,1,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.042607275807783354,
+        "rms": [
+          0.010954782246955383,
+          0.011011140616749838
+        ],
+        "correlation": -0.002566209754197259,
+        "leftRightPowerDifferenceDB": 0.04457118942087057,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "87a78ca117caab66abb59db2c61674182822845faa40fc9f17d8c9721e52db00",
+        "sampleSumMaximumError": 2.14434303646982e-09
+      },
+      {
+        "name": "mix-120",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,2,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.015012220874277574,
+        "rms": [
+          0.0030985772566425873,
+          0.0031184005323001587
+        ],
+        "correlation": -0.024058102404741696,
+        "leftRightPowerDifferenceDB": 0.05539134093836896,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "e9c7da1c856093454e8ae3a5c1599fb88ea4e09db028a47c01d3cfc493cf9dbb",
+        "sampleSumMaximumError": 1.257637990276228e-09
+      },
+      {
+        "name": "mix-121",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,2,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.016861343595481294,
+        "rms": [
+          0.0033830798231145555,
+          0.0034070924889090404
+        ],
+        "correlation": -0.02038508380450476,
+        "leftRightPowerDifferenceDB": 0.06143356159307129,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "bdc6def20ccf249eb821b4fa8e9104889586bfcd1782b8ab7cbef5009aa57a98",
+        "sampleSumMaximumError": 1.6569562926588288e-09
+      },
+      {
+        "name": "mix-122",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,2,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.019427556153416348,
+        "rms": [
+          0.004115017174490265,
+          0.004144089073489649
+        ],
+        "correlation": -0.014315278390687625,
+        "leftRightPowerDifferenceDB": 0.06114858959658345,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "f6ae0fed83be98ab275f30547e5b1821f304b2b1f0b453bc77d9964a01cd161e",
+        "sampleSumMaximumError": 1.5146726442538672e-09
+      },
+      {
+        "name": "mix-123",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,2,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.027120677621120484,
+        "rms": [
+          0.006226794928819371,
+          0.006267251083452404
+        ],
+        "correlation": -0.0072319187585618136,
+        "leftRightPowerDifferenceDB": 0.056250620832540225,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "85d4657bd99d43d92ebb8c2e5d68c7c68beefda1d921c8a7d214c12d1b86ab07",
+        "sampleSumMaximumError": 2.267503663999637e-09
+      },
+      {
+        "name": "mix-124",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,2,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.04645288589688485,
+        "rms": [
+          0.011211598825398048,
+          0.01127737365570399
+        ],
+        "correlation": -0.003458445224082693,
+        "leftRightPowerDifferenceDB": 0.05080841701710771,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "aae9163b68635d588a5734ab61438399c5c4cd48e57cd09c5616d38be4d719ae",
+        "sampleSumMaximumError": 2.550537898937666e-09
+      },
+      {
+        "name": "mix-130",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,3,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.026594413344006928,
+        "rms": [
+          0.005672123239705197,
+          0.005739684420102438
+        ],
+        "correlation": -0.021586925140617205,
+        "leftRightPowerDifferenceDB": 0.10284712649661454,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "e51f4b4d63ceb8ec0229940d0d9773bfc3f4ce1623adb87e84d0bcf170f22416",
+        "sampleSumMaximumError": 2.5355952788796987e-09
+      },
+      {
+        "name": "mix-131",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,3,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.027812559838663316,
+        "rms": [
+          0.005832748133096088,
+          0.005903661286992271
+        ],
+        "correlation": -0.020465234635435252,
+        "leftRightPowerDifferenceDB": 0.10496418492009202,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "6f97d90e515480d4262abcc792de6157a2775d33ef15eec75d3553057d789492",
+        "sampleSumMaximumError": 3.0815587893917584e-09
+      },
+      {
+        "name": "mix-132",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,3,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.030378770610779995,
+        "rms": [
+          0.006285935900243381,
+          0.00635953405331394
+        ],
+        "correlation": -0.017842974879240758,
+        "leftRightPowerDifferenceDB": 0.10110698230224097,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "b6c82ed2138ebba97cf8ff385c19810f900ee32090746cd9d4b12e52427fb8b4",
+        "sampleSumMaximumError": 3.0323120230046907e-09
+      },
+      {
+        "name": "mix-133",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,3,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.03549903913036897,
+        "rms": [
+          0.007833286961255596,
+          0.007911955453740214
+        ],
+        "correlation": -0.012105166717774627,
+        "leftRightPowerDifferenceDB": 0.08679593640520908,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "6645b54aab0fbbe747049da1463ce1085774a314893860041020593339784eac",
+        "sampleSumMaximumError": 4.010257723119359e-09
+      },
+      {
+        "name": "mix-134",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,3,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.05412589142910145,
+        "rms": [
+          0.012177967488477413,
+          0.012271932544662799
+        ],
+        "correlation": -0.0060421901045267816,
+        "leftRightPowerDifferenceDB": 0.06676298267477243,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "6f9693ce386ebd2be141623b21e2f07ec27793ff657258d5c2d85fd4c323b6dc",
+        "sampleSumMaximumError": 3.822050398394339e-09
+      },
+      {
+        "name": "mix-140",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,4,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0497103364233951,
+        "rms": [
+          0.011044225219616234,
+          0.011197298487562507
+        ],
+        "correlation": -0.02005939646663701,
+        "leftRightPowerDifferenceDB": 0.11956001957584209,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "8668ce1e0e40802fa8058cc8d4dcf61e0b91e5d5413e803d6d880ea841c1889e",
+        "sampleSumMaximumError": 2.2484704445546733e-09
+      },
+      {
+        "name": "mix-141",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,4,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.04991535448287803,
+        "rms": [
+          0.011127924436560776,
+          0.011284475023675467
+        ],
+        "correlation": -0.019760808118233882,
+        "leftRightPowerDifferenceDB": 0.12134383381677141,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "b4e3709cb80a488b77d84ade3c5a158446704e5289873272e8e09d39e73fe658",
+        "sampleSumMaximumError": 3.640568041474168e-09
+      },
+      {
+        "name": "mix-142",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,4,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.05222932451556893,
+        "rms": [
+          0.011372358034461374,
+          0.011531705734742985
+        ],
+        "correlation": -0.01897810044923731,
+        "leftRightPowerDifferenceDB": 0.1208605498287791,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "7ad6861632c856ccaf58d8d270a78bfbe223e749bb94d199c93796d1c7e5944f",
+        "sampleSumMaximumError": 3.711033869091551e-09
+      },
+      {
+        "name": "mix-143",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,4,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0573495918367454,
+        "rms": [
+          0.012296074831630926,
+          0.01245938087244489
+        ],
+        "correlation": -0.016471717077762408,
+        "leftRightPowerDifferenceDB": 0.11459929003860135,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "4bce640489ebe57f916a017ecea5b91242f7a8f8649f5bcdd955e9ae2e8a5fd3",
+        "sampleSumMaximumError": 4.185982963034185e-09
+      },
+      {
+        "name": "mix-144",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "1,4,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.07043524205715006,
+        "rms": [
+          0.01543265885262895,
+          0.015602503719422754
+        ],
+        "correlation": -0.011095446114231692,
+        "leftRightPowerDifferenceDB": 0.0950707761463655,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "c19d3b293c56ec44a90d4d24041513b20f8f485f704f91c574bf68ef6bf0536d",
+        "sampleSumMaximumError": 5.303192801564549e-09
+      },
+      {
+        "name": "mix-200",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,0,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.011921078853381882,
+        "rms": [
+          0.0028287130123622914,
+          0.002775027504972785
+        ],
+        "correlation": -0.021723348153616432,
+        "leftRightPowerDifferenceDB": 0.16643192449346872,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "3c3e81e0c3b35a3d2d23b8e86c8dbc8f940bf8db7f803f4dc7662e8004eef4f6",
+        "sampleSumMaximumError": 9.05696491762531e-10
+      },
+      {
+        "name": "mix-201",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,0,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.01488362306944219,
+        "rms": [
+          0.0031372547443487882,
+          0.0030917907076749673
+        ],
+        "correlation": -0.017871237858865907,
+        "leftRightPowerDifferenceDB": 0.12679394315267492,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "c458b5fd1363c0ebf92e532954fe2d0d73f3fbeae5e7fa6cdd9feff6d9a48755",
+        "sampleSumMaximumError": 1.2622469354461874e-09
+      },
+      {
+        "name": "mix-202",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,0,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.017833135380240506,
+        "rms": [
+          0.0039149996371484015,
+          0.0038857457758700595
+        ],
+        "correlation": -0.012017228497332432,
+        "leftRightPowerDifferenceDB": 0.0651468515554576,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "7755037345f561c25643827df24f8ce2ccfb3b9bac62a30671bb8e78324b189c",
+        "sampleSumMaximumError": 1.3564961549861199e-09
+      },
+      {
+        "name": "mix-203",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,0,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.026115224062297694,
+        "rms": [
+          0.006095923361345131,
+          0.006095359962953825
+        ],
+        "correlation": -0.005962691489399845,
+        "leftRightPowerDifferenceDB": 0.0008028057625204136,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "64ac4be44d433223a265cd5c5e74af5e9a009e81fd0c00fe91f2f98d9d58896b",
+        "sampleSumMaximumError": 2.3591086306673503e-09
+      },
+      {
+        "name": "mix-204",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,0,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.04421729792271511,
+        "rms": [
+          0.011138859327882264,
+          0.011178248292704012
+        ],
+        "correlation": -0.003034801089638937,
+        "leftRightPowerDifferenceDB": 0.03066065392273285,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "85f2a966e85d3b485f47023eba389c6d1e3bac54ce60a6e05f69c95e9bc82406",
+        "sampleSumMaximumError": 2.2579904196406986e-09
+      },
+      {
+        "name": "mix-210",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,1,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.01460236537665063,
+        "rms": [
+          0.003151260564701257,
+          0.003107855793465355
+        ],
+        "correlation": -0.025932121920325592,
+        "leftRightPowerDifferenceDB": 0.12046911247342529,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "3985b5cb69830f68009c67c38fea7d91f0be29212fe4fa81a643bc43413a67d0",
+        "sampleSumMaximumError": 1.3163073513122736e-09
+      },
+      {
+        "name": "mix-211",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,1,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.01728232117854344,
+        "rms": [
+          0.0034312049654176714,
+          0.0033955767490720778
+        ],
+        "correlation": -0.022015542657084126,
+        "leftRightPowerDifferenceDB": 0.09066221178861927,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "d14f86175cd02cbb84830dc992fc83a0dd5f038436e1579a1a07eedb91cf3798",
+        "sampleSumMaximumError": 1.7302012409597944e-09
+      },
+      {
+        "name": "mix-212",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,1,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.020231833489341756,
+        "rms": [
+          0.0041545140912438066,
+          0.004133099689645299
+        ],
+        "correlation": -0.01547248660780101,
+        "leftRightPowerDifferenceDB": 0.04488711656284416,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "1b94dc6c15bac71d15a04b77ae64ea99990189ba2fa4bacf283d6067f5c0c6e8",
+        "sampleSumMaximumError": 1.7585002429904018e-09
+      },
+      {
+        "name": "mix-213",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,1,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.026983217985081635,
+        "rms": [
+          0.006252756787649592,
+          0.006257977939441079
+        ],
+        "correlation": -0.007764912829629322,
+        "leftRightPowerDifferenceDB": 0.007249830144522405,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "6b9519477d0d5fda348f888f65f20be40dfd76e6ee9a659f63bc3701a01abc2a",
+        "sampleSumMaximumError": 2.4888798903777154e-09
+      },
+      {
+        "name": "mix-214",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,1,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0446196018825061,
+        "rms": [
+          0.011225804904356549,
+          0.011269993500812476
+        ],
+        "correlation": -0.003628007809736779,
+        "leftRightPowerDifferenceDB": 0.03412350687158312,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "f195fc953568d2fe4c520ac94d595a01ab8fb564fafc18c8816800cfc3fdc1ed",
+        "sampleSumMaximumError": 2.8276293112527995e-09
+      },
+      {
+        "name": "mix-220",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,2,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.019310421089792487,
+        "rms": [
+          0.0039524808907582315,
+          0.003936046539598959
+        ],
+        "correlation": -0.026210154054618892,
+        "leftRightPowerDifferenceDB": 0.03619108083780139,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "cd4b059a54fdbdaea84d0d490e41ad4bdd1a8058f8914e44a81b95a20855fb5c",
+        "sampleSumMaximumError": 1.5190856211821924e-09
+      },
+      {
+        "name": "mix-221",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,2,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.020944962466422357,
+        "rms": [
+          0.0041793294380726145,
+          0.004168495811486859
+        ],
+        "correlation": -0.023533834457498157,
+        "leftRightPowerDifferenceDB": 0.022544731093253355,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "272b0af70a568d2188f7e89f5f3ca13887bda82ef2e07ea8618d3c779148e38f",
+        "sampleSumMaximumError": 2.092168258083227e-09
+      },
+      {
+        "name": "mix-222",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,2,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.02322868222580101,
+        "rms": [
+          0.00479119714149639,
+          0.0047897379656670755
+        ],
+        "correlation": -0.018253092550984017,
+        "leftRightPowerDifferenceDB": 0.0026457209389661503,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "25e873321b8a6d2992bbf10df4604d6479b92f63ea4103d5745c493af3dc93ba",
+        "sampleSumMaximumError": 2.0927223322309008e-09
+      },
+      {
+        "name": "mix-223",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,2,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0302022280090642,
+        "rms": [
+          0.006693015185540908,
+          0.006711678357242686
+        ],
+        "correlation": -0.01016140558944661,
+        "leftRightPowerDifferenceDB": 0.024186506603257572,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "71eb306334d9f759bd9ecbf3cdf95a2d694d75ddfbdc3fc743d905fc7cc57d2c",
+        "sampleSumMaximumError": 2.6296037083928248e-09
+      },
+      {
+        "name": "mix-224",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,2,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.04643986266247045,
+        "rms": [
+          0.01147719331087851,
+          0.011530286026973213
+        ],
+        "correlation": -0.004613050061256789,
+        "leftRightPowerDifferenceDB": 0.040087684912541936,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "b1b9552b5e105730cd00fe7d099354be14bcdda1dcaef09dd72c8e1ef141f583",
+        "sampleSumMaximumError": 2.933183702868991e-09
+      },
+      {
+        "name": "mix-230",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,3,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.029953319827374893,
+        "rms": [
+          0.006182474427516642,
+          0.006222027065512503
+        ],
+        "correlation": -0.02405810233787227,
+        "leftRightPowerDifferenceDB": 0.055391345313718435,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "1e06e48a985ec2982328bb332962f5c5f18a127ff489a4f37dc742b68ad84a84",
+        "sampleSumMaximumError": 2.6784523730893905e-09
+      },
+      {
+        "name": "mix-231",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,3,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0310765910291761,
+        "rms": [
+          0.006330213272125731,
+          0.006373609478617236
+        ],
+        "correlation": -0.022978925431904093,
+        "leftRightPowerDifferenceDB": 0.05934215768837209,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "40c87d971b2b4d26990e7c0f3c985a5449e0cfd1f241f3dcba414283776e32af",
+        "sampleSumMaximumError": 3.1163883834617323e-09
+      },
+      {
+        "name": "mix-232",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,3,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.03364280545975691,
+        "rms": [
+          0.006750131677945619,
+          0.006798043246684502
+        ],
+        "correlation": -0.020385083921188138,
+        "leftRightPowerDifferenceDB": 0.061433563648757884,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "a468eeed73bb30a35f88ca03e627073d6b787bbe4c17a548c8a7819437d28256",
+        "sampleSumMaximumError": 3.1040217028655004e-09
+      },
+      {
+        "name": "mix-233",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,3,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.03876307269254978,
+        "rms": [
+          0.008210538691133461,
+          0.008268544761314254
+        ],
+        "correlation": -0.014315278337560655,
+        "leftRightPowerDifferenceDB": 0.06114859558527416,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "0675757376edc43965bc7a5be533b53173b9a7b663e4aaf85a51243df8574b0f",
+        "sampleSumMaximumError": 3.3892862960627212e-09
+      },
+      {
+        "name": "mix-234",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,3,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.054112864024867716,
+        "rms": [
+          0.012424089265159043,
+          0.012504809904034707
+        ],
+        "correlation": -0.0072319186448467085,
+        "leftRightPowerDifferenceDB": 0.056250619529200366,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "06d8257893cb40fbb5e402afd9bc1e9f23e5438a41c40cb104b84a40a75fa0b1",
+        "sampleSumMaximumError": 3.69101565977914e-09
+      },
+      {
+        "name": "mix-240",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,4,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.053062831722952265,
+        "rms": [
+          0.011317373750326817,
+          0.011452176019737744
+        ],
+        "correlation": -0.021586925024346493,
+        "leftRightPowerDifferenceDB": 0.10284712054921735,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "7d1c090d5fa64cb6b4ede055b16eb2c30d279ef01f2370b1fcafdbd343c9336c",
+        "sampleSumMaximumError": 2.3579479757618316e-09
+      },
+      {
+        "name": "mix-241",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,4,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.05320041971586419,
+        "rms": [
+          0.011399095640332436,
+          0.01153742849797567
+        ],
+        "correlation": -0.02127760412989849,
+        "leftRightPowerDifferenceDB": 0.10477250139105335,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "ba060b37764991d488918c7a852f8e7cb7ae5d2641d4102f9abb4537ba937027",
+        "sampleSumMaximumError": 3.964073083673192e-09
+      },
+      {
+        "name": "mix-242",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,4,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.05549335086710122,
+        "rms": [
+          0.011637862548265637,
+          0.011779352883195275
+        ],
+        "correlation": -0.020465234525050134,
+        "leftRightPowerDifferenceDB": 0.10496417847314676,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "875f929f6c610c27183b2bf311b974f9595be911b5665ee34f8f6e953e0f3beb",
+        "sampleSumMaximumError": 3.749494277560661e-09
+      },
+      {
+        "name": "mix-243",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,4,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.06061362060342452,
+        "rms": [
+          0.012542091020511213,
+          0.012688938635454007
+        ],
+        "correlation": -0.01784297476890625,
+        "leftRightPowerDifferenceDB": 0.10110697793343075,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "acdb8797235930b16eab5b4f68309173fd984b98f79d7ff6ee86a0b0aba6b8db",
+        "sampleSumMaximumError": 4.221753779898307e-09
+      },
+      {
+        "name": "mix-244",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "2,4,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.07082989651323693,
+        "rms": [
+          0.01562946227333047,
+          0.015786426554243917
+        ],
+        "correlation": -0.012105166501848163,
+        "leftRightPowerDifferenceDB": 0.08679593778712127,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "26c03ea3df7a8d40a442bb0587099fe097dd02fa260fcc664d3e60b5951fbd35",
+        "sampleSumMaximumError": 5.535876479445534e-09
+      },
+      {
+        "name": "mix-300",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,0,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.02378567804069481,
+        "rms": [
+          0.005644024472671917,
+          0.005536907805135778
+        ],
+        "correlation": -0.021723348280263424,
+        "leftRightPowerDifferenceDB": 0.16643192103636506,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "20b5fdb7d07c413583fd1615883f5b74994daa0ca46a0562528cff38a962e3d5",
+        "sampleSumMaximumError": 1.8318139158313151e-09
+      },
+      {
+        "name": "mix-301",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,0,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.026747221379591832,
+        "rms": [
+          0.0058049153145686185,
+          0.005702264044509977
+        ],
+        "correlation": -0.02057814563306619,
+        "leftRightPowerDifferenceDB": 0.154971296992069,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "d73cf4882530ab9db2068283a5dd2b7e235bd7dfd913238d8b5cd9f23063d4f3",
+        "sampleSumMaximumError": 2.72364808484582e-09
+      },
+      {
+        "name": "mix-302",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,0,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.029696733690390147,
+        "rms": [
+          0.0062596461641915395,
+          0.006168933487470153
+        ],
+        "correlation": -0.017871238065401092,
+        "leftRightPowerDifferenceDB": 0.12679393985074983,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "6c7c23c973aab9d7a0ea2d258f848e23b44dbb048adeed8279ae2f4af4194cfc",
+        "sampleSumMaximumError": 2.4572401786937537e-09
+      },
+      {
+        "name": "mix-303",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,0,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.03558178330831767,
+        "rms": [
+          0.0078114512386337695,
+          0.007753082113880222
+        ],
+        "correlation": -0.01201722849955917,
+        "leftRightPowerDifferenceDB": 0.06514684906967037,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "6922087f673e8f8e3d7bfa72809ae6c6b07df87de2c9a100375c8401916ded65",
+        "sampleSumMaximumError": 3.2652599166183016e-09
+      },
+      {
+        "name": "mix-304",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,0,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.052106722734133096,
+        "rms": [
+          0.012162966155623654,
+          0.01216184202568732
+        ],
+        "correlation": -0.0059626915335755995,
+        "leftRightPowerDifferenceDB": 0.0008028074466210748,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "49dcb9bc52bb54d841ac58105ba921013f4a6ebd5e5c8565a4b04e6562fa11a6",
+        "sampleSumMaximumError": 3.516021071514608e-09
+      },
+      {
+        "name": "mix-310",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,1,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.026330082989864917,
+        "rms": [
+          0.005814899856852999,
+          0.005711124997673202
+        ],
+        "correlation": -0.02438792042352719,
+        "leftRightPowerDifferenceDB": 0.15641148493989024,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "fa636fadeb196c033d5de6f0ea66627e59180baa34e50ae8b511a99579f1ac4b",
+        "sampleSumMaximumError": 2.5266897914211217e-09
+      },
+      {
+        "name": "mix-311",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,1,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.029145919488693082,
+        "rms": [
+          0.005971353635890286,
+          0.005872665290959239
+        ],
+        "correlation": -0.023152814092931594,
+        "leftRightPowerDifferenceDB": 0.1447508512958983,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "914a42c3b99c1dbaaa7905e83ed0616d216e723004b3ecf7ae04c13f813056f6",
+        "sampleSumMaximumError": 3.1221217382249034e-09
+      },
+      {
+        "name": "mix-312",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,1,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0320954317994914,
+        "rms": [
+          0.0064144491214489065,
+          0.006327783491602744
+        ],
+        "correlation": -0.020216432654378474,
+        "leftRightPowerDifferenceDB": 0.11815507172817813,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "29afcbd51b300aec9f19bf793c9baca189ee903a52b6e764e6c3e77514ccdc9e",
+        "sampleSumMaximumError": 3.101007020611668e-09
+      },
+      {
+        "name": "mix-313",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,1,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.03798048141741892,
+        "rms": [
+          0.007936288713080292,
+          0.007881672905511705
+        ],
+        "correlation": -0.01371167716156955,
+        "leftRightPowerDifferenceDB": 0.05998102330019403,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "2bb19f9f8ab927e918f01a8f36ca164dd4067e9bbe881912eae3f9614004f06e",
+        "sampleSumMaximumError": 3.1020184927676997e-09
+      },
+      {
+        "name": "mix-314",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,1,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.05061958697719882,
+        "rms": [
+          0.012243834226941223,
+          0.01224628640855677
+        ],
+        "correlation": -0.006740974660414918,
+        "leftRightPowerDifferenceDB": 0.0017394262178877524,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "e291372efa663ca3e225c531bafa3aa4ae6c05d2c1455d164292c4cc483082f3",
+        "sampleSumMaximumError": 3.602403923774755e-09
+      },
+      {
+        "name": "mix-320",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,2,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.029135548390952573,
+        "rms": [
+          0.006287591447167984,
+          0.006200987545323883
+        ],
+        "correlation": -0.02593212195060321,
+        "leftRightPowerDifferenceDB": 0.1204691090247646,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "ae34e5bba5f7b68ecc26fb1bdcea2787579daf5f3d75d4a76634e6ec3ffad6c3",
+        "sampleSumMaximumError": 2.5194547455253957e-09
+      },
+      {
+        "name": "mix-321",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,2,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.031533251957306975,
+        "rms": [
+          0.006432711332527851,
+          0.006351079951512753
+        ],
+        "correlation": -0.024790007248303537,
+        "leftRightPowerDifferenceDB": 0.11092965898055031,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "dfe8f2854e8bb7d37fe021bd6b0970f80eb706d98171a8350f6cb1e353bb4652",
+        "sampleSumMaximumError": 2.9901198288218023e-09
+      },
+      {
+        "name": "mix-322",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,2,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.03448276426810529,
+        "rms": [
+          0.006846153961275877,
+          0.00677506632516508
+        ],
+        "correlation": -0.02201554253570174,
+        "leftRightPowerDifferenceDB": 0.09066221012053453,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "a42f14eafe9c52137249424ab2a03ce809443fee1ed0c01a31077d5a25970023",
+        "sampleSumMaximumError": 3.0008476051279764e-09
+      },
+      {
+        "name": "mix-323",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,2,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0403678176136945,
+        "rms": [
+          0.008289345400816061,
+          0.008246618055362977
+        ],
+        "correlation": -0.015472486621230396,
+        "leftRightPowerDifferenceDB": 0.044887113359439026,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "4da4b63c793ed181d396e0d6eae38f3b3e5fd135ff07d04b032adc7026f63fef",
+        "sampleSumMaximumError": 3.5076072324446983e-09
+      },
+      {
+        "name": "mix-324",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,2,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.05383860073628176,
+        "rms": [
+          0.012475889983585035,
+          0.012486307547435979
+        ],
+        "correlation": -0.0077649128755342064,
+        "leftRightPowerDifferenceDB": 0.007249827668222901,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "41a66bce4415aff655aa2d9763a28065350f8592c7d4b8b4ddc572b5060f6a73",
+        "sampleSumMaximumError": 3.6408344186722452e-09
+      },
+      {
+        "name": "mix-330",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,3,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.03852935463522506,
+        "rms": [
+          0.007886236169595011,
+          0.007853445330831594
+        ],
+        "correlation": -0.026210153873814982,
+        "leftRightPowerDifferenceDB": 0.03619107777884248,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "e941ecf4becb09422961035ee1ddc77c7b611b345394a5f3b2f16df022a7826d",
+        "sampleSumMaximumError": 3.1045717108213466e-09
+      },
+      {
+        "name": "mix-331",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,3,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.03995613682757422,
+        "rms": [
+          0.00800266271108837,
+          0.007974080234970172
+        ],
+        "correlation": -0.025455828072360104,
+        "leftRightPowerDifferenceDB": 0.0310782365146453,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "d5be38b6e33ee68c853169831e49fffd5dcc37ad38ec3f89f63b8dda7d9f9130",
+        "sampleSumMaximumError": 4.41294598779729e-09
+      },
+      {
+        "name": "mix-332",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,3,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.041790695520849054,
+        "rms": [
+          0.008338858527752352,
+          0.008317242604721985
+        ],
+        "correlation": -0.023533834276014867,
+        "leftRightPowerDifferenceDB": 0.022544727097902405,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "74a811df9458223ea698992bf7c72dcad4cee0cc6ab398de4028219157093011",
+        "sampleSumMaximumError": 4.2900900470987935e-09
+      },
+      {
+        "name": "mix-333",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,3,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.046347316672768354,
+        "rms": [
+          0.009559695098321953,
+          0.009556783662075687
+        ],
+        "correlation": -0.018253092446281132,
+        "leftRightPowerDifferenceDB": 0.0026457188518672916,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "3c3fe5d3cb7a87fafdc3b2496435a5c7ee257e7e7780fd113bc7e68819dfc7da",
+        "sampleSumMaximumError": 4.436784342698452e-09
+      },
+      {
+        "name": "mix-334",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,3,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.06026136894188707,
+        "rms": [
+          0.013354320968887846,
+          0.013391558895494239
+        ],
+        "correlation": -0.010161405545232835,
+        "leftRightPowerDifferenceDB": 0.02418650883715471,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "dac76dde8aba0bcf42837d9dc055760d55ab49238a805cccf124f9d6c55be85e",
+        "sampleSumMaximumError": 4.433168443451763e-09
+      },
+      {
+        "name": "mix-340",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,4,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.05976472757427953,
+        "rms": [
+          0.012335658240988017,
+          0.01241457612400952
+        ],
+        "correlation": -0.02405810238116301,
+        "leftRightPowerDifferenceDB": 0.055391341783781876,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "fd3845117ff071f23d321751502128271bb8637e4d1eb3887122235ba42ac433",
+        "sampleSumMaximumError": 3.449248997533516e-09
+      },
+      {
+        "name": "mix-341",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,4,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.059754994649611606,
+        "rms": [
+          0.012410728286126847,
+          0.012493266031131302
+        ],
+        "correlation": -0.023761793231718623,
+        "leftRightPowerDifferenceDB": 0.0575744083353216,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "0492a1c15d1acc86c2fb2e39b9b1e38477c46ebdd7c75f9fd13be7f5f5157988",
+        "sampleSumMaximumError": 4.818335758161041e-09
+      },
+      {
+        "name": "mix-342",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,4,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.062005950327871276,
+        "rms": [
+          0.012630435990138968,
+          0.012717022801174024
+        ],
+        "correlation": -0.022978925583647013,
+        "leftRightPowerDifferenceDB": 0.059342154677969036,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "d1c77ef3e0139408905462f89a8fd9f470a525a7b92bcf49f74fe37dfc15c366",
+        "sampleSumMaximumError": 4.888011891079902e-09
+      },
+      {
+        "name": "mix-343",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,4,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.06712621995370326,
+        "rms": [
+          0.013468283360985394,
+          0.013563879506841639
+        ],
+        "correlation": -0.020385083722497286,
+        "leftRightPowerDifferenceDB": 0.061433562547264065,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "57c6353e17aadb3c764cd5a0ad978149f853d5762908ff79b72bb12b46f5a3fb",
+        "sampleSumMaximumError": 4.92068015500724e-09
+      },
+      {
+        "name": "mix-344",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "3,4,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.07734249822682142,
+        "rms": [
+          0.016382178433410718,
+          0.016497915756328613
+        ],
+        "correlation": -0.01431527862698819,
+        "leftRightPowerDifferenceDB": 0.06114859404009629,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "aa418ba85e6d1778d959dd08c81bcbd4f7e651f3e503a9771fc56894622ca61d",
+        "sampleSumMaximumError": 5.34311553335165e-09
+      },
+      {
+        "name": "mix-401",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,0,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.05041820858929456,
+        "rms": [
+          0.011342912789173301,
+          0.011131384360779987
+        ],
+        "correlation": -0.021414558883955468,
+        "leftRightPowerDifferenceDB": 0.16350828044788773,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "2828cf1e668f0157bd24b616970a7fca48a5eaf878bf2912cb1726dadc56896e",
+        "sampleSumMaximumError": 2.0194688976626907e-09
+      },
+      {
+        "name": "mix-402",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,0,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.05336772090009287,
+        "rms": [
+          0.011582328771211677,
+          0.011377512555889292
+        ],
+        "correlation": -0.020578145508569828,
+        "leftRightPowerDifferenceDB": 0.15497130046340973,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "8320944131e4f3a72b6f623cd058545877c05a09d39e18e1c7b575434bbe421b",
+        "sampleSumMaximumError": 2.2046915126860966e-09
+      },
+      {
+        "name": "mix-403",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,0,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.059252770518020394,
+        "rms": [
+          0.012489636095776234,
+          0.012308640511128734
+        ],
+        "correlation": -0.017871237919163327,
+        "leftRightPowerDifferenceDB": 0.1267939393604068,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "9ccb7255d587f4a5281fd24da9fabb5e4036c78dcad0b0f4c4725063147ba7a5",
+        "sampleSumMaximumError": 3.3686635841911894e-09
+      },
+      {
+        "name": "mix-404",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,0,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0709949868444476,
+        "rms": [
+          0.015585894283478138,
+          0.015469432562577844
+        ],
+        "correlation": -0.012017228509148492,
+        "leftRightPowerDifferenceDB": 0.06514685238708312,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "d1521c2374af54bf22965238a4fb05527998dbeb2d165460dbea7d5e4e7232cd",
+        "sampleSumMaximumError": 3.725290298461914e-09
+      },
+      {
+        "name": "mix-410",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,1,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.049977442415956905,
+        "rms": [
+          0.011350482023854299,
+          0.011136063726123595
+        ],
+        "correlation": -0.02316963513769756,
+        "leftRightPowerDifferenceDB": 0.1656519538614768,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "fb14a2e8716f458983f3b67342687a014d1430c574e25fe6ee96bf3d483ae5a7",
+        "sampleSumMaximumError": 2.2182137723869566e-09
+      },
+      {
+        "name": "mix-411",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,1,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0528169066983958,
+        "rms": [
+          0.011431535290082553,
+          0.011219773346546641
+        ],
+        "correlation": -0.022841138349769943,
+        "leftRightPowerDifferenceDB": 0.16240955339685478,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "f2b087f9c383015e1e8132cf77323995d0b57519c34bb2ef3b2186a652cca6c3",
+        "sampleSumMaximumError": 3.6426096861053026e-09
+      },
+      {
+        "name": "mix-412",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,1,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.05576641900919412,
+        "rms": [
+          0.011669217337816203,
+          0.011464558834561487
+        ],
+        "correlation": -0.021954995788276727,
+        "leftRightPowerDifferenceDB": 0.1536876243010143,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "a0978f989a14ca02809bfc36179a524e9478cfd9dbfb00cafdffa125aa46123e",
+        "sampleSumMaximumError": 3.904878552452029e-09
+      },
+      {
+        "name": "mix-413",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,1,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.06165146862712165,
+        "rms": [
+          0.012570410655281193,
+          0.012390170723736984
+        ],
+        "correlation": -0.019083308656951136,
+        "leftRightPowerDifferenceDB": 0.12544350160400491,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "b6a195b39ab62cd6b62c47df78aaeffc1277676c17ceba2548eb567f71692ec7",
+        "sampleSumMaximumError": 3.9489921194180155e-09
+      },
+      {
+        "name": "mix-414",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,1,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.07339369240887224,
+        "rms": [
+          0.015650946859921307,
+          0.015536012579210962
+        ],
+        "correlation": -0.012836006611081231,
+        "leftRightPowerDifferenceDB": 0.06402105337785403,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "e985742efc9ee3ada64954f4cd2f4c7fb154737d6962079da718aaf07df0578e",
+        "sampleSumMaximumError": 4.116146437582735e-09
+      },
+      {
+        "name": "mix-420",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,2,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.052535419781333796,
+        "rms": [
+          0.011602250553266474,
+          0.0113951924839059
+        ],
+        "correlation": -0.0243879205067271,
+        "leftRightPowerDifferenceDB": 0.15641148763381643,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "d054702524eb44375c72ef5e7057cb3cbeeff72085cf42fa96c78b35b9390962",
+        "sampleSumMaximumError": 2.4689345012873787e-09
+      },
+      {
+        "name": "mix-421",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,2,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0552042391670097,
+        "rms": [
+          0.011681641143057973,
+          0.011477566445511941
+        ],
+        "correlation": -0.02405326547553931,
+        "leftRightPowerDifferenceDB": 0.15308090098337399,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "e740153a927bec6e75ecc7718a3e01e9548d4ad25a9c2b42e76beb65e36e20be",
+        "sampleSumMaximumError": 3.727605994707783e-09
+      },
+      {
+        "name": "mix-422",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,2,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.05815375147780801,
+        "rms": [
+          0.011914416882131308,
+          0.011717507741698673
+        ],
+        "correlation": -0.023152814102661345,
+        "leftRightPowerDifferenceDB": 0.1447508548644298,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "e7dc7f67250e5ae1a1bc107c13a24115bac606ed941321247cf6350d34560054",
+        "sampleSumMaximumError": 4.032364532557953e-09
+      },
+      {
+        "name": "mix-423",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,2,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.06403880482339723,
+        "rms": [
+          0.012798508604945006,
+          0.01262558793509165
+        ],
+        "correlation": -0.020216432599308005,
+        "leftRightPowerDifferenceDB": 0.11815507489017901,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "46df407dbc001535a1ffd4bafd2600e9221ff218def65036355b468838edbea4",
+        "sampleSumMaximumError": 4.184545182583932e-09
+      },
+      {
+        "name": "mix-424",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,2,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.07578102114982443,
+        "rms": [
+          0.01583497779783492,
+          0.015726004922507256
+        ],
+        "correlation": -0.013711677107010704,
+        "leftRightPowerDifferenceDB": 0.05998103027608669,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "cc800883166403b8458b2fd2881319984c3f8061c2ce9e7aaec02f50b215bb75",
+        "sampleSumMaximumError": 4.96932825444496e-09
+      },
+      {
+        "name": "mix-430",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,3,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.058133061046335095,
+        "rms": [
+          0.012545394269562679,
+          0.012372596767171663
+        ],
+        "correlation": -0.02593212165341301,
+        "leftRightPowerDifferenceDB": 0.12046910949470814,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "1343680b9bfb113859256de57df7a55bb96fccfe124d5162be46b11e9a1cb35f",
+        "sampleSumMaximumError": 3.6862703792217566e-09
+      },
+      {
+        "name": "mix-431",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,3,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.05996759810633713,
+        "rms": [
+          0.012619007881462748,
+          0.012449524190562517
+        ],
+        "correlation": -0.025622053735066683,
+        "leftRightPowerDifferenceDB": 0.11744916379350948,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "24d9b4832f32796cc57725267d50919d2662467a8f50f50735e888e578ea8e51",
+        "sampleSumMaximumError": 4.464158348538305e-09
+      },
+      {
+        "name": "mix-432",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,3,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.06291711414479713,
+        "rms": [
+          0.01283494651128824,
+          0.012672070492203423
+        ],
+        "correlation": -0.02479000705680506,
+        "leftRightPowerDifferenceDB": 0.11092965949122097,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "aa6f73a3e38d61f0f971104b28654219195dc8e17ac2481a4d18c507159ff538",
+        "sampleSumMaximumError": 4.454541506493381e-09
+      },
+      {
+        "name": "mix-433",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,3,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.06880216003506297,
+        "rms": [
+          0.013659873005232463,
+          0.013518034521888118
+        ],
+        "correlation": -0.022015542426395633,
+        "leftRightPowerDifferenceDB": 0.0906622113494237,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "2b8a968d527b588c81bdcd55e0cfbe3384b449127be6b0487ace6f2ec8ead50c",
+        "sampleSumMaximumError": 4.303219426626814e-09
+      },
+      {
+        "name": "mix-434",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,3,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.08054437636149019,
+        "rms": [
+          0.01653941849671483,
+          0.016454166230553707
+        ],
+        "correlation": -0.015472486395251669,
+        "leftRightPowerDifferenceDB": 0.044887115442456264,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "ad569909436825d963f6fcb83c518ddbf93a9bfa74045abb7ffdf1266d03689c",
+        "sampleSumMaximumError": 5.441090189517439e-09
+      },
+      {
+        "name": "mix-440",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,4,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.07687616778987612,
+        "rms": [
+          0.015735109842161046,
+          0.015669683511891783
+        ],
+        "correlation": -0.02621015376863541,
+        "leftRightPowerDifferenceDB": 0.036191080762896295,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "2cc6356c37dc91a84c44bc7fb87f1d75c48cf621608f8a79ffee59abbebb00ab",
+        "sampleSumMaximumError": 3.725290298461914e-09
+      },
+      {
+        "name": "mix-441",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,4,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0779154823912389,
+        "rms": [
+          0.015794111153004955,
+          0.01573210497386488
+        ],
+        "correlation": -0.026004295160854406,
+        "leftRightPowerDifferenceDB": 0.03416708945940323,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "14bc3fa45acad91e997fdf887c9fd00609cfa9935e107894b4c8062e21c81a30",
+        "sampleSumMaximumError": 7.302730836711291e-09
+      },
+      {
+        "name": "mix-442",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,4,2",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.07972297524066739,
+        "rms": [
+          0.015967411333362356,
+          0.015910381790606398
+        ],
+        "correlation": -0.02545582807615259,
+        "leftRightPowerDifferenceDB": 0.031078239389233066,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "9cccdb90ab11525ef0eb68c5e55ea41dd676da92969564688c73792b21c91ec8",
+        "sampleSumMaximumError": 7.471971860684157e-09
+      },
+      {
+        "name": "mix-443",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,4,3",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.08338340240346725,
+        "rms": [
+          0.016638210176636872,
+          0.016595080732368955
+        ],
+        "correlation": -0.023533834192422047,
+        "leftRightPowerDifferenceDB": 0.022544731089196333,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "fbfa4c7989ed8db03cfb3130b85da94ca6409e9bc2e9fb6b333481f81b66196c",
+        "sampleSumMaximumError": 6.537700297792881e-09
+      },
+      {
+        "name": "mix-444",
+        "sampleRate": 48000,
+        "seconds": 4,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0924750489225936,
+        "rms": [
+          0.019074099377178886,
+          0.019068290294025323
+        ],
+        "correlation": -0.018253092679887933,
+        "leftRightPowerDifferenceDB": 0.0026457207319865637,
+        "renderRetries": 0,
+        "sourceFrames": [
+          192000,
+          192000,
+          192000
+        ],
+        "wavSHA256": "35808ccc1a4fc947d9cb0ed0d4b7992338eea07c279b70e0d592f8f8cd3ee0a2",
+        "sampleSumMaximumError": 7.450580596923828e-09
+      },
+      {
+        "name": "route-16000-1-mono",
+        "sampleRate": 16000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "mono",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0860662212628267,
+        "rms": [
+          0.017659949794528954
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "1fe0f1f7451d05af6b223e028d579eb733709a3ce255b6627246bcbe101d2f16"
+      },
+      {
+        "name": "route-16000-1-stereo",
+        "sampleRate": 16000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0860662212628267,
+        "rms": [
+          0.017659949794528954
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "1fe0f1f7451d05af6b223e028d579eb733709a3ce255b6627246bcbe101d2f16"
+      },
+      {
+        "name": "route-16000-1-switch",
+        "sampleRate": 16000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "switch",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0860662212628267,
+        "rms": [
+          0.017659949794528954
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "1fe0f1f7451d05af6b223e028d579eb733709a3ce255b6627246bcbe101d2f16"
+      },
+      {
+        "name": "route-16000-1-rapid",
+        "sampleRate": 16000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "rapid",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0860662212628267,
+        "rms": [
+          0.017659949794528954
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "1fe0f1f7451d05af6b223e028d579eb733709a3ce255b6627246bcbe101d2f16"
+      },
+      {
+        "name": "route-16000-2-mono",
+        "sampleRate": 16000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "mono",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0860662212628267,
+        "rms": [
+          0.017659949794529863,
+          0.017659949794529863
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "c22e5f6acf13e92ede39a408a64e66b83f2f1c0f96c5a0cecdb4554b2eeb0822"
+      },
+      {
+        "name": "route-16000-2-stereo",
+        "sampleRate": 16000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0860662212628267,
+        "rms": [
+          0.017659949794529863,
+          0.01756382235482101
+        ],
+        "correlation": -0.00973693907649776,
+        "leftRightPowerDifferenceDB": 0.04740857406178658,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "07676c9025acb8b54d256c4ed8d24237ffb4ce7ca439259e2c656aff431348b3"
+      },
+      {
+        "name": "route-16000-2-switch",
+        "sampleRate": 16000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "switch",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0860662212628267,
+        "rms": [
+          0.017659949794529863,
+          0.016973429277274927
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "fec8b30b08e49ee3195c9570be8c5112f068290197ff658c659051d274130a74"
+      },
+      {
+        "name": "route-16000-2-rapid",
+        "sampleRate": 16000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "rapid",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0860662212628267,
+        "rms": [
+          0.017659949794529863,
+          0.016872109074541522
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "8d33df78622cb3b0a3f3399819f266805403af580ec95c91ad0bf59283d14ca0"
+      },
+      {
+        "name": "route-44100-1-mono",
+        "sampleRate": 44100,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "mono",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09174464973564295,
+        "rms": [
+          0.019126718936399646
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "2e216482ea25d2dd13f05634e8c61c499395a541b2ac87a9671dceba3c493063"
+      },
+      {
+        "name": "route-44100-1-stereo",
+        "sampleRate": 44100,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09174464973564295,
+        "rms": [
+          0.019126718936399646
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "2e216482ea25d2dd13f05634e8c61c499395a541b2ac87a9671dceba3c493063"
+      },
+      {
+        "name": "route-44100-1-switch",
+        "sampleRate": 44100,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "switch",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09174464973564295,
+        "rms": [
+          0.019126718936399646
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "2e216482ea25d2dd13f05634e8c61c499395a541b2ac87a9671dceba3c493063"
+      },
+      {
+        "name": "route-44100-1-rapid",
+        "sampleRate": 44100,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "rapid",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09174464973564295,
+        "rms": [
+          0.019126718936399646
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "2e216482ea25d2dd13f05634e8c61c499395a541b2ac87a9671dceba3c493063"
+      },
+      {
+        "name": "route-44100-2-mono",
+        "sampleRate": 44100,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "mono",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09174464973564295,
+        "rms": [
+          0.01912671893640163,
+          0.01912671893640163
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "7a15cb665dc9510a983c5c2362963d8b4f3becd54e76bd84fb2df6a95072a4cd"
+      },
+      {
+        "name": "route-44100-2-stereo",
+        "sampleRate": 44100,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09174464973564295,
+        "rms": [
+          0.01912671893640163,
+          0.019045193825374004
+        ],
+        "correlation": -0.00853063668919895,
+        "leftRightPowerDifferenceDB": 0.037101582946665726,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "4d603b561cc53511cdeff002fde742cf1ceb1578b1d904fd86aadd53c9e398d8"
+      },
+      {
+        "name": "route-44100-2-switch",
+        "sampleRate": 44100,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "switch",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09174464973564295,
+        "rms": [
+          0.01912671893640163,
+          0.018390091267317228
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "ac99afaabb6ef837e18dfe714fb3299c9a245d2359d6daddce79a0156cb0309a"
+      },
+      {
+        "name": "route-44100-2-rapid",
+        "sampleRate": 44100,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "rapid",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09174464973564295,
+        "rms": [
+          0.01912671893640163,
+          0.01835744350784275
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "e54e05f6541804fb3882504c420511092a78b71fb797ef1da2f808f5c619df75"
+      },
+      {
+        "name": "route-48000-1-mono",
+        "sampleRate": 48000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "mono",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0924750489225936,
+        "rms": [
+          0.019159339176813873
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "17eb4b88ee01a59f7af71e850fbb27e7cfc7f8ea51d764ed80e00cb81cfa62ec"
+      },
+      {
+        "name": "route-48000-1-stereo",
+        "sampleRate": 48000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0924750489225936,
+        "rms": [
+          0.019159339176813873
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "17eb4b88ee01a59f7af71e850fbb27e7cfc7f8ea51d764ed80e00cb81cfa62ec"
+      },
+      {
+        "name": "route-48000-1-switch",
+        "sampleRate": 48000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "switch",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0924750489225936,
+        "rms": [
+          0.019159339176813873
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "17eb4b88ee01a59f7af71e850fbb27e7cfc7f8ea51d764ed80e00cb81cfa62ec"
+      },
+      {
+        "name": "route-48000-1-rapid",
+        "sampleRate": 48000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "rapid",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0924750489225936,
+        "rms": [
+          0.019159339176813873
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "17eb4b88ee01a59f7af71e850fbb27e7cfc7f8ea51d764ed80e00cb81cfa62ec"
+      },
+      {
+        "name": "route-48000-2-mono",
+        "sampleRate": 48000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "mono",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0924750489225936,
+        "rms": [
+          0.019159339176815997,
+          0.019159339176815997
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "52505f8468d9c997d670fe9cad143c7db61572742316e9d922e8a55dc517ae47"
+      },
+      {
+        "name": "route-48000-2-stereo",
+        "sampleRate": 48000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0924750489225936,
+        "rms": [
+          0.019159339176815997,
+          0.01907797516450136
+        ],
+        "correlation": -0.00849815509619805,
+        "leftRightPowerDifferenceDB": 0.03696493387602787,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "954b959ff15442b3de097b402004819541f008bbc91896203930a419fa870244"
+      },
+      {
+        "name": "route-48000-2-switch",
+        "sampleRate": 48000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "switch",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0924750489225936,
+        "rms": [
+          0.019159339176815997,
+          0.01841197906660672
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "7a2ed4e9a4fe7c9bc030608f6076a7700f934da110dc207af61dce650ce98452"
+      },
+      {
+        "name": "route-48000-2-rapid",
+        "sampleRate": 48000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "rapid",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.0924750489225936,
+        "rms": [
+          0.019159339176815997,
+          0.018403209343906938
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "b1d221e06b98b520a5bda6285143288222a9e0845cbe5b9091f4a85085cebcf1"
+      },
+      {
+        "name": "route-96000-1-mono",
+        "sampleRate": 96000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "mono",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09233612740650979,
+        "rms": [
+          0.019152141456246215
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "f42e8284ad9eeb9cf633e9c0b30abff4b90a21605db347c427efe735501389e4"
+      },
+      {
+        "name": "route-96000-1-stereo",
+        "sampleRate": 96000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09233612740650979,
+        "rms": [
+          0.019152141456246215
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "f42e8284ad9eeb9cf633e9c0b30abff4b90a21605db347c427efe735501389e4"
+      },
+      {
+        "name": "route-96000-1-switch",
+        "sampleRate": 96000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "switch",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09233612740650979,
+        "rms": [
+          0.019152141456246215
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "f42e8284ad9eeb9cf633e9c0b30abff4b90a21605db347c427efe735501389e4"
+      },
+      {
+        "name": "route-96000-1-rapid",
+        "sampleRate": 96000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 1,
+        "mode": "rapid",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09233612740650979,
+        "rms": [
+          0.019152141456246215
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "f42e8284ad9eeb9cf633e9c0b30abff4b90a21605db347c427efe735501389e4"
+      },
+      {
+        "name": "route-96000-2-mono",
+        "sampleRate": 96000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "mono",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09233612740650979,
+        "rms": [
+          0.01915214145624936,
+          0.01915214145624936
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "a303a80daaa9b1f916c351e548f8e9bccfa569ef05ec9535c6279323de34f7c3"
+      },
+      {
+        "name": "route-96000-2-stereo",
+        "sampleRate": 96000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09233612740650979,
+        "rms": [
+          0.01915214145624936,
+          0.01907079822533492
+        ],
+        "correlation": -0.008516195288883862,
+        "leftRightPowerDifferenceDB": 0.036969390582395456,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "9d6953debe0b5050a99b8d3ba0f7fe6ca2f8bd39933b605dc822892fe01fc2ba"
+      },
+      {
+        "name": "route-96000-2-switch",
+        "sampleRate": 96000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "switch",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09233612740650979,
+        "rms": [
+          0.01915214145624936,
+          0.018413405625432828
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "053ecdaa1da48608db2a7e3018337e725bf38fadd3e41fc7d55b70cf91a10eb5"
+      },
+      {
+        "name": "route-96000-2-rapid",
+        "sampleRate": 96000,
+        "seconds": 12,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "rapid",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09233612740650979,
+        "rms": [
+          0.01915214145624936,
+          0.01839630214562634
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          576000,
+          576000,
+          576000
+        ],
+        "wavSHA256": "140f6d732332becebb83835f27c2cde384057008e12573f18c86e45b4f8ba8b3"
+      },
+      {
+        "name": "transition-rapid",
+        "sampleRate": 48000,
+        "seconds": 15,
+        "mix": "rapid",
+        "channels": 2,
+        "mode": "rapid",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.06813400084532652,
+        "rms": [
+          0.009583255949170949,
+          0.0092285032897393
+        ],
+        "correlation": null,
+        "leftRightPowerDifferenceDB": null,
+        "renderRetries": 0,
+        "sourceFrames": [
+          720000,
+          720000,
+          720000
+        ],
+        "wavSHA256": "2a45ead10795aa5d3c6cd9874bdb584d6fc1b3a75eeb025f288e5959f4d981d8"
+      },
+      {
+        "name": "transition-mute",
+        "sampleRate": 48000,
+        "seconds": 15,
+        "mix": "mute",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.09494948663354053,
+        "rms": [
+          0.013193574327376417,
+          0.013066491131192659
+        ],
+        "correlation": -0.013997020351456625,
+        "leftRightPowerDifferenceDB": 0.08406980066066658,
+        "renderRetries": 0,
+        "sourceFrames": [
+          720000,
+          720000,
+          720000
+        ],
+        "wavSHA256": "8d614bf3b4a2862813a2b8cc13c99b129bfc93f2a67ec7bbd5e0a8b1a3663a4d"
+      },
+      {
+        "name": "spectrum-low",
+        "sampleRate": 48000,
+        "seconds": 65,
+        "mix": "4,0,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.05226796751052791,
+        "rms": [
+          0.011166127422612616,
+          0.011094830205887082
+        ],
+        "correlation": 0.00036802817143116213,
+        "leftRightPowerDifferenceDB": 0.05563838571776654,
+        "renderRetries": 0,
+        "sourceFrames": [
+          3120000,
+          3120000,
+          3120000
+        ],
+        "wavSHA256": "08c929aa0e2659eb41591b1594eb858f02f3a3b4ea28cfffa04ba8d639cc051c"
+      },
+      {
+        "name": "spectrum-mid",
+        "sampleRate": 48000,
+        "seconds": 65,
+        "mix": "0,4,0",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.05644453575991127,
+        "rms": [
+          0.011115467268890159,
+          0.011106701257615743
+        ],
+        "correlation": 0.0011646469955847746,
+        "leftRightPowerDifferenceDB": 0.006852671498205495,
+        "renderRetries": 0,
+        "sourceFrames": [
+          3120000,
+          3120000,
+          3120000
+        ],
+        "wavSHA256": "9ed1a1f40899faabd77a9ece7a61b9c8966d98951ba298570f1475a51a2f59ef"
+      },
+      {
+        "name": "spectrum-high",
+        "sampleRate": 48000,
+        "seconds": 65,
+        "mix": "0,0,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.04387779923114187,
+        "rms": [
+          0.010793161057945855,
+          0.010809561156525864
+        ],
+        "correlation": 0.00014790438734911556,
+        "leftRightPowerDifferenceDB": 0.013188104005725062,
+        "renderRetries": 0,
+        "sourceFrames": [
+          3120000,
+          3120000,
+          3120000
+        ],
+        "wavSHA256": "463fbb232cfd17dcc64247b95f9dd966b2ea66bf666af8b2626902acdeb25886"
+      },
+      {
+        "name": "spectrum-equal",
+        "sampleRate": 48000,
+        "seconds": 65,
+        "mix": "4,4,4",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.10108066848304756,
+        "rms": [
+          0.019081248549155615,
+          0.01907035907471228
+        ],
+        "correlation": 0.0005131179988391012,
+        "leftRightPowerDifferenceDB": 0.004958363837896819,
+        "renderRetries": 0,
+        "sourceFrames": [
+          3120000,
+          3120000,
+          3120000
+        ],
+        "wavSHA256": "41b4c53ac814cc0e29b32a02953cb22cb05e4e1e396687cd59684c806f8a379b"
+      },
+      {
+        "name": "spectrum-default",
+        "sampleRate": 48000,
+        "seconds": 65,
+        "mix": "2,2,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "complementary",
+        "estimatedIntersamplePeak": 0.022788086811187852,
+        "rms": [
+          0.004180490240142837,
+          0.004174053216255185
+        ],
+        "correlation": 0.0006564572069926349,
+        "leftRightPowerDifferenceDB": 0.013384642845250198,
+        "renderRetries": 0,
+        "sourceFrames": [
+          3120000,
+          3120000,
+          3120000
+        ],
+        "wavSHA256": "eaf7784500f2105445fed7a566f1150929055434eede4c8cc7ec0294c5e9f4b8"
+      },
+      {
+        "name": "spectrum-legacy-default",
+        "sampleRate": 48000,
+        "seconds": 65,
+        "mix": "2,2,1",
+        "channels": 2,
+        "mode": "stereo",
+        "family": "legacy",
+        "estimatedIntersamplePeak": 0.054168899771417055,
+        "rms": [
+          0.011451875586553511,
+          0.01153096876107557
+        ],
+        "correlation": -0.0047376545174955325,
+        "leftRightPowerDifferenceDB": 0.05978348778166997,
+        "renderRetries": 0,
+        "sourceFrames": [
+          520000,
+          3120000,
+          3120000
+        ],
+        "wavSHA256": "c4b2070d885ccab3db5ffa58584ce19489e3372f046da4e2a93b8fc003911938"
+      }
+    ],
+    "maxEstimatedIntersamplePeak": 0.10108066848304756,
+    "maxWeightedSampleSumError": 7.471971860684157e-09,
+    "scriptSHA256": "e45e38de0098c638360b93a3c50338b918c8608787838bc15e845783d040413d"
+  },
+  "acceleratedEndurance": [
+    {
+      "band": "low",
+      "hours": 30,
+      "framesPerChannel": 5184000000,
+      "stereoChanges": 2916,
+      "CPUSeconds": 123.319,
+      "channels": [
+        {
+          "channel": 0,
+          "peak": 0.064914279,
+          "rms": 0.011097555,
+          "mean": 1e-09,
+          "minimumBlockRMS": 0.005547199
+        },
+        {
+          "channel": 1,
+          "peak": 0.061754413,
+          "rms": 0.011064352,
+          "mean": 1e-09,
+          "minimumBlockRMS": 0.004162133
+        }
+      ]
+    },
+    {
+      "band": "mid",
+      "hours": 30,
+      "framesPerChannel": 5184000000,
+      "stereoChanges": 2916,
+      "CPUSeconds": 142.586,
+      "channels": [
+        {
+          "channel": 0,
+          "peak": 0.065908723,
+          "rms": 0.011118988,
+          "mean": 0.0,
+          "minimumBlockRMS": 0.008977637
+        },
+        {
+          "channel": 1,
+          "peak": 0.065908723,
+          "rms": 0.011086899,
+          "mean": -0.0,
+          "minimumBlockRMS": 0.006851613
+        }
+      ]
+    },
+    {
+      "band": "high",
+      "hours": 30,
+      "framesPerChannel": 5184000000,
+      "stereoChanges": 2916,
+      "CPUSeconds": 142.662,
+      "channels": [
+        {
+          "channel": 0,
+          "peak": 0.049953993,
+          "rms": 0.01079971,
+          "mean": -0.0,
+          "minimumBlockRMS": 0.010145812
+        },
+        {
+          "channel": 1,
+          "peak": 0.047512166,
+          "rms": 0.010768051,
+          "mean": 0.0,
+          "minimumBlockRMS": 0.007326598
+        }
+      ]
+    }
+  ],
+  "compiledFilterAudit": "band=0 measured_L1=0.558273208803 adversarial_peak=0.558273208802 bound=0.558273208803\nband=1 measured_L1=0.181397579675 adversarial_peak=0.181397579675 bound=0.181397579675\nband=2 measured_L1=0.060328411521 adversarial_peak=0.060328411521 bound=0.060328411521\nPASS worst_sum=0.799999199999 max_linearity_error=4.65e-13\n",
+  "physicalDeviceOvernightOrBatteryTest": false,
+  "sourceSHA256": {
+    "Sources/BrownNoiseDSP/BNColorFilter.h": "b84e0009dd830d31f26d9011909400fda50e73be7137c8823f6cbf1954c003f8",
+    "Sources/BrownNoiseDSP/BNComplementaryCoefficients.h": "0b3604984b1dd319e22e8e193849ee2ea01ec016eca5a4a402247bba6358801e",
+    "Sources/BrownNoiseDSP/BNComplementaryFilter.h": "9ec9b32c6ef6ec8f012ae3fd480b841b5567c664129bc519b3cb593aaa5ee95b",
+    "Sources/BrownNoiseDSP/BNGrayAirFilter.h": "67354fd6727e66a85a9ef00eced4af6f588dbc0e131ec09d76fd5b34d898a77c",
+    "Sources/BrownNoiseDSP/BNMidFilter.h": "da2e7fae0e982b46e0a7dcfdac4644e85396be431e3f3c4402ebb3ab7ba63839",
+    "Sources/BrownNoiseDSP/BrownNoiseDSP.c": "427d011374f30e51d143c62200cad8b79f29416749ed52ce110e2b6728e57486",
+    "Sources/BrownNoiseDSP/include/BrownNoiseDSP.h": "6e56c0eb6417e21a12232ac90a02ff15ddaeffb266f037f5d09167efed813968"
+  },
+  "analysisScriptSHA256": "a08490092008c73bd36378b965f311bffeb989399f6b4de7de5eb3d2fdb0e524"
+}

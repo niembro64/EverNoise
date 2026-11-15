@@ -16,6 +16,10 @@ git worktree add --detach ../evernoise-sound-baseline sound-baseline-build-22
 
 Open that checkout's Xcode project and run it locally. An App Store/TestFlight rollback must use a **new, higher build number**; do not reuse build 22. Record any return to the baseline as a new commit rather than rewriting Git history.
 
-## Next generation: power-complementary bands
+## Complementary design 1 — build 23
 
 The user explicitly approved a fundamental change to sound generation and does not require the new generator to reproduce the old favorite exactly. Treat any changed timbre as an intentional sound-design change, document the target spectrum and crossover math, and retain the baseline tag. Measure complementary power after actual conversion, clipping/headroom, smooth level changes, stereo behavior, and long-duration state continuity before release.
+
+Implemented: independent 48 kHz sources, complementary second-order Butterworth splits at 200 Hz and 2 kHz, shared pink-weighted coloring with 20 Hz/18 kHz edge rolloffs, and one fixed gain with a combined pre-conversion absolute bound below 0.8. The five levels, saved selections, default 3/3/2, and playback lifecycle are preserved. The same selection intentionally produces a different spectrum and digital level.
+
+The legacy `BNSourceBrown`, `BNSourceMid`, and `BNSourceGrayAir` APIs remain in the library for reproducible comparisons. Four actual-engine comparisons with build 22 are bit-identical. They are not exposed as extra UI settings. Full design, measurement, and limitations: [POWER_COMPLEMENTARY_RELEASE.md](POWER_COMPLEMENTARY_RELEASE.md).

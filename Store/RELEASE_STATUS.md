@@ -1,6 +1,23 @@
 # Release status — November 15, 2026
 
-## Glass buttons and new starting balance — version 1.0.1, build 22
+## Complementary sound engine — version 1.0.1, build 23
+
+**Build 23 is available in TestFlight and submitted for App Review.** Apple confirmed TestFlight availability at **09:45:04 CST (15:45:04 UTC)** on November 15. Upload succeeded at 09:43:41 CST. At 09:53 CST, App Store Connect confirmed **1 Item Submitted** for [submission cb3f8064-29c8-42ca-b927-c737a0d173b5](https://appstoreconnect.apple.com/apps/6834413344/distribution/reviewsubmissions/details/cb3f8064-29c8-42ca-b927-c737a0d173b5), containing **1.0.1 (23)**. Build 15's older submission was removed and replaced.
+
+- This is an intentional, fundamental sound-generation change: independent 48 kHz bands, shared pink-weighted coloring, and complementary Butterworth splits at 200 Hz and 2 kHz. Equal band settings preserve one continuous base spectrum.
+- One fixed gain supplies headroom without a limiter or nonlinear processing. The analytic combined bound is 0.7999992 before sample-rate conversion, leaving margin below 0.8 for rounding. The largest measured reconstructed output peak was 0.101081 full scale.
+- The five logarithmic levels, saved choices, 3/3/2 default, stereo behavior, and playback lifecycle remain. The new default has a different tone and measures 8.79 dB lower digital RMS than the old favorite; device volume may need adjustment.
+- **40 core tests, all 32 integration/UI tests in one run, and 164 new-engine Apple-engine renders pass.** Each paired band also passed **30 accelerated hours**, 5.184 billion frames per channel, and 2,916 Mono/Stereo changes. Four comparisons of the retained legacy path with build 22 are bit-identical.
+- Release signing, distribution entitlements, background audio, source/package hashes, and fresh default preferences pass. UI/animation sources and compiled Metal match build 22. Final Release phone and both uploaded store previews were visually inspected.
+- What to Test notes are saved, and Personal Testing includes build 23 with one tester. Description, What's New, review notes, and updated phone/tablet screenshots are saved in App Store Connect. Automatic release to all users after approval is selected.
+- The public [GitHub repository](https://github.com/niembro64/EverNoise) preserves the complete original sound at **`sound-baseline-build-22`**. [Sound history](SOUND_ENGINE_HISTORY.md) documents the old favorite and safe rollback procedure.
+- All 12 support assets are live and verified; 177 unrelated files were preserved. Physical-device listening, battery, Bluetooth, and overnight qualification of the new engine remain unperformed. Installation of build 23 has not been observed.
+
+The US public storefront still showed **free version 1.0** at **15:43:05 UTC November 15**. Approval and public release of 1.0.1 are not yet confirmed.
+
+Details: [design and validation](POWER_COMPLEMENTARY_RELEASE.md), [measurements](complementary-audit-v23.json), [spectrum comparison](complementary-spectrum-v23.png), [package manifest and delivery evidence](build-23-manifest.json).
+
+## Historical glass buttons and new starting balance — version 1.0.1, build 22
 
 **Build 22 is available in TestFlight**, confirmed by Apple at **08:40:00 CST (14:40:00 UTC)** on November 15. Upload succeeded at 08:38:15 CST. The browser access host is unavailable, so the public App Review replacement and portal notes/screenshots remain pending.
 
