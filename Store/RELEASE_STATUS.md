@@ -1,6 +1,14 @@
 # Release status — November 15, 2026
 
-## Complementary sound engine — version 1.0.1, build 23
+## Public release confirmed — version 1.0.1, build 23
+
+**EverNoise 1.0.1 (build 23) is live on the App Store for free.** At **15:11:05 CST (21:11:05 UTC)** on November 15, Apple's US lookup service reported version 1.0.1, price $0.00, and release time **14:44:13 CST (20:44:13 UTC)**. App Store Connect separately showed **Ready for Distribution** with build **23** attached.
+
+The current internal tester is shown as having installed build 23. External TestFlight distribution still showed **Waiting for Review**; its beta review is separate from the completed public App Store review. Automatic external tester notification remains enabled. Personal invitation records are kept locally in ignored files.
+
+Evidence: [public release record](public-release-v23.json) and [public App Store listing](https://apps.apple.com/us/app/evernoise/id6834413344).
+
+## Historical preparation and submission — complementary engine, build 23
 
 **Build 23 is available in TestFlight and submitted for App Review.** Apple confirmed TestFlight availability at **09:45:04 CST (15:45:04 UTC)** on November 15. Upload succeeded at 09:43:41 CST. At 09:53 CST, App Store Connect confirmed **1 Item Submitted** for [submission cb3f8064-29c8-42ca-b927-c737a0d173b5](https://appstoreconnect.apple.com/apps/6834413344/distribution/reviewsubmissions/details/cb3f8064-29c8-42ca-b927-c737a0d173b5), containing **1.0.1 (23)**. Build 15's older submission was removed and replaced.
 

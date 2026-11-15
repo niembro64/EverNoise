@@ -1,0 +1,16 @@
+{
+  "checkedAtUTC": "2026-11-15T21:11:05.819570+00:00",
+  "trackId": 6834413344,
+  "trackName": "EverNoise",
+  "version": "1.0.1",
+  "buildConfirmedInAppStoreConnect": "23",
+  "appStoreConnectStatus": "Ready for Distribution",
+  "price": 0.0,
+  "formattedPrice": "Free",
+  "currentVersionReleaseDate": "2026-11-15T20:44:13Z",
+  "trackViewUrl": "https://apps.apple.com/us/app/evernoise/id6834413344",
+  "lookupURL": "https://itunes.apple.com/lookup?id=6834413344&country=us",
+  "releaseNotes": "A new sound engine blends Low, Mid, and High over a warm pink-weighted base. Equal settings preserve one consistent base spectrum. This intentionally changes the tone of the same settings. Your saved levels, independent stereo, and continuous playback remain.",
+  "externalTestFlightBuildStatus": "Waiting for Review",
+  "internalTestFlightInstalledBuildObserved": "23"
+}

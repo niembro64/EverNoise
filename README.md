@@ -45,7 +45,9 @@ Open [TestFlight](https://testflight.apple.com/v1/app/6834413344) and update Eve
 This build introduces the complementary sound engine. New installations still
 use buttons 3 / 3 / 2, counting Off as first; saved choices remain intact, but
 their tone and digital output level intentionally change. What to Test notes
-are saved in App Store Connect. Installation of build 23 has not been observed.
+are saved in App Store Connect. On November 15, the internal tester portal
+reported build 23 installed. External TestFlight testing still awaited its
+separate beta review at 15:11 CST; the same build is already public on the App Store.
 
 ## Run on your iPhone
 
@@ -148,14 +150,11 @@ cannot qualify physical-device battery, Bluetooth, or all interruption behavior.
 ## App Store
 
 Listing text is in `Store/metadata.json`; support/privacy pages are in `Store/site`.
-Version **1.0 (build 11) is publicly listed for free** on the
-[App Store](https://apps.apple.com/us/app/evernoise/id6834413344). Apple approved
-it while the animation update was being prepared.
-
-**1.0.1 (build 23) is submitted for App Review.** Apple confirmed
-**1 Item Submitted** on November 15, 2026. The listing, review notes, and current
-phone/tablet screenshots are saved. Automatic release to all users after
-approval is selected. Approval and public release of 1.0.1 are not yet confirmed. See
+Version **1.0.1 (build 23) is publicly available for free** on the
+[App Store](https://apps.apple.com/us/app/evernoise/id6834413344).
+Apple's US storefront reports release at **14:44:13 CST on November 15, 2026**;
+App Store Connect confirms build 23 is **Ready for Distribution**. The public
+listing includes the complementary engine description and current screenshots. See
 [release evidence](Store/RELEASE_STATUS.md) for the separately tracked states.
 
 Apple references: [background audio](https://developer.apple.com/documentation/avfoundation/configuring-your-app-for-media-playback),
