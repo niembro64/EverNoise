@@ -1,5 +1,14 @@
 # Sound engine history and rollback
 
+## Visualization only — build 29
+
+November 16, 2026: the Max spectrogram changes its resolution blending and
+brightness units to energy per octave. This can make the chart look different
+without changing the sound. Audio DSP, leveling, peak protection, fades, and
+capture-producer hashes match build 28; over one million samples per channel
+compare bit-for-bit. Volume offset is renamed App Loudness, with the same
+saved key and control range. See [the identity check](audio-unchanged-v29.json).
+
 ## Practical bass and extended upper audible range — build 28
 
 Approved November 16, 2026 after inspecting the full-range spectrogram. The

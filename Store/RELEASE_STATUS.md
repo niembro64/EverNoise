@@ -1,5 +1,29 @@
 # Release status — November 16, 2026
 
+## Smooth Max spectrum and App Loudness — build 29
+
+**EverNoise 1.1 (29) is available in your internal TestFlight for iOS and Apple TV.**
+Apple confirmed iOS availability at **22:51:20 CST** and tvOS at **22:52:20 CST**
+on November 16. Notes are saved on both platforms. TV is **Testing** in
+Personal Testing and Friends and Family, with automatic notification enabled.
+iOS build 25 remains Waiting for Review, and Apple still prevents submitting
+another version-1.1 build for external testing. The public App Store submission
+is unchanged.
+
+Max now uses seven overlapping window lengths, 1024 frequency rows, 60 columns
+per second, smooth octave-energy weighting, gentle temporal filtering, and
+16-bit linear-light images. A fixed perceptual brightness curve replaces the
+per-hertz display scale. The setting is now **App Loudness**, with its saved
+value preserved. The sound engine is bit-identical to build 28.
+
+107 core/integration tests, affected phone/tablet/TV UI flows, independent
+numerical calibration, and undefined-behavior/bounds checks passed. The host's
+AddressSanitizer runtime could not initialize; that attempt is not a pass.
+Physical-device battery, thermal, and GPU performance remain to be measured.
+See [design and validation](SPECTROGRAM_SMOOTH_RELEASE.md),
+[numerical audit](spectrogram-audit-v29.json), [packages](build-29-manifest.json),
+and [delivery](delivery-v29.json).
+
 ## Practical frequency tapers and household guidance — build 28
 
 **EverNoise 1.1 (28) is available in internal TestFlight for iOS and Apple TV.**
