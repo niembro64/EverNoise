@@ -18,9 +18,9 @@ args = parser.parse_args()
 root = args.root.resolve()
 cases = []
 for rate in [8000, 16000, 24000, 32000, 44100, 48000, 88200, 96000, 192000]:
-    for channels in [1, 2]: cases.append((rate, channels, "4,0,0", "stereo"))
+    for channels in [1, 2]: cases.append((rate, channels, "5,1,0", "stereo"))
 for rate in [44100, 48000, 96000]:
-    for mix in ["0,0,4", "2,2,1", "4,4,4"]:
+    for mix in ["0,1,5", "3,3,2", "5,5,5", "1,0,5"]:
         for mode in ["mono", "rapid"]: cases.append((rate, 2, mix, mode))
 results = []
 for i, (rate, channels, mix, mode) in enumerate(cases):

@@ -80,7 +80,10 @@ typedef struct {
 } BNMixMetrics;
 BNMixGenerator *BNMixCreate(uint64_t seed);
 void BNMixDestroy(BNMixGenerator *generator);
-// Each complete mix is one atomic command. Same five logarithmic ratios [0,4].
+enum { BNMixLevelCount = 6 };
+// Off, -30, -18, -12, -6, 0 dB. Each complete mix is one atomic command.
+// Exposed for independent calibration and Swift/DSP agreement checks.
+double BNMixAmplitudeForLevel(int level);
 void BNMixSetLevels(BNMixGenerator *generator, int low, int mid, int high);
 void BNMixSetStereo(BNMixGenerator *generator, bool stereo);
 // Whole dB, clamped to [-18,+3]. Changes fade over three seconds; default 0.

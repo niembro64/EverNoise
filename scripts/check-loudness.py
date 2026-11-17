@@ -1,7 +1,7 @@
 """Independent numerical checks of the actual production C renderer.
 
 Build build/libNoiseLoudness.dylib from BNMixRenderer.c, then run this script.
-All 125 mixes at default and maximum offsets, 16x reconstructed peaks,
+All 216 mixes at default and maximum offsets, 16x reconstructed peaks,
 K-weighted loudness, smooth commands, silence, mono, and rare-peak protection.
 """
 import ctypes as C
@@ -53,7 +53,7 @@ def analyze(x, trim=1):
             "rms": np.sqrt(np.mean(x[:, round(trim*48000):].astype(float)**2, axis=1)).tolist()}
 
 start = time.monotonic(); results = []
-for offset, levels in itertools.product([0, 3], itertools.product(range(5), repeat=3)):
+for offset, levels in itertools.product([0, 3], itertools.product(range(6), repeat=3)):
     g = lib.BNMixCreate(987654123)
     lib.BNMixSetLevels(g, *levels); lib.BNMixSetOffsetDB(g, offset); lib.BNMixBeginFadeIn(g)
     x = render(g, 10); m = lib.BNMixReadMetrics(g); lib.BNMixDestroy(g)
@@ -65,12 +65,12 @@ for offset, levels in itertools.product([0, 3], itertools.product(range(5), repe
         assert np.max(abs(x)) == 0
     assert result["truePeak16x"] <= 10**(-2/20), result
     results.append(result)
-    if len(results)%50 == 0: print(f"Checked {len(results)}/250 mixes", flush=True)
+    if len(results)%50 == 0: print(f"Checked {len(results)}/432 mixes", flush=True)
 
 # Recorded examples and offset, mono, and all-off behavior.
 from scipy.io import wavfile
-for name, levels, offset, stereo in [("default",(2,2,1),0,True), ("default-quiet",(2,2,1),-6,True),
-                                    ("bass-max",(4,0,0),3,True), ("mono",(2,2,1),0,False)]:
+for name, levels, offset, stereo in [("default",(3,3,2),0,True), ("default-quiet",(3,3,2),-6,True),
+                                    ("bass-max",(5,0,0),3,True), ("mono",(3,3,2),0,False)]:
     g = lib.BNMixCreate(123456789)
     lib.BNMixSetLevels(g,*levels); lib.BNMixSetOffsetDB(g,offset); lib.BNMixSetStereo(g,stereo)
     lib.BNMixBeginFadeIn(g); x = render(g,60)
@@ -82,12 +82,12 @@ for name, levels, offset, stereo in [("default",(2,2,1),0,True), ("default-quiet
 
 # Change all controls repeatedly without restarting; then silence, pause/resume.
 g=lib.BNMixCreate(372893); parts=[render(g,2)]
-for n in range(125):
-    lib.BNMixSetLevels(g,n//25,(n//5)%5,n%5)
+for n in range(216):
+    lib.BNMixSetLevels(g,n//36,(n//6)%6,n%6)
     lib.BNMixSetOffsetDB(g,3 if n%2 else -18); lib.BNMixSetStereo(g,bool(n%3))
     parts.append(render(g,.037))
 lib.BNMixSetLevels(g,0,0,0); muted=render(g,2); assert np.max(abs(muted[:,48000:])) == 0
-parts.append(muted); lib.BNMixSetLevels(g,2,2,1); parts.append(render(g,4))
+parts.append(muted); lib.BNMixSetLevels(g,3,3,2); parts.append(render(g,4))
 lib.BNMixSetPlaying(g,False); muted=render(g,1); assert np.max(abs(muted[:,4800:])) == 0
 parts.append(muted); lib.BNMixSetPlaying(g,True); parts.append(render(g,4)); lib.BNMixDestroy(g)
 x=np.concatenate(parts,axis=1); result={"case":"rapid-controls-pause-silence",**analyze(x)}

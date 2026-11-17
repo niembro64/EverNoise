@@ -36,8 +36,8 @@ var rendered: Int64 = 0, retries = 0, changes = 0, nextChange = Int64(rate*0.037
 let total = Int64(rate*seconds)
 while rendered < total {
     if mode == "rapid", rendered >= nextChange {
-        let cell = (changes * 37) % 124 + 1
-        BNMixSetLevels(stream.pointer, Int32(cell/25), Int32((cell/5)%5), Int32(cell%5))
+        let cell = (changes * 37) % 215 + 1
+        BNMixSetLevels(stream.pointer, Int32(cell/36), Int32((cell/6)%6), Int32(cell%6))
         BNMixSetOffsetDB(stream.pointer, changes.isMultiple(of: 2) ? -6 : 3)
         BNMixSetStereo(stream.pointer, changes.isMultiple(of: 3))
         changes += 1; nextChange = rendered + Int64(rate*0.037)

@@ -101,8 +101,8 @@ final class AudioDriverTests: XCTestCase {
         try driver.start()
         let engine = driver.currentEngine
         let before = driver.renderedFrames
-        for index in 0..<125 {
-            let mix = NoiseMix(highs: index % 5, mids: (index / 5) % 5, lows: index / 25)
+        for index in 0..<216 {
+            let mix = NoiseMix(highs: index % 6, mids: (index / 6) % 6, lows: index / 36)
             driver.select(mix)
             try await Task.sleep(for: .milliseconds(37))
             XCTAssertTrue(driver.isRunning)

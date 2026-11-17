@@ -5,7 +5,7 @@ final class JustBrownNoiseUITests: XCTestCase {
     @MainActor
     func testOffAndMaxSpectrogramPreserveContinuousAudio() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["-mixLows", "2", "-mixMids", "2", "-mixHighs", "1", "-volumeOffsetDB", "0"]
+        app.launchArguments = ["-volumeOffsetDB", "0", "-mixLevelsV2", "<dict><key>low</key><integer>2</integer><key>mid</key><integer>2</integer><key>high</key><integer>1</integer></dict>"]
         app.launch()
         XCTAssertTrue(app.buttons["settingsButton"].waitForExistence(timeout: 15))
         XCTAssertLessThan(app.buttons["band-high-1"].frame.midY, app.buttons["band-mid-2"].frame.midY)
@@ -93,8 +93,7 @@ final class JustBrownNoiseUITests: XCTestCase {
     @MainActor
     func testSavedVolumeOffsetKeepsPlaybackRunning() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["-volumeOffsetDB", "0", "-animationLevel", "low",
-                               "-mixLows", "2", "-mixMids", "2", "-mixHighs", "1"]
+        app.launchArguments = ["-volumeOffsetDB", "0", "-animationLevel", "low", "-mixLevelsV2", "<dict><key>low</key><integer>2</integer><key>mid</key><integer>2</integer><key>high</key><integer>1</integer></dict>"]
         app.launch()
         XCTAssertTrue(app.buttons["settingsButton"].waitForExistence(timeout: 15))
         let before = app.staticTexts["audioDiagnostics"].label.split(separator: ":").compactMap { UInt64($0) }
@@ -132,7 +131,7 @@ final class JustBrownNoiseUITests: XCTestCase {
     @MainActor
     func testStereoPreferencePersistsWithoutRestartingPlayback() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["-stereoEnabled", "NO", "-mixLows", "4", "-mixMids", "2", "-mixHighs", "3"]
+        app.launchArguments = ["-stereoEnabled", "NO", "-mixLevelsV2", "<dict><key>low</key><integer>4</integer><key>mid</key><integer>2</integer><key>high</key><integer>3</integer></dict>"]
         app.launch()
         XCTAssertTrue(app.buttons["settingsButton"].waitForExistence(timeout: 15))
         let before = app.staticTexts["audioDiagnostics"].label.split(separator: ":").compactMap { UInt64($0) }
@@ -178,7 +177,7 @@ final class JustBrownNoiseUITests: XCTestCase {
     @MainActor
     func testPlaybackVisuals() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["-mixHighs", "3", "-mixMids", "2", "-mixLows", "4", "-animationLevel", "high"]
+        app.launchArguments = ["-animationLevel", "high", "-mixLevelsV2", "<dict><key>low</key><integer>4</integer><key>mid</key><integer>2</integer><key>high</key><integer>3</integer></dict>"]
         app.launch()
         let button = app.buttons["playbackButton"]
         XCTAssertTrue(button.waitForExistence(timeout: 15))
@@ -229,7 +228,7 @@ final class JustBrownNoiseUITests: XCTestCase {
     @MainActor
     func testAnimationLevelsPersistAndKeepAudioRunning() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["-mixHighs", "3", "-mixMids", "2", "-mixLows", "4"]
+        app.launchArguments = ["-mixLevelsV2", "<dict><key>low</key><integer>4</integer><key>mid</key><integer>2</integer><key>high</key><integer>3</integer></dict>"]
         app.launch()
         XCTAssertTrue(app.buttons["settingsButton"].waitForExistence(timeout: 15))
         let diagnostic = app.staticTexts["audioDiagnostics"]
@@ -303,21 +302,29 @@ final class JustBrownNoiseUITests: XCTestCase {
     @MainActor
     func testButtonsShowOneSelectionAndGenerousTouchTargets() {
         let app = XCUIApplication()
-        app.launchArguments = ["-mixLows", "2", "-mixMids", "2", "-mixHighs", "1", "-animationLevel", "low"]
+        app.launchArguments = ["-mixLevelsV2", "<dict></dict>", "-mixLows", "2", "-mixMids", "2", "-mixHighs", "1", "-animationLevel", "low"]
         app.launch()
-        XCTAssertTrue(app.buttons["band-low-2"].waitForExistence(timeout: 15))
+        XCTAssertTrue(app.buttons["band-low-3"].waitForExistence(timeout: 15))
         XCTAssertEqual(app.sliders.count, 0)
+        XCTAssertTrue(app.buttons["band-low-3"].isSelected)
+        XCTAssertTrue(app.buttons["band-mid-3"].isSelected)
+        XCTAssertTrue(app.buttons["band-high-2"].isSelected)
+        _ = capture(app, named: "Six-buttons-preserved-favorite")
         for band in ["low", "mid", "high"] {
-            for level in [4, 0, 2] {
+            for level in [5, 0, 1, 2] {
                 let button = app.buttons["band-\(band)-\(level)"]
                 XCTAssertGreaterThanOrEqual(button.frame.width, 44)
                 XCTAssertGreaterThanOrEqual(button.frame.height, 56)
+                XCTAssertTrue(app.frame.contains(button.frame), "Every touch target fits the screen")
                 button.coordinate(withNormalizedOffset: CGVector(dx: 0.16, dy: 0.84)).tap()
-                for candidate in 0...4 {
+                for candidate in 0...5 {
                     XCTAssertEqual(app.buttons["band-\(band)-\(candidate)"].isSelected, candidate == level)
                 }
             }
         }
+        choose(1, band: "high", in: app)
+        XCTAssertTrue(app.buttons["band-high-1"].label.contains("-30 decibels"))
+        _ = capture(app, named: "Six-buttons-trace-high")
         let target = app.buttons["band-mid-2"]
         let rim = CGRect(x: target.frame.minX + 5, y: target.frame.minY + 1,
                          width: target.frame.width - 10, height: 5)
@@ -327,6 +334,25 @@ final class JustBrownNoiseUITests: XCTestCase {
         XCTAssertGreaterThan(pixels(selected, in: rim).whiteCount,
                              pixels(unselected, in: rim).whiteCount + 30,
                              "A reflective selection rim must distinguish the active tile")
+        let beforePause = app.staticTexts["audioDiagnostics"].label.split(separator: ":").compactMap { UInt64($0) }
+        app.buttons["playbackButton"].tap()
+        sleep(2)
+        let paused = capture(app, named: "Six-buttons-paused")
+        var pausedButtons = [UInt8]()
+        for band in ["low", "mid", "high"] {
+            for level in 0...5 {
+                pausedButtons += pixels(paused, in: app.buttons["band-\(band)-\(level)"].frame).bytes
+            }
+        }
+        // Apply the area tolerance to the whole control set. One native edge
+        // pixel is a disproportionate fraction of a single tiny tile crop.
+        assertGrayscale(Pixels(bytes: pausedButtons))
+        app.terminate(); app.launchArguments = ["-animationLevel", "low"]; app.launch()
+        XCTAssertTrue(app.buttons["band-high-1"].waitForExistence(timeout: 15))
+        XCTAssertTrue(app.buttons["band-high-1"].isSelected)
+        XCTAssertTrue(app.buttons["band-mid-3"].isSelected)
+        XCTAssertTrue(app.buttons["band-low-2"].isSelected)
+        XCTAssertEqual(beforePause.first, 1, "Band changes must keep one engine instance")
     }
 
     @MainActor
@@ -421,7 +447,7 @@ final class JustBrownNoiseUITests: XCTestCase {
     @MainActor
     func testLaunchPauseReopenAndBackground() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["-mixHighs", "0", "-mixMids", "0", "-mixLows", "4", "-animationLevel", "high"]
+        app.launchArguments = ["-animationLevel", "high", "-mixLevelsV2", "<dict><key>low</key><integer>4</integer><key>mid</key><integer>0</integer><key>high</key><integer>0</integer></dict>"]
         app.launch()
         let status = app.buttons["playbackButton"]
         XCTAssertTrue(status.waitForExistence(timeout: 15))
@@ -449,7 +475,7 @@ final class JustBrownNoiseUITests: XCTestCase {
         }
         var selected = ["low": 4, "mid": 0, "high": 0]
         for band in ["low", "mid", "high"] {
-            for level in 0..<5 {
+            for level in 0..<6 {
                 let cell = app.buttons["band-\(band)-\(level)"]
                 XCTAssertTrue(cell.exists)
                 XCTAssertGreaterThanOrEqual(cell.frame.width, 44)
@@ -471,8 +497,8 @@ final class JustBrownNoiseUITests: XCTestCase {
         XCTAssertEqual(app.sliders.count, 0)
         XCTAssertGreaterThanOrEqual(status.frame.width, 112)
         XCTAssertGreaterThanOrEqual(status.frame.height, 112)
-        XCTAssertLessThan(app.buttons["band-low-4"].frame.midY, app.buttons["band-mid-4"].frame.midY)
-        XCTAssertLessThan(app.buttons["band-mid-4"].frame.midY, app.buttons["band-high-4"].frame.midY)
+        XCTAssertLessThan(app.buttons["band-high-5"].frame.midY, app.buttons["band-mid-5"].frame.midY)
+        XCTAssertLessThan(app.buttons["band-mid-5"].frame.midY, app.buttons["band-low-5"].frame.midY)
         app.buttons["playbackButton"].tap()
         XCTAssertEqual(status.value as? String, "Paused")
         choose(0, band: "low", in: app)

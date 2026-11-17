@@ -21,8 +21,8 @@ int main(int argc, char **argv) {
         if (done >= nextChange) {
             // Include prolonged bass-only at the highest offset, independent
             // stereo and mono, all active mix ratios, and slow offset changes.
-            int cell = (changes * 37) % 124 + 1;
-            BNMixSetLevels(g, cell/25, (cell/5)%5, cell%5);
+            int cell = (changes * 37) % 215 + 1;
+            BNMixSetLevels(g, cell/36, (cell/6)%6, cell%6);
             BNMixSetOffsetDB(g, changes%3 == 0 ? 3 : 0);
             BNMixSetStereo(g, changes%2 == 0);
             ++changes; nextChange = done + 48000 * 31ULL;

@@ -131,7 +131,7 @@ struct ContentView: View {
                     }
                 }
                 .frame(maxWidth: .infinity)
-                .padding(.horizontal, 24)
+                .padding(.horizontal, geometry.size.width < 350 ? 16 : 24)
                 .padding(.top, 8)
                 .padding(.bottom, 20)
                 .frame(minHeight: geometry.size.height, alignment: .top)

@@ -1,6 +1,19 @@
 import SwiftUI
+import PlaybackCore
 
-/// Five direct choices, with a reflective glass rim for the selected tile.
+/// Compress the power range for legibility: literal power-proportional area
+/// would make the quietest dot smaller than a pixel. Area grows with sqrt(power)
+/// and tint light energy with cbrt(power); both encode strength, not button index.
+enum BandLevelAppearance {
+    static func dotDiameter(at level: Int) -> Double {
+        22 * pow(NoiseMix.relativePower(at: level), 0.25)
+    }
+    static func tintIntensity(at level: Int) -> Double {
+        pow(NoiseMix.relativePower(at: level), 1.0 / 3)
+    }
+}
+
+/// Six direct choices, with a reflective glass rim for the selected tile.
 struct BandPicker: View {
     let title: String
     let id: String
@@ -16,14 +29,15 @@ struct BandPicker: View {
                 .font(AppTypography.band)
                 .foregroundStyle(Color(white: 0.75))
                 .accessibilityAddTraits(.isHeader)
-            HStack(spacing: 8) {
-                ForEach(0..<5, id: \.self) { value in
+            HStack(spacing: buttonSpacing) {
+                ForEach(NoiseMix.levels, id: \.self) { value in
                     let selected = value == level
+                    let strength = BandLevelAppearance.tintIntensity(at: value)
                     let tint = value == 0 ? Color(white: 0.065) :
-                        (showsColor ? color(Double(value) / 4) : Color(white: 0.055 + Double(value) * 0.027))
+                        (showsColor ? color(strength) : Color(white: 0.055 + strength * 0.108))
                     Button { select(value) } label: {
                         IntensitySymbol(level: value)
-                        .foregroundStyle(.white.opacity(0.92))
+                        .foregroundStyle(.white.opacity(value == 0 ? 0.55 : 0.55 + 0.37 * strength))
                         .frame(minWidth: 44, maxWidth: .infinity, minHeight: 56)
                         .overlay {
                             GlassSelectionRim()
@@ -37,13 +51,21 @@ struct BandPicker: View {
                     .buttonStyle(NoiseGlassButtonStyle(tint: tint, shape: RoundedRectangle(cornerRadius: 12), interactive: animate, colorful: showsColor, usesClearGlass: true))
                     .animation(animate ? .easeInOut(duration: 1.4) : nil, value: showsColor)
                     .accessibilityIdentifier("band-\(id)-\(value)")
-                    .accessibilityLabel(value == 0 ? "\(title), off" : "\(title), \(value) of 4")
+                    .accessibilityLabel("\(title), \(NoiseMix.levelDescription(value))")
                     .accessibilityAddTraits(selected ? [.isSelected] : [])
                 }
             }
         }
         .accessibilityElement(children: .contain)
         .accessibilityLabel("\(title) frequency mix")
+    }
+
+    private var buttonSpacing: CGFloat {
+        #if os(tvOS)
+        8 // Leave room for the native focus enlargement on the remote UI.
+        #else
+        4 // Six 44-point targets still fit a narrow phone or iPad window.
+        #endif
     }
 }
 
@@ -71,11 +93,11 @@ private struct IntensitySymbol: View {
         Group {
             if level == 0 {
                 Circle()
-                    .strokeBorder(lineWidth: 1.25)
-                    .frame(width: 8, height: 8)
+                    .strokeBorder(lineWidth: 1)
+                    .frame(width: 6, height: 6)
             } else {
                 Circle()
-                    .frame(width: CGFloat(2 + level * 4), height: CGFloat(2 + level * 4))
+                    .frame(width: BandLevelAppearance.dotDiameter(at: level), height: BandLevelAppearance.dotDiameter(at: level))
             }
         }
         .frame(width: 32, height: 28)

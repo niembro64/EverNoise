@@ -43,9 +43,9 @@ struct NoiseGlassGroup<Content: View>: View {
 
     @ViewBuilder var body: some View {
         if #available(iOS 26.0, tvOS 26.0, macOS 26.0, visionOS 26.0, *) {
-            // Less than the eight-point picker gaps: adjacent levels remain
+            // Less than even the four-point picker gaps: adjacent levels remain
             // distinct instead of merging into a continuous glass capsule.
-            GlassEffectContainer(spacing: 4) { content() }
+            GlassEffectContainer(spacing: 2) { content() }
         } else {
             content()
         }

@@ -5,16 +5,16 @@ import PlaybackCore
 final class FluidMotionTests: XCTestCase {
     func testPaletteUsesDecibelPowerAndSharedMutedColors() {
         XCTAssertEqual(RibbonPalette.power(at: 0), 0)
-        XCTAssertEqual(RibbonPalette.power(at: 4), 1)
-        for level in 1..<4 {
+        XCTAssertEqual(RibbonPalette.power(at: 5), 1)
+        for level in 2..<5 {
             XCTAssertEqual(10 * log10(RibbonPalette.power(at: level + 1) /
                                      RibbonPalette.power(at: level)), 6, accuracy: 1e-12)
         }
-        let p = RibbonPalette(mix: NoiseMix(highs: 3, mids: 2, lows: 4))
+        let p = RibbonPalette(mix: NoiseMix(highs: 4, mids: 3, lows: 5))
         XCTAssertEqual(p.bandPower.x, 1)
         XCTAssertEqual(p.bandPower.y, pow(10, -1.2), accuracy: 1e-12)
         XCTAssertEqual(p.bandPower.z, pow(10, -0.6), accuracy: 1e-12)
-        XCTAssertEqual(RibbonPalette(mix: NoiseMix(highs: 0, mids: 0, lows: 4)).mixedColor, NoisePalette.linearHues[0])
+        XCTAssertEqual(RibbonPalette(mix: NoiseMix(highs: 0, mids: 0, lows: 5)).mixedColor, NoisePalette.linearHues[0])
         XCTAssertEqual(RibbonPalette(mix: NoiseMix(highs: 0, mids: 0, lows: 0)).mixedColor, .zero)
     }
 

@@ -1,15 +1,16 @@
 import SwiftUI
 import UIKit
+import PlaybackCore
 
-/// Coordinates are continuous for touch handling; only five integer levels
+/// Coordinates are continuous for touch handling; only six integer levels
 /// ever cross the boundary into the existing audio service.
 enum BandNotches {
     static func level(at position: Float) -> Int {
         guard position.isFinite else { return 0 }
-        return Int((min(1, max(0, position)) * 4).rounded())
+        return Int((min(1, max(0, position)) * Float(NoiseMix.maximumLevel)).rounded())
     }
-    static func position(for level: Int) -> Float { Float(min(4, max(0, level))) / 4 }
-    static func description(for level: Int) -> String { level == 0 ? "Off" : "\(level) of 4" }
+    static func position(for level: Int) -> Float { Float(NoiseMix.clamp(level)) / Float(NoiseMix.maximumLevel) }
+    static func description(for level: Int) -> String { NoiseMix.levelDescription(level) }
 }
 
 struct BandNotchPicker: View {
@@ -61,7 +62,7 @@ private struct NotchedSlider: UIViewRepresentable {
         slider.accessibilityIdentifier = "band-\(id)-slider"
         slider.accessibilityLabel = "\(title) frequency intensity"
         slider.accessibilityValue = BandNotches.description(for: level)
-        slider.accessibilityHint = "Five stops. Swipe up or down to change intensity."
+        slider.accessibilityHint = "Six stops. Swipe up or down to change intensity."
         slider.animatesChanges = animate
         let position = BandNotches.position(for: level)
         if !slider.isTracking && slider.value != position { slider.setValue(position, animated: false) }
@@ -175,8 +176,8 @@ final class NotchedLevelSlider: UISlider {
         notchOverlay.frame = bounds
         notches.frame = bounds
         let path = UIBezierPath()
-        for index in 0...4 {
-            let x = start + (end - start) * CGFloat(index) / 4
+        for index in NoiseMix.levels {
+            let x = start + (end - start) * CGFloat(index) / CGFloat(NoiseMix.maximumLevel)
             path.append(UIBezierPath(ovalIn: CGRect(x: x - 4.5, y: rail.frame.midY - 4.5, width: 9, height: 9)))
         }
         notches.path = path.cgPath
@@ -236,7 +237,7 @@ final class NotchedLevelSlider: UISlider {
         sendActions(for: .valueChanged)
     }
 
-    override func accessibilityIncrement() { choose(min(4, BandNotches.level(at: value) + 1)) }
+    override func accessibilityIncrement() { choose(min(NoiseMix.maximumLevel, BandNotches.level(at: value) + 1)) }
     override func accessibilityDecrement() { choose(max(0, BandNotches.level(at: value) - 1)) }
 }
 

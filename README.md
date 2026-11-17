@@ -13,15 +13,16 @@ layout supports remote focus and the Siri Remote Play/Pause button. Apple Watch
 is intentionally outside the supported scope.
 See [platform availability and validation](Store/PLATFORM_AVAILABILITY.md).
 Opening it starts
-the last selected balance (buttons 3 / 3 / 2 for a new installation, counting Off as the first button). Locking the screen or switching apps leaves the audio engine
+the last selected balance (Low/Mid/High buttons 4 / 4 / 3 for a new installation, counting Off as the first button). Locking the screen or switching apps leaves the audio engine
 running. There is no playback deadline, recording to loop, network dependency,
 account, advertising, or subscription.
 
-Three rows of five buttons run **High, Mid, Low** from top to bottom, matching
-the spectrogram's frequency direction, each with Off and four
-active levels. A hollow circle means Off; four growing dots show intensity.
+Three rows of six buttons run **High, Mid, Low** from top to bottom, matching
+the spectrogram's frequency direction, each with Off and five
+active levels. A hollow circle means Off; five growing, brighter dots show relative power.
 A reflective glass rim identifies the selection, with no checkmark or pointer.
-The same five levels and saved balances are preserved. Low/Mid/High headings
+The new −30 dB trace contributes about one-sixteenth the power of the former
+first active choice. All old weights and saved balances are preserved. Low/Mid/High headings
 share the thin title font. The previous slider remains available in
 `App/BandNotchPicker.swift`. Muted rose
 represents lows, sage mids, and periwinkle highs. Avenir Next typography scales with your preferred text size throughout the app. A large liquid infinity fills the upper screen and
@@ -136,7 +137,7 @@ That path has no allocation, locks, file access, networking, or filter design.
 Random and filter state persist between callbacks, including while a band is
 Off. Build 25 added shared K-weighted mix normalization,
 very slow bounded loudness correction, and linked lookahead peak protection.
-The five choices now describe relative band weights. A saved Volume offset
+The six choices describe relative band weights. A saved App Loudness preference
 adjusts the target from -18 to +3 dB around a nominal -20 LUFS stereo level.
 Peak protection retains a separate ceiling; the preference never changes system
 volume. There is no hard clipping or saturation. Startup, pause, resume, and
@@ -144,10 +145,12 @@ mix changes remain smooth. Build 28 recalibrates each band's expected power for
 the revised filters without changing dynamics, targets, or stored settings.
 See [loudness design](Store/LOUDNESS_RELEASE.md).
 
-All three controls retain Off / -18 / -12 / -6 / 0 dB, using sample gains
+All three controls offer Off / -30 / -18 / -12 / -6 / 0 dB, using sample gains
 `10^(dB/20)`. Changes fade over 600 ms without restarting the engine. Saved
-settings and the default buttons 3 / 3 / 2 remain, but their sound intentionally
-changes with the new generator. All three Off produces exact silence.
+settings and the default −12/−12/−18 dB sound remain; the default buttons are
+now 4 / 4 / 3. A single band alone keeps the same normalized loudness at any
+active choice. All three Off produces exact silence. See
+[mix resolution and validation](Store/MIX_RESOLUTION_RELEASE.md).
 
 Stereo defaults on and preserves saved choices. Each band has a permanent pair
 of independent left/right generators. Mono duplicates the left signal; the

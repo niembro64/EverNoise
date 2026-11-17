@@ -4,7 +4,7 @@ final class TVPlaybackUITests: XCTestCase {
     @MainActor
     func testMaxSpectrogramAndOffKeepAudioIndependent() {
         let app = XCUIApplication()
-        app.launchArguments = ["-animationLevel", "max", "-mixLows", "2", "-mixMids", "2", "-mixHighs", "1"]
+        app.launchArguments = ["-animationLevel", "max", "-mixLevelsV2", "<dict><key>low</key><integer>2</integer><key>mid</key><integer>2</integer><key>high</key><integer>1</integer></dict>"]
         app.launch()
         XCTAssertTrue(app.buttons["playbackButton"].waitForExistence(timeout: 20))
         XCTAssertLessThan(app.buttons["band-high-1"].frame.midY, app.buttons["band-mid-2"].frame.midY)
@@ -28,7 +28,7 @@ final class TVPlaybackUITests: XCTestCase {
         sleep(1)
         XCTAssertEqual(frameCount(), paused)
         app.terminate()
-        app.launchArguments = ["-animationLevel", "off", "-mixLows", "2", "-mixMids", "2", "-mixHighs", "1"]
+        app.launchArguments = ["-animationLevel", "off", "-mixLevelsV2", "<dict><key>low</key><integer>2</integer><key>mid</key><integer>2</integer><key>high</key><integer>1</integer></dict>"]
         app.launch()
         XCTAssertTrue(app.buttons["playbackButton"].waitForExistence(timeout: 20))
         XCTAssertFalse(app.otherElements["outputSpectrogram"].exists)
@@ -40,7 +40,7 @@ final class TVPlaybackUITests: XCTestCase {
     @MainActor
     func testRemotePlayPauseAndBackgroundContinuity() {
         let app = XCUIApplication()
-        app.launchArguments = ["-animationLevel", "low", "-mixLows", "2", "-mixMids", "2", "-mixHighs", "1"]
+        app.launchArguments = ["-animationLevel", "low", "-mixLevelsV2", "<dict><key>low</key><integer>2</integer><key>mid</key><integer>2</integer><key>high</key><integer>1</integer></dict>"]
         app.launch()
         let playback = app.buttons["playbackButton"]
         XCTAssertTrue(playback.waitForExistence(timeout: 20))
@@ -69,16 +69,23 @@ final class TVPlaybackUITests: XCTestCase {
     @MainActor
     func testRemoteCanSelectBandsAndOpenSettingsWithoutRestartingAudio() {
         let app = XCUIApplication()
-        app.launchArguments = ["-animationLevel", "low", "-mixLows", "2", "-mixMids", "2", "-mixHighs", "1"]
+        app.launchArguments = ["-animationLevel", "low", "-mixLevelsV2", "<dict><key>low</key><integer>2</integer><key>mid</key><integer>2</integer><key>high</key><integer>1</integer></dict>"]
         app.launch()
         XCTAssertTrue(app.buttons["playbackButton"].waitForExistence(timeout: 20))
         let before = diagnostics(app)
         for band in ["low", "mid", "high"] {
-            let selected = app.buttons["band-\(band)-3"]
+            let selected = app.buttons["band-\(band)-5"]
             select(selected, in: app)
             XCTAssertTrue(selected.isSelected)
-            for other in [0, 1, 2, 4] { XCTAssertFalse(app.buttons["band-\(band)-\(other)"].isSelected) }
+            for other in [0, 1, 2, 3, 4] { XCTAssertFalse(app.buttons["band-\(band)-\(other)"].isSelected) }
         }
+        for band in ["low", "mid", "high"] {
+            select(app.buttons["band-\(band)-1"], in: app)
+            XCTAssertTrue(app.buttons["band-\(band)-1"].isSelected)
+            XCTAssertTrue(app.buttons["band-\(band)-1"].label.contains("-30 decibels"))
+        }
+        let levels = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        levels.name = "TV-six-button-mix"; levels.lifetime = .keepAlways; add(levels)
         select(app.buttons["settingsButton"], in: app)
         XCTAssertTrue(app.staticTexts["Settings"].waitForExistence(timeout: 10))
         XCTAssertTrue(app.descendants(matching: .any)["volumeOffsetPicker"].firstMatch.exists)

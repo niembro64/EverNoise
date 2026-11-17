@@ -1,0 +1,5 @@
+Six choices for each frequency band, including a new very quiet first dot. It adds about one-sixteenth the power of the next dot, so you can add just a trace of Low, Mid, or High.
+
+Dots and button colors now reflect relative strength. Your existing saved mix and default sound are preserved; the former choices move one spot to the right. App Loudness and peak protection are unchanged.
+
+Please try a trace of High or Mid under a stronger Low, switching between Off and the first dot, and pausing/resuming. The mix should change smoothly without a click, jump, dropout, or distortion. A band playing alone keeps the same normalized loudness at every active setting.

@@ -1,5 +1,14 @@
 # Sound engine history and rollback
 
+## Additional quiet mix choice — build 30
+
+November 16, 2026: insert a −30 dB trace below the existing −18/−12/−6/0 dB
+weights, giving six choices including Off. Old saved coordinates migrate to
+the same weights. The default retains its −12/−12/−18 dB sound. Filters,
+loudness normalization and peak protection are unchanged. An independent
+comparison with build 29 matches 19,120,000 samples per channel exactly for
+the old choices and their transitions. See [design and checks](MIX_RESOLUTION_RELEASE.md).
+
 ## Visualization only — build 29
 
 November 16, 2026: the Max spectrogram changes its resolution blending and

@@ -136,7 +136,7 @@ private struct TVSettingsView: View {
                 Text("The spectrogram spans 2 Hz to 48 kHz, with a shaded margin above the source’s 24 kHz limit. Red means low frequencies, green mid, and blue high; brighter means more energy per octave on a fixed perceptual brightness scale. Overlapping analysis windows smooth the detail across frequencies and time. Colors stay tied to frequency as you change the mix. The chart begins after about six seconds, and very low frequencies settle more slowly. It measures before device volume and speaker processing and stops when hidden or paused. Reduce Motion updates its history once per second.")
                 FamilyListeningSection()
                 Section("Playback") {
-                    Text("Low, Mid, and High shape the balance of your sound. EverNoise gently maintains overall loudness. Turning every band off makes the mix silent.")
+                    Text("Low, Mid, and High shape the balance of your sound. The hollow circle is Off; five growing, brighter dots go from a trace to full strength. The smallest dot adds about one-sixteenth the power of the next dot. App Loudness sets the overall level. A single band playing alone stays at the same loudness at any active setting. Turning every band off makes the mix silent.")
                     Text("Open EverNoise to start. Use your TV or receiver controls for volume. Sound continues when you switch apps. Press Play/Pause on your remote to pause or resume.")
                     Text("Turning off or putting Apple TV to sleep stops playback. Other apps and system events can interrupt audio.")
                 }

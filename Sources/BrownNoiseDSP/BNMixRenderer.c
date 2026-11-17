@@ -36,7 +36,15 @@ struct BNMixGenerator {
     BNPeakProtector peak;
 };
 
-static int clampLevel(int x) { return x < 0 ? 0 : x > 4 ? 4 : x; }
+static int clampLevel(int x) { return x < 0 ? 0 : x >= BNMixLevelCount ? BNMixLevelCount - 1 : x; }
+double BNMixAmplitudeForLevel(int level) {
+    // Keep the original four nonzero weights bit-for-bit. Only the -30 dB
+    // choice is new; filters, normalization and peak protection are unchanged.
+    static const double weights[BNMixLevelCount] = {
+        0, .03162277660168379, .12589254117941673, .251188643150958, .5011872336272722, 1
+    };
+    return weights[clampLevel(level)];
+}
 static uint64_t splitMix(uint64_t *state) {
     uint64_t z = (*state += UINT64_C(0x9E3779B97F4A7C15));
     z = (z ^ (z >> 30)) * UINT64_C(0xBF58476D1CE4E5B9);
@@ -57,10 +65,9 @@ static inline double noise(BNMixGenerator *g, int channel, int band) {
 // all three user weights cancels exactly. Interpolated vectors are renormalized
 // on every sample, preventing crossfade dips without feedback chasing a change.
 static void setShape(BNMixGenerator *g, int packed, bool immediate) {
-    const double weights[5] = {0, .12589254117941673, .251188643150958, .5011872336272722, 1};
     double q[3], energy = 0;
     for (int b = 0; b < 3; ++b) {
-        q[b] = weights[(packed >> (3*b)) & 7] / g->inverseBandRMS[b];
+        q[b] = BNMixAmplitudeForLevel((packed >> (3*b)) & 7) / g->inverseBandRMS[b];
         energy += q[b]*q[b];
     }
     bool audible = energy > 0;
@@ -80,7 +87,7 @@ static void setShape(BNMixGenerator *g, int packed, bool immediate) {
 BNMixGenerator *BNMixCreate(uint64_t seed) {
     BNMixGenerator *g = calloc(1, sizeof(*g));
     if (!g) return NULL;
-    atomic_init(&g->levels, 2 | (2 << 3) | (1 << 6));
+    atomic_init(&g->levels, 3 | (3 << 3) | (2 << 6));
     atomic_init(&g->stereo, 1); atomic_init(&g->offset, 0);
     atomic_init(&g->playing, 1); atomic_init(&g->silent, 1);
     atomic_init(&g->renderedFrames, 0);

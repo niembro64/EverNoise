@@ -15,12 +15,12 @@ final class ColorCompositingTests: XCTestCase {
     }
 
     func testBandLightAddsByPowerWithoutGammaSpaceAveraging() {
-        let low = RibbonPalette(mix: NoiseMix(highs: 0, mids: 0, lows: 4)).mixedColor
-        let high = RibbonPalette(mix: NoiseMix(highs: 4, mids: 0, lows: 0)).mixedColor
-        let both = RibbonPalette(mix: NoiseMix(highs: 4, mids: 0, lows: 4)).mixedColor
+        let low = RibbonPalette(mix: NoiseMix(highs: 0, mids: 0, lows: 5)).mixedColor
+        let high = RibbonPalette(mix: NoiseMix(highs: 5, mids: 0, lows: 0)).mixedColor
+        let both = RibbonPalette(mix: NoiseMix(highs: 5, mids: 0, lows: 5)).mixedColor
         XCTAssertEqual(both, low + high)
         let quiet = RibbonPalette(mix: NoiseMix(highs: 0, mids: 0, lows: 1)).mixedColor
-        XCTAssertEqual(quiet.x / low.x, pow(10, -1.8), accuracy: 1e-14)
+        XCTAssertEqual(quiet.x / low.x, pow(10, -3.0), accuracy: 1e-14)
         XCTAssertEqual(NoisePalette.linearHues.count, 6)
     }
 

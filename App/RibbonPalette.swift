@@ -17,7 +17,6 @@ struct RibbonPalette: Equatable {
     }
 
     static func power(at level: Int) -> Double {
-        guard level > 0 else { return 0 }
-        return pow(10, Double(-24 + 6 * min(4, level)) / 10)
+        NoiseMix.relativePower(at: level)
     }
 }

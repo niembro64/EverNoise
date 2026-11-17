@@ -24,7 +24,7 @@ final class AudioPreferencesTests: XCTestCase {
         let name = "EverNoise.mix-preference-test.\(UUID().uuidString)"
         let defaults = UserDefaults(suiteName: name)!
         defer { defaults.removePersistentDomain(forName: name) }
-        XCTAssertEqual(AudioService(defaults: defaults).selectedMix, NoiseMix(highs: 1, mids: 2, lows: 2))
+        XCTAssertEqual(AudioService(defaults: defaults).selectedMix, NoiseMix(highs: 2, mids: 3, lows: 3))
         XCTAssertNil(defaults.object(forKey: "mixLows"), "Reading a fallback must not overwrite saved choices")
         defaults.set("brown", forKey: "selectedNoise")
         XCTAssertEqual(AudioService(defaults: defaults).selectedMix, .baseline)
