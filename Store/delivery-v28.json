@@ -1,0 +1,36 @@
+{
+  "version": "1.1",
+  "build": "28",
+  "sourceCommit": "065631603bcfece3044596e90de5a06648a04e66",
+  "lastObservedAtUTC": "2026-11-17T04:07:01Z",
+  "publicAppStoreSubmissionChanged": false,
+  "iOS": {
+    "uploadSucceededAtUTC": "2026-11-17T04:00:49Z",
+    "readyToTestAtUTC": "2026-11-17T04:02:23Z",
+    "buildID": "d02fceab-ef1e-46f4-a48c-1617e3225cda",
+    "notesSaved": true,
+    "internalGroup": "Personal Testing",
+    "availabilityEvidence": "Apple TestFlight availability notification and live App Store Connect group",
+    "externalStatus": "Not submitted: Apple allows only one version 1.1 build in Beta App Review until that build is approved.",
+    "pendingExternalReviewBuild": "25",
+    "pendingExternalReviewState": "Waiting for Review"
+  },
+  "tvOS": {
+    "uploadSucceededAtUTC": "2026-11-17T04:02:19Z",
+    "readyToTestAtUTC": "2026-11-17T04:04:05Z",
+    "buildID": "8815fc0c-52dd-44bc-812b-17a9f03791ab",
+    "notesSaved": true,
+    "status": "Testing",
+    "groups": [
+      "Personal Testing",
+      "Friends and Family"
+    ],
+    "displayedInvites": 3,
+    "automaticallyNotifyTesters": true,
+    "availabilityEvidence": "Apple TestFlight availability notification and live App Store Connect Testing status"
+  },
+  "limitations": [
+    "No physical-speaker listening or overnight hardware qualification performed for this build.",
+    "Listing a group or invite does not prove receipt or installation by every tester."
+  ]
+}

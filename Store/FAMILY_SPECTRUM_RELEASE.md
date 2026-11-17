@@ -6,6 +6,14 @@ Low/Mid/High indices 2/2/1 remain. The settings section **For the ones you care
 for** describes a broad, adjustable blanket of sound for households with babies,
 children and pets, with clear limits and caregiver guidance.
 
+**1.1 (28) is available in internal TestFlight on iOS and tvOS.** Apple confirmed
+iOS availability at 22:02:23 CST and tvOS at 22:04:05 CST on November 16, 2026.
+Testing notes are saved. tvOS is **Testing** in Personal Testing and Friends and
+Family with automatic notifications enabled. iOS remains in Personal Testing;
+Apple prevents another external version-1.1 submission until build 25's pending
+review is approved. No public App Store submission was changed by this release.
+See [delivery evidence](delivery-v28.json).
+
 ## Sound design
 
 This intentionally changes timbre. **sound-baseline-build-27** preserves the
@@ -56,8 +64,9 @@ speaker processing. It is not a microphone or a sound-pressure meter.
   and the separate overload harness. No AddressSanitizer result is claimed.
 - **52 core, 33 iOS integration and 10 tvOS integration tests** pass. Affected
   iPhone/iPad/TV UI flows cover row order, selected settings, Max/Off, pause,
-  settings persistence and continued audio. Final family copy is readable in
-  the iPad settings sheet; final phone verification is recorded with the build.
+  settings persistence and continued audio. Final family copy was visually
+  verified in the iPhone and iPad settings sheets. TV remote tests pass; the
+  native TV settings sheet still needs a physical-TV visual check.
 - Independent FFT/decimation checks pass. Relative PSD error is at most
   1.01e-7; visible row error is below 0.000569 dB. The new quiet sub-bass exposes
   up to 0.00232 dB single-precision error below the display's -120 dBFS/Hz floor.
@@ -65,8 +74,13 @@ speaker processing. It is not a microphone or a sound-pressure meter.
   and retains the global linear-power and Parseval checks. Production analysis
   and the visual floor did not change to conceal the residual.
 
-Extended continuity qualification and delivery are recorded in the final build
-audit and delivery files. No physical-speaker listening, Bluetooth recording,
+**30 accelerated hours pass:** 5,184,000,000 frames per channel, 1,265,625
+buffers and 3,476 mix changes. No nonfinite samples, silent buffers or samples
+above the ceiling occurred. Maximum sample peak was **0.700709**. Protection
+gain remained 1 throughout this run; slow correction stayed between 0.995742
+and 1.004604. The run crossed the 32-bit frame boundary and took 1,164.575 CPU
+seconds. These are accelerated digital renders, not 30 hours on a device.
+Full results: [build-28 audio audit](loudness-audit-v28.json). No physical-speaker listening, Bluetooth recording,
 overnight hardware test, or child/animal efficacy study was performed here.
 Software peak margin does not establish a safe acoustic listening level.
 

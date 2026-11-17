@@ -1,5 +1,28 @@
 # Release status — November 16, 2026
 
+## Practical frequency tapers and household guidance — build 28
+
+**EverNoise 1.1 (28) is available in internal TestFlight for iOS and Apple TV.**
+Apple confirmed iOS availability at **22:02:23 CST** and tvOS at **22:04:05 CST**
+on November 16. Testing notes are saved. TV is **Testing** in Personal Testing
+and Friends and Family, with automatic notification enabled. Apple still blocks
+another iOS version-1.1 external build until build 25's pending review is approved.
+No public App Store submission changed in this release.
+
+The rows now run High, Mid, Low. Shared smooth 30 Hz / 20 kHz edge tapers reduce
+impractical sub-bass and preserve the upper audible range. Calibration is updated;
+dynamics and saved preferences remain. Settings explains listening for babies,
+children and pets, including hearing differences, speaker limits and caregiver
+precautions. The prior complete sound is tagged `sound-baseline-build-27`.
+
+All 125 mixes at two offsets, 36 Apple-engine conversions, overload checks,
+95 core/integration tests, affected phone/tablet/TV UI flows, and **30 accelerated
+hours** pass. The long run had no silent buffers or over-ceiling samples, and
+peak protection never needed to engage. Physical-speaker listening and overnight
+hardware playback remain unverified. See [design and guidance](FAMILY_SPECTRUM_RELEASE.md),
+[measurements](loudness-audit-v28.json), [packages](build-28-manifest.json), and
+[delivery](delivery-v28.json).
+
 ## Off and output spectrogram — build 26 available in TestFlight
 
 **EverNoise 1.1 (26) is available in internal TestFlight for iOS and Apple TV.**

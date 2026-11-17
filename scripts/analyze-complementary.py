@@ -1,4 +1,8 @@
-"""Verify compiled-filter complementarity and plot actual production-engine noise."""
+"""Reproduce the historical build-23 filter and engine spectrum audit.
+
+Current normalized-output comparisons use check-frequency-tapers.py instead.
+Keep the design-1 record here so old render artifacts remain reproducible.
+"""
 from pathlib import Path
 import hashlib, json, re, sys, warnings
 import matplotlib
@@ -9,7 +13,7 @@ from scipy import signal
 from scipy.io import wavfile
 
 root = Path(sys.argv[1])
-design = json.loads(Path("Store/complementary-design-v2.json").read_text())
+design = json.loads(Path("Store/complementary-design-v1.json").read_text())
 engine = json.loads((root/"engine-analysis.json").read_text())
 impulse = np.fromfile(root/"impulses.f64",dtype=np.float64).reshape(4,192000)
 nfft = 1048576
