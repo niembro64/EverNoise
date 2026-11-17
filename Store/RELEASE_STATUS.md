@@ -1,5 +1,30 @@
 # Release status — November 16, 2026
 
+## Off and output spectrogram — build 26 available in TestFlight
+
+**EverNoise 1.1 (26) is available in internal TestFlight for iOS and Apple TV.**
+Apple confirmed iOS availability at **19:05:19 CST** and tvOS at **19:08:10 CST**
+on November 16. Notes are saved on both builds. The TV build is **Testing** in
+Personal Testing and Friends and Family, with automatic notification enabled.
+Apple currently prevents adding iOS build 26 to external groups until build
+25's first version-1.1 beta review is approved; build 26 is not queued for that
+review. Personal Testing has access now.
+
+Off removes artwork and its ongoing animation/analysis work. Max replaces the
+infinity with a calibrated spectrogram of the final generated output. Med stays
+the default. Pause freezes and grayscales the chart; hiding it stops analysis.
+The audio DSP, mix normalization, Volume offset and peak protection are unchanged.
+
+All 50 core tests, 41 platform integration tests, affected phone/tablet/TV UI
+flows, independent FFT comparison and concurrent capture stress checks pass.
+Both signed packages verify strictly. Physical-device battery, listening and
+overnight measurements were not repeated. This release updates TestFlight;
+public App Store submissions were not changed in this work.
+
+Details: [design and validation](SPECTROGRAM_RELEASE.md),
+[measurements](spectrogram-audit-v26.json), [packages](build-26-manifest.json),
+[delivery](delivery-v26.json).
+
 ## Stable mix loudness — build 25 available in TestFlight
 
 **EverNoise 1.1 (25) is available in internal TestFlight for iOS and Apple TV.**

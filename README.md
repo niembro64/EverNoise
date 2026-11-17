@@ -36,9 +36,13 @@ and colors change gradually, including rapid taps.
 Pausing or turning all bands off fades the controls to grayscale and eases the
 mark to rest. Animation suspends when hidden and respects Reduce Motion. Settings has native segmented
 Audio (Mono/Stereo) and
-Animations control: Low keeps a still infinity on black and stops scheduled
-visual updates; Med animates only the infinity; High also shows the background
-ribbons. Med is the default. A saved old animations-off choice migrates to Low;
+Animations control: Off removes all artwork and stops visual processing; Low
+keeps a still infinity on black; Med animates only the infinity; High also
+shows the background ribbons; Max replaces the infinity with a spectrogram
+of the actual generated audio. Its logarithmic frequency axis spans 20 Hz to
+20 kHz, with approximately 22 seconds of time history and a fixed power scale.
+Analysis runs off the audio thread and stops while paused or hidden. Med is
+the default. A saved old animations-off choice migrates to Low;
 otherwise upgrades start on Med. Every new level is remembered. Animation settings do not affect audio.
 The app remembers all three levels and fades smoothly between balances. A large
 play/pause button controls playback; use the physical buttons for volume. Settings
@@ -48,11 +52,14 @@ work too. Reopening the app starts it again.
 
 ## TestFlight
 
-**1.1 (25) is available in TestFlight** for iOS and Apple TV. It adds consistent
-mix loudness and a saved Volume offset. Open
-[TestFlight](https://testflight.apple.com/v1/app/6834413344) to update. iOS
-external beta review is pending; the TV build is testing in both existing groups.
-See [the release audit](Store/LOUDNESS_RELEASE.md) for measurements and limits.
+**1.1 (26) is available in internal TestFlight** for iOS and Apple TV. It adds
+Off and Max animation settings, including a calibrated spectrogram of the final
+generated audio. Open [TestFlight](https://testflight.apple.com/v1/app/6834413344)
+to update. Apple TV is also testing in Friends and Family. Apple prevents adding
+iOS build 26 to external groups until build 25's beta review is approved.
+See [spectrogram validation](Store/SPECTROGRAM_RELEASE.md) for measurements
+and limits. Build 25's mix loudness and saved Volume offset remain unchanged;
+see [the loudness audit](Store/LOUDNESS_RELEASE.md).
 The records below describe earlier distributed builds.
 
 Apple confirmed **1.0.1 (23)** is ready to test at 09:45:04 CST on November 15.
@@ -82,7 +89,8 @@ after approval. It is not yet confirmed publicly available.
 
 The generated project is included. To regenerate it after changing `project.yml`,
 run `xcodegen generate`. There are no external app dependencies; `Package.swift`
-contains only the local DSP and playback modules.
+contains only local DSP, playback and spectrum-analysis modules. Spectrum
+analysis uses Apple's Accelerate framework.
 
 For Apple TV, select the **EverNoiseTV** scheme and an Apple TV simulator or
 registered device. Its test action runs the real audio-engine checks plus remote
@@ -141,6 +149,14 @@ as Apple requires. Disconnecting headphones continues on the available output,
 which may be the speaker. No app can guarantee immunity from system interruptions.
 
 ## Verification
+
+Build 26 passes all **50 core tests**, **31 iOS and 10 tvOS integration tests**,
+and affected visual flows on iPhone, iPad and Apple TV. Independent FFT and
+concurrent capture audits pass. Every audio DSP/playback source matches build
+25, and capture tests confirm sample-exact observation. Detailed results and
+physical-device limitations are in the [spectrogram audit](Store/SPECTROGRAM_RELEASE.md).
+
+The following records describe the earlier sound-engine qualification.
 
 See the [build-23 complementary sound audit](Store/POWER_COMPLEMENTARY_RELEASE.md).
 All **40 core tests and 32 integration/UI tests pass**; the integration/UI suite

@@ -12,7 +12,7 @@ struct ContentView: View {
 
     private var isPlaying: Bool { audio.playback.state == .playing }
     private var isSounding: Bool { isPlaying && !audio.selectedMix.isSilent }
-    private var animateControls: Bool { animationLevel.animatesInfinity && !reduceMotion }
+    private var animateControls: Bool { animationLevel.animatesArtwork && !reduceMotion }
     private var status: String {
         switch audio.playback.state {
         case .idle: "Starting…"
@@ -29,15 +29,18 @@ struct ContentView: View {
                     animationLevel: animationLevel) { frame in
             NoiseGlassGroup { controls(frame: frame) }
                 .backgroundPreferenceValue(InfinityBounds.self) { anchor in
-                    GeometryReader { geometry in
-                        RibbonArtwork(frame: frame, infinityRect: anchor.map { geometry[$0] } ?? .zero)
+                    if animationLevel != .off {
+                        GeometryReader { geometry in
+                            RibbonArtwork(frame: frame, infinityRect: animationLevel.showsInfinity ? anchor.map { geometry[$0] } ?? .zero : .zero)
+                        }
+                        .ignoresSafeArea()
                     }
-                    .ignoresSafeArea()
                 }
         }
         .background(Color.black.ignoresSafeArea())
         .font(AppTypography.body)
         .sheet(isPresented: $showingSettings) { PrivacyView(audio: audio).tint(NoisePalette.accent) }
+        .transaction { if animationLevel == .off { $0.animation = nil; $0.disablesAnimations = true } }
     }
 
     private func controls(frame: FluidMotion.Frame) -> some View {
@@ -45,11 +48,19 @@ struct ContentView: View {
             let infinityWidth = max(1, min(geometry.size.width - 48, geometry.size.height * 0.82))
             ScrollView {
                 VStack(spacing: 0) {
-                    Color.clear
+                    ZStack {
+                        Color.clear
+                        if animationLevel == .maximum {
+                            SpectrogramView(feed: audio.outputSamples,
+                                            isVisible: scenePhase == .active && !showingSettings,
+                                            isSounding: isSounding)
+                                .padding(.top, 40) // Keep the chart clear of the gear's touch target.
+                        }
+                    }
                         .frame(width: infinityWidth, height: infinityWidth * 9 / 16)
                         .anchorPreference(key: InfinityBounds.self, value: .bounds) { $0 }
-                        .accessibilityElement(children: .ignore)
-                        .accessibilityLabel("Noise color")
+                        .accessibilityElement(children: animationLevel == .maximum ? .contain : .ignore)
+                        .accessibilityLabel(animationLevel == .maximum ? "Audio visualization" : "Noise color")
                         .accessibilityValue(audio.selectedMix.summary)
                         .accessibilityIdentifier("noiseColor")
                         .padding(.bottom, 6)

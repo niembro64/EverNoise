@@ -2,6 +2,35 @@ import XCTest
 
 final class TVPlaybackUITests: XCTestCase {
     @MainActor
+    func testMaxSpectrogramAndOffKeepAudioIndependent() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-animationLevel", "max", "-mixLows", "2", "-mixMids", "2", "-mixHighs", "1"]
+        app.launch()
+        XCTAssertTrue(app.buttons["playbackButton"].waitForExistence(timeout: 20))
+        XCTAssertTrue(app.otherElements["outputSpectrogram"].waitForExistence(timeout: 10))
+        sleep(5)
+        let plot = app.otherElements["outputSpectrogram"]
+        func frameCount() -> UInt64 { UInt64((plot.value as? String ?? "").split(separator: "=").last ?? "") ?? 0 }
+        XCTAssertGreaterThan(frameCount(), 48000)
+        let maxImage = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        maxImage.name = "TV-Max-spectrogram"; maxImage.lifetime = .keepAlways; add(maxImage)
+        XCUIRemote.shared.press(.playPause)
+        XCTAssertTrue(waitForValue("Paused", on: app.buttons["playbackButton"]))
+        sleep(1)
+        let paused = frameCount()
+        sleep(1)
+        XCTAssertEqual(frameCount(), paused)
+        app.terminate()
+        app.launchArguments = ["-animationLevel", "off", "-mixLows", "2", "-mixMids", "2", "-mixHighs", "1"]
+        app.launch()
+        XCTAssertTrue(app.buttons["playbackButton"].waitForExistence(timeout: 20))
+        XCTAssertFalse(app.otherElements["outputSpectrogram"].exists)
+        XCTAssertEqual(app.buttons["playbackButton"].value as? String, "Playing continuously")
+        let offImage = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        offImage.name = "TV-Off-artwork"; offImage.lifetime = .keepAlways; add(offImage)
+    }
+
+    @MainActor
     func testRemotePlayPauseAndBackgroundContinuity() {
         let app = XCUIApplication()
         app.launchArguments = ["-animationLevel", "low", "-mixLows", "2", "-mixMids", "2", "-mixHighs", "1"]

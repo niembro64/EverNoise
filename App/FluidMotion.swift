@@ -68,14 +68,14 @@ struct FluidMotion {
         advance(to: now)
         self.visible = visible
         if !visible { speed = FluidSmoother(0) }
-        speed.retarget(sounding && visible && !reduceMotion && animationLevel.animatesInfinity ? 1 : 0)
+        speed.retarget(sounding && visible && !reduceMotion && animationLevel.animatesArtwork ? 1 : 0)
         activity.retarget(sounding ? 1 : 0)
         red.retarget(color.x); green.retarget(color.y); blue.retarget(color.z)
         lowPower.retarget(bandPower.x); midPower.retarget(bandPower.y); highPower.retarget(bandPower.z)
         ambience.retarget(animationLevel.showsRibbons && !reduceMotion ? 1 : 0)
         // A disabled preference is a genuinely static renderer, even while
         // changing colors or playing/pausing. No four-second display timer.
-        if !animationLevel.animatesInfinity { settle(at: now) }
+        if !animationLevel.animatesArtwork { settle(at: now) }
     }
 
     func sample(at now: Double) -> Frame {

@@ -9,6 +9,25 @@ import PlaybackCore
 
 @MainActor
 final class AudioDriverTests: XCTestCase {
+    func testSpectrumCaptureStopsWithoutChangingPlayback() async throws {
+        let driver = NoiseAudioDriver()
+        defer { driver.outputSamples.stop(); driver.stop(immediately: true) }
+        try driver.start()
+        let original = driver.currentEngine
+        XCTAssertEqual(driver.outputSamples.publishedFrames, 0)
+        let lease = driver.outputSamples.begin()
+        try await Task.sleep(for: .milliseconds(250))
+        XCTAssertGreaterThan(driver.outputSamples.publishedFrames, 4000)
+        driver.outputSamples.end(lease)
+        try await Task.sleep(for: .milliseconds(80))
+        let stopped = driver.outputSamples.publishedFrames, audio = driver.renderedFrames
+        try await Task.sleep(for: .milliseconds(150))
+        XCTAssertEqual(driver.outputSamples.publishedFrames, stopped)
+        XCTAssertGreaterThan(driver.renderedFrames, audio)
+        XCTAssertTrue(driver.currentEngine === original)
+        XCTAssertEqual(driver.startCount, 1)
+    }
+
     func testVolumeOffsetDoesNotRestartAudioAndSurvivesReset() async throws {
         let driver = NoiseAudioDriver(volumeOffsetDB: -6)
         defer { driver.stop(immediately: true) }

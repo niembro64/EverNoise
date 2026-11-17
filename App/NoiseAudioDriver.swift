@@ -1,6 +1,7 @@
 import AVFoundation
 import BrownNoiseDSP
 import PlaybackCore
+import SpectrumAnalysis
 
 /// The source node retains this storage until its final render is finished.
 /// After construction, only the render callback touches the DSP state, except
@@ -44,6 +45,7 @@ final class NoiseAudioDriver: AudioDriver {
     var renderedFrames: UInt64 { renderStorage?.renderedFrames ?? 0 }
     var isRunning: Bool { engine?.isRunning == true && stopTask == nil }
     var currentEngine: AVAudioEngine? { engine }
+    let outputSamples = OutputSampleFeed()
 
     init(mix: NoiseMix = .baseline, stereoEnabled: Bool = true, volumeOffsetDB: Int = 0) {
         selectedMix = mix
@@ -168,9 +170,13 @@ final class NoiseAudioDriver: AudioDriver {
         guard let format = AVAudioFormat(standardFormatWithSampleRate: 48_000, channels: 2) else {
             throw CocoaError(.coderInvalidValue)
         }
-        let source = AVAudioSourceNode(format: format) { @Sendable [storage] isSilence, _, count, buffers in
+        let feed = outputSamples
+        let source = AVAudioSourceNode(format: format) { @Sendable [storage, feed] isSilence, _, count, buffers in
             isSilence.pointee = false
             BNMixRenderAudioBuffers(storage.pointer, buffers, count)
+            // Observe the final generated PCM after normalization, protection,
+            // lookahead and fades. No FFT, waits, allocations or graph changes.
+            if let capture = feed.pointer { BNCaptureAudioBuffers(capture, buffers, count) }
             return noErr
         }
         newEngine.attach(source)

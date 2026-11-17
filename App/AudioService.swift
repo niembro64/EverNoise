@@ -16,6 +16,7 @@ final class AudioService {
     private(set) var diagnostics = "0:0"
     #endif
     private let driver: NoiseAudioDriver
+    var outputSamples: OutputSampleFeed { driver.outputSamples }
     private var observers: [NSObjectProtocol] = []
     private var commandTargets: [(MPRemoteCommand, Any)] = []
     private var recoveryTask: Task<Void, Never>?

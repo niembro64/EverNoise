@@ -2,6 +2,15 @@ import XCTest
 @testable import JustBrownNoise
 
 final class AnimationPreferencesTests: XCTestCase {
+    func testOffAndMaxHaveDistinctRenderingPolicies() {
+        XCTAssertFalse(AnimationLevel.off.animatesArtwork)
+        XCTAssertFalse(AnimationLevel.off.showsInfinity)
+        XCTAssertFalse(AnimationLevel.off.showsRibbons)
+        XCTAssertTrue(AnimationLevel.maximum.animatesArtwork)
+        XCTAssertFalse(AnimationLevel.maximum.showsInfinity)
+        XCTAssertTrue(AnimationLevel.maximum.showsRibbons)
+        XCTAssertEqual(AnimationLevel.allCases.map(\.title), ["Off", "Low", "Med", "High", "Max"])
+    }
     func testDefaultMigrationAndAllSavedLevels() {
         let name = "EverNoise.animation-preference-test.\(UUID().uuidString)"
         let defaults = UserDefaults(suiteName: name)!

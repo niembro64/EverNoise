@@ -12,7 +12,7 @@ struct TVContentView: View {
 
     private var playing: Bool { audio.playback.state == .playing }
     private var sounding: Bool { playing && !audio.selectedMix.isSilent }
-    private var animate: Bool { animationLevel.animatesInfinity && !reduceMotion }
+    private var animate: Bool { animationLevel.animatesArtwork && !reduceMotion }
 
     var body: some View {
         RibbonScene(palette: RibbonPalette(mix: audio.selectedMix), isSounding: sounding,
@@ -21,10 +21,17 @@ struct TVContentView: View {
             NoiseGlassGroup {
                 HStack(spacing: 80) {
                     VStack(spacing: 20) {
-                        Color.clear
+                        ZStack {
+                            Color.clear
+                            if animationLevel == .maximum {
+                                SpectrogramView(feed: audio.outputSamples,
+                                                isVisible: scenePhase == .active && !showingSettings,
+                                                isSounding: sounding)
+                            }
+                        }
                             .aspectRatio(16 / 9, contentMode: .fit)
                             .anchorPreference(key: InfinityBounds.self, value: .bounds) { $0 }
-                            .accessibilityHidden(true)
+                            .accessibilityHidden(animationLevel != .maximum)
                         Text("EverNoise").font(AppTypography.title)
                         Text("Your sound. All night.")
                             .font(AppTypography.subtitle)
@@ -78,10 +85,12 @@ struct TVContentView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             .backgroundPreferenceValue(InfinityBounds.self) { anchor in
-                GeometryReader { geometry in
-                    RibbonArtwork(frame: frame, infinityRect: anchor.map { geometry[$0] } ?? .zero)
+                if animationLevel != .off {
+                    GeometryReader { geometry in
+                        RibbonArtwork(frame: frame, infinityRect: animationLevel.showsInfinity ? anchor.map { geometry[$0] } ?? .zero : .zero)
+                    }
+                    .ignoresSafeArea()
                 }
-                .ignoresSafeArea()
             }
         }
         .background(Color.black.ignoresSafeArea())
@@ -89,6 +98,7 @@ struct TVContentView: View {
         .defaultFocus($focusedControl, .playback)
         .onPlayPauseCommand(perform: togglePlayback)
         .sheet(isPresented: $showingSettings) { TVSettingsView(audio: audio) }
+        .transaction { if animationLevel == .off { $0.animation = nil; $0.disablesAnimations = true } }
     }
 
     private func band(_ title: String, id: String, level: Int, hue: SIMD3<Double>, select: @escaping (Int) -> Void) -> some View {
@@ -121,6 +131,9 @@ private struct TVSettingsView: View {
                 Picker("Animations", selection: $animationLevel) {
                     ForEach(AnimationLevel.allCases) { Text($0.title).tag($0) }
                 }
+                .accessibilityIdentifier("animationLevelPicker")
+                Text("Off removes artwork. Low keeps a still infinity. Med animates the infinity. High adds ribbons. Max replaces the infinity with the output spectrogram. Med is the default.")
+                Text("The spectrogram measures generated audio before device volume and speaker processing. It stops when hidden or paused. Reduce Motion updates its history once per second.")
                 Section("Playback") {
                     Text("Low, Mid, and High shape the balance of your sound. EverNoise gently maintains overall loudness. Turning every band off makes the mix silent.")
                     Text("Open EverNoise to start. Use your TV or receiver controls for volume. Sound continues when you switch apps. Press Play/Pause on your remote to pause or resume.")

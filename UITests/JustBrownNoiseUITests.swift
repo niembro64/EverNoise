@@ -3,6 +3,72 @@ import UIKit
 
 final class JustBrownNoiseUITests: XCTestCase {
     @MainActor
+    func testOffAndMaxSpectrogramPreserveContinuousAudio() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-mixLows", "2", "-mixMids", "2", "-mixHighs", "1", "-volumeOffsetDB", "0"]
+        app.launch()
+        XCTAssertTrue(app.buttons["settingsButton"].waitForExistence(timeout: 15))
+        let before = app.staticTexts["audioDiagnostics"].label.split(separator: ":").compactMap { UInt64($0) }
+        func chooseVisual(_ title: String) {
+            app.buttons["settingsButton"].tap()
+            let picker = app.segmentedControls["animationLevelPicker"]
+            XCTAssertTrue(picker.waitForExistence(timeout: 5))
+            picker.buttons[title].tap()
+            XCTAssertTrue(picker.buttons[title].isSelected)
+            _ = capture(app, named: "Visual-settings-\(title)")
+            app.buttons["Done"].tap()
+        }
+        chooseVisual("Off")
+        sleep(1)
+        let off = capture(app, named: "Off-no-artwork")
+        let mark = app.otherElements["noiseColor"]
+        XCTAssertEqual(pixels(off, in: mark.frame).coloredCount, 0)
+        XCTAssertFalse(app.otherElements["outputSpectrogram"].exists)
+        sleep(1)
+        let still = capture(app, named: "Off-no-display-motion")
+        XCTAssertEqual(differences(pixels(off, in: mark.frame), pixels(still, in: mark.frame), minimumChange: 0), 0)
+        chooseVisual("Max")
+        XCTAssertTrue(app.otherElements["outputSpectrogram"].waitForExistence(timeout: 5))
+        let plot = app.otherElements["outputSpectrogram"]
+        func frameCount() -> UInt64 { UInt64((plot.value as? String ?? "").split(separator: "=").last ?? "") ?? 0 }
+        let running = NSPredicate { _, _ in frameCount() > 48000 }
+        expectation(for: running, evaluatedWith: app)
+        waitForExpectations(timeout: 12)
+        sleep(5)
+        let maximum = capture(app, named: "Max-output-spectrogram")
+        XCTAssertGreaterThan(pixels(maximum, in: mark.frame).coloredCount, 1000)
+        let first = frameCount()
+        sleep(1)
+        XCTAssertGreaterThan(frameCount(), first)
+        app.buttons["playbackButton"].tap()
+        sleep(4) // Allow the existing gradual ribbon color transition to settle.
+        let pausedFrame = frameCount()
+        let paused = capture(app, named: "Max-paused-spectrogram")
+        // The rendered color conversion can differ by 1–2 least-significant
+        // byte values; coloredCount excludes that imperceptible rounding.
+        XCTAssertEqual(pixels(paused, in: plot.frame).coloredCount, 0)
+        sleep(1)
+        XCTAssertEqual(frameCount(), pausedFrame, "Paused analysis must stop")
+        app.buttons["playbackButton"].tap()
+        chooseVisual("Off")
+        choose(3, band: "mid", in: app)
+        let after = app.staticTexts["audioDiagnostics"].label.split(separator: ":").compactMap { UInt64($0) }
+        XCTAssertEqual(before.count, 2); XCTAssertEqual(after.count, 2)
+        if before.count == 2 && after.count == 2 {
+            XCTAssertEqual(after[0], before[0]+1, "Only the explicit pause/resume may restart audio")
+            XCTAssertGreaterThan(after[1], before[1])
+        }
+        app.terminate(); app.launchArguments = []; app.launch()
+        XCTAssertTrue(app.buttons["settingsButton"].waitForExistence(timeout: 15))
+        app.buttons["settingsButton"].tap()
+        XCTAssertTrue(app.segmentedControls["animationLevelPicker"].buttons["Off"].isSelected)
+        app.segmentedControls["animationLevelPicker"].buttons["Max"].tap()
+        app.buttons["Done"].tap()
+        app.terminate(); app.launch()
+        XCTAssertTrue(app.otherElements["outputSpectrogram"].waitForExistence(timeout: 15))
+    }
+
+    @MainActor
     func testSavedVolumeOffsetKeepsPlaybackRunning() throws {
         let app = XCUIApplication()
         app.launchArguments = ["-volumeOffsetDB", "0", "-animationLevel", "low",

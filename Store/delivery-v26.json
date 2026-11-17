@@ -1,0 +1,28 @@
+{
+  "version": "1.1",
+  "build": 26,
+  "iOS": {
+    "uploadSucceededAt": "2026-11-16T19:04:06-06:00",
+    "availableToInternalTestersAt": "2026-11-16T19:05:19-06:00",
+    "buildID": "9f911fd0-9179-4217-a065-a95d1adac0ed",
+    "notesSaved": true,
+    "groups": [
+      "Personal Testing"
+    ],
+    "external": "Not submitted. Apple disables external group assignment while build 25 awaits the first version-1.1 Beta App Review approval."
+  },
+  "tvOS": {
+    "uploadSucceededAt": "2026-11-16T19:06:21-06:00",
+    "availableToInternalTestersAt": "2026-11-16T19:08:10-06:00",
+    "buildID": "c6db9c56-3448-4c10-9287-235a8b3574ee",
+    "notesSaved": true,
+    "groups": [
+      "Personal Testing",
+      "Friends and Family"
+    ],
+    "external": "Testing; three invites shown. Automatic tester notification enabled."
+  },
+  "availabilityEvidence": "Apple TestFlight availability emails for both platforms, plus live App Store Connect group and status checks.",
+  "publicRelease": "No changes to public App Store submissions in this work.",
+  "portalFinalCheckDate": "2026-11-16"
+}

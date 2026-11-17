@@ -18,9 +18,14 @@ struct RibbonScene<Content: View>: View {
                level: animationLevel, reduced: reduceMotion)
     }
 
-    var body: some View {
+    @ViewBuilder var body: some View {
+        if animationLevel == .off {
+            // No timeline, shader, settling task or display timer in Off.
+            content(FluidMotion.Frame(phase: 0, activity: isSounding ? 1 : 0,
+                                      color: palette.mixedColor, bandPower: palette.bandPower, ambience: 0))
+        } else {
         TimelineView(.animation(minimumInterval: 1.0 / 60.0,
-                                paused: !isVisible || !animationLevel.animatesInfinity ||
+                                paused: !isVisible || !animationLevel.animatesArtwork ||
                                     (settled && (!isSounding || reduceMotion)))) { _ in
             content(motion.sample(at: CACurrentMediaTime()))
         }
@@ -29,10 +34,11 @@ struct RibbonScene<Content: View>: View {
                           reduceMotion: reduceMotion, bandPower: palette.bandPower,
                           animationLevel: animationLevel, at: CACurrentMediaTime())
             settled = false
-            guard isVisible && animationLevel.animatesInfinity else { return }
+            guard isVisible && animationLevel.animatesArtwork else { return }
             do { try await Task.sleep(for: .seconds(4)) } catch { return }
             motion.settle(at: CACurrentMediaTime())
             settled = true
+        }
         }
     }
 

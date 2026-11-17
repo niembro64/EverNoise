@@ -1,0 +1,8 @@
+Off and Max animation settings.
+
+Off removes the artwork and stops visual animation and spectrum analysis. Med remains the default.
+
+Max replaces the infinity with a high-resolution spectrogram of the actual generated audio. Frequency runs from 20 Hz at the bottom to 20 kHz at the top; time runs left to right, with new sound on the right. Color shows power on a fixed decibel scale. The spectrogram freezes and turns grayscale when paused, and analysis stops while hidden.
+
+Please try changing the sound mix and Volume offset in Max, then switching to Off. Audio should keep playing without restarting. Check that both settings persist after reopening the app. The audio generation, loudness normalization and peak protection from build 25 are unchanged.
+On Apple TV, also try the Siri Remote Play/Pause button and switching apps.

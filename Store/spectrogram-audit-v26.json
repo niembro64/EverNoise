@@ -1,0 +1,54 @@
+{
+  "version": "1.1",
+  "build": 26,
+  "baseline": "6458d01cabd8fcc8a9f394c5292766f779ba4a38",
+  "analysis": {
+    "passed": true,
+    "FFTSize": 32768,
+    "sampleRate": 48000,
+    "hop": 2048,
+    "rows": 512,
+    "relativePSDError": 8.376109262940912e-08,
+    "integratedPSD": 0.00612376688327857,
+    "windowWeightedTimePower": 0.006123766995161938,
+    "secondsOfAudio": 60,
+    "columnsProcessed": 1406,
+    "analysisWallSeconds": 0.5564301669946872,
+    "benchmarkLimit": "Host-Mac analysis only; excludes image generation and physical-device GPU/battery use."
+  },
+  "captureConcurrency": {
+    "passed": true,
+    "sourceFrames": 25600000,
+    "checkedFrames": 24204288,
+    "droppedVisualFrames": 703744
+  },
+  "unchangedAudioSourceSHA256": {
+    "Sources/BrownNoiseDSP/BNColorFilter.h": "b84e0009dd830d31f26d9011909400fda50e73be7137c8823f6cbf1954c003f8",
+    "Sources/BrownNoiseDSP/BNComplementaryCoefficients.h": "0b3604984b1dd319e22e8e193849ee2ea01ec016eca5a4a402247bba6358801e",
+    "Sources/BrownNoiseDSP/BNComplementaryFilter.h": "9ec9b32c6ef6ec8f012ae3fd480b841b5567c664129bc519b3cb593aaa5ee95b",
+    "Sources/BrownNoiseDSP/BNGrayAirFilter.h": "67354fd6727e66a85a9ef00eced4af6f588dbc0e131ec09d76fd5b34d898a77c",
+    "Sources/BrownNoiseDSP/BNLoudnessCoefficients.h": "2e626847645639189880fda7f2c98d0c92b55ee2639c6c8d85ff6a727bb72fbe",
+    "Sources/BrownNoiseDSP/BNMidFilter.h": "da2e7fae0e982b46e0a7dcfdac4644e85396be431e3f3c4402ebb3ab7ba63839",
+    "Sources/BrownNoiseDSP/BNMixRenderer.c": "a55c25e90a53666ad891990c7d99f4ead353caa8766db1fc09836a87021fcfef",
+    "Sources/BrownNoiseDSP/BNPeakProtector.h": "f254814c941ac4c07072f2b04ab274bb76f053264fa2a934c62379cf5080aafa",
+    "Sources/BrownNoiseDSP/BrownNoiseDSP.c": "427d011374f30e51d143c62200cad8b79f29416749ed52ce110e2b6728e57486",
+    "Sources/BrownNoiseDSP/include/BrownNoiseDSP.h": "a738e0d3d9e6c61071f5fc29667111a727e53a7f5069b186542386b0e25a0bf3",
+    "Sources/PlaybackCore/NoiseMix.swift": "6ea3dba1a59811e60a6e4b8fa688781a478855baa88341ff0b7f3f1cc4380cde",
+    "Sources/PlaybackCore/PlaybackController.swift": "f7a924f23a8a82db821be12afe458ba07803f948d7ffea66186e8a02f0a25162",
+    "Sources/PlaybackCore/VolumeOffset.swift": "7f71f3987c413a6fa2092681e8086b5979a698a106e494bbca9f4e4980da3e56"
+  },
+  "qualification": {
+    "core": "50 tests in 7 suites pass",
+    "iOSIntegration": "31 pass",
+    "tvOSIntegration": "10 pass",
+    "iOSUI": "Existing Low/Med/High flow and new Off/Max/pause/persistence flow pass",
+    "tvOSUI": "Remote background continuity and new Off/Max/pause flow pass",
+    "iPadUI": "Off/Max/pause/persistence flow passes on iPad Pro 13-inch (M5), iOS 26.2",
+    "sanitizers": "Undefined behavior and bounds pass on concurrent capture harness"
+  },
+  "limits": [
+    "Spectrum measures generated 48 kHz PCM before Apple output conversion, device volume and speaker processing.",
+    "Host benchmark excludes image generation, physical-device GPU work and battery use.",
+    "No new physical-device listening or overnight playback qualification."
+  ]
+}

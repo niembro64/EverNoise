@@ -33,7 +33,7 @@ struct NoiseGlassButtonStyle<S: Shape>: ButtonStyle {
         #if os(tvOS)
         .overlay(shape.stroke(.white.opacity(isFocused ? 0.9 : 0), lineWidth: 3))
         .scaleEffect(isFocused ? 1.045 : 1)
-        .animation(reduceMotion ? nil : .easeInOut(duration: 0.3), value: isFocused)
+        .animation(interactive && !reduceMotion ? .easeInOut(duration: 0.3) : nil, value: isFocused)
         #endif
     }
 }
