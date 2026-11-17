@@ -1,11 +1,15 @@
 import XCTest
 import SpectrumAnalysis
+#if os(tvOS)
+@testable import EverNoiseTV
+#else
 @testable import JustBrownNoise
+#endif
 
 final class SpectrogramPaletteTests: XCTestCase {
     func testEqualMeasuredPowerHasEqualLightnessAndAllColorsFitTheDisplay() {
         let palette = SpectrogramPalette()
-        for db in stride(from: Float(-120), through: -30, by: 3) {
+        for db in stride(from: Float(-100), through: 30, by: 3) {
             let expectedY = SpectrogramPalette.luminance(palette.linearColor(row: 0, decibels: db))
             for row in 0..<Int(BNSpectrumRows) {
                 let rgb = palette.linearColor(row: row, decibels: db)
@@ -13,6 +17,34 @@ final class SpectrogramPaletteTests: XCTestCase {
                 for channel in 0..<3 { XCTAssertTrue((0...1).contains(rgb[channel])) }
             }
         }
+    }
+
+    func testFixedPerceptualCurveIsMonotonicAndDoesNotClipBrightDetail() {
+        var previous = -1.0
+        for db in stride(from: Float(-100), through: 30, by: 0.25) {
+            let lightness = SpectrogramPalette.lightness(decibels: db)
+            XCTAssertGreaterThan(lightness, previous)
+            XCTAssertLessThan(lightness, 70)
+            previous = lightness
+        }
+        // Undo the soft shoulder: a 10 dB increase doubles the contrast proxy,
+        // including the subtracted display floor. This is not an SPL meter.
+        func proxy(_ db: Float) -> Double {
+            let lightness = SpectrogramPalette.lightness(decibels: db)
+            return lightness/(70-lightness) + exp2(Double(SpectrogramPalette.floorDB-SpectrogramPalette.referenceDB)/10)
+        }
+        XCTAssertEqual(proxy(-40)/proxy(-50), 2, accuracy: 1e-12)
+        XCTAssertEqual(SpectrogramPalette.lightness(decibels: -200), 0)
+    }
+
+    func testSixteenBitIntermediatePreservesFineGradients() {
+        let palette = SpectrogramPalette()
+        let colors = (0..<1000).map { palette.linearColor16(row: 100, decibels: -40 + Float($0)/1000) }
+        let distinct = Set(colors.map { "\($0.x),\($0.y),\($0.z)" })
+        let encoded = (0..<1000).map { palette.encodedColor(row: 100, decibels: -40 + Float($0)/1000) }
+        let eightBitCount = Set(encoded.map { "\($0.x),\($0.y),\($0.z)" }).count
+        XCTAssertGreaterThan(distinct.count, eightBitCount*50,
+                             "A one-decibel gradient must preserve far more detail than the old 8-bit intermediate")
     }
 
     func testBrighterPowerPreservesFrequencyHueAndUnknownValuesAreBlack() {

@@ -1,0 +1,9 @@
+EverNoise 1.1 (29)
+
+Max now has a much smoother spectrogram: seven overlapping analysis resolutions, finer frequency detail, gentler changes over time, and higher-precision color gradients. Brightness shows energy per octave with a fixed perceptual curve. Frequency colors remain tied to low, mid, and high; the display does not automatically brighten a quieter mix.
+
+"Volume offset" is now called "App Loudness". Your saved value is preserved.
+
+This update changes the visualization, not the sound. The build 28 frequency tapers, mix normalization, slow leveling, stereo behavior, fades, and peak protection are unchanged. The axis still spans 2 Hz to 48 kHz, with the region above the 24 kHz source limit marked as unmeasured.
+
+Choose Max, allow about six seconds for the first measurement, and watch the history fill. Try changing your mix and App Loudness, pausing, reopening, and switching animation levels. Max intentionally uses more processing; Off, Low, Med and High remain available. The chart measures generated audio before device volume and speaker processing, not sound pressure at your ears.

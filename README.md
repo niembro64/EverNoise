@@ -43,15 +43,19 @@ shows the background ribbons; Max replaces the infinity with a spectrogram
 of the actual generated audio. Its logarithmic frequency axis spans 2 Hz to
 48 kHz, with a marked 24 kHz source measurement limit and approximately
 22 seconds of time history. Fixed red/green/blue frequency colors follow the
-equal-gain crossover curves; brightness follows measured power on a fixed
-−120 to −30 dBFS/Hz scale. A longer bass analysis window resolves near 2 Hz;
-the first measurement takes about six seconds. Analysis runs off the audio
+equal-gain crossover curves. Brightness uses energy per octave, converted to
+decibels and a fixed perceptual lightness curve, without automatic exposure.
+Seven overlapping analysis windows, Gaussian frequency weighting, gentle
+linear-power temporal smoothing, and 16-bit linear-light imagery soften the
+frequency and time detail. Max computes 60 columns per second with 1024 rows;
+a small presentation buffer absorbs uneven worker delivery. The longest bass
+window resolves near 2 Hz; the first measurement takes about six seconds. Analysis runs off the audio
 thread and stops while paused or hidden. Med is
 the default. A saved old animations-off choice migrates to Low;
 otherwise upgrades start on Med. Every new level is remembered. Animation settings do not affect audio.
 The app remembers all three levels and fades smoothly between balances. A large
 play/pause button controls playback; use the physical buttons for volume. Settings
-also has a saved Volume offset to balance EverNoise against your other audio. Privacy
+also has a saved App Loudness setting to balance EverNoise against your other audio. Privacy
 and help sit behind an outline gear with a generous 80-point touch target. Lock-screen and Control Center controls
 work too. Reopening the app starts it again.
 

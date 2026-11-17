@@ -18,6 +18,7 @@
 		1CFA4EAA219694B83AC45452 /* RibbonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717BC5C9A34C454F03B1D995 /* RibbonScene.swift */; };
 		204A030BA56E97B13C71229B /* AnimationPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDC88511A79B0CD7CCBDEB2 /* AnimationPreferencesTests.swift */; };
 		237EC9B00918BD0955D8FD86 /* NoiseGlass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10567F25BD5468FD330B9507 /* NoiseGlass.swift */; };
+		247B1430C74AD34E2F935BEB /* SpectrogramWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3485CA4258EEAE7A8414F246 /* SpectrogramWorkerTests.swift */; };
 		2A5522990A7C8B542DFC2BD2 /* SpectrogramPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276CF3509BFC8C2099B47634 /* SpectrogramPalette.swift */; };
 		2D3ECB8E873A1E158D98F549 /* TVContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D47ABAC7211F4A65E8C6E2D /* TVContentView.swift */; };
 		3847222E5B4C01A531E5C1A3 /* NoiseGlass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10567F25BD5468FD330B9507 /* NoiseGlass.swift */; };
@@ -49,6 +50,7 @@
 		9E17FD16FD4E5D8935051AE0 /* BandNotchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457EE3E4EBF2C3AEB6858 /* BandNotchTests.swift */; };
 		AA80899FD32648A446692E29 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E5C7E2C8D557890CCEE08492 /* PrivacyInfo.xcprivacy */; };
 		AE0426BAF85851E5E83CBF00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AF512EB87D67E999F85B89 /* Assets.xcassets */; };
+		B04CC9CC0E91620E8626CE3D /* SpectrogramPaletteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1370EB9418E67AEF356AA /* SpectrogramPaletteTests.swift */; };
 		B85459A2114FE0552FACDC3F /* BandNotchPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB78FA711FE246643EA8197 /* BandNotchPicker.swift */; };
 		B99FDE0355524955018013A0 /* FluidMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A0E59C4AB8BDDC1B4F289E /* FluidMotion.swift */; };
 		BA66B95A73FB18F2F6B714C5 /* RibbonSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F854835C1B0D424B90BDE4F6 /* RibbonSurface.swift */; };
@@ -58,6 +60,7 @@
 		C553B0230144BCC4BE2D2A1E /* SpectrumAnalysis in Frameworks */ = {isa = PBXBuildFile; productRef = B9E646C9DF817260954CA380 /* SpectrumAnalysis */; };
 		C55C965081F5D18546EC0743 /* PlaybackCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5647CB50B1FC4F83C1215CEF /* PlaybackCore */; };
 		C62E93C202649CA1A08A6B7E /* BandPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B104FFB5F06BEB0F04F15D8 /* BandPicker.swift */; };
+		C6EEEC49BA9F1999A37C3EF1 /* SpectrogramWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3485CA4258EEAE7A8414F246 /* SpectrogramWorkerTests.swift */; };
 		CDB6BFDBECFBFA74D2476C34 /* AnimationLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBE9D752037F656857DCA4E /* AnimationLevel.swift */; };
 		CF3D635DF3BD63B48B8C387E /* AppTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB74E5EA40CD0433F5C212D /* AppTypography.swift */; };
 		D1CAD55BA1EB1872F0610F52 /* SpectrogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418771ED4AC8BA5237D2C2C6 /* SpectrogramView.swift */; };
@@ -118,6 +121,7 @@
 		2E3643F6A487969684D43BC5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2EBE30C4033CD6BA6307C634 /* JustBrownNoiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustBrownNoiseUITests.swift; sourceTree = "<group>"; };
 		341BB4CC0D05B06213CFB872 /* VolumeOffsetControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeOffsetControl.swift; sourceTree = "<group>"; };
+		3485CA4258EEAE7A8414F246 /* SpectrogramWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrogramWorkerTests.swift; sourceTree = "<group>"; };
 		3834D91C761D7639961CD647 /* NoiseAudioDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseAudioDriver.swift; sourceTree = "<group>"; };
 		3D47ABAC7211F4A65E8C6E2D /* TVContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVContentView.swift; sourceTree = "<group>"; };
 		418771ED4AC8BA5237D2C2C6 /* SpectrogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrogramView.swift; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 				71BA853DBB3ABB115ED56261 /* FluidMotionTests.swift */,
 				E3C5CC7677CF862ED826A3E6 /* LinearColorProbe.metal */,
 				D2D1370EB9418E67AEF356AA /* SpectrogramPaletteTests.swift */,
+				3485CA4258EEAE7A8414F246 /* SpectrogramWorkerTests.swift */,
 			);
 			path = IntegrationTests;
 			sourceTree = "<group>";
@@ -515,6 +520,7 @@
 				9C1514A574A5408C4D0528AD /* FluidMotionTests.swift in Sources */,
 				64F07EC9DC230BBB2D25A3DF /* LinearColorProbe.metal in Sources */,
 				4D1A9B0EB53F06575F69120D /* SpectrogramPaletteTests.swift in Sources */,
+				C6EEEC49BA9F1999A37C3EF1 /* SpectrogramWorkerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +593,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F928C39216BEA9BCDB253BE5 /* AudioDriverTests.swift in Sources */,
+				B04CC9CC0E91620E8626CE3D /* SpectrogramPaletteTests.swift in Sources */,
+				247B1430C74AD34E2F935BEB /* SpectrogramWorkerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,7 +659,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 28;
+				CURRENT_PROJECT_VERSION = 29;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 82F3X3VDHP;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -940,7 +948,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 28;
+				CURRENT_PROJECT_VERSION = 29;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 82F3X3VDHP;
 				ENABLE_NS_ASSERTIONS = NO;

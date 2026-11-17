@@ -4,8 +4,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-enum { BNSpectrumFFTSize = 32768, BNSpectrumHop = 2048,
-       BNSpectrumRows = 512, BNCaptureCapacity = 65536,
+enum { BNSpectrumFFTSize = 32768, BNSpectrumHop = 800,
+       BNSpectrumRows = 1024, BNCaptureCapacity = 65536,
        BNSpectrumSampleRate = 48000, BNSpectrumLowDecimation = 8,
        BNSpectrumFilterTaps = 257, BNSpectrumFilterDelay = 128,
        BNSpectrumWarmupFrames = BNSpectrumFFTSize * BNSpectrumLowDecimation + BNSpectrumFilterTaps - 1,
@@ -29,15 +29,21 @@ typedef struct BNSpectrum BNSpectrum;
 BNSpectrum *BNSpectrumCreate(void);
 void BNSpectrumDestroy(BNSpectrum *spectrum);
 void BNSpectrumReset(BNSpectrum *spectrum);
-// Consumer only. Each column has 512 logarithmic rows, 2 Hz to 48 kHz,
-// in dBFS/Hz. Rows above the 24 kHz source Nyquist limit are NAN (unmeasured).
+// Consumer only. Each column has 1024 logarithmic rows, 2 Hz to 48 kHz,
+// in dBFS/octave. Rows above the 24 kHz source Nyquist limit are NAN (unmeasured).
 // Stereo POWER is averaged; opposite-phase channels never cancel visually.
 // A discontinuous sample clock resets the window instead of splicing audio.
-// The low-frequency window uses 8x decimation after a 257-tap anti-alias FIR.
-// endFrames refers to the shared, FIR-delay-compensated sample endpoint.
+// Seven overlapping Hann windows (85 ms to 5.46 s) blend continuously in log
+// frequency. Gaussian fractional-octave kernels and temporal smoothing operate
+// on linear power, before decibel conversion. 4x FFT padding interpolates the
+// windowed spectrum; it does not increase the underlying resolving power.
+// The three longest windows use 8x decimation after a 257-tap anti-alias FIR.
+// endFrames refers to the shared, FIR-delay-compensated sample endpoint, not
+// the center of every window. Low frequencies necessarily respond more slowly.
 uint32_t BNSpectrumConsume(BNSpectrum *spectrum, const BNCapturedFrame *frames, uint32_t count,
                           float *columns, uint64_t *endFrames, uint32_t capacity);
-// Linear one-sided PSD for calibration/tests, N/2+1 bins, last complete window.
+// Linear one-sided PSD/Hz for calibration/tests, N/2+1 unpadded bins from the
+// 32768-sample full-rate and low-rate windows, before display smoothing.
 void BNSpectrumCopyPower(const BNSpectrum *spectrum, float *density);
 void BNSpectrumCopyLowPower(const BNSpectrum *spectrum, float *density);
 double BNSpectrumRowFrequency(uint32_t row);

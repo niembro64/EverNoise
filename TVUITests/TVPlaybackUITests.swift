@@ -82,6 +82,7 @@ final class TVPlaybackUITests: XCTestCase {
         select(app.buttons["settingsButton"], in: app)
         XCTAssertTrue(app.staticTexts["Settings"].waitForExistence(timeout: 10))
         XCTAssertTrue(app.descendants(matching: .any)["volumeOffsetPicker"].firstMatch.exists)
+        XCTAssertTrue(app.staticTexts["App Loudness"].exists)
         XCUIRemote.shared.press(.select) // Native picker is the initially focused row.
         let choice = app.cells["-1 dB"]
         XCTAssertTrue(choice.waitForExistence(timeout: 5))
@@ -97,9 +98,10 @@ final class TVPlaybackUITests: XCTestCase {
             XCUIRemote.shared.press(.menu)
         }
         XCTAssertEqual(app.descendants(matching: .any)["volumeOffsetPicker"].firstMatch.value as? String, "-1 dB")
+        XCUIRemote.shared.press(.down) // Show the saved label outside the native focus overlay.
         sleep(2) // Include the native sheet's separate window after focus settles.
         let settings = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
-        settings.name = "TV-volume-offset"; settings.lifetime = .keepAlways
+        settings.name = "TV-app-loudness"; settings.lifetime = .keepAlways
         add(settings)
         XCUIRemote.shared.press(.menu)
         XCTAssertTrue(app.buttons["playbackButton"].waitForExistence(timeout: 10))

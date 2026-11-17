@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "baselineBuild": 28,
+  "unchangedSourceFiles": [
+    "App/AudioService.swift",
+    "App/NoiseAudioDriver.swift",
+    "App/OutputSampleFeed.swift",
+    "Sources/BrownNoiseDSP/BNColorFilter.h",
+    "Sources/BrownNoiseDSP/BNComplementaryCoefficients.h",
+    "Sources/BrownNoiseDSP/BNComplementaryFilter.h",
+    "Sources/BrownNoiseDSP/BNGrayAirFilter.h",
+    "Sources/BrownNoiseDSP/BNLoudnessCoefficients.h",
+    "Sources/BrownNoiseDSP/BNMidFilter.h",
+    "Sources/BrownNoiseDSP/BNMixRenderer.c",
+    "Sources/BrownNoiseDSP/BNPeakProtector.h",
+    "Sources/BrownNoiseDSP/BrownNoiseDSP.c",
+    "Sources/BrownNoiseDSP/include/BrownNoiseDSP.h",
+    "Sources/PlaybackCore/NoiseMix.swift",
+    "Sources/PlaybackCore/PlaybackController.swift",
+    "Sources/PlaybackCore/VolumeOffset.swift",
+    "Sources/SpectrumAnalysis/BNCapture.c"
+  ],
+  "framesPerChannelCompared": 1024000,
+  "bitIdentical": true,
+  "exercise": "All 125 mixes, -18/0/+3 dB, Mono/Stereo transitions",
+  "note": "No change to the audio generator, gain control, fades, capture producer or peak protection."
+}

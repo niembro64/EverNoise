@@ -133,9 +133,10 @@ struct SpectrumTests {
         var frames = (0..<warmup).map { BNCapturedFrame(left: 0.1, right: 0.1, frame: UInt64($0)) }
         var columns = [Float](repeating: 0, count: Int(BNSpectrumRows)*2), ends = [UInt64](repeating: 0, count: 2)
         #expect(BNSpectrumConsume(analyzer, &frames, UInt32(warmup), &columns, &ends, 2) == 1)
-        frames = (0..<4096).map { BNCapturedFrame(left: 0.1, right: 0.1, frame: UInt64(warmup+$0)) }
-        #expect(BNSpectrumConsume(analyzer, &frames, 4096, &columns, &ends, 2) == 2)
-        #expect(ends == [UInt64(warmup+2047-delay), UInt64(warmup+4095-delay)])
+        let hop = Int(BNSpectrumHop)
+        frames = (0..<2*hop).map { BNCapturedFrame(left: 0.1, right: 0.1, frame: UInt64(warmup+$0)) }
+        #expect(BNSpectrumConsume(analyzer, &frames, UInt32(2*hop), &columns, &ends, 2) == 2)
+        #expect(ends == [UInt64(warmup+hop-1-delay), UInt64(warmup+2*hop-1-delay)])
         frames = (0..<4096).map { BNCapturedFrame(left: 0, right: 0, frame: UInt64(warmup+9999+$0)) }
         #expect(BNSpectrumConsume(analyzer, &frames, 4096, &columns, &ends, 2) == 0,
                 "A dropped or disabled interval must not be spliced into a false spectrum")

@@ -41,7 +41,7 @@ final class JustBrownNoiseUITests: XCTestCase {
         let running = NSPredicate { _, _ in frameCount() > 48000 }
         expectation(for: running, evaluatedWith: app)
         waitForExpectations(timeout: 12)
-        sleep(5)
+        sleep(24) // Fill the entire history before inspecting frequency detail.
         let maximum = capture(app, named: "Max-output-spectrogram")
         XCTAssertGreaterThan(pixels(maximum, in: mark.frame).coloredCount, 1000)
         let first = frameCount()
@@ -101,12 +101,14 @@ final class JustBrownNoiseUITests: XCTestCase {
         app.buttons["settingsButton"].tap()
         let slider = app.sliders["volumeOffsetSlider"]
         XCTAssertTrue(slider.waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["App Loudness"].exists)
+        XCTAssertEqual(slider.label, "App Loudness")
         XCTAssertEqual(app.staticTexts["volumeOffsetValue"].label, "0 dB")
         slider.adjust(toNormalizedSliderPosition: 0.285714)
         let saved = app.staticTexts["volumeOffsetValue"].label
         XCTAssertNotEqual(saved, "0 dB")
         XCTAssertTrue(saved.hasPrefix("-"))
-        _ = capture(app, named: "Settings-volume-offset")
+        _ = capture(app, named: "Settings-app-loudness")
         app.buttons["Done"].tap()
         XCTAssertEqual(app.buttons["playbackButton"].value as? String, "Playing continuously")
         let after = app.staticTexts["audioDiagnostics"].label.split(separator: ":").compactMap { UInt64($0) }

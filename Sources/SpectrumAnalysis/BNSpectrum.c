@@ -7,18 +7,30 @@
 #include <stdlib.h>
 #include <string.h>
 
-enum { FullRingSize = BNSpectrumFFTSize + BNSpectrumFilterDelay };
-struct BNSpectrum {
+enum { FullRingSize = BNSpectrumFFTSize + BNSpectrumFilterDelay,
+       StageCount = 7, Padding = 4, MaximumFFT = BNSpectrumFFTSize * Padding };
+typedef struct {
+    uint32_t first, count;
+    float *weights;
+    double mix;
+} FrequencyKernel;
+typedef struct {
     FFTSetup fft;
+    uint32_t size, fftSize, log2FFT;
+    bool lowRate;
+    double rate, windowEnergy;
+    float *window, *power;
+    FrequencyKernel rows[BNSpectrumRows];
+} SpectrumStage;
+struct BNSpectrum {
+    SpectrumStage stages[StageCount];
     float samples[2][FullRingSize], lowSamples[2][BNSpectrumFFTSize];
-    float filterHistory[2][2*BNSpectrumFilterTaps], window[BNSpectrumFFTSize];
-    float real[BNSpectrumFFTSize], imaginary[BNSpectrumFFTSize];
-    float power[BNSpectrumFFTSize/2+1], lowPower[BNSpectrumFFTSize/2+1];
-    double lower[BNSpectrumRows], upper[BNSpectrumRows], frequency[BNSpectrumRows];
-    double windowEnergy;
+    float filterHistory[2][2*BNSpectrumFilterTaps];
+    float real[MaximumFFT], imaginary[MaximumFFT];
+    double frequency[BNSpectrumRows], smoothed[3][BNSpectrumRows];
     uint32_t index, lowIndex, filterIndex, filled, decimation, hop;
     uint64_t expectedFrame;
-    bool hasClock;
+    bool hasClock, hasSmoothed;
 };
 
 double BNSpectrumRowFrequency(uint32_t row) {
@@ -43,86 +55,144 @@ void BNSpectrumReferenceWeights(double frequencyHz, double weights[3]) {
     for (int i = 0; i < 3; ++i) weights[i] /= sum;
 }
 
+static bool makeKernel(FrequencyKernel *kernel, const SpectrumStage *stage, double hz) {
+    // Overlapping Gaussian kernels avoid the old one-bin interpolation boundary.
+    // A 0.12 Hz minimum width acknowledges finite resolution at the axis bottom.
+    double sigma = hypot((1.0/12)/2.354820045, .12/(hz*M_LN2));
+    double binHz = stage->rate/stage->fftSize;
+    kernel->first = (uint32_t)fmax(1, ceil(hz*exp2(-6*sigma)/binHz));
+    uint32_t last = (uint32_t)fmin(stage->fftSize/2, floor(hz*exp2(6*sigma)/binHz));
+    if (last < kernel->first) { kernel->mix = 0; return true; }
+    kernel->count = last-kernel->first+1;
+    kernel->weights = calloc(kernel->count, sizeof(float));
+    if (!kernel->weights) return false;
+    double normalization = 0;
+    for (uint32_t n = 0; n < kernel->count; ++n) {
+        uint32_t k = kernel->first+n;
+        double frequency = k*binHz, distance = log2(frequency/hz)/sigma;
+        double weight = exp(-.5*distance*distance);
+        kernel->weights[n] = weight;
+        // Change variables from Hz to octaves. Averaging S(f)*f*ln(2) in
+        // log-frequency gives energy per octave; a 1/f PSD stays level.
+        // PSD already carries the half-weight Nyquist endpoint.
+        normalization += weight*binHz/(frequency*M_LN2)*(k == stage->fftSize/2 ? .5 : 1);
+    }
+    for (uint32_t n = 0; n < kernel->count; ++n)
+        kernel->weights[n] *= binHz/normalization;
+    return true;
+}
+
 BNSpectrum *BNSpectrumCreate(void) {
     BNSpectrum *s = calloc(1, sizeof(*s));
     if (!s) return NULL;
-    s->fft = vDSP_create_fftsetup(15, kFFTRadix2);
-    if (!s->fft) { free(s); return NULL; }
-    for (int n = 0; n < BNSpectrumFFTSize; ++n) {
-        double w = .5 - .5*cos(2*M_PI*n/BNSpectrumFFTSize);
-        s->window[n] = w; s->windowEnergy += w*w;
+    const uint32_t sizes[StageCount] = {32768, 16384, 8192, 32768, 16384, 8192, 4096};
+    for (int i = 0; i < StageCount; ++i) {
+        SpectrumStage *stage = &s->stages[i];
+        stage->size = sizes[i]; stage->fftSize = sizes[i]*Padding;
+        stage->log2FFT = (uint32_t)log2(stage->fftSize);
+        stage->lowRate = i < 3;
+        stage->rate = stage->lowRate ? (double)BNSpectrumSampleRate/BNSpectrumLowDecimation : BNSpectrumSampleRate;
+        stage->fft = vDSP_create_fftsetup(stage->log2FFT, kFFTRadix2);
+        stage->window = calloc(stage->size, sizeof(float));
+        stage->power = calloc(stage->fftSize/2+1, sizeof(float));
+        if (!stage->fft || !stage->window || !stage->power) { BNSpectrumDestroy(s); return NULL; }
+        for (uint32_t n = 0; n < stage->size; ++n) {
+            double w = .5-.5*cos(2*M_PI*n/stage->size);
+            stage->window[n] = w; stage->windowEnergy += w*w;
+        }
     }
-    double halfRow = pow((double)BNSpectrumMaximumHz/BNSpectrumMinimumHz, .5/(BNSpectrumRows-1));
     for (int row = 0; row < BNSpectrumRows; ++row) {
-        s->frequency[row] = BNSpectrumRowFrequency(row);
-        s->lower[row] = s->frequency[row]/halfRow;
-        s->upper[row] = s->frequency[row]*halfRow;
+        double hz = s->frequency[row] = BNSpectrumRowFrequency(row);
+        if (hz > BNSpectrumNyquistHz) continue;
+        double distance[StageCount], nearest = INFINITY;
+        for (int i = 0; i < StageCount; ++i) {
+            SpectrumStage *stage = &s->stages[i];
+            // Target 96 cycles per window, with broad overlapping weights in
+            // log duration. No fixed frequency switches or 8x window jump.
+            double d = log2((stage->size/stage->rate)/(96/hz))/.65;
+            distance[i] = d*d; nearest = fmin(nearest, distance[i]);
+        }
+        double total = 0;
+        for (int i = 0; i < StageCount; ++i) {
+            SpectrumStage *stage = &s->stages[i];
+            FrequencyKernel *kernel = &stage->rows[row];
+            kernel->mix = exp(-.5*(distance[i]-nearest));
+            if (kernel->mix < 1e-8) { kernel->mix = 0; continue; }
+            if (!makeKernel(kernel, stage, hz)) { BNSpectrumDestroy(s); return NULL; }
+            total += kernel->mix;
+        }
+        for (int i = 0; i < StageCount; ++i) s->stages[i].rows[row].mix /= total;
     }
     return s;
 }
 
-void BNSpectrumDestroy(BNSpectrum *s) { if (s) { vDSP_destroy_fftsetup(s->fft); free(s); } }
+void BNSpectrumDestroy(BNSpectrum *s) {
+    if (!s) return;
+    for (int i = 0; i < StageCount; ++i) {
+        SpectrumStage *stage = &s->stages[i];
+        if (stage->fft) vDSP_destroy_fftsetup(stage->fft);
+        free(stage->window); free(stage->power);
+        for (int row = 0; row < BNSpectrumRows; ++row) free(stage->rows[row].weights);
+    }
+    free(s);
+}
 
 void BNSpectrumReset(BNSpectrum *s) {
     s->index = s->lowIndex = s->filterIndex = s->filled = s->decimation = s->hop = 0;
-    s->hasClock = false;
+    s->hasClock = s->hasSmoothed = false;
     memset(s->filterHistory, 0, sizeof(s->filterHistory));
-    memset(s->power, 0, sizeof(s->power));
-    memset(s->lowPower, 0, sizeof(s->lowPower));
+    memset(s->smoothed, 0, sizeof(s->smoothed));
+    for (int i = 0; i < StageCount; ++i)
+        memset(s->stages[i].power, 0, (s->stages[i].fftSize/2+1)*sizeof(float));
 }
 
-static void spectrum(BNSpectrum *s, const float *samples, uint32_t stride,
-                     uint32_t index, double rate, float *power) {
-    memset(power, 0, (BNSpectrumFFTSize/2+1)*sizeof(float));
-    // Stereo powers are averaged after transforming the ears separately.
-    double scale = 1/(rate*s->windowEnergy);
+static void spectrum(BNSpectrum *s, SpectrumStage *stage) {
+    uint32_t stride = stage->lowRate ? BNSpectrumFFTSize : FullRingSize;
+    uint32_t index = ((stage->lowRate ? s->lowIndex : s->index)+BNSpectrumFFTSize-stage->size)%stride;
+    const float *samples = stage->lowRate ? &s->lowSamples[0][0] : &s->samples[0][0];
+    memset(stage->power, 0, (stage->fftSize/2+1)*sizeof(float));
+    double scale = 1/(stage->rate*stage->windowEnergy);
+    // Average stereo powers, never samples: opposite-phase ears must not
+    // cancel. Zero padding samples the Hann-window spectrum more densely.
     for (int ch = 0; ch < 2; ++ch) {
-        for (int n = 0; n < BNSpectrumFFTSize; ++n)
-            s->real[n] = samples[ch*stride+(index+n)%stride]*s->window[n];
-        memset(s->imaginary, 0, sizeof(s->imaginary));
+        for (uint32_t n = 0; n < stage->size; ++n)
+            s->real[n] = samples[ch*stride+(index+n)%stride]*stage->window[n];
+        memset(s->real+stage->size, 0, (stage->fftSize-stage->size)*sizeof(float));
+        memset(s->imaginary, 0, stage->fftSize*sizeof(float));
         DSPSplitComplex z = {s->real, s->imaginary};
-        vDSP_fft_zip(s->fft, &z, 1, 15, FFT_FORWARD);
-        for (int k = 0; k <= BNSpectrumFFTSize/2; ++k) {
-            double p = (double)s->real[k]*s->real[k] + (double)s->imaginary[k]*s->imaginary[k];
-            power[k] += p*scale*((k == 0 || k == BNSpectrumFFTSize/2) ? .5 : 1);
+        vDSP_fft_zip(stage->fft, &z, 1, stage->log2FFT, FFT_FORWARD);
+        for (uint32_t k = 0; k <= stage->fftSize/2; ++k) {
+            double p = (double)s->real[k]*s->real[k]+(double)s->imaginary[k]*s->imaginary[k];
+            stage->power[k] += p*scale*((k == 0 || k == stage->fftSize/2) ? .5 : 1);
         }
     }
 }
 
-static double rowPower(const float *power, double rate, double loHz, double hiHz) {
-    double lo = loHz*BNSpectrumFFTSize/rate;
-    double hi = fmin(hiHz*BNSpectrumFFTSize/rate, BNSpectrumFFTSize/2.0);
-    if (hi-lo < 1) {
-        double center = fmin(sqrt(lo*hi), BNSpectrumFFTSize/2.0);
-        int k = (int)center, next = k < BNSpectrumFFTSize/2 ? k+1 : k;
-        return power[k]*(1-(center-k))+power[next]*(center-k);
-    }
-    double p = 0;
-    for (int k = (int)floor(lo+.5); k <= (int)floor(hi+.5); ++k)
-        p += power[k]*fmax(0, fmin(hi, k+.5)-fmax(lo, k-.5));
-    return p/(hi-lo);
-}
-
 static void analyze(BNSpectrum *s, float *column) {
-    // Delay the full-rate window by the FIR's group delay so both windows end
-    // at the same source sample: 0.683 s above 80 Hz, 5.461 s below 40 Hz.
-    spectrum(s, &s->samples[0][0], FullRingSize, s->index, BNSpectrumSampleRate, s->power);
-    spectrum(s, &s->lowSamples[0][0], BNSpectrumFFTSize, s->lowIndex,
-             (double)BNSpectrumSampleRate/BNSpectrumLowDecimation, s->lowPower);
+    // All seven windows end at the same FIR-delay-compensated source sample.
+    for (int i = 0; i < StageCount; ++i) spectrum(s, &s->stages[i]);
+    double alpha = -expm1(-(double)BNSpectrumHop/BNSpectrumSampleRate/.08);
     for (int row = 0; row < BNSpectrumRows; ++row) {
-        double frequency = s->frequency[row];
-        if (frequency > BNSpectrumNyquistHz) { column[row] = NAN; continue; }
-        double p;
-        if (frequency < 80) {
-            p = rowPower(s->lowPower, (double)BNSpectrumSampleRate/BNSpectrumLowDecimation,
-                         s->lower[row], s->upper[row]);
-            if (frequency > 40) {
-                double t = log2(frequency/40); t = t*t*(3-2*t);
-                p = p*(1-t)+rowPower(s->power, BNSpectrumSampleRate, s->lower[row], s->upper[row])*t;
-            }
-        } else p = rowPower(s->power, BNSpectrumSampleRate, s->lower[row], s->upper[row]);
+        if (s->frequency[row] > BNSpectrumNyquistHz) { column[row] = NAN; continue; }
+        double p = 0;
+        for (int i = 0; i < StageCount; ++i) {
+            SpectrumStage *stage = &s->stages[i];
+            FrequencyKernel *kernel = &stage->rows[row];
+            if (kernel->mix == 0) continue;
+            float value;
+            vDSP_dotpr(stage->power+kernel->first, 1, kernel->weights, 1, &value, kernel->count);
+            p += value*kernel->mix;
+        }
+        // Three gentle, symmetric low-pass stages smooth changes in slope as
+        // well as brightness. Smooth power, not dB or separately encoded RGB.
+        for (int i = 0; i < 3; ++i) {
+            if (!s->hasSmoothed) s->smoothed[i][row] = p;
+            else s->smoothed[i][row] += alpha*(p-s->smoothed[i][row]);
+            p = s->smoothed[i][row];
+        }
         column[row] = 10*log10(fmax(p, 1e-20));
     }
+    s->hasSmoothed = true;
 }
 
 uint32_t BNSpectrumConsume(BNSpectrum *s, const BNCapturedFrame *frames, uint32_t count,
@@ -160,5 +230,9 @@ uint32_t BNSpectrumConsume(BNSpectrum *s, const BNCapturedFrame *frames, uint32_
     return produced;
 }
 
-void BNSpectrumCopyPower(const BNSpectrum *s, float *density) { memcpy(density, s->power, sizeof(s->power)); }
-void BNSpectrumCopyLowPower(const BNSpectrum *s, float *density) { memcpy(density, s->lowPower, sizeof(s->lowPower)); }
+void BNSpectrumCopyPower(const BNSpectrum *s, float *density) {
+    for (int k = 0; k <= BNSpectrumFFTSize/2; ++k) density[k] = s->stages[3].power[k*Padding];
+}
+void BNSpectrumCopyLowPower(const BNSpectrum *s, float *density) {
+    for (int k = 0; k <= BNSpectrumFFTSize/2; ++k) density[k] = s->stages[0].power[k*Padding];
+}

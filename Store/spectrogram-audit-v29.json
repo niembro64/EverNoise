@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "rows": 1024,
+  "hop": 800,
+  "columnsPerSecond": 60.0,
+  "axisHz": [
+    2,
+    48000
+  ],
+  "measuredLimitHz": 24000,
+  "units": "dBFS/octave",
+  "windowSamples": [
+    32768,
+    16384,
+    8192,
+    32768,
+    16384,
+    8192,
+    4096
+  ],
+  "windowSampleRates": [
+    6000,
+    6000,
+    6000,
+    48000,
+    48000,
+    48000,
+    48000
+  ],
+  "windowSeconds": [
+    5.461333333333333,
+    2.7306666666666666,
+    1.3653333333333333,
+    0.6826666666666666,
+    0.3413333333333333,
+    0.17066666666666666,
+    0.08533333333333333
+  ],
+  "fftPadding": 4,
+  "minimumWindowOverlap": 0.8046875,
+  "frequencyKernelFWHMOctaves": 0.08333333333333333,
+  "temporalStages": 3,
+  "temporalStageSeconds": 0.08,
+  "warmupSeconds": 5.466666666666667,
+  "rawPSD": [
+    {
+      "sampleRate": 48000,
+      "relativePSDError": 8.563745968030388e-08,
+      "integratedPower": 0.005283685165767615,
+      "referencePower": 0.005283685245933229
+    },
+    {
+      "sampleRate": 6000,
+      "relativePSDError": 1.0956475188571554e-07,
+      "integratedPower": 0.00363900126403017,
+      "referencePower": 0.0036390013326119087
+    }
+  ],
+  "maximumRowErrorDB": 0.0007520595148093889,
+  "maximumVisibleRowErrorDB": 3.0084296554377943e-05,
+  "maximumGainErrorDB": 1.4781951904296875e-05,
+  "partitionInvariant": true,
+  "analyticalPinkFlatnessErrorDB": 1.5911403198129265e-14,
+  "analyticalWhiteOctaveEnergyErrorDB": 0.001614623257297493,
+  "measuredPinkFlatness95PercentDB": 0.07776375017049937,
+  "measuredPinkFlatnessMaximumDB": 0.18428679798551428,
+  "maximumReferenceWeightError": 1.8418599978531347e-13,
+  "benchmarkAudioSeconds": 65.46666666666667,
+  "benchmarkColumns": 3601,
+  "analysisWallSeconds": 19.798434832991916,
+  "analysisRealtimeFraction": 0.3024200840070048,
+  "benchmarkLimit": "Host Mac analysis only, including Python transfer. Excludes Swift images and physical-device GPU/battery use."
+}
