@@ -5,7 +5,7 @@
 typedef struct { double z1, z2; } BNSecondOrderState;
 typedef struct {
     double pink[6];
-    BNSecondOrderState subsonic, ultrasonic, lowerSplit, upperSplit;
+    BNSecondOrderState subsonic[BNSubsonicSections], ultrasonic, lowerSplit, upperSplit;
     int band;
 } BNComplementaryFilter;
 
@@ -29,7 +29,9 @@ static inline BNComplementaryFilter BNComplementaryCreate(int band) {
 // This is a linear, fixed-coefficient filter: no limiter, clipping, dynamic
 // normalization, buffer-local state, allocation, locks, or transcendental work.
 static inline double BNComplementaryColor(BNComplementaryFilter *f, double white) {
-    double x = BNSecondOrderProcess(&f->subsonic, &BNSubsonic, white);
+    double x = white;
+    for (int i = 0; i < BNSubsonicSections; ++i)
+        x = BNSecondOrderProcess(&f->subsonic[i], &BNSubsonic[i], x);
     for (int i = 0; i < 6; ++i) {
         const BNFirstOrderCoefficients *c = &BNPinkShelves[i];
         double y = c->b0 * x + f->pink[i];

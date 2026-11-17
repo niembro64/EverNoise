@@ -38,6 +38,7 @@
 		6C7A4664D506A0FD9DB281FD /* PlaybackCore in Frameworks */ = {isa = PBXBuildFile; productRef = A03D55A72DB4EBDE73633ED0 /* PlaybackCore */; };
 		75AC4C8CBD4DB26A40D8AB31 /* TVPlaybackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0925266DC960898E9212077A /* TVPlaybackUITests.swift */; };
 		76D37307492DC178D10A827D /* RibbonShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A7218FAEEDAE87DA5CE9A532 /* RibbonShaders.metal */; };
+		790C23D5D87F3AB728FCF747 /* FamilyListeningSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D11E48AC11EC95BA0BBC469 /* FamilyListeningSection.swift */; };
 		7AB809F296274FBFC79F5CED /* FluidMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A0E59C4AB8BDDC1B4F289E /* FluidMotion.swift */; };
 		7FAB10E30C92AB41A6AB1299 /* NoisePalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEEB8F1E94FC64E47D85D89 /* NoisePalette.swift */; };
 		8A61C18C29F051734C85C37B /* LinearLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C268B5437B7E8135CF3275F /* LinearLight.swift */; };
@@ -69,6 +70,7 @@
 		F2C94C8D40CC903EB21341A5 /* RibbonPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A45E10DDB790759C43C00 /* RibbonPalette.swift */; };
 		F928C39216BEA9BCDB253BE5 /* AudioDriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA50B958D70330450A061DAE /* AudioDriverTests.swift */; };
 		F9DAF85CB9A696EB860B01A5 /* RibbonPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A45E10DDB790759C43C00 /* RibbonPalette.swift */; };
+		FAC9F734BC28D948200E94D0 /* FamilyListeningSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D11E48AC11EC95BA0BBC469 /* FamilyListeningSection.swift */; };
 		FB5142AC17049CC9434171C7 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A623DC91377E12201CD3C /* AudioService.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +110,7 @@
 		0925266DC960898E9212077A /* TVPlaybackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVPlaybackUITests.swift; sourceTree = "<group>"; };
 		0B104FFB5F06BEB0F04F15D8 /* BandPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandPicker.swift; sourceTree = "<group>"; };
 		10567F25BD5468FD330B9507 /* NoiseGlass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseGlass.swift; sourceTree = "<group>"; };
+		1D11E48AC11EC95BA0BBC469 /* FamilyListeningSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListeningSection.swift; sourceTree = "<group>"; };
 		1FEBC272235140D56081CB4A /* EverNoiseTV.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = EverNoiseTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		204C881EC0A795F878E7A885 /* OutputSampleFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputSampleFeed.swift; sourceTree = "<group>"; };
 		24D457EE3E4EBF2C3AEB6858 /* BandNotchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandNotchTests.swift; sourceTree = "<group>"; };
@@ -216,6 +219,7 @@
 				FDB78FA711FE246643EA8197 /* BandNotchPicker.swift */,
 				0B104FFB5F06BEB0F04F15D8 /* BandPicker.swift */,
 				2E3643F6A487969684D43BC5 /* ContentView.swift */,
+				1D11E48AC11EC95BA0BBC469 /* FamilyListeningSection.swift */,
 				A5A0E59C4AB8BDDC1B4F289E /* FluidMotion.swift */,
 				4D2ABC4102A927FCE6A8AAF8 /* Info.plist */,
 				B0367ABEEC499A1244CE577D /* JustBrownNoiseApp.swift */,
@@ -531,6 +535,7 @@
 				05A5C1C8BF74D5F202E5F306 /* AudioService.swift in Sources */,
 				C62E93C202649CA1A08A6B7E /* BandPicker.swift in Sources */,
 				140AEC4F4690EAB1666ED101 /* EverNoiseTVApp.swift in Sources */,
+				FAC9F734BC28D948200E94D0 /* FamilyListeningSection.swift in Sources */,
 				B99FDE0355524955018013A0 /* FluidMotion.swift in Sources */,
 				8B69D73110C7DFAE944FEBB2 /* LinearLight.swift in Sources */,
 				3EF19169DE729A1DFEFBAA9D /* NoiseAudioDriver.swift in Sources */,
@@ -558,6 +563,7 @@
 				B85459A2114FE0552FACDC3F /* BandNotchPicker.swift in Sources */,
 				6C6A9BE516A398D8D17A349A /* BandPicker.swift in Sources */,
 				38A0E15914E48DC50B918828 /* ContentView.swift in Sources */,
+				790C23D5D87F3AB728FCF747 /* FamilyListeningSection.swift in Sources */,
 				7AB809F296274FBFC79F5CED /* FluidMotion.swift in Sources */,
 				188780866EE1E6841140D069 /* JustBrownNoiseApp.swift in Sources */,
 				8A61C18C29F051734C85C37B /* LinearLight.swift in Sources */,
@@ -645,7 +651,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 28;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 82F3X3VDHP;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -934,7 +940,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 28;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 82F3X3VDHP;
 				ENABLE_NS_ASSERTIONS = NO;

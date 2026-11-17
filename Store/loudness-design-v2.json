@@ -1,0 +1,41 @@
+{
+  "design": 2,
+  "complementaryDesign": 2,
+  "sampleRate": 48000,
+  "baseTargetLUFS": -20,
+  "offsetDB": [
+    -18,
+    3
+  ],
+  "bandKPower": [
+    5.8563889237480154e-05,
+    0.0001407762718941164,
+    0.0002789282882660713
+  ],
+  "kWeightingSOS": [
+    [
+      1.53512485958697,
+      -2.69169618940638,
+      1.19839281085285,
+      1.0,
+      -1.69065929318241,
+      0.73248077421585
+    ],
+    [
+      1.0,
+      -2.0,
+      1.0,
+      1.0,
+      -1.99004745483398,
+      0.99007225036621
+    ]
+  ],
+  "detectorOversampling": 4,
+  "detectorTaps": 129,
+  "detectorDelayFrames": 16,
+  "limiterSampleCeilingDBFS": -3,
+  "postConversionAcceptanceDBTP": -2,
+  "meterTimeConstantSeconds": 30,
+  "correctionTimeConstantSeconds": 60,
+  "maximumCorrectionDB": 1
+}

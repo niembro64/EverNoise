@@ -7,6 +7,11 @@ final class TVPlaybackUITests: XCTestCase {
         app.launchArguments = ["-animationLevel", "max", "-mixLows", "2", "-mixMids", "2", "-mixHighs", "1"]
         app.launch()
         XCTAssertTrue(app.buttons["playbackButton"].waitForExistence(timeout: 20))
+        XCTAssertLessThan(app.buttons["band-high-1"].frame.midY, app.buttons["band-mid-2"].frame.midY)
+        XCTAssertLessThan(app.buttons["band-mid-2"].frame.midY, app.buttons["band-low-2"].frame.midY)
+        XCTAssertTrue(app.buttons["band-high-1"].isSelected)
+        XCTAssertTrue(app.buttons["band-mid-2"].isSelected)
+        XCTAssertTrue(app.buttons["band-low-2"].isSelected)
         XCTAssertTrue(app.otherElements["outputSpectrogram"].waitForExistence(timeout: 10))
         let plot = app.otherElements["outputSpectrogram"]
         func frameCount() -> UInt64 { UInt64((plot.value as? String ?? "").split(separator: "=").last ?? "") ?? 0 }

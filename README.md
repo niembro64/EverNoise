@@ -17,7 +17,8 @@ the last selected balance (buttons 3 / 3 / 2 for a new installation, counting Of
 running. There is no playback deadline, recording to loop, network dependency,
 account, advertising, or subscription.
 
-Three rows of five buttons control Low, Mid, and High, each with Off and four
+Three rows of five buttons run **High, Mid, Low** from top to bottom, matching
+the spectrogram's frequency direction, each with Off and four
 active levels. A hollow circle means Off; four growing dots show intensity.
 A reflective glass rim identifies the selection, with no checkmark or pointer.
 The same five levels and saved balances are preserved. Low/Mid/High headings
@@ -53,6 +54,13 @@ play/pause button controls playback; use the physical buttons for volume. Settin
 also has a saved Volume offset to balance EverNoise against your other audio. Privacy
 and help sit behind an outline gear with a generous 80-point touch target. Lock-screen and Control Center controls
 work too. Reopening the app starts it again.
+
+Settings includes **For the ones you care for**, describing a broad, adjustable
+blanket of sound for households with babies, children and pets. It explains
+individual hearing differences, the app's upper-human-audible coverage, and
+the higher ranges dogs and cats can hear. Caregiver guidance covers quiet,
+distant, limited listening for children and a quiet retreat for pets. Digital
+peak protection is not a sound-pressure limit at anyone's ears.
 
 ## TestFlight
 
@@ -106,23 +114,29 @@ regenerates its layered app icons and Top Shelf images. See the
 
 ## Continuous audio
 
-Build 23 is a fundamental change in sound generation. Three independently
-excited, continuously running 48 kHz bands share a warm pink-weighted base and
-complementary Butterworth splits at 200 Hz and 2 kHz. At equal settings their
-powers sum to the designed base curve, with 20 Hz/18 kHz edge rolloffs. The
-current filter math, spectrum, and bounds are documented in the
-[complementary sound audit](Store/POWER_COMPLEMENTARY_RELEASE.md).
+Three independently excited, continuously running 48 kHz bands share a warm
+pink-weighted base and complementary Butterworth splits at 200 Hz and 2 kHz.
+The crossover power weights sum to one at every frequency. Build 28 adds a
+fourth-order Butterworth high-pass at 30 Hz and moves the second-order low-pass
+to 20 kHz. Both are shared by all bands, preserving crossover complementarity.
+The lower taper removes much more impractical sub-bass; the upper taper retains
+more of the high frequencies younger listeners may hear. There is no extra
+ultrasonic source or treble boost for children or animals. See
+[frequency-taper validation](Store/FAMILY_SPECTRUM_RELEASE.md). The complete
+previous sound remains at `sound-baseline-build-27`; design-1 records are retained.
 
 `AVAudioSourceNode` asks the C generator for samples on the audio render thread.
 That path has no allocation, locks, file access, networking, or filter design.
 Random and filter state persist between callbacks, including while a band is
-Off. Build 25 keeps those filters and adds shared K-weighted mix normalization,
+Off. Build 25 added shared K-weighted mix normalization,
 very slow bounded loudness correction, and linked lookahead peak protection.
 The five choices now describe relative band weights. A saved Volume offset
 adjusts the target from -18 to +3 dB around a nominal -20 LUFS stereo level.
 Peak protection retains a separate ceiling; the preference never changes system
 volume. There is no hard clipping or saturation. Startup, pause, resume, and
-mix changes remain smooth. See [loudness validation](Store/LOUDNESS_RELEASE.md).
+mix changes remain smooth. Build 28 recalibrates each band's expected power for
+the revised filters without changing dynamics, targets, or stored settings.
+See [loudness design](Store/LOUDNESS_RELEASE.md).
 
 All three controls retain Off / -18 / -12 / -6 / 0 dB, using sample gains
 `10^(dB/20)`. Changes fade over 600 ms without restarting the engine. Saved

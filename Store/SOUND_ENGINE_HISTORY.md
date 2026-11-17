@@ -1,5 +1,22 @@
 # Sound engine history and rollback
 
+## Practical bass and extended upper audible range — build 28
+
+Approved November 16, 2026 after inspecting the full-range spectrogram. The
+shared subsonic filter changes from second-order 20 Hz to fourth-order 30 Hz
+Butterworth; the shared second-order low-pass moves from 18 kHz to 20 kHz.
+The pink shelves, 200 Hz / 2 kHz complementary splits, independent sources,
+48 kHz clock, level ratios and dynamics remain. Band K-weighted calibration
+and the pre-normalization filter bounds are regenerated for the new spectrum.
+This intentionally changes timbre, particularly deep sub-bass and upper treble.
+
+**sound-baseline-build-27** preserves `815bc1d2a7516f88318d6803be617b4e45875601`,
+including normalized loudness, peak protection, and the expanded spectrogram.
+The design-1 coefficient records remain in `complementary-design-v1.json` and
+`loudness-design-v1.json`; current generators write separate design-2 records.
+Use the tag for a complete rollback with a new distribution build number.
+See [design, measurements and guidance sources](FAMILY_SPECTRUM_RELEASE.md).
+
 ## Normalized mix and slow leveling — build 25
 
 Approved November 16, 2026 to address the large loudness difference when switching

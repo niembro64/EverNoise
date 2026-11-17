@@ -1,4 +1,4 @@
-"""Offline calibration for the unchanged build-23 filters; no runtime SciPy.
+"""Offline calibration for complementary filter design 2; no runtime SciPy.
 
 K weighting: ITU-R BS.1770-5 Annex 1, Tables 1/2 (48 kHz).
 This is stationary-noise calibration, not a gated programme-loudness meter.
@@ -18,7 +18,7 @@ K_SOS = np.array([
 
 
 def design():
-    bank = json.loads((ROOT / "Store/complementary-design-v1.json").read_text())
+    bank = json.loads((ROOT / "Store/complementary-design-v2.json").read_text())
     impulse = np.zeros(192000); impulse[0] = 1
     powers = []
     for split in bank["crossoverSOS"]:
@@ -39,7 +39,8 @@ def design():
     header += "static const double BNBandKPower[3] = " + row(powers) + ";\n"
     header += "static const double BNTruePeakFIR[4][33] = {\n"
     header += ",\n".join("    " + row(p) for p in phases) + "\n};\n#endif\n"
-    record = {"sampleRate": 48000, "baseTargetLUFS": -20, "offsetDB": [-18, 3],
+    record = {"design": 2, "complementaryDesign": bank["design"],
+              "sampleRate": 48000, "baseTargetLUFS": -20, "offsetDB": [-18, 3],
               "bandKPower": powers, "kWeightingSOS": K_SOS.tolist(),
               "detectorOversampling": 4, "detectorTaps": 129,
               "detectorDelayFrames": 16, "limiterSampleCeilingDBFS": -3,
@@ -55,7 +56,7 @@ if __name__ == "__main__":
     path = ROOT / "Sources/BrownNoiseDSP/BNLoudnessCoefficients.h"
     if args.write:
         path.write_text(header)
-        (ROOT / "Store/loudness-design-v1.json").write_text(json.dumps(record, indent=2)+"\n")
+        (ROOT / "Store/loudness-design-v2.json").write_text(json.dumps(record, indent=2)+"\n")
     else:
         assert path.read_text() == header
     print(json.dumps(record, indent=2))

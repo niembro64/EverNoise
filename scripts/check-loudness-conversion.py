@@ -4,6 +4,7 @@ Requires compiled build/loudness/render-engine (scripts/render-loudness.swift).
 Temporary route WAVs are removed after independent peak analysis.
 """
 from pathlib import Path
+import argparse
 import json
 import subprocess
 import warnings
@@ -11,7 +12,10 @@ import numpy as np
 from scipy import signal
 from scipy.io import wavfile
 
-root = Path(__file__).resolve().parents[1] / "build/loudness"
+parser = argparse.ArgumentParser()
+parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1] / "build/loudness")
+args = parser.parse_args()
+root = args.root.resolve()
 cases = []
 for rate in [8000, 16000, 24000, 32000, 44100, 48000, 88200, 96000, 192000]:
     for channels in [1, 2]: cases.append((rate, channels, "4,0,0", "stereo"))

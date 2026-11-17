@@ -5,6 +5,7 @@ All 125 mixes at default and maximum offsets, 16x reconstructed peaks,
 K-weighted loudness, smooth commands, silence, mono, and rare-peak protection.
 """
 import ctypes as C
+import argparse
 import importlib.util
 import itertools
 import json
@@ -14,11 +15,16 @@ import numpy as np
 from scipy import signal
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "build/loudness"
+parser = argparse.ArgumentParser()
+parser.add_argument("--output", type=Path, default=ROOT / "build/loudness")
+parser.add_argument("--library", type=Path, default=ROOT / "build/libNoiseLoudness.dylib")
+args = parser.parse_args()
+OUT = args.output
+OUT.mkdir(parents=True, exist_ok=True)
 spec = importlib.util.spec_from_file_location("design", ROOT / "scripts/design-loudness.py")
 design = importlib.util.module_from_spec(spec); spec.loader.exec_module(design)
 K = design.K_SOS
-lib = C.CDLL(str(ROOT / "build/libNoiseLoudness.dylib"))
+lib = C.CDLL(str(args.library.resolve()))
 pointer = C.c_void_p
 class Metrics(C.Structure):
     _fields_ = [("power", C.c_double), ("slow", C.c_double), ("protection", C.c_double), ("frames", C.c_uint64)]

@@ -1,0 +1,9 @@
+EverNoise for Apple TV 1.1 (28)
+
+The sound controls now run High, Mid, Low from top to bottom, matching the frequency spectrum. The five choices, your saved mix, and the default balance are preserved.
+
+This update intentionally changes the sound: a stronger smooth taper below 30 Hz reduces impractical sub-bass, while a gentler upper edge retains more sound through 20 kHz before fading toward the 24 kHz source limit. Overall loudness has been recalibrated for these filters. The slow leveling, saved volume offset, stereo behavior and peak protection remain.
+
+Settings now includes "For the ones you care for": a broad, adjustable blanket of sound for households with babies, children and pets. It explains hearing differences, the limits of the app and your speaker, and considerate listening practices. It does not claim to cover pets' entire hearing ranges or establish safe sound levels at their ears.
+
+Listen on your usual TV or receiver at a comfortable volume. Try the reordered controls with the Siri Remote, Mono/Stereo, Play/Pause, returning from the Home screen, and an extended session. Max shows the reduced deepest bass and retained upper frequencies. Do not turn the volume up to make a very high frequency audible to you.

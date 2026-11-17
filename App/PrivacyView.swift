@@ -52,6 +52,7 @@ struct PrivacyView: View {
                     }
                         .buttonStyle(NoiseGlassButtonStyle(shape: Capsule(), interactive: animationLevel.animatesArtwork))
                 } header: { Text("Your privacy").font(AppTypography.heading) }
+                FamilyListeningSection()
                 Section {
                     Text("Open the app to start. Use your device’s volume buttons, then lock your screen or switch apps. Playback has no time limit. Tap Pause on the main screen or in Control Center to stop. Opening the app starts it again.")
                     Text("Tap a button in each Low, Mid, and High row to shape your mix. The hollow circle is Off; four growing dots choose each band’s relative strength. EverNoise gently balances the overall loudness as you change the mix. Raising all three bands proportionally keeps the same balance and volume. Your choices are remembered. Turning every band off makes the mix silent.")

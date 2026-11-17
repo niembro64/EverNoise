@@ -8,6 +8,11 @@ final class JustBrownNoiseUITests: XCTestCase {
         app.launchArguments = ["-mixLows", "2", "-mixMids", "2", "-mixHighs", "1", "-volumeOffsetDB", "0"]
         app.launch()
         XCTAssertTrue(app.buttons["settingsButton"].waitForExistence(timeout: 15))
+        XCTAssertLessThan(app.buttons["band-high-1"].frame.midY, app.buttons["band-mid-2"].frame.midY)
+        XCTAssertLessThan(app.buttons["band-mid-2"].frame.midY, app.buttons["band-low-2"].frame.midY)
+        XCTAssertTrue(app.buttons["band-high-1"].isSelected)
+        XCTAssertTrue(app.buttons["band-mid-2"].isSelected)
+        XCTAssertTrue(app.buttons["band-low-2"].isSelected)
         let before = app.staticTexts["audioDiagnostics"].label.split(separator: ":").compactMap { UInt64($0) }
         func chooseVisual(_ title: String) {
             app.buttons["settingsButton"].tap()
@@ -65,6 +70,21 @@ final class JustBrownNoiseUITests: XCTestCase {
         app.buttons["settingsButton"].tap()
         XCTAssertTrue(app.segmentedControls["animationLevelPicker"].buttons["Off"].isSelected)
         app.segmentedControls["animationLevelPicker"].buttons["Max"].tap()
+        let guidance = app.staticTexts["familyHearingGuidance"]
+        for _ in 0..<6 {
+            if guidance.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(guidance.isHittable)
+        XCTAssertTrue(guidance.label.contains("may hear high frequencies"))
+        _ = capture(app, named: "Family-hearing-guidance")
+        let listening = app.staticTexts["familyListeningGuidance"]
+        for _ in 0..<4 {
+            if listening.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(listening.isHittable)
+        _ = capture(app, named: "Family-listening-guidance")
         app.buttons["Done"].tap()
         app.terminate(); app.launch()
         XCTAssertTrue(app.otherElements["outputSpectrogram"].waitForExistence(timeout: 15))

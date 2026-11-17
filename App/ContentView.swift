@@ -80,17 +80,17 @@ struct ContentView: View {
                         .padding(.bottom, 16)
 
                     VStack(spacing: 12) {
-                        BandPicker(title: "Low", id: "low", level: audio.selectedMix.lows, showsColor: isSounding, animate: animateControls,
-                                   color: { NoisePalette.color(NoisePalette.low, intensity: $0) }) { value in
-                            audio.selectMix(NoiseMix(highs: audio.selectedMix.highs, mids: audio.selectedMix.mids, lows: value))
+                        BandPicker(title: "High", id: "high", level: audio.selectedMix.highs, showsColor: isSounding, animate: animateControls,
+                                   color: { NoisePalette.color(NoisePalette.high, intensity: $0) }) { value in
+                            audio.selectMix(NoiseMix(highs: value, mids: audio.selectedMix.mids, lows: audio.selectedMix.lows))
                         }
                         BandPicker(title: "Mid", id: "mid", level: audio.selectedMix.mids, showsColor: isSounding, animate: animateControls,
                                    color: { NoisePalette.color(NoisePalette.mid, intensity: $0) }) { value in
                             audio.selectMix(NoiseMix(highs: audio.selectedMix.highs, mids: value, lows: audio.selectedMix.lows))
                         }
-                        BandPicker(title: "High", id: "high", level: audio.selectedMix.highs, showsColor: isSounding, animate: animateControls,
-                                   color: { NoisePalette.color(NoisePalette.high, intensity: $0) }) { value in
-                            audio.selectMix(NoiseMix(highs: value, mids: audio.selectedMix.mids, lows: audio.selectedMix.lows))
+                        BandPicker(title: "Low", id: "low", level: audio.selectedMix.lows, showsColor: isSounding, animate: animateControls,
+                                   color: { NoisePalette.color(NoisePalette.low, intensity: $0) }) { value in
+                            audio.selectMix(NoiseMix(highs: audio.selectedMix.highs, mids: audio.selectedMix.mids, lows: value))
                         }
                     }
                     .frame(maxWidth: 420)
