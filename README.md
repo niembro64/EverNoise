@@ -69,16 +69,17 @@ peak protection is not a sound-pressure limit at anyone's ears.
 
 ## TestFlight
 
-**1.1 (29) is available in internal TestFlight** for iOS and Apple TV. Max now
-uses seven overlapping analysis windows, smoother frequency/time detail, and
-perceptual brightness based on energy per octave. Volume offset is renamed
-**App Loudness**; saved values and the build-28 sound are preserved.
+**1.1 (30) is available in internal TestFlight** for iOS and Apple TV. Six band
+choices add a −30 dB trace below the former first active choice, with dots and
+colors that indicate relative power. Existing mixes and the default sound are
+preserved exactly. Max retains build 29's smooth spectrum and perceptual
+brightness; App Loudness and peak protection are unchanged.
 Open [TestFlight](https://testflight.apple.com/v1/app/6834413344) to update.
 Apple TV is also testing in Friends and Family. Apple prevents adding iOS
-build 29 to external groups until build 25's beta review is approved.
-See [spectrum validation](Store/SPECTROGRAM_SMOOTH_RELEASE.md),
-[signed packages](Store/build-29-manifest.json), and
-[delivery evidence](Store/delivery-v29.json). The sound retains build 28's
+build 30 to external groups until build 25's beta review is approved.
+See [mix validation](Store/MIX_RESOLUTION_RELEASE.md),
+[signed packages](Store/build-30-manifest.json), and
+[delivery evidence](Store/delivery-v30.json). The sound retains build 28's
 30 Hz / 20 kHz tapers and household listening guidance; see
 [the sound release record](Store/FAMILY_SPECTRUM_RELEASE.md).
 The records below describe earlier distributed builds.

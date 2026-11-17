@@ -1,0 +1,148 @@
+{
+  "version": "1.1",
+  "build": "30",
+  "sourceCommit": "17922e3a841e9fbe8e0ec581a7a6e189812c239c",
+  "sourceSHA256": {
+    "App/AnimationLevel.swift": "f02f921c38065f3f471418a05057be6429762c820e75297fa126a2b34411cfbb",
+    "App/AppTypography.swift": "32c553246b79fc3f2437bb5c444019307c30fd8acd4db7c100f149a61503a2fa",
+    "App/AudioService.swift": "67b8f4428dece4466be0db01ef5532e4e2c7b4c335edba7d62f93c1f4289da4d",
+    "App/BandNotchPicker.swift": "a5d854af2d154aa3a5e11f928710dbbf288fa815d2c47a9055bcd9da780dd3f9",
+    "App/BandPicker.swift": "244928ce9458b7ee7f62632080f2f572ff28dbd318749f5f334700a81723bfd0",
+    "App/ContentView.swift": "af63edbfe9d6a743407cdb1997b2b94440e7a757737394fb760a9dfc2d19e965",
+    "App/FamilyListeningSection.swift": "dae2eff9e9d78d6dc06852be318a79357035a0005e8081b9e6cc5206c972c9d0",
+    "App/FluidMotion.swift": "f32cec85ee3c4956a4da4f962679a973d4c9abd4fbc13da1037ce6685b9acdb8",
+    "App/Info.plist": "1c2fcad57f472c0405338191f6e2633b3ee3d881a8747b69a0e1149605d0fb01",
+    "App/JustBrownNoiseApp.swift": "e1522be6e4d767b49b9d635afcf3db77d35c095daa2d666e1903dd964a51283e",
+    "App/LinearLight.swift": "3140645fd8144f4d931d1a5f5bc53b49c1a58e039e7220da04698dd937e8383b",
+    "App/NoiseAudioDriver.swift": "2b9e553f9cbb3b7aa2ee9c1d44d85450ff0fa09250c4949a9a5427dc97d6cb57",
+    "App/NoiseGlass.swift": "06308ae880b0e5044020ee9c4b944f8f425505371f6e5cc4b7ea80063fbaee0d",
+    "App/NoisePalette.swift": "24eb98b4c8dab8d5bcfc15c4192221801a7aec986260de052e432db9baa108a2",
+    "App/OutputSampleFeed.swift": "01d8aa2a60d6f8ff0a6c3b0d199a02bd86bc2e63e918d3ada5468c2ad29ec82a",
+    "App/PrivacyInfo.xcprivacy": "418018c160ded561d379cee1510cfb6e0806573c7221177a5330d76ea4145990",
+    "App/PrivacyView.swift": "8ce13f3fe265869e09d164c02e8a4b9ac7ab7c84b9aebcc73bfa6806bdcf3258",
+    "App/RibbonPalette.swift": "e32c1f2a85638a73259e28956a9cafc06fac90bad8641cd1dbdb7fc6da2e1967",
+    "App/RibbonScene.swift": "e0709abe6ff9d72e913c24ae39f428653572b55068f7c69f03ca67d5a4d5a8c9",
+    "App/RibbonShaders.metal": "f2146966021ac7bff5348f772a5d290c508d942678f254e2c5d9dbd44faaf503",
+    "App/RibbonSurface.swift": "f0e2c6410a30de1917daa15624845869aa93e4625c3079125af342b78aebd086",
+    "App/SpectrogramPalette.swift": "e0a3fb93eae8eafc1074c5f0351f6ccf21814f51459cb9fd7bb779023f2c8bd3",
+    "App/SpectrogramView.swift": "2fd0a45646f963b02990002870597bf197517a472b874d14acdae7c15b8ffe6d",
+    "App/VolumeOffsetControl.swift": "32037ee0370940e93092da96c17629c0da67925746c18d6572eeb76d1ab2f0de",
+    "JustBrownNoise.xcodeproj/project.pbxproj": "65145141be782b1f38e782f1edbf6ddbe286bc3fc585aa55bf6040c7364fdef2",
+    "Package.swift": "62d20955a650dc51f7ff87c4afe65371ec7dec24ead29e1cb4cf2b383872817f",
+    "Sources/BrownNoiseDSP/BNColorFilter.h": "b84e0009dd830d31f26d9011909400fda50e73be7137c8823f6cbf1954c003f8",
+    "Sources/BrownNoiseDSP/BNComplementaryCoefficients.h": "c4d53d7510a94169362a29b0b63193451d25e017655664afb81be697b17e44dd",
+    "Sources/BrownNoiseDSP/BNComplementaryFilter.h": "b362940a46b0d93823fec53bbe4ff073957bc021afe58d34789607f0330bb147",
+    "Sources/BrownNoiseDSP/BNGrayAirFilter.h": "67354fd6727e66a85a9ef00eced4af6f588dbc0e131ec09d76fd5b34d898a77c",
+    "Sources/BrownNoiseDSP/BNLoudnessCoefficients.h": "cc87f8d8e34e439d88beea5f3edbe7b307c080a1b1a3490e1af5191bc66e2fd7",
+    "Sources/BrownNoiseDSP/BNMidFilter.h": "da2e7fae0e982b46e0a7dcfdac4644e85396be431e3f3c4402ebb3ab7ba63839",
+    "Sources/BrownNoiseDSP/BNMixRenderer.c": "0221a26009ef2e6f2752e56bafdfa63896274ccdd1fbf03d95045b56f11aba1f",
+    "Sources/BrownNoiseDSP/BNPeakProtector.h": "f254814c941ac4c07072f2b04ab274bb76f053264fa2a934c62379cf5080aafa",
+    "Sources/BrownNoiseDSP/BrownNoiseDSP.c": "427d011374f30e51d143c62200cad8b79f29416749ed52ce110e2b6728e57486",
+    "Sources/BrownNoiseDSP/include/BrownNoiseDSP.h": "e1e3427bab037ea39cd880cc409e859a72d074cf1a2af130f53d3ee434821afa",
+    "Sources/PlaybackCore/NoiseMix.swift": "b90cf677791405ed437f901b3fb9e9411875cd7406c7595e67043b3a0d53bedb",
+    "Sources/PlaybackCore/PlaybackController.swift": "f7a924f23a8a82db821be12afe458ba07803f948d7ffea66186e8a02f0a25162",
+    "Sources/PlaybackCore/VolumeOffset.swift": "7f71f3987c413a6fa2092681e8086b5979a698a106e494bbca9f4e4980da3e56",
+    "Sources/SpectrumAnalysis/BNCapture.c": "23fa017b30bfda3b9c715bfbe64187cf7ba90a7fd9ae28e514fbe07538a35586",
+    "Sources/SpectrumAnalysis/BNSpectrum.c": "38f9abbfb1396884f16f2db5c1fabc6c4bd3088af03d71d4d00d3a30f19a0812",
+    "Sources/SpectrumAnalysis/BNSpectrumDecimation.h": "1496b75f0be2ed449a106c0cef928f606354ee6f73d9a68515dddec6644addd2",
+    "Sources/SpectrumAnalysis/include/SpectrumAnalysis.h": "a0c5ff8dae185d8d2af543dafb766202709d465c899c79fc4a3a385a7acf7fc6",
+    "TVApp/EverNoiseTVApp.swift": "53749d618d9ae57fa5954c2c7c4819aa0242c81dfc7e941058c41f5b2c5b28d2",
+    "TVApp/TVContentView.swift": "15cd36fc1ab13ad686a7c7b03f3bde0b6f78dd571eb3907cc74edd4b4800a9f8",
+    "project.yml": "43021627284331e82d0b0021f9fecf415fcff66f98e20d07530ca043a8ef92bb"
+  },
+  "packages": {
+    "iOS": {
+      "version": "1.1",
+      "build": "30",
+      "SHA256": "a3dfc4a51e0743557abcb1717e5ea037c56f6ea65ffc1b3bfde034870dcc1c62",
+      "signature": "Strict verification passed",
+      "entitlements": "Distribution, get-task-allow false",
+      "backgroundModes": [
+        "audio"
+      ],
+      "deviceFamily": [
+        1,
+        2
+      ],
+      "minimumOS": "17.0",
+      "compiledSourceCommit": "f0139d97fa40343353d768dec86b4e033ac9222e"
+    },
+    "TV": {
+      "version": "1.1",
+      "build": "30",
+      "SHA256": "cdc77200562e1fd6de5beccf8187f314c697d40d26ae094aedb27a138220e791",
+      "signature": "Strict verification passed",
+      "entitlements": "Distribution, get-task-allow false",
+      "backgroundModes": [
+        "audio"
+      ],
+      "deviceFamily": [
+        3
+      ],
+      "minimumOS": "17.0",
+      "compiledSourceCommit": "17922e3a841e9fbe8e0ec581a7a6e189812c239c"
+    }
+  },
+  "validation": {
+    "coreTestsPassed": 55,
+    "iOSIntegrationTestsPassed": 39,
+    "tvOSIntegrationTestsPassed": 17,
+    "finalUIFlows": {
+      "iPhone": 1,
+      "iPad": 1,
+      "AppleTV": 2
+    },
+    "testResults": {
+      "iPhone": {
+        "result": "Passed",
+        "passedTests": 39,
+        "failedTests": 0,
+        "totalTestCount": 39
+      },
+      "TV": {
+        "result": "Passed",
+        "passedTests": 17,
+        "failedTests": 0,
+        "totalTestCount": 17
+      },
+      "iPhone-final": {
+        "result": "Passed",
+        "passedTests": 1,
+        "failedTests": 0,
+        "totalTestCount": 1
+      },
+      "iPad-final": {
+        "result": "Passed",
+        "passedTests": 1,
+        "failedTests": 0,
+        "totalTestCount": 1
+      },
+      "TV-focus": {
+        "result": "Passed",
+        "passedTests": 2,
+        "failedTests": 0,
+        "totalTestCount": 2
+      },
+      "core": {
+        "passedTests": 55
+      }
+    },
+    "audit": "mix-resolution-audit-v30.json",
+    "legacySamplesComparedPerChannel": 19120000,
+    "legacyPCMBitIdentical": true,
+    "allNewMixesAtDefaultAndMaximumOffset": 216,
+    "actualAppleEngineConversionRenders": 42,
+    "acceleratedHours": 2,
+    "undefinedBehaviorAndBounds": {
+      "passed": true,
+      "commands": 2160,
+      "framesPerChannel": 4466392,
+      "guardCanariesIntact": true,
+      "allOffExactSilence": true
+    },
+    "physicalDevices": "No new physical-device listening or overnight acoustic measurement.",
+    "addressSanitizer": "Not claimed; prior host runtime failed before main. UBSan and bounds checks passed."
+  },
+  "packageHashScope": "SHA256 identifies locally exported, strictly verified IPAs. Uploads are signed/exported from the same archives.",
+  "sourceScope": "The iOS archive precedes the TV-only focus fix. All iOS compilation inputs match sourceCommit; TV compiles the complete final tree."
+}

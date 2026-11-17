@@ -1,5 +1,34 @@
 # Release status — November 16, 2026
 
+## Quieter first mix choice — build 30
+
+**EverNoise 1.1 (30) is available in internal TestFlight for iOS and Apple TV.**
+Apple confirmed iOS availability at **05:29:36 UTC** and tvOS at **05:31:04 UTC
+on November 17** (23:29:36 and 23:31:04 CST on November 16).
+
+Each frequency row now has six choices: Off, −30, −18, −12, −6 and 0 dB.
+The new first dot contributes about 16 times less power than the former first
+dot. Growing dots and brighter tints encode the power curve. All former mixes
+and the default sound are preserved through preference migration. Audio
+filters, shared App Loudness and peak protection remain unchanged.
+
+55 core, 39 iOS integration, 17 tvOS integration tests, and four final UI flow
+executions across iPhone, iPad and Apple TV pass. Checks cover all 216 mixes at
+two loudness offsets, 42 Apple-engine conversions, two accelerated hours and
+UBSan/bounds instrumentation. Over 19 million legacy samples per channel match
+build 29 exactly. A TV focus section keeps the bottom controls reachable from
+every Low choice.
+
+What to Test notes are saved and verified for both platforms. TV build 30 is
+**Testing** in Personal Testing and Friends and Family, with automatic tester
+notification. iOS build 30 is available to Personal Testing; Apple still blocks
+another version-1.1 external beta submission while build 25 is Waiting for
+Review. The public App Store submission was unchanged during this update.
+
+See [design and validation](MIX_RESOLUTION_RELEASE.md),
+[numerical evidence](mix-resolution-audit-v30.json),
+[signed packages](build-30-manifest.json), and [delivery evidence](delivery-v30.json).
+
 ## Smooth Max spectrum and App Loudness — build 29
 
 **EverNoise 1.1 (29) is available in your internal TestFlight for iOS and Apple TV.**

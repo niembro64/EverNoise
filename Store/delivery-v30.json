@@ -1,0 +1,27 @@
+{
+  "version": "1.1",
+  "build": "30",
+  "sourceCommit": "17922e3a841e9fbe8e0ec581a7a6e189812c239c",
+  "observedAtUTC": "2026-11-17T05:33:38.163662+00:00",
+  "iOS": {
+    "uploadSucceededAtUTC": "2026-11-17T05:27:38Z",
+    "appleAvailabilityEmailAtUTC": "2026-11-17T05:29:36Z",
+    "buildID": "7952a403-0e1f-42e2-a69f-09618e0579c0",
+    "internalGroup": "Personal Testing",
+    "whatToTest": "Saved, verified in App Store Connect",
+    "externalStatus": "Not submitted: Apple allows one version-1.1 build in Beta App Review; build 25 still Waiting for Review."
+  },
+  "tvOS": {
+    "uploadSucceededAtUTC": "2026-11-17T05:29:36Z",
+    "status": "Testing",
+    "appleAvailabilityEmailAtUTC": "2026-11-17T05:31:04Z",
+    "buildID": "332c5408-8713-4271-bc5f-eba69711614d",
+    "groups": [
+      "Personal Testing",
+      "Friends and Family"
+    ],
+    "automaticTesterNotification": true,
+    "whatToTest": "Saved, verified in App Store Connect"
+  },
+  "publicAppStoreSubmission": "Unchanged during this mix-control release."
+}
