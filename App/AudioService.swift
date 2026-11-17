@@ -10,6 +10,7 @@ final class AudioService {
     let playback: PlaybackController
     private(set) var selectedMix: NoiseMix
     private(set) var stereoEnabled: Bool
+    private(set) var volumeOffsetDB: Int
     private let defaults: UserDefaults
     #if DEBUG
     private(set) var diagnostics = "0:0"
@@ -27,7 +28,9 @@ final class AudioService {
         // Absence means the new default; an explicitly saved Off stays Off.
         let stereo = defaults.object(forKey: "stereoEnabled") == nil || defaults.bool(forKey: "stereoEnabled")
         stereoEnabled = stereo
-        let driver = NoiseAudioDriver(mix: selected, stereoEnabled: stereo)
+        let offset = VolumeOffset.load(from: defaults)
+        volumeOffsetDB = offset
+        let driver = NoiseAudioDriver(mix: selected, stereoEnabled: stereo, volumeOffsetDB: offset)
         self.driver = driver
         playback = PlaybackController(driver: driver)
         observeAudioEvents()
@@ -62,6 +65,15 @@ final class AudioService {
         stereoEnabled = enabled
         defaults.set(enabled, forKey: "stereoEnabled")
         driver.setStereoEnabled(enabled)
+        refresh()
+    }
+
+    func setVolumeOffsetDB(_ value: Int) {
+        let value = VolumeOffset.clamp(value)
+        guard value != volumeOffsetDB else { return }
+        volumeOffsetDB = value
+        defaults.set(value, forKey: VolumeOffset.preferenceKey)
+        driver.setVolumeOffsetDB(value)
         refresh()
     }
 

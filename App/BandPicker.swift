@@ -43,7 +43,7 @@ struct BandPicker: View {
             }
         }
         .accessibilityElement(children: .contain)
-        .accessibilityLabel("\(title) frequency intensity")
+        .accessibilityLabel("\(title) frequency mix")
     }
 }
 

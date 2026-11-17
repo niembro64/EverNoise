@@ -3,6 +3,43 @@ import UIKit
 
 final class JustBrownNoiseUITests: XCTestCase {
     @MainActor
+    func testSavedVolumeOffsetKeepsPlaybackRunning() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-volumeOffsetDB", "0", "-animationLevel", "low",
+                               "-mixLows", "2", "-mixMids", "2", "-mixHighs", "1"]
+        app.launch()
+        XCTAssertTrue(app.buttons["settingsButton"].waitForExistence(timeout: 15))
+        let before = app.staticTexts["audioDiagnostics"].label.split(separator: ":").compactMap { UInt64($0) }
+        app.buttons["settingsButton"].tap()
+        let slider = app.sliders["volumeOffsetSlider"]
+        XCTAssertTrue(slider.waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["volumeOffsetValue"].label, "0 dB")
+        slider.adjust(toNormalizedSliderPosition: 0.285714)
+        let saved = app.staticTexts["volumeOffsetValue"].label
+        XCTAssertNotEqual(saved, "0 dB")
+        XCTAssertTrue(saved.hasPrefix("-"))
+        _ = capture(app, named: "Settings-volume-offset")
+        app.buttons["Done"].tap()
+        XCTAssertEqual(app.buttons["playbackButton"].value as? String, "Playing continuously")
+        let after = app.staticTexts["audioDiagnostics"].label.split(separator: ":").compactMap { UInt64($0) }
+        XCTAssertEqual(before.count, 2); XCTAssertEqual(after.count, 2)
+        if before.count == 2 && after.count == 2 {
+            XCTAssertEqual(before[0], after[0]); XCTAssertGreaterThan(after[1], before[1])
+        }
+        app.terminate(); app.launchArguments = []; app.launch()
+        XCTAssertTrue(app.buttons["settingsButton"].waitForExistence(timeout: 15))
+        app.buttons["settingsButton"].tap()
+        XCTAssertTrue(slider.waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["volumeOffsetValue"].label, saved)
+        app.buttons["Done"].tap()
+        app.buttons["playbackButton"].tap()
+        app.buttons["settingsButton"].tap()
+        slider.adjust(toNormalizedSliderPosition: 0.571429)
+        app.buttons["Done"].tap()
+        XCTAssertEqual(app.buttons["playbackButton"].value as? String, "Paused")
+    }
+
+    @MainActor
     func testStereoPreferencePersistsWithoutRestartingPlayback() throws {
         let app = XCUIApplication()
         app.launchArguments = ["-stereoEnabled", "NO", "-mixLows", "4", "-mixMids", "2", "-mixHighs", "3"]

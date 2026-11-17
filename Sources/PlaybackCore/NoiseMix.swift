@@ -1,6 +1,7 @@
 import Foundation
 
-/// Independent band levels: off, then -18, -12, -6, and 0 dB.
+/// Relative band weights: off, then -18, -12, -6, and 0 dB before shared
+/// loudness normalization. A proportional change preserves tone and loudness.
 public struct NoiseMix: Equatable, Hashable, Sendable {
     public let lows: Int
     public let highs: Int

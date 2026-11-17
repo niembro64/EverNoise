@@ -45,6 +45,26 @@ final class TVPlaybackUITests: XCTestCase {
         }
         select(app.buttons["settingsButton"], in: app)
         XCTAssertTrue(app.staticTexts["Settings"].waitForExistence(timeout: 10))
+        XCTAssertTrue(app.descendants(matching: .any)["volumeOffsetPicker"].firstMatch.exists)
+        XCUIRemote.shared.press(.select) // Native picker is the initially focused row.
+        let choice = app.cells["-1 dB"]
+        XCTAssertTrue(choice.waitForExistence(timeout: 5))
+        for _ in 0..<24 {
+            if choice.hasFocus { break }
+            let focused = app.cells.allElementsBoundByIndex.first(where: { $0.hasFocus })
+            let current = focused.flatMap { Int($0.label.split(separator: " ").first ?? "") }
+            XCUIRemote.shared.press((current ?? -18) < -1 ? .down : .up)
+        }
+        XCTAssertTrue(choice.hasFocus)
+        XCUIRemote.shared.press(.select)
+        if !app.descendants(matching: .any)["volumeOffsetPicker"].firstMatch.waitForExistence(timeout: 2) {
+            XCUIRemote.shared.press(.menu)
+        }
+        XCTAssertEqual(app.descendants(matching: .any)["volumeOffsetPicker"].firstMatch.value as? String, "-1 dB")
+        sleep(2) // Include the native sheet's separate window after focus settles.
+        let settings = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        settings.name = "TV-volume-offset"; settings.lifetime = .keepAlways
+        add(settings)
         XCUIRemote.shared.press(.menu)
         XCTAssertTrue(app.buttons["playbackButton"].waitForExistence(timeout: 10))
         XCTAssertEqual(app.buttons["playbackButton"].value as? String, "Playing continuously")

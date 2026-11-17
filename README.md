@@ -41,11 +41,19 @@ visual updates; Med animates only the infinity; High also shows the background
 ribbons. Med is the default. A saved old animations-off choice migrates to Low;
 otherwise upgrades start on Med. Every new level is remembered. Animation settings do not affect audio.
 The app remembers all three levels and fades smoothly between balances. A large
-play/pause button controls playback; use the physical buttons for volume. Privacy
+play/pause button controls playback; use the physical buttons for volume. Settings
+also has a saved Volume offset to balance EverNoise against your other audio. Privacy
 and help sit behind an outline gear with a generous 80-point touch target. Lock-screen and Control Center controls
 work too. Reopening the app starts it again.
 
 ## TestFlight
+
+**1.1 (25) is available in TestFlight** for iOS and Apple TV. It adds consistent
+mix loudness and a saved Volume offset. Open
+[TestFlight](https://testflight.apple.com/v1/app/6834413344) to update. iOS
+external beta review is pending; the TV build is testing in both existing groups.
+See [the release audit](Store/LOUDNESS_RELEASE.md) for measurements and limits.
+The records below describe earlier distributed builds.
 
 Apple confirmed **1.0.1 (23)** is ready to test at 09:45:04 CST on November 15.
 Open [TestFlight](https://testflight.apple.com/v1/app/6834413344) and update EverNoise.
@@ -94,9 +102,13 @@ current filter math, spectrum, and bounds are documented in the
 `AVAudioSourceNode` asks the C generator for samples on the audio render thread.
 That path has no allocation, locks, file access, networking, or filter design.
 Random and filter state persist between callbacks, including while a band is
-Off. One fixed common gain bounds the sum below 0.8 full scale before output
-conversion. There is no clipping, limiting, compression, or dynamic normalization.
-Startup, pause, resume, and level changes use the existing smooth fades.
+Off. Build 25 keeps those filters and adds shared K-weighted mix normalization,
+very slow bounded loudness correction, and linked lookahead peak protection.
+The five choices now describe relative band weights. A saved Volume offset
+adjusts the target from -18 to +3 dB around a nominal -20 LUFS stereo level.
+Peak protection retains a separate ceiling; the preference never changes system
+volume. There is no hard clipping or saturation. Startup, pause, resume, and
+mix changes remain smooth. See [loudness validation](Store/LOUDNESS_RELEASE.md).
 
 All three controls retain Off / -18 / -12 / -6 / 0 dB, using sample gains
 `10^(dB/20)`. Changes fade over 600 ms without restarting the engine. Saved
@@ -105,8 +117,8 @@ changes with the new generator. All three Off produces exact silence.
 
 Stereo defaults on and preserves saved choices. Each band has a permanent pair
 of independent left/right generators. Mono duplicates the left signal; the
-one-second convex Mono/Stereo transition keeps its existing bounded behavior.
-It can briefly reduce right-channel power during the switch. No graph rebuild
+one-second Mono/Stereo transition now normalizes the blend to preserve expected
+right-channel power during the switch. Linked peak protection covers both channels. No graph rebuild
 is needed. All bands use the same conversion path to the output sample rate.
 
 The legacy generators remain available for comparison. Four actual-engine

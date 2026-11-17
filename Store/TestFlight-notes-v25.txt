@@ -1,0 +1,9 @@
+EverNoise now keeps a consistent overall listening level as you change the mix.
+
+Low, Mid, and High control the relative balance of the sound. Raising all three proportionally keeps the same sound and loudness. All three Off still means silence.
+
+Settings has a saved Volume offset to help match EverNoise with your other audio. The default output is substantially louder than build 23. Your device's volume controls still work normally.
+
+The original complementary filters remain. Slow loudness correction and separate lookahead peak protection maintain smooth output. Pause/resume, independent stereo, background playback, and lock-screen controls remain.
+
+Please compare with your usual media at the same device volume, adjust Volume offset to taste, and check for pumping, distortion, jumps during mix changes, or interruptions during long playback. Test iPhone speakers, headphones, Bluetooth, Mac, and Apple TV outputs as available.

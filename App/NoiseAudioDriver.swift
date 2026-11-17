@@ -5,58 +5,30 @@ import PlaybackCore
 /// The source node retains this storage until its final render is finished.
 /// After construction, only the render callback touches the DSP state, except
 /// for a fade reset while the engine is stopped.
-private final class NoiseStream: @unchecked Sendable {
+private final class RenderStorage: @unchecked Sendable {
     let pointer: OpaquePointer
-    let kind: BNSourceKind
 
-    init(kind: BNSourceKind, level: Int, stereoEnabled: Bool) throws {
-        self.kind = kind
-        guard let pointer = BNStereoCreateSource(kind, UInt64.random(in: 1...UInt64.max),
-                                               UInt64.random(in: 1...UInt64.max), stereoEnabled) else {
+    init(mix: NoiseMix, stereoEnabled: Bool, volumeOffsetDB: Int) throws {
+        guard let pointer = BNMixCreate(UInt64.random(in: 1...UInt64.max)) else {
             throw CocoaError(.coderInvalidValue)
         }
         self.pointer = pointer
-        BNStereoSetLevel(pointer, Int32(level))
-        BNStereoBeginFadeIn(pointer)
+        select(mix)
+        setStereoEnabled(stereoEnabled)
+        setVolumeOffsetDB(volumeOffsetDB)
+        beginFadeIn()
     }
 
-    deinit { BNStereoDestroy(pointer) }
-}
-
-private final class RenderStorage {
-    // All complementary streams keep their clocks/filter state, even while
-    // inaudible. A shared 48 kHz rate gives each band the same conversion path.
-    let streams: [NoiseStream]
-
-    init(mix: NoiseMix, stereoEnabled: Bool) throws {
-        streams = try [BNSourceComplementaryLow, BNSourceComplementaryMid, BNSourceComplementaryHigh].map { kind in
-            try NoiseStream(kind: kind, level: Self.level(kind, in: mix), stereoEnabled: stereoEnabled)
-        }
-    }
-
-    private static func level(_ kind: BNSourceKind, in mix: NoiseMix) -> Int {
-        switch kind {
-        case BNSourceComplementaryLow: mix.lows
-        case BNSourceComplementaryMid: mix.mids
-        default: mix.highs
-        }
-    }
-
+    deinit { BNMixDestroy(pointer) }
     func select(_ mix: NoiseMix) {
-        // Every layer keeps its clock and filter state, even at level zero.
-        for stream in streams {
-            BNStereoSetLevel(stream.pointer, Int32(Self.level(stream.kind, in: mix)))
-        }
+        BNMixSetLevels(pointer, Int32(mix.lows), Int32(mix.mids), Int32(mix.highs))
     }
-    func setStereoEnabled(_ enabled: Bool) {
-        for stream in streams { BNStereoSetEnabled(stream.pointer, enabled) }
-    }
-    func setPlaying(_ playing: Bool) {
-        for stream in streams { BNStereoSetPlaying(stream.pointer, playing) }
-    }
-    func beginFadeIn() { for stream in streams { BNStereoBeginFadeIn(stream.pointer) } }
-    var isSilent: Bool { streams.allSatisfy { BNStereoIsSilent($0.pointer) } }
-    var renderedFrames: UInt64 { BNStereoRenderedFrames(streams[0].pointer) }
+    func setStereoEnabled(_ enabled: Bool) { BNMixSetStereo(pointer, enabled) }
+    func setVolumeOffsetDB(_ value: Int) { BNMixSetOffsetDB(pointer, Int32(value)) }
+    func setPlaying(_ playing: Bool) { BNMixSetPlaying(pointer, playing) }
+    func beginFadeIn() { BNMixBeginFadeIn(pointer) }
+    var isSilent: Bool { BNMixIsSilent(pointer) }
+    var renderedFrames: UInt64 { BNMixRenderedFrames(pointer) }
 }
 
 @MainActor
@@ -67,14 +39,21 @@ final class NoiseAudioDriver: AudioDriver {
     private var sessionConfigured = false
     private(set) var selectedMix: NoiseMix
     private(set) var stereoEnabled: Bool
+    private(set) var volumeOffsetDB: Int
     private(set) var startCount = 0
     var renderedFrames: UInt64 { renderStorage?.renderedFrames ?? 0 }
     var isRunning: Bool { engine?.isRunning == true && stopTask == nil }
     var currentEngine: AVAudioEngine? { engine }
 
-    init(mix: NoiseMix = .baseline, stereoEnabled: Bool = true) {
+    init(mix: NoiseMix = .baseline, stereoEnabled: Bool = true, volumeOffsetDB: Int = 0) {
         selectedMix = mix
         self.stereoEnabled = stereoEnabled
+        self.volumeOffsetDB = VolumeOffset.clamp(volumeOffsetDB)
+    }
+
+    func setVolumeOffsetDB(_ value: Int) {
+        volumeOffsetDB = VolumeOffset.clamp(value)
+        renderStorage?.setVolumeOffsetDB(volumeOffsetDB)
     }
 
     func setStereoEnabled(_ enabled: Bool) {
@@ -181,24 +160,21 @@ final class NoiseAudioDriver: AudioDriver {
     }
 
     private func makeEngine() throws {
-        let storage = try renderStorage ?? RenderStorage(mix: selectedMix, stereoEnabled: stereoEnabled)
+        let storage = try renderStorage ?? RenderStorage(mix: selectedMix, stereoEnabled: stereoEnabled,
+                                                        volumeOffsetDB: volumeOffsetDB)
         let newEngine = AVAudioEngine()
-        for stream in storage.streams {
-            // Permanent stereo avoids any graph rebuild when the mode changes.
-            // Duplicated mono has the original calibrated per-channel gain.
-            // Unlike Apple's mono-input SRC, it does not add rate-dependent
-            // attenuation (the old 44.1 kHz path was about 3 dB quieter).
-            guard let format = AVAudioFormat(standardFormatWithSampleRate: BNRateForSource(stream.kind), channels: 2) else {
-                throw CocoaError(.coderInvalidValue)
-            }
-            let source = AVAudioSourceNode(format: format) { @Sendable [stream] isSilence, _, count, buffers in
-                isSilence.pointee = false
-                BNStereoRenderAudioBuffers(stream.pointer, buffers, count)
-                return noErr
-            }
-            newEngine.attach(source)
-            newEngine.connect(source, to: newEngine.mainMixerNode, format: format)
+        // One permanent stereo node lets all bands share normalization, linked
+        // peak protection, and an atomic mix command before Apple conversion.
+        guard let format = AVAudioFormat(standardFormatWithSampleRate: 48_000, channels: 2) else {
+            throw CocoaError(.coderInvalidValue)
         }
+        let source = AVAudioSourceNode(format: format) { @Sendable [storage] isSilence, _, count, buffers in
+            isSilence.pointee = false
+            BNMixRenderAudioBuffers(storage.pointer, buffers, count)
+            return noErr
+        }
+        newEngine.attach(source)
+        newEngine.connect(source, to: newEngine.mainMixerNode, format: format)
         renderStorage = storage
         engine = newEngine
     }

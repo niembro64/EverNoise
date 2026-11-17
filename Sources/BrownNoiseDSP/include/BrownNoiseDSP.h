@@ -70,4 +70,29 @@ uint64_t BNStereoRenderedFrames(const BNStereoGenerator *generator);
 void BNStereoRender(BNStereoGenerator *generator, float *left, float *right, uint32_t frameCount);
 void BNStereoRenderAudioBuffers(BNStereoGenerator *generator, AudioBufferList *buffers, uint32_t frameCount);
 
+// Production mix renderer (48 kHz). Retains the complementary filters above,
+// with relative band weights, stationary K-weighted calibration, slow correction,
+// and shared lookahead peak protection. Legacy renderers remain for comparisons.
+typedef struct BNMixGenerator BNMixGenerator;
+typedef struct {
+    double measuredRelativePower, slowGain, protectionGain;
+    uint64_t renderedFrames;
+} BNMixMetrics;
+BNMixGenerator *BNMixCreate(uint64_t seed);
+void BNMixDestroy(BNMixGenerator *generator);
+// Each complete mix is one atomic command. Same five logarithmic ratios [0,4].
+void BNMixSetLevels(BNMixGenerator *generator, int low, int mid, int high);
+void BNMixSetStereo(BNMixGenerator *generator, bool stereo);
+// Whole dB, clamped to [-18,+3]. Changes fade over three seconds; default 0.
+void BNMixSetOffsetDB(BNMixGenerator *generator, int offset);
+void BNMixSetPlaying(BNMixGenerator *generator, bool playing);
+// Only while stopped. Preserves random/filter state, clears delayed audio, and
+// starts a 750 ms fade. All-off is exact silence, not a request for infinite gain.
+void BNMixBeginFadeIn(BNMixGenerator *generator);
+bool BNMixIsSilent(const BNMixGenerator *generator);
+uint64_t BNMixRenderedFrames(const BNMixGenerator *generator);
+BNMixMetrics BNMixReadMetrics(const BNMixGenerator *generator);
+void BNMixRender(BNMixGenerator *generator, float *left, float *right, uint32_t frameCount);
+void BNMixRenderAudioBuffers(BNMixGenerator *generator, AudioBufferList *buffers, uint32_t frameCount);
+
 #endif

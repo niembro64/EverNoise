@@ -9,12 +9,33 @@ import PlaybackCore
 
 @MainActor
 final class AudioDriverTests: XCTestCase {
+    func testVolumeOffsetDoesNotRestartAudioAndSurvivesReset() async throws {
+        let driver = NoiseAudioDriver(volumeOffsetDB: -6)
+        defer { driver.stop(immediately: true) }
+        try driver.start()
+        let engine = driver.currentEngine, frames = driver.renderedFrames
+        for value in [-18, 3, -6, 0] {
+            driver.setVolumeOffsetDB(value)
+            try await Task.sleep(for: .milliseconds(80))
+            XCTAssertEqual(driver.volumeOffsetDB, value)
+            XCTAssertTrue(driver.currentEngine === engine && driver.isRunning)
+            XCTAssertEqual(driver.startCount, 1)
+        }
+        XCTAssertGreaterThan(driver.renderedFrames, frames)
+        driver.stop(immediately: true)
+        driver.setVolumeOffsetDB(-7)
+        driver.reset()
+        XCTAssertFalse(driver.isRunning)
+        try driver.start()
+        XCTAssertEqual(driver.volumeOffsetDB, -7)
+    }
+
     func testProductionBandsShareTheComplementary48kHzPath() throws {
         let driver = NoiseAudioDriver()
         defer { driver.stop(immediately: true) }
         try driver.start()
         let sources = try XCTUnwrap(driver.currentEngine).attachedNodes.compactMap { $0 as? AVAudioSourceNode }
-        XCTAssertEqual(sources.count, 3)
+        XCTAssertEqual(sources.count, 1, "All three bands share one normalized, peak-protected output")
         for source in sources {
             XCTAssertEqual(source.outputFormat(forBus: 0).sampleRate, 48000)
             XCTAssertEqual(source.outputFormat(forBus: 0).channelCount, 2)

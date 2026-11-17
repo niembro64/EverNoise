@@ -1,4 +1,30 @@
-# Release status — November 15, 2026
+# Release status — November 16, 2026
+
+## Stable mix loudness — build 25 available in TestFlight
+
+**EverNoise 1.1 (25) is available in internal TestFlight for iOS and Apple TV.**
+Apple confirmed iOS availability at **18:15:57 CST** and tvOS at **18:16:58 CST**
+on November 16. Both uploads, saved testing notes, and group assignments are
+verified. iOS external beta testing is **Waiting for Review**. tvOS is
+**Testing** in both Personal Testing and Friends and Family, with three invites
+shown. Automatic external notification is enabled.
+
+Low/Mid/High now set relative balance at a consistent K-weighted listening
+level. Very slow correction, separate linked lookahead peak protection, and a
+remembered **Volume offset** preserve smooth control changes. The existing
+frequency filters remain. The complete previous app is preserved on GitHub at
+`sound-baseline-build-24`.
+
+All 125 mixes at two offsets, 36 Apple-engine conversion cases, overload tests,
+45 core tests, iOS/TV integration and affected UI tests, and **30 accelerated
+hours** pass. Physical-device listening and overnight hardware playback remain
+unverified. TV remote offset selection passes; simulator Settings captures are
+inconsistent, so physical-TV visual verification remains open.
+
+This is a TestFlight update. Public submissions remain unchanged: iOS **1.0.1
+(23)** is Ready for Distribution and tvOS **1.1 (24)** is Waiting for Review
+at the live portal check. Details: [loudness design and validation](LOUDNESS_RELEASE.md),
+[measurements](loudness-audit-v25.json), [delivery](delivery-v25.json).
 
 ## Apple TV submitted; Mac installed
 

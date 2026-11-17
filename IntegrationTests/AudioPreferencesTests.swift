@@ -4,6 +4,22 @@ import PlaybackCore
 
 @MainActor
 final class AudioPreferencesTests: XCTestCase {
+    func testVolumeOffsetPersistsIndependentlyOfMixAndClampsOldValues() {
+        let name = "EverNoise.offset-test.\(UUID().uuidString)"
+        let defaults = UserDefaults(suiteName: name)!
+        defer { defaults.removePersistentDomain(forName: name) }
+        let service = AudioService(defaults: defaults)
+        XCTAssertEqual(service.volumeOffsetDB, 0)
+        XCTAssertNil(defaults.object(forKey: VolumeOffset.preferenceKey))
+        service.setVolumeOffsetDB(-7)
+        service.selectMix(NoiseMix(highs: 4, mids: 1, lows: 0))
+        XCTAssertEqual(AudioService(defaults: defaults).volumeOffsetDB, -7)
+        service.setVolumeOffsetDB(100)
+        XCTAssertEqual(AudioService(defaults: defaults).volumeOffsetDB, 3)
+        defaults.set(-100, forKey: VolumeOffset.preferenceKey)
+        XCTAssertEqual(AudioService(defaults: defaults).volumeOffsetDB, -18)
+    }
+
     func testNewMixDefaultPreservesSavedAndLegacyBalances() {
         let name = "EverNoise.mix-preference-test.\(UUID().uuidString)"
         let defaults = UserDefaults(suiteName: name)!

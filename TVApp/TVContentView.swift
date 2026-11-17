@@ -109,6 +109,11 @@ private struct TVSettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
+                Section {
+                    VolumeOffsetControl(audio: audio)
+                } footer: {
+                    Text("Saved for every mix. Adjust EverNoise to sit comfortably alongside your other audio.")
+                }
                 Picker("Audio", selection: Binding(get: { audio.stereoEnabled }, set: { audio.setStereoEnabled($0) })) {
                     Text("Mono").tag(false)
                     Text("Stereo").tag(true)
@@ -117,6 +122,7 @@ private struct TVSettingsView: View {
                     ForEach(AnimationLevel.allCases) { Text($0.title).tag($0) }
                 }
                 Section("Playback") {
+                    Text("Low, Mid, and High shape the balance of your sound. EverNoise gently maintains overall loudness. Turning every band off makes the mix silent.")
                     Text("Open EverNoise to start. Use your TV or receiver controls for volume. Sound continues when you switch apps. Press Play/Pause on your remote to pause or resume.")
                     Text("Turning off or putting Apple TV to sleep stops playback. Other apps and system events can interrupt audio.")
                 }

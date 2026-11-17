@@ -1,0 +1,21 @@
+{
+  "version": "1.1",
+  "build": 25,
+  "iOS": {
+    "uploadSucceededAt": "2026-11-16T18:14:15-06:00",
+    "availableToInternalTestersAt": "2026-11-16T18:15:57-06:00",
+    "buildID": "8146f42c-dc6c-401e-adb2-7651596cbb1c",
+    "notesSaved": true,
+    "external": "Waiting for Review; existing Friends and Family group attached, automatic notification enabled."
+  },
+  "tvOS": {
+    "uploadSucceededAt": "2026-11-16T18:15:41-06:00",
+    "availableToInternalTestersAt": "2026-11-16T18:16:58-06:00",
+    "buildID": "c6eaeba8-38f2-430f-bceb-add6fa01c93f",
+    "notesSaved": true,
+    "external": "Testing; Personal Testing and Friends and Family are attached, three invites shown. Automatic notification enabled."
+  },
+  "availabilityEvidence": "Apple TestFlight availability messages received and read for both platforms; App Store Connect lists Personal Testing on both builds.",
+  "publicRelease": "Unchanged: iOS 1.0.1 build 23 Ready for Distribution; tvOS 1.1 build 24 Waiting for Review at read-only live check on November 16.",
+  "portalFinalCheckDate": "2026-11-16"
+}

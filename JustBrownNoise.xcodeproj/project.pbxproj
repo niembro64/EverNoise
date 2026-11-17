@@ -25,6 +25,8 @@
 		3CB4446CA2B79AC23BCFD424 /* BrownNoiseDSP in Frameworks */ = {isa = PBXBuildFile; productRef = 354E7417230FEB2369B15C27 /* BrownNoiseDSP */; };
 		3EF19169DE729A1DFEFBAA9D /* NoiseAudioDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834D91C761D7639961CD647 /* NoiseAudioDriver.swift */; };
 		40A09964021D02786CE8D1C0 /* ChannelConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8FAA6B001201EB18422590 /* ChannelConversionTests.swift */; };
+		428CD0AC5B2C901D03CE77E2 /* VolumeOffsetControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341BB4CC0D05B06213CFB872 /* VolumeOffsetControl.swift */; };
+		4AA129136FAB7BAA89271F65 /* VolumeOffsetControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341BB4CC0D05B06213CFB872 /* VolumeOffsetControl.swift */; };
 		5554EF081B2ADBC7AE2254BA /* NoisePalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEEB8F1E94FC64E47D85D89 /* NoisePalette.swift */; };
 		603030483F081BBC3042664E /* AudioDriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA50B958D70330450A061DAE /* AudioDriverTests.swift */; };
 		64F07EC9DC230BBB2D25A3DF /* LinearColorProbe.metal in Sources */ = {isa = PBXBuildFile; fileRef = E3C5CC7677CF862ED826A3E6 /* LinearColorProbe.metal */; };
@@ -101,6 +103,7 @@
 		24D457EE3E4EBF2C3AEB6858 /* BandNotchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandNotchTests.swift; sourceTree = "<group>"; };
 		2E3643F6A487969684D43BC5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2EBE30C4033CD6BA6307C634 /* JustBrownNoiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustBrownNoiseUITests.swift; sourceTree = "<group>"; };
+		341BB4CC0D05B06213CFB872 /* VolumeOffsetControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeOffsetControl.swift; sourceTree = "<group>"; };
 		3834D91C761D7639961CD647 /* NoiseAudioDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseAudioDriver.swift; sourceTree = "<group>"; };
 		3D47ABAC7211F4A65E8C6E2D /* TVContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVContentView.swift; sourceTree = "<group>"; };
 		4D2ABC4102A927FCE6A8AAF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -211,6 +214,7 @@
 				717BC5C9A34C454F03B1D995 /* RibbonScene.swift */,
 				A7218FAEEDAE87DA5CE9A532 /* RibbonShaders.metal */,
 				F854835C1B0D424B90BDE4F6 /* RibbonSurface.swift */,
+				341BB4CC0D05B06213CFB872 /* VolumeOffsetControl.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -515,6 +519,7 @@
 				11819CE9AE33743296F99A2A /* RibbonShaders.metal in Sources */,
 				EC786FDDB7046AA1C1E889B0 /* RibbonSurface.swift in Sources */,
 				2D3ECB8E873A1E158D98F549 /* TVContentView.swift in Sources */,
+				4AA129136FAB7BAA89271F65 /* VolumeOffsetControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +544,7 @@
 				C2E24F193D83E8CFECAFEF66 /* RibbonScene.swift in Sources */,
 				76D37307492DC178D10A827D /* RibbonShaders.metal in Sources */,
 				BA66B95A73FB18F2F6B714C5 /* RibbonSurface.swift in Sources */,
+				428CD0AC5B2C901D03CE77E2 /* VolumeOffsetControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,7 +617,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 82F3X3VDHP;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -900,7 +906,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 82F3X3VDHP;
 				ENABLE_NS_ASSERTIONS = NO;

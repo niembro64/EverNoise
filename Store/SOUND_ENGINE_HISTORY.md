@@ -1,5 +1,20 @@
 # Sound engine history and rollback
 
+## Normalized mix and slow leveling — build 25
+
+Approved November 16, 2026 to address the large loudness difference when switching
+between EverNoise and other media. The frequency filters and five relative
+ratios remain; output now uses K-weighted calibration, slow bounded correction,
+linked lookahead peak protection, and a saved Volume offset. The controls shape
+the relative mix rather than absolute output power. This is a deliberate change
+to gain and dynamics; the prior fixed-gain absolute bound no longer describes
+the complete output path. See [loudness design and validation](LOUDNESS_RELEASE.md).
+
+**sound-baseline-build-24** preserves commit `b4b62d9` before this change. It has
+the same audio as build 23, plus the native TV interface. Retain this tag and
+the original build-22 tag for independent rollback. A distributed rollback
+requires a new build number; never rewrite an existing release tag.
+
 ## Original independent layers — build 22
 
 This is the last release before the fundamental power-complementary crossover redesign authorized on November 15, 2026. Its sound was described by the user as smooth and consistent. The preferred balance is the third Low button, third Mid button, and second High button, counting Off as the first: internal levels **2 / 2 / 1**, with gains **−12 / −12 / −18 dB**.

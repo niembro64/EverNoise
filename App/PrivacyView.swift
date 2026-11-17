@@ -8,6 +8,12 @@ struct PrivacyView: View {
         NavigationStack {
             List {
                 Section {
+                    VolumeOffsetControl(audio: audio)
+                } footer: {
+                    Text("Saved for every mix. Adjust EverNoise to sit comfortably alongside your other audio. Your device’s volume buttons still control listening volume.")
+                        .font(AppTypography.footnote)
+                }
+                Section {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Audio")
                         Picker("Audio", selection: Binding(get: { audio.stereoEnabled }, set: { audio.setStereoEnabled($0) })) {
@@ -48,7 +54,7 @@ struct PrivacyView: View {
                 } header: { Text("Your privacy").font(AppTypography.heading) }
                 Section {
                     Text("Open the app to start. Use your device’s volume buttons, then lock your screen or switch apps. Playback has no time limit. Tap Pause on the main screen or in Control Center to stop. Opening the app starts it again.")
-                    Text("Tap a button in each Low, Mid, and High row. The hollow circle is Off; four growing dots choose the intensity. A glass rim shows your selection. The four active levels keep the same equal 6 dB steps. New installations start on the third Low button, third Mid button, and second High button, counting Off as first. Changes fade smoothly, and the app remembers your choices. Turning every band off makes the mix silent.")
+                    Text("Tap a button in each Low, Mid, and High row to shape your mix. The hollow circle is Off; four growing dots choose each band’s relative strength. EverNoise gently balances the overall loudness as you change the mix. Raising all three bands proportionally keeps the same balance and volume. Your choices are remembered. Turning every band off makes the mix silent.")
                     Text("Low uses muted rose, Mid uses sage, and High uses periwinkle. The large infinity mixes their color with six rainbow currents weighted by your bands’ power. Med animates the infinity on a black background. High adds four enormous, faint floating ribbons with the same liquid and mist. Low keeps a still infinity on black. Pausing or turning all bands off mutes the colors. Animation stops when hidden and respects Reduce Motion. Your animation level is remembered.")
                     Text("Stereo creates independent left and right signals with the same sound mix. Switching modes fades smoothly without restarting playback. Stereo starts on unless you have saved a different choice. A mono output cannot reproduce the stereo separation.")
                     Text("iOS can interrupt audio for calls, Siri, or system events. Playback resumes automatically when iOS permits. If audio is reset by iOS, tap Play to resume. Force-quitting the app or powering off the device stops playback.")
