@@ -69,6 +69,10 @@ struct TVContentView: View {
                             .focused($focusedControl, equals: .settings)
                         }
                         .padding(.top, 16)
+                        .frame(maxWidth: .infinity)
+                        // The control row accepts Down from every Low choice,
+                        // including those outside the two buttons' own columns.
+                        .focusSection()
                         #if DEBUG
                         Text(audio.diagnostics)
                             .font(.system(size: 1))

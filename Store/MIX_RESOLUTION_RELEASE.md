@@ -73,8 +73,19 @@ also understands all six choices.
   all-off silence pass. AddressSanitizer is not claimed; this host's runtime
   failed before main during the preceding release's attempt.
 
-UI validation and final delivery are recorded in the build manifest and
-release status after completion. No new physical-device listening or overnight
+- Final iPhone 17 Pro and iPad Pro 13 UI flows pass: legacy preferences migrate
+  to the same sound, six buttons fit, touch targets remain at least 44×56,
+  one selection has the glass rim, paused controls are grayscale, and new
+  trace choices persist after relaunch. Final screenshots were reviewed.
+- Two final Apple TV UI flows pass, including all six Low choices moving Down
+  to the playback controls and selection/settings without engine restarts.
+  Wider TV gaps exposed a geometric focus miss at the left edge; a full-width
+  native [focus section](https://developer.apple.com/documentation/swiftui/view/focussection())
+  now guides navigation into the bottom row. No synthetic focus movement is
+  added to the app.
+
+Final delivery is recorded in the build manifest and release status.
+No new physical-device listening or overnight
 acoustic measurement is claimed. Digital peaks do not determine room sound
 pressure or guarantee freedom from distortion in every speaker or output route.
 

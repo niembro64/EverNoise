@@ -121,6 +121,21 @@ final class TVPlaybackUITests: XCTestCase {
     }
 
     @MainActor
+    func testEveryLowChoiceCanMoveDownToPlaybackControls() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-animationLevel", "low", "-mixLevelsV2",
+            "<dict><key>low</key><integer>3</integer><key>mid</key><integer>3</integer><key>high</key><integer>2</integer></dict>"]
+        app.launch()
+        XCTAssertTrue(app.buttons["playbackButton"].waitForExistence(timeout: 20))
+        for level in 0...5 {
+            select(app.buttons["band-low-\(level)"], in: app)
+            XCUIRemote.shared.press(.down)
+            XCTAssertTrue(app.buttons["playbackButton"].hasFocus || app.buttons["settingsButton"].hasFocus,
+                          "Down from Low \(level) must reach the bottom controls")
+        }
+    }
+
+    @MainActor
     private func select(_ target: XCUIElement, in app: XCUIApplication) {
         for _ in 0..<12 {
             if target.hasFocus {
