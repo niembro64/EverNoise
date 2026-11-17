@@ -11,7 +11,7 @@ let package = Package(
     ],
     targets: [
         .target(name: "BrownNoiseDSP"),
-        .target(name: "SpectrumAnalysis", linkerSettings: [.linkedFramework("Accelerate")]),
+        .target(name: "SpectrumAnalysis", dependencies: ["BrownNoiseDSP"], linkerSettings: [.linkedFramework("Accelerate")]),
         .target(name: "PlaybackCore"),
         .testTarget(name: "BrownNoiseCoreTests", dependencies: ["BrownNoiseDSP", "PlaybackCore", "SpectrumAnalysis"])
     ]

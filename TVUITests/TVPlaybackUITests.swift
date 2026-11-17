@@ -8,9 +8,11 @@ final class TVPlaybackUITests: XCTestCase {
         app.launch()
         XCTAssertTrue(app.buttons["playbackButton"].waitForExistence(timeout: 20))
         XCTAssertTrue(app.otherElements["outputSpectrogram"].waitForExistence(timeout: 10))
-        sleep(5)
         let plot = app.otherElements["outputSpectrogram"]
         func frameCount() -> UInt64 { UInt64((plot.value as? String ?? "").split(separator: "=").last ?? "") ?? 0 }
+        expectation(for: NSPredicate { _, _ in frameCount() > 48000 }, evaluatedWith: app)
+        waitForExpectations(timeout: 15)
+        sleep(6)
         XCTAssertGreaterThan(frameCount(), 48000)
         let maxImage = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
         maxImage.name = "TV-Max-spectrogram"; maxImage.lifetime = .keepAlways; add(maxImage)

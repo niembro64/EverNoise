@@ -30,6 +30,8 @@ final class JustBrownNoiseUITests: XCTestCase {
         chooseVisual("Max")
         XCTAssertTrue(app.otherElements["outputSpectrogram"].waitForExistence(timeout: 5))
         let plot = app.otherElements["outputSpectrogram"]
+        XCTAssertTrue((plot.value as? String ?? "").contains("2 hertz to 24 kilohertz"))
+        XCTAssertTrue((plot.value as? String ?? "").contains("48 kilohertz"))
         func frameCount() -> UInt64 { UInt64((plot.value as? String ?? "").split(separator: "=").last ?? "") ?? 0 }
         let running = NSPredicate { _, _ in frameCount() > 48000 }
         expectation(for: running, evaluatedWith: app)

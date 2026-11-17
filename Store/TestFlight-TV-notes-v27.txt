@@ -1,0 +1,11 @@
+EverNoise for Apple TV 1.1 (27)
+
+Max now shows a wider, more detailed output spectrogram. The logarithmic axis spans 2 Hz to 48 kHz; a dashed line marks the 24 kHz measurement limit. The shaded area above it is outside the generated signal's measurable range.
+
+Frequency determines color: muted red for lows, green for mids and blue for highs, blended using the equal-gain crossover curves. Brighter means more measured power. Colors and the brightness scale stay fixed when you change the mix.
+
+Deep bass gets a longer analysis window with about 0.18 Hz bin spacing. Allow roughly six seconds for the first measurement; the lowest frequencies respond more gradually. Playback starts immediately as before.
+
+Choose Max in Settings using the Siri Remote. Change the Low/Mid/High balance and check that the matching frequencies brighten or dim. Test Play/Pause and returning from the Home screen. Off disables visual processing; Med remains the default.
+
+The sound engine, saved mix, loudness adjustment and peak protection are unchanged. Analysis observes the final generated audio before system volume and speaker processing.

@@ -133,7 +133,7 @@ private struct TVSettingsView: View {
                 }
                 .accessibilityIdentifier("animationLevelPicker")
                 Text("Off removes artwork. Low keeps a still infinity. Med animates the infinity. High adds ribbons. Max replaces the infinity with the output spectrogram. Med is the default.")
-                Text("The spectrogram measures generated audio before device volume and speaker processing. It stops when hidden or paused. Reduce Motion updates its history once per second.")
+                Text("The spectrogram spans 2 Hz to 48 kHz, with a shaded margin above the source’s 24 kHz limit. Red means low frequencies, green mid, and blue high; brighter means more measured power. Colors stay tied to frequency as you change the mix. The chart begins after about six seconds, and very low frequencies settle more slowly. It measures before device volume and speaker processing and stops when hidden or paused. Reduce Motion updates its history once per second.")
                 Section("Playback") {
                     Text("Low, Mid, and High shape the balance of your sound. EverNoise gently maintains overall loudness. Turning every band off makes the mix silent.")
                     Text("Open EverNoise to start. Use your TV or receiver controls for volume. Sound continues when you switch apps. Press Play/Pause on your remote to pause or resume.")

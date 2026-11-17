@@ -30,17 +30,7 @@ actor SpectrogramWorker {
     private var lastEnd: UInt64 = 0
     private var lastInput: UInt64?
     private var started = false
-    private let colors: [[UInt8]] = (0..<1024).map { step in
-        // A quiet, monotonic lightness palette; fixed levels, no autoscaling.
-        let stops: [SIMD3<Double>] = [.zero, SIMD3(0.07, 0.055, 0.16), SIMD3(0.28, 0.25, 0.49),
-                                     SIMD3(0.44, 0.58, 0.72), SIMD3(0.60, 0.76, 0.68), SIMD3(0.96, 0.87, 0.70)]
-        let location = Double(step) / 1023 * 5
-        let i = min(4, Int(location)), t = location - Double(i)
-        return (0..<3).map { ch in
-            let linear = LinearLight.decode(stops[i][ch]) * (1-t) + LinearLight.decode(stops[i+1][ch]) * t
-            return UInt8(min(255, max(0, (LinearLight.encode(linear)*255).rounded())))
-        }
-    }
+    private let palette = SpectrogramPalette()
 
     init(feed: OutputSampleFeed) { self.feed = feed }
 
@@ -81,8 +71,7 @@ actor SpectrogramWorker {
                 }
                 for row in 0..<Self.height {
                     let dB = columns[x * Self.height + row]
-                    let index = min(1023, max(0, Int(((dB + 100) / 70 * 1023).rounded())))
-                    let color = colors[index]
+                    let color = palette.encodedColor(row: row, decibels: dB)
                     let p = ((Self.height-1-row)*Self.width+column)*4
                     pixels[p] = color[0]; pixels[p+1] = color[1]; pixels[p+2] = color[2]; pixels[p+3] = 255
                 }
@@ -131,7 +120,9 @@ struct SpectrogramView: View {
     private let labelScale = 1.0
     #endif
     private var accessibleValue: String {
-        let description = isSounding ? "Live audio, 20 hertz to 20 kilohertz, 22 seconds of history" : "Paused or silent"
+        let description = isSounding
+            ? "Live audio, 2 hertz to 24 kilohertz, axis extends to 48 kilohertz, 22 seconds of history. Red is low, green is mid, blue is high. Brighter means more power."
+            : "Paused or silent"
         #if DEBUG
         return "\(description); frame=\(snapshot?.endFrame ?? 0)"
         #else
@@ -156,7 +147,23 @@ struct SpectrogramView: View {
                                in: CGRect(x: plot.minX-fraction*pixel, y: plot.minY,
                                           width: plot.width+pixel, height: plot.height))
                 }
-                for (text, fraction) in [("20k", 0.0), ("2k", 1.0/3), ("200", 2.0/3), ("20", 1.0)] {
+                func verticalFraction(_ frequency: Double) -> Double {
+                    log(Double(BNSpectrumMaximumHz)/frequency) /
+                        log(Double(BNSpectrumMaximumHz)/Double(BNSpectrumMinimumHz))
+                }
+                let limitY = plot.minY + plot.height*verticalFraction(Double(BNSpectrumNyquistHz))
+                context.fill(Path(CGRect(x: plot.minX, y: plot.minY, width: plot.width, height: limitY-plot.minY)),
+                             with: .color(.white.opacity(0.035)))
+                var boundary = Path()
+                boundary.move(to: CGPoint(x: plot.minX, y: limitY)); boundary.addLine(to: CGPoint(x: plot.maxX, y: limitY))
+                context.stroke(boundary, with: .color(.white.opacity(0.2)),
+                               style: StrokeStyle(lineWidth: 0.5, dash: [2, 3]))
+                if snapshot == nil && active {
+                    context.draw(Text("Measuring output…").font(.custom("AvenirNext-Regular", size: 11*labelScale))
+                        .foregroundColor(.white.opacity(0.4)), at: CGPoint(x: plot.midX, y: plot.midY))
+                }
+                for (text, frequency) in [("48k", 48000.0), ("20k", 20000), ("2k", 2000), ("200", 200), ("20", 20), ("2", 2)] {
+                    let fraction = verticalFraction(frequency)
                     let y = plot.minY+plot.height*fraction
                     var line = Path(); line.move(to: CGPoint(x: plot.minX, y: y)); line.addLine(to: CGPoint(x: plot.maxX, y: y))
                     context.stroke(line, with: .color(.white.opacity(0.09)), lineWidth: 0.5)
@@ -165,7 +172,7 @@ struct SpectrogramView: View {
                 }
                 context.draw(Text("Hz").font(.custom("AvenirNext-Regular", size: 9*labelScale)).foregroundColor(.white.opacity(0.45)),
                              at: CGPoint(x: plot.minX-6*labelScale, y: 7*labelScale), anchor: .trailing)
-                context.draw(Text("−100 … −30 dBFS/Hz").font(.custom("AvenirNext-Regular", size: 9*labelScale)).foregroundColor(.white.opacity(0.45)),
+                context.draw(Text("−120 … −30 dBFS/Hz · 24k limit").font(.custom("AvenirNext-Regular", size: 9*labelScale)).foregroundColor(.white.opacity(0.45)),
                              at: CGPoint(x: plot.minX, y: 7*labelScale), anchor: .leading)
                 context.draw(Text("−22 s").font(.custom("AvenirNext-Regular", size: 9*labelScale)).foregroundColor(.white.opacity(0.45)),
                              at: CGPoint(x: plot.minX, y: plot.maxY+13*labelScale), anchor: .leading)

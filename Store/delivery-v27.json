@@ -1,0 +1,28 @@
+{
+  "version": "1.1",
+  "build": 27,
+  "iOS": {
+    "uploadSucceededAt": "2026-11-16T20:28:27-06:00",
+    "availableToInternalTestersAt": "2026-11-16T20:29:43-06:00",
+    "buildID": "598c7b5c-fcda-4b20-be70-7686d4a772df",
+    "notesSaved": true,
+    "groups": [
+      "Personal Testing"
+    ],
+    "external": "Not submitted. Apple permits only one build from version 1.1 in Beta App Review until the first is approved; build 25 remains Waiting for Review."
+  },
+  "tvOS": {
+    "uploadSucceededAt": "2026-11-16T20:30:21-06:00",
+    "availableToInternalTestersAt": "2026-11-16T20:31:44-06:00",
+    "buildID": "beb1dd3e-f907-4b4b-93df-254ecc761032",
+    "notesSaved": true,
+    "groups": [
+      "Personal Testing",
+      "Friends and Family"
+    ],
+    "external": "Testing; three invites shown. Automatic tester notification enabled."
+  },
+  "availabilityEvidence": "Apple TestFlight availability emails for both platforms, plus live App Store Connect group and status checks.",
+  "publicRelease": "No changes to public App Store submissions in this work.",
+  "portalFinalCheckDate": "2026-11-16"
+}

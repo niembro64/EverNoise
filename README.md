@@ -39,9 +39,13 @@ Audio (Mono/Stereo) and
 Animations control: Off removes all artwork and stops visual processing; Low
 keeps a still infinity on black; Med animates only the infinity; High also
 shows the background ribbons; Max replaces the infinity with a spectrogram
-of the actual generated audio. Its logarithmic frequency axis spans 20 Hz to
-20 kHz, with approximately 22 seconds of time history and a fixed power scale.
-Analysis runs off the audio thread and stops while paused or hidden. Med is
+of the actual generated audio. Its logarithmic frequency axis spans 2 Hz to
+48 kHz, with a marked 24 kHz source measurement limit and approximately
+22 seconds of time history. Fixed red/green/blue frequency colors follow the
+equal-gain crossover curves; brightness follows measured power on a fixed
+−120 to −30 dBFS/Hz scale. A longer bass analysis window resolves near 2 Hz;
+the first measurement takes about six seconds. Analysis runs off the audio
+thread and stops while paused or hidden. Med is
 the default. A saved old animations-off choice migrates to Low;
 otherwise upgrades start on Med. Every new level is remembered. Animation settings do not affect audio.
 The app remembers all three levels and fades smoothly between balances. A large
@@ -52,13 +56,15 @@ work too. Reopening the app starts it again.
 
 ## TestFlight
 
-**1.1 (26) is available in internal TestFlight** for iOS and Apple TV. It adds
-Off and Max animation settings, including a calibrated spectrogram of the final
-generated audio. Open [TestFlight](https://testflight.apple.com/v1/app/6834413344)
-to update. Apple TV is also testing in Friends and Family. Apple prevents adding
-iOS build 26 to external groups until build 25's beta review is approved.
-See [spectrogram validation](Store/SPECTROGRAM_RELEASE.md) for measurements
-and limits. Build 25's mix loudness and saved Volume offset remain unchanged;
+**1.1 (27) is available in internal TestFlight** for iOS and Apple TV. Max now
+shows a 2 Hz–48 kHz frequency axis, fixed low/red, mid/green and high/blue
+colors, and higher-resolution bass analysis. Measured power controls brightness.
+Open [TestFlight](https://testflight.apple.com/v1/app/6834413344) to update.
+Apple TV is also testing in Friends and Family. Apple prevents adding iOS
+build 27 to external groups until build 25's beta review is approved.
+See [spectrogram validation](Store/SPECTROGRAM_COLOR_RELEASE.md) for measurements
+and limits, including the 24 kHz source measurement boundary.
+Build 25's mix loudness and saved Volume offset remain unchanged;
 see [the loudness audit](Store/LOUDNESS_RELEASE.md).
 The records below describe earlier distributed builds.
 
@@ -150,11 +156,13 @@ which may be the speaker. No app can guarantee immunity from system interruption
 
 ## Verification
 
-Build 26 passes all **50 core tests**, **31 iOS and 10 tvOS integration tests**,
-and affected visual flows on iPhone, iPad and Apple TV. Independent FFT and
-concurrent capture audits pass. Every audio DSP/playback source matches build
-25, and capture tests confirm sample-exact observation. Detailed results and
-physical-device limitations are in the [spectrogram audit](Store/SPECTROGRAM_RELEASE.md).
+Build 27 passes all **52 core tests**, **33 iOS and 10 tvOS integration tests**,
+and affected visual flows on iPhone, iPad and Apple TV. Independent full-rate
+and decimated FFT, anti-alias filtering, color/lightness and sanitizer checks
+pass. Every audio DSP/playback/driver/capture source matches build 26, and
+capture tests confirm sample-exact observation. Detailed results and
+physical-device limitations are in the
+[frequency-color spectrogram audit](Store/SPECTROGRAM_COLOR_RELEASE.md).
 
 The following records describe the earlier sound-engine qualification.
 
