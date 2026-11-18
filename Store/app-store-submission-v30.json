@@ -1,0 +1,57 @@
+{
+  "version": "1.1",
+  "build": "30",
+  "sourceCommit": "17922e3a841e9fbe8e0ec581a7a6e189812c239c",
+  "observedAtUTC": "2026-11-18T04:20:34.608957+00:00",
+  "observationMethod": "Live App Store Connect in Microsoft Edge; final App Review list verified both submissions Waiting for Review.",
+  "iOS": {
+    "submissionID": "aff29e07-12ee-4044-a9d1-d6ec12ebc129",
+    "submissionURL": "https://appstoreconnect.apple.com/apps/6834413344/distribution/reviewsubmissions/details/aff29e07-12ee-4044-a9d1-d6ec12ebc129",
+    "submittedAtLocal": "2026-11-17 22:15 CST",
+    "buildID": "7952a403-0e1f-42e2-a69f-09618e0579c0",
+    "status": "Waiting for Review",
+    "release": "Automatically release this version; release update to all users immediately",
+    "platforms": [
+      "iPhone",
+      "iPad",
+      "Apple silicon Mac (compatible iPad app)",
+      "Apple Vision Pro (compatible iPad app)"
+    ],
+    "currentlyReleasedVersion": "1.0.1",
+    "currentlyReleasedBuild": "23"
+  },
+  "tvOS": {
+    "submissionID": "be35dd2c-3d3e-41a6-adab-70a64a489a42",
+    "submissionURL": "https://appstoreconnect.apple.com/apps/6834413344/distribution/reviewsubmissions/details/be35dd2c-3d3e-41a6-adab-70a64a489a42",
+    "submittedAtLocal": "2026-11-17 22:18 CST",
+    "buildID": "332c5408-8713-4271-bc5f-eba69711614d",
+    "status": "Waiting for Review",
+    "release": "Automatically release this version",
+    "replacedSubmissionID": "b7ec2504-b05f-42c6-91ca-1afa920be659",
+    "replacedBuild": "24",
+    "replacedSubmissionFinalStatus": "Removed",
+    "firstPublicRelease": true
+  },
+  "availability": {
+    "price": "Free; zero prices confirmed in the 175-country pricing table",
+    "countriesOrRegions": 175,
+    "appleSiliconMacEnabled": true,
+    "minimumMacOS": "Automatic (macOS 14.0)",
+    "macVersion1_1Compatible": true,
+    "visionProEnabled": true,
+    "visionVersion1_1Compatible": true,
+    "availabilityChangesNeeded": false,
+    "optionalMacCompatibilityAttestation": "Not submitted; availability and platform compatibility confirmed separately."
+  },
+  "metadata": "metadata-v30.json",
+  "screenshotProvenance": "screenshots-v30/provenance.json",
+  "verification": {
+    "sourceFilesMatchedBuild30Manifest": 46,
+    "codeChanged": false,
+    "rebuildNeeded": false,
+    "tests": "Existing build 30 validation reused; see build-30-manifest.json. Large iPhone screenshot captured from the build 30 simulator binary and visually checked. All submitted screenshot dimensions checked."
+  },
+  "publicReleaseConfirmed": false,
+  "remainingStep": "Apple App Review approval and storefront propagation; automatic release is configured on both platforms.",
+  "testFlightChanges": "None during this public-store update; see delivery-v30.json for separate beta delivery."
+}

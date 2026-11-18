@@ -67,6 +67,16 @@ the higher ranges dogs and cats can hear. Caregiver guidance covers quiet,
 distant, limited listening for children and a quiet retreat for pets. Digital
 peak protection is not a sound-pressure limit at anyone's ears.
 
+## Public App Store
+
+Version **1.1 (30)** was submitted on November 17 for **iOS and tvOS**; both
+are **Waiting for Review**, with automatic release after approval. iPad,
+Apple silicon Mac and Vision Pro share the iOS release. Their availability
+is enabled. Current screenshots and descriptions are submitted, and the app
+remains free. The released iOS version is still 1.0.1 (23) while review is
+pending. See [release status](Store/RELEASE_STATUS.md) and
+[submission evidence](Store/app-store-submission-v30.json).
+
 ## TestFlight
 
 **1.1 (30) is available in internal TestFlight** for iOS and Apple TV. Six band

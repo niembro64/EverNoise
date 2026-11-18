@@ -1,4 +1,30 @@
-# Release status — November 16, 2026
+# Release status — November 17, 2026
+
+## Public App Store updates — build 30 submitted on all supported platforms
+
+**iOS 1.1 (30) and tvOS 1.1 (30) are both Waiting for Review.** Apple confirmed
+receipt on November 17 at **22:15 CST** for iOS and **22:18 CST** for tvOS
+(November 18 at 04:15 and 04:18 UTC). Both are configured to release automatically
+after approval; iOS will release to all users immediately rather than in phases.
+
+The universal iOS update covers iPhone and iPad, plus the compatible iPad app
+on **Apple silicon Mac** and **Apple Vision Pro**. Their availability checkboxes
+remain enabled, and App Store Connect lists version 1.1 as compatible with both.
+The current public iOS release remains **1.0.1 (23)** until approval. Apple TV's
+first public release was still waiting with build 24; that old submission was
+withdrawn and replaced with build 30. Neither new public release is approved yet.
+
+Updated descriptions and review notes cover six mix choices, App Loudness,
+peak protection, five visual levels and the output spectrogram. Current iPhone,
+iPad and 4K TV screenshots replace the old control layouts. Pricing remains
+**free** across the existing 175 countries or regions. TestFlight was unchanged.
+No application code changed: all 46 source hashes match the validated build-30
+manifest, and the existing uploaded binaries were reused.
+
+- [iOS submission](https://appstoreconnect.apple.com/apps/6834413344/distribution/reviewsubmissions/details/aff29e07-12ee-4044-a9d1-d6ec12ebc129)
+- [tvOS submission](https://appstoreconnect.apple.com/apps/6834413344/distribution/reviewsubmissions/details/be35dd2c-3d3e-41a6-adab-70a64a489a42)
+- [Submission and availability evidence](app-store-submission-v30.json)
+- [Submitted metadata](metadata-v30.json) and [screenshot provenance](screenshots-v30/provenance.json)
 
 ## Quieter first mix choice — build 30
 

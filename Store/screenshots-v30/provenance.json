@@ -1,0 +1,22 @@
+{
+  "iPhone-6.3-inch.jpg": {
+    "source": "build 30 final iPhone UI test, favorite mix; source EA7CE718-5706-461C-9C23-3AEC44CD126B.png",
+    "sha256": "366b9a2d69381d515cdbd00b73bc12d7fd6af1c10d185fce3ea2710c42d49699",
+    "conversion": "JPEG quality 92, no content edits or resizing"
+  },
+  "iPhone-6.9-inch.jpg": {
+    "source": "build 30 simulator binary, iPhone 17 Pro Max iOS 26.2; default mix and Med animation, 2026-11-18 UTC",
+    "sha256": "3c72837f22e8b3c67cef4566fabd7bbd7bdf7bc32d5c9a28d3c0cc0f16cf6482",
+    "conversion": "JPEG quality 92, no content edits or resizing"
+  },
+  "iPad-13-inch.jpg": {
+    "source": "build 30 final iPad UI test, favorite mix; source D79BAD87-101D-42A1-9E43-C64573FE7C32.png",
+    "sha256": "c051479354e97a38e96e47d9003441f5c65669c320ca6f3cb4cce60c3eb553ac",
+    "conversion": "JPEG quality 92, no content edits or resizing"
+  },
+  "Apple-TV-4K.jpg": {
+    "source": "build 30 final TV UI test; source 5DB959C5-58DD-4174-BEB5-0D6DF3798EDB.png",
+    "sha256": "b4fc21276658c955764e8860ecfa6d92b70853deacbd46098a53d244a130db21",
+    "conversion": "JPEG quality 92, no content edits or resizing"
+  }
+}

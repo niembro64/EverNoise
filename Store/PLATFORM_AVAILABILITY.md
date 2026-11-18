@@ -1,4 +1,26 @@
-# Apple platform availability — November 15, 2026
+# Apple platform availability — November 17, 2026
+
+## Current public-store update
+
+On November 17, **1.1 (30)** was submitted for public App Review on both iOS and
+tvOS. Both submissions are **Waiting for Review**, with automatic release after
+approval. The iOS update includes iPhone/iPad and the compatible app on Apple
+silicon Mac and Vision Pro. Mac and Vision Pro availability remain enabled;
+App Store Connect explicitly lists version 1.1 as compatible with each.
+Mac availability is app-wide and applies to future iOS versions. There is no
+separate native macOS release and no Intel Mac support.
+
+The public iOS version remains 1.0.1 (23) while review is pending. Apple TV's
+pending build 24 submission was removed and replaced with build 30. Current
+screenshots and descriptions were saved for phone, tablet and TV. Pricing is
+still free in the 175 existing countries or regions. This is a public-store
+submission, distinct from the already uploaded TestFlight builds.
+
+See [current submission evidence](app-store-submission-v30.json) and
+[release status](RELEASE_STATUS.md). The historical platform setup and Mac smoke
+test below describe build 23, not fresh physical-device validation of build 30.
+
+## Original platform rollout — November 15
 
 At approximately 22:33 UTC (16:33 CST), distribution was expanded using the
 existing, released **1.0.1 (23)** binary. No audio or application code changed.
