@@ -1,0 +1,31 @@
+{
+  "version": "1.2",
+  "build": "31",
+  "sourceCommit": "872a922",
+  "observedAtUTC": "2026-11-21T16:18:50.089858+00:00",
+  "iOS": {
+    "buildID": "9812fa43-0197-4976-b307-703219c684dd",
+    "uploadSucceededAtUTC": "2026-11-21T16:01:34Z",
+    "internalAvailableAtUTC": "2026-11-21T16:02:58Z",
+    "internalAvailabilityEvidence": "Apple TestFlight email: EverNoise 1.2 (31) for iOS is now available to test.",
+    "internalGroup": "Personal Testing",
+    "externalGroup": "Friends and Family",
+    "externalStatus": "Waiting for Review",
+    "automaticallyNotifyExternalTesters": true,
+    "testingNotesSaved": true
+  },
+  "tvOS": {
+    "buildID": "49df04ce-2c7c-45f7-a37c-9bcecd4138b7",
+    "uploadSucceededAtUTC": "2026-11-21T16:01:27Z",
+    "internalAvailableAtUTC": "2026-11-21T16:03:03Z",
+    "internalAvailabilityEvidence": "Apple TestFlight email: EverNoise 1.2 (31) for tvOS is now available to test.",
+    "internalGroup": "Personal Testing",
+    "externalGroup": "Friends and Family",
+    "externalStatus": "Waiting for Review",
+    "automaticallyNotifyExternalTesters": true,
+    "testingNotesSaved": true
+  },
+  "observationMethod": "Successful Xcode uploads, Apple availability emails, and final live App Store Connect build tables in Microsoft Edge. Both build-31 rows showed Waiting for Review and both existing groups.",
+  "uploadAdvisory": "Apple accepted both builds and advised that uploads/submissions from April 2027 will require SDK 27 or later. Current build uses Xcode/SDK 26.2; this did not block delivery or review submission.",
+  "validation": "build-31-manifest.json"
+}

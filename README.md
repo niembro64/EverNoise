@@ -57,8 +57,16 @@ otherwise upgrades start on Med. Every new level is remembered. Animation settin
 The app remembers all three levels and fades smoothly between balances. A large
 play/pause button controls playback; use the physical buttons for volume. Settings
 also has a saved App Loudness setting to balance EverNoise against your other audio. Privacy
-and help sit behind an outline gear with a generous 80-point touch target. Lock-screen and Control Center controls
-work too. Reopening the app starts it again.
+and help sit behind an outline gear with a generous 80-point touch target. Reopening the app starts it again.
+
+Interactive Home Screen and Lock Screen widgets let you play or pause your
+saved mix without opening EverNoise. On iOS 18+, a native control can be added
+to Control Center, Lock Screen control slots or a supported Action button.
+Start, Pause and Play or Pause actions are available in Siri and Shortcuts,
+including bedtime automations. Settings includes a native audio-output picker
+and a **Widgets & shortcuts** setup guide. Widgets stay still to save power.
+The app keeps mixing with other audio; these dedicated controls work independently
+of iOS's separate Now Playing media card. See [design and validation](Store/WIDGETS_RELEASE.md).
 
 Settings includes **For the ones you care for**, describing a broad, adjustable
 blanket of sound for households with babies, children and pets. It explains
@@ -69,29 +77,24 @@ peak protection is not a sound-pressure limit at anyone's ears.
 
 ## Public App Store
 
-Version **1.1 (30)** was submitted on November 17 for **iOS and tvOS**; both
-are **Waiting for Review**, with automatic release after approval. iPad,
-Apple silicon Mac and Vision Pro share the iOS release. Their availability
-is enabled. Current screenshots and descriptions are submitted, and the app
-remains free. The released iOS version is still 1.0.1 (23) while review is
-pending. See [release status](Store/RELEASE_STATUS.md) and
-[submission evidence](Store/app-store-submission-v30.json).
+**1.1 (30)** now shows Ready for Distribution for iOS and tvOS. The new
+**1.2 (31)** update was submitted on November 21 for both and is **Waiting for
+Review**, with automatic release after approval. iPad, Apple silicon Mac and
+Vision Pro share the iOS release; their availability remains enabled. The app
+remains free. See [release status](Store/RELEASE_STATUS.md) and
+[submission evidence](Store/app-store-submission-v31.json).
 
 ## TestFlight
 
-**1.1 (30) is available in internal TestFlight** for iOS and Apple TV. Six band
-choices add a −30 dB trace below the former first active choice, with dots and
-colors that indicate relative power. Existing mixes and the default sound are
-preserved exactly. Max retains build 29's smooth spectrum and perceptual
-brightness; App Loudness and peak protection are unchanged.
+**1.2 (31) is available in internal TestFlight** for iOS and Apple TV.
 Open [TestFlight](https://testflight.apple.com/v1/app/6834413344) to update.
-Apple TV is also testing in Friends and Family. Apple prevents adding iOS
-build 30 to external groups until build 25's beta review is approved.
-See [mix validation](Store/MIX_RESOLUTION_RELEASE.md),
-[signed packages](Store/build-30-manifest.json), and
-[delivery evidence](Store/delivery-v30.json). The sound retains build 28's
-30 Hz / 20 kHz tapers and household listening guidance; see
-[the sound release record](Store/FAMILY_SPECTRUM_RELEASE.md).
+Friends and Family external testing is Waiting for Review on both platforms.
+The update adds iPhone/iPad widgets, system controls, Siri/Shortcuts and an
+output picker. Your existing mix, App Loudness and sound are preserved; all
+19 audio/analysis/driver source files match build 30. See
+[validation](Store/WIDGETS_RELEASE.md), [signed packages](Store/build-31-manifest.json)
+and [delivery evidence](Store/delivery-v31.json).
+
 The records below describe earlier distributed builds.
 
 Apple confirmed **1.0.1 (23)** is ready to test at 09:45:04 CST on November 15.
@@ -114,9 +117,9 @@ after approval. It is not yet confirmed publicly available.
 
 ## Run on your iPhone
 
-1. Open `JustBrownNoise.xcodeproj` in Xcode 16 or newer (tested with Xcode 26.2).
-2. Select the **JustBrownNoise** app target, then **Signing & Capabilities**.
-3. Select your Apple developer team. Connect your iPhone and select it as the destination.
+1. Open `JustBrownNoise.xcodeproj` in Xcode 26.2 or newer.
+2. Check **Signing & Capabilities** for both **JustBrownNoise** and **EverNoiseWidgets**.
+3. Use the same Apple developer team and App Group for both targets. Connect your iPhone and select it as the destination.
 4. Run. For App Store distribution, use **Product → Archive → Distribute App**.
 
 The generated project is included. To regenerate it after changing `project.yml`,

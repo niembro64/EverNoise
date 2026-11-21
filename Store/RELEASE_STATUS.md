@@ -1,4 +1,37 @@
-# Release status — November 17, 2026
+# Release status — November 21, 2026
+
+## Widgets and system playback — build 31
+
+**EverNoise 1.2 (31) is available in internal TestFlight for iOS and Apple TV.**
+Apple confirmed availability on November 21 at **10:02:58 CST** for iOS and
+**10:03:03 CST** for tvOS. Testing notes are saved. Both builds are assigned to
+Personal Testing and Friends and Family; external testing is **Waiting for
+Review**, with automatic notification enabled.
+
+Home Screen and Lock Screen widgets, native system controls (Control Center,
+Lock Screen control slots and supported Action buttons), Siri/Shortcuts actions,
+and an audio-output picker make the saved sound accessible outside the app.
+Settings includes setup instructions. Widgets remain still and use event-based
+state updates. Sound generation, filtering and peak protection are unchanged.
+The matching TV update includes the shared idle-pause refinement.
+
+Public **iOS and tvOS 1.2 (31) are both Waiting for Review**, submitted at
+**10:12 CST** and **10:16 CST**, respectively. Both will release automatically
+after approval, to all users immediately. Mac and Vision Pro availability is
+enabled; Apple lists version 1.2 as compatible with each. All 175 current
+territory prices remain zero. The existing **1.1 (30)** releases now show
+**Ready for Distribution** on both platforms. Build 31 is not yet public.
+
+55 core, 44 iOS integration, 17 tvOS integration, two iPhone UI and one iPad UI
+checks passed. Actual Home Screen and Lock Screen widget play/pause, and the
+native control through the simulator Action button while locked, passed manual
+checks. Both distribution packages and App Group profiles were verified.
+Physical-device overnight, acoustic, Bluetooth/AirPlay and spoken-Siri checks
+were not performed. See [implementation and validation](WIDGETS_RELEASE.md),
+[package/source evidence](build-31-manifest.json), [TestFlight](delivery-v31.json)
+and [public submissions](app-store-submission-v31.json).
+
+The dated sections below retain earlier release states for history.
 
 ## Public App Store updates — build 30 submitted on all supported platforms
 
