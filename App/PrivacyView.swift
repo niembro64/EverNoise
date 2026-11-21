@@ -45,6 +45,20 @@ struct PrivacyView: View {
                         .font(AppTypography.footnote)
                 }
                 Section {
+                    HStack {
+                        Label("Audio output", systemImage: "airplay.audio")
+                        Spacer()
+                        AudioOutputPicker().frame(width: 52, height: 44)
+                            .accessibilityLabel("Choose audio output")
+                    }
+                    NavigationLink {
+                        SystemControlsGuide()
+                    } label: {
+                        Label("Widgets & shortcuts", systemImage: "square.grid.2x2")
+                    }
+                    .accessibilityIdentifier("systemControlsGuide")
+                } header: { Text("Quick controls").font(AppTypography.heading) }
+                Section {
                     Text("EverNoise generates all sound on your device. It does not collect, store, or share personal data. There are no accounts, ads, analytics, tracking, or third-party services in the app.")
                     Text("The app works entirely offline. Opening an external support or privacy page uses your browser and is subject to that website’s privacy practices.")
                     Link(destination: URL(string: "https://niemo.io/evernoise/privacy.html")!) {

@@ -2,7 +2,8 @@ import SwiftUI
 
 @main
 struct JustBrownNoiseApp: App {
-    @State private var audio = AudioService()
+    @State private var audio = AudioService.shared
+    @State private var hasActivated = false
     @State private var wasBackgrounded = false
     @Environment(\.scenePhase) private var scenePhase
 
@@ -10,12 +11,12 @@ struct JustBrownNoiseApp: App {
         WindowGroup {
             ContentView(audio: audio)
                 .preferredColorScheme(.dark)
-                .task { audio.opened() }
         }
-        .onChange(of: scenePhase) { _, phase in
+        .onChange(of: scenePhase, initial: true) { _, phase in
             if phase == .background {
                 wasBackgrounded = true
-            } else if phase == .active && wasBackgrounded {
+            } else if phase == .active && (!hasActivated || wasBackgrounded) {
+                hasActivated = true
                 wasBackgrounded = false
                 audio.opened()
             }

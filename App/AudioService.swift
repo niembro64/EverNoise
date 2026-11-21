@@ -7,6 +7,14 @@ import UIKit
 @MainActor
 @Observable
 final class AudioService {
+    #if os(iOS)
+    static let shared: AudioService = {
+        let service = AudioService()
+        service.systemPublisher = SystemPlaybackPublisher()
+        return service
+    }()
+    private var systemPublisher: SystemPlaybackPublisher?
+    #endif
     let playback: PlaybackController
     private(set) var selectedMix: NoiseMix
     private(set) var stereoEnabled: Bool
@@ -21,6 +29,7 @@ final class AudioService {
     private var commandTargets: [(MPRemoteCommand, Any)] = []
     private var recoveryTask: Task<Void, Never>?
     private var artwork: MPMediaItemArtwork?
+    private var ownsNowPlaying = false
 
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
@@ -159,6 +168,23 @@ final class AudioService {
         #if DEBUG
         diagnostics = "\(driver.startCount):\(driver.renderedFrames)"
         #endif
+        #if os(iOS)
+        let status: PlaybackSnapshot.Status
+        switch playback.state {
+        case .playing: status = .playing
+        case .interrupted: status = .interrupted
+        case .unavailable: status = .unavailable
+        default: status = .paused
+        }
+        systemPublisher?.publish(.init(status: status, low: selectedMix.lows, mid: selectedMix.mids, high: selectedMix.highs))
+        #endif
+        if playback.state == .playing { ownsNowPlaying = true }
+        // A cold-background Pause must not take Now Playing from another app.
+        if ownsNowPlaying { refreshNowPlaying() }
+        scheduleRecoveryIfNeeded()
+    }
+
+    private func refreshNowPlaying() {
         if artwork == nil, let image = UIImage(named: "NowPlayingArtwork") {
             artwork = MPMediaItemArtwork(boundsSize: image.size) { @Sendable _ in image }
         }
@@ -171,6 +197,9 @@ final class AudioService {
         ]
         if let artwork { info[MPMediaItemPropertyArtwork] = artwork }
         MPNowPlayingInfoCenter.default().nowPlayingInfo = info
+    }
+
+    private func scheduleRecoveryIfNeeded() {
         recoveryTask?.cancel()
         recoveryTask = nil
         if playback.canRetry {

@@ -3,6 +3,33 @@ import UIKit
 
 final class JustBrownNoiseUITests: XCTestCase {
     @MainActor
+    func testSystemControlsGuidePreservesPlayback() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-animationLevel", "low"]
+        app.launch()
+        XCTAssertTrue(app.buttons["settingsButton"].waitForExistence(timeout: 15))
+        let before = app.staticTexts["audioDiagnostics"].label.split(separator: ":").first
+        app.buttons["settingsButton"].tap()
+        let guide = app.buttons["systemControlsGuide"]
+        for _ in 0..<4 {
+            if guide.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(guide.isHittable)
+        guide.tap()
+        XCTAssertTrue(app.navigationBars["Widgets & shortcuts"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "Touch and hold your Home Screen")).firstMatch.exists)
+        let attachment = XCTAttachment(screenshot: app.screenshot())
+        attachment.name = "Widgets-and-shortcuts-guide"
+        attachment.lifetime = .keepAlways
+        add(attachment)
+        app.navigationBars.buttons["Settings"].tap()
+        app.buttons["Done"].tap()
+        XCTAssertEqual(app.buttons["playbackButton"].value as? String, "Playing continuously")
+        XCTAssertEqual(app.staticTexts["audioDiagnostics"].label.split(separator: ":").first, before)
+    }
+
+    @MainActor
     func testOffAndMaxSpectrogramPreserveContinuousAudio() throws {
         let app = XCUIApplication()
         app.launchArguments = ["-volumeOffsetDB", "0", "-mixLevelsV2", "<dict><key>low</key><integer>2</integer><key>mid</key><integer>2</integer><key>high</key><integer>1</integer></dict>"]
