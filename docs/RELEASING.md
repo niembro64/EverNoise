@@ -56,6 +56,9 @@ so a deployment does not force-reload active audio. Localhost does not register 
 The `gh-pages` branch contains deployable web files plus `fdroid/repo/`, with no
 build tools, private configuration, or test harness. GitHub Pages serves that
 branch's root. The source `main` branch retains buildable code and full history.
+`python3 scripts/publish-pages.py` stages only the public output, excludes private
+configuration and status logs, and pushes a normal commit to `gh-pages`.
+
 Publishing a Pages commit and a GitHub Release are distinct operations; check the
 live site and downloaded APK hash after both complete.
 
