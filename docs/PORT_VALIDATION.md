@@ -6,7 +6,7 @@ Emscripten 4.0.20 and Node 24.1.0. This is emulator and browser validation, not
 an overnight test on physical Android hardware.
 
 - The migrated Swift package passes 55 tests across seven suites.
-- iOS Simulator build succeeds using the new root package paths, including widgets.
+- iOS and tvOS Simulator builds succeed using the new root package paths, including the iOS widgets.
 - Fixed-seed WebAssembly PCM matches 204,800 native Apple stereo frames exactly
   (maximum absolute sample difference 0).
 - Portable packed-stereo FFT vs Accelerate: maximum difference 0.000184 dB across
