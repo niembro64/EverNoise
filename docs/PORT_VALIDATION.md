@@ -20,6 +20,31 @@ an overnight test on physical Android hardware.
 - Android device tests exercise JNI capture parity, headroom, independent stereo,
   fade-in/out, background frame continuity, zero observed AudioTrack underruns,
   transient audio-focus loss/regain, saved preferences, and Max analysis playback.
+- Hosted [CI run 45652170698](https://github.com/niembro64/EverNoise/actions/runs/45652170698)
+  passes both the macOS Apple core job and Linux Android/web build, lint and tests.
+- The production web app was exercised in Edge. After enabling offline mode and
+  reloading, its service worker supplied the app, AudioWorklet and WASM, and
+  playback resumed without a network connection. Online mode was restored.
+- All 40 public files in the live deployment match their local SHA-256 hashes.
+  The additional `.nojekyll` hosting marker is deliberately not publicly served.
+- The live F-Droid index passes signature/fingerprint verification with
+  fdroidserver 2.4.6. The downloaded APK matches the tested release, passes APK v2
+  signature verification, and passes 16 KiB ZIP alignment checks. All ARM64 and
+  x86-64 native ELF load segments also have verified 16 KiB alignment. The public
+  GitHub Release download has the same APK hash.
+
+## Migration and publication
+
+Android 1.0.0 (1), the web app, and the publisher-operated F-Droid repository are
+live. Links and the release artifact hash are in [the launch record](LAUNCH_2026-11-25.md).
+The central F-Droid catalog submission is prepared, but has not been submitted or
+accepted. Apple store versions were not changed by this repository migration.
+
+The original checkout's 50,803 file entries were audited: 50,789 are identical,
+11 have intentional source/build/documentation changes, and three were already
+broken generated-build symlinks. No file was missing. Original Git history is an
+ancestor of the new main branch. The original checkout is recoverable from Trash;
+its former path now resolves to the new repository.
 
 ## Important limits
 

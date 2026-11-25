@@ -77,4 +77,6 @@ version or require resubmitting its current App Store release. Re-run XcodeGen
 from `apple/` after project edits. Root Swift package tests use `swift test`.
 
 GitHub Pages and Releases returned server errors during the November 25 launch
-outage. The primary niemo.io deployment is independent of that service.
+outage. Releases subsequently recovered and Android 1.0.0 was published. The
+primary niemo.io deployment is independent of GitHub Pages; a pushed Pages branch
+alone does not prove that its optional mirror is live.

@@ -34,6 +34,10 @@ with a new approximation. Android and web compile the same renderer; the web's
 reference-seeded output matches the native Apple output sample for sample.
 See [architecture](docs/ARCHITECTURE.md) and [port validation](docs/PORT_VALIDATION.md).
 
+The canonical local checkout is `~/code/evernoise`. The former
+`~/code/just_brown_noise` path is a compatibility symlink to this root. Its old
+standalone checkout was preserved in Trash during the verified migration.
+
 ## Build and test
 
 Apple requires macOS, Xcode 26.2+, XcodeGen and Swift 6:
