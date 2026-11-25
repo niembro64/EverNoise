@@ -1,0 +1,84 @@
+{
+  "repo": {
+    "timestamp": 1795622743000,
+    "version": 20002,
+    "name": "EverNoise",
+    "icon": "repo-icon.png",
+    "address": "https://niembro64.github.io/EverNoise/fdroid/repo",
+    "description": "Official EverNoise releases from Eric Niemeyer. Free, offline, continuous noise."
+  },
+  "requests": {
+    "install": [],
+    "uninstall": []
+  },
+  "apps": [
+    {
+      "authorName": "Eric Niemeyer",
+      "categories": [
+        "Multimedia"
+      ],
+      "changelog": "https://github.com/niembro64/EverNoise/releases",
+      "suggestedVersionName": "1.0.0",
+      "suggestedVersionCode": "1",
+      "description": "Your sound. All night.\n\nEverNoise generates continuous noise on your device, with no looping sound files,\nplayback timer, ads, account, microphone access, or tracking.\n\n* Six mix levels each for high, mid and low frequencies\n* Independent stereo or mono, saved App Loudness, smooth fades and peak protection\n* Background playback and Lock Screen/media controls\n* Home Screen widget and Quick Settings tile\n* Flowing infinity artwork, optional background ribbons, and a live spectrogram\n* Off and static visual modes to reduce work and battery use\n\nCalls, another app taking audio focus, operating-system restrictions, force-stop,\nand device shutdown can interrupt playback. Keep listening volume comfortable;\ndigital peak protection is not a sound-pressure limit at your ears.\n\nMIT licensed. Native Android interface and audio service; shared C audio engine\nwith the Apple and web apps. Developed with AI assistance.",
+      "issueTracker": "https://github.com/niembro64/EverNoise/issues",
+      "license": "MIT",
+      "name": "EverNoise",
+      "sourceCode": "https://github.com/niembro64/EverNoise",
+      "summary": "Gentle, continuous noise shaped by you",
+      "webSite": "https://niembro64.github.io/EverNoise/",
+      "added": 1795622287000,
+      "packageName": "io.niemo.evernoise",
+      "lastUpdated": 1795622287000,
+      "localized": {
+        "en-US": {
+          "icon": "icon_a1hlxqHUcTokTaB5H4wAiLrRkUlvwME-qvGTinmP-uw=.png",
+          "phoneScreenshots": [
+            "01-infinity.png",
+            "02-ribbons.png"
+          ]
+        }
+      }
+    }
+  ],
+  "packages": {
+    "io.niemo.evernoise": [
+      {
+        "added": 1795622287000,
+        "apkName": "io.niemo.evernoise_1.apk",
+        "hash": "012850b57624989b412b7560c2628d09fc6e42fb20b0d8bff477070b3bff3dd3",
+        "hashType": "sha256",
+        "minSdkVersion": 26,
+        "nativecode": [
+          "arm64-v8a",
+          "x86_64"
+        ],
+        "packageName": "io.niemo.evernoise",
+        "sig": "33254c53c977e0105d5e697a6378025d",
+        "signer": "b272f3d8a3691753e149a1b39b2e4bfe0d023a9756d214385106ac80106b6200",
+        "size": 135615,
+        "targetSdkVersion": 36,
+        "uses-permission": [
+          [
+            "android.permission.FOREGROUND_SERVICE",
+            null
+          ],
+          [
+            "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK",
+            null
+          ],
+          [
+            "android.permission.WAKE_LOCK",
+            null
+          ],
+          [
+            "android.permission.POST_NOTIFICATIONS",
+            null
+          ]
+        ],
+        "versionCode": 1,
+        "versionName": "1.0.0"
+      }
+    ]
+  }
+}

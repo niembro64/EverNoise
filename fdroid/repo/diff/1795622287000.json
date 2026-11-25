@@ -1,0 +1,76 @@
+{
+  "repo": {
+    "timestamp": 1795622743000
+  },
+  "packages": {
+    "io.niemo.evernoise": {
+      "metadata": {
+        "screenshots": {
+          "phone": {
+            "en-US": [
+              {
+                "name": "/io.niemo.evernoise/en-US/phoneScreenshots/01-infinity.png",
+                "sha256": "d612f5e1dc9512d57b5942f11375c7cd6de68c56e889b3fe0d55ae8a1006f07a",
+                "size": 287734
+              },
+              {
+                "name": "/io.niemo.evernoise/en-US/phoneScreenshots/02-ribbons.png",
+                "sha256": "a61407d831b0513adc85e68a34db9444985297abe8b34397dae7fba3ebeb0124",
+                "size": 485823
+              }
+            ]
+          }
+        },
+        "icon": {
+          "en-US": {
+            "name": "/io.niemo.evernoise/en-US/icon_a1hlxqHUcTokTaB5H4wAiLrRkUlvwME-qvGTinmP-uw=.png",
+            "sha256": "6b5865c6a1d4713a244da0791f8c0088bad191496fc0c13eaaf1938a798ffaec",
+            "size": 24940
+          }
+        }
+      },
+      "versions": {
+        "063df042addfb5920e917f4d815108407e77767fb684b795bfa10fc61b82a2eb": null,
+        "012850b57624989b412b7560c2628d09fc6e42fb20b0d8bff477070b3bff3dd3": {
+          "added": 1795622287000,
+          "file": {
+            "name": "/io.niemo.evernoise_1.apk",
+            "sha256": "012850b57624989b412b7560c2628d09fc6e42fb20b0d8bff477070b3bff3dd3",
+            "size": 135615
+          },
+          "manifest": {
+            "nativecode": [
+              "arm64-v8a",
+              "x86_64"
+            ],
+            "versionName": "1.0.0",
+            "versionCode": 1,
+            "usesSdk": {
+              "minSdkVersion": 26,
+              "targetSdkVersion": 36
+            },
+            "signer": {
+              "sha256": [
+                "b272f3d8a3691753e149a1b39b2e4bfe0d023a9756d214385106ac80106b6200"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.FOREGROUND_SERVICE"
+              },
+              {
+                "name": "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"
+              },
+              {
+                "name": "android.permission.WAKE_LOCK"
+              },
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
