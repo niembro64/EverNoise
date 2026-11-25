@@ -10,9 +10,9 @@ let package = Package(
         .library(name: "PlaybackCore", targets: ["PlaybackCore"])
     ],
     targets: [
-        .target(name: "BrownNoiseDSP"),
-        .target(name: "SpectrumAnalysis", dependencies: ["BrownNoiseDSP"], linkerSettings: [.linkedFramework("Accelerate")]),
-        .target(name: "PlaybackCore"),
-        .testTarget(name: "BrownNoiseCoreTests", dependencies: ["BrownNoiseDSP", "PlaybackCore", "SpectrumAnalysis"])
+        .target(name: "BrownNoiseDSP", path: "shared/dsp"),
+        .target(name: "SpectrumAnalysis", dependencies: ["BrownNoiseDSP"], path: "shared/analysis", linkerSettings: [.linkedFramework("Accelerate")]),
+        .target(name: "PlaybackCore", path: "apple/Sources/PlaybackCore"),
+        .testTarget(name: "BrownNoiseCoreTests", dependencies: ["BrownNoiseDSP", "PlaybackCore", "SpectrumAnalysis"], path: "apple/Tests/BrownNoiseCoreTests")
     ]
 )

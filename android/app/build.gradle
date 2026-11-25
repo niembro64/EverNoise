@@ -1,0 +1,37 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'io.niemo.evernoise'
+    compileSdk 36
+    ndkVersion '27.1.12297006'
+    defaultConfig {
+        applicationId 'io.niemo.evernoise'
+        minSdk 26
+        targetSdk 36
+        versionCode 1
+        versionName '1.0.0'
+        ndk { abiFilters 'arm64-v8a', 'x86_64' }
+        externalNativeBuild { cmake { arguments '-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON'; cFlags '-O3', '-ffp-contract=off' } }
+        testInstrumentationRunner 'android.test.InstrumentationTestRunner'
+    }
+    signingConfigs {
+        release {
+            if (System.getenv('EVERNOISE_KEYSTORE')) {
+                storeFile file(System.getenv('EVERNOISE_KEYSTORE'))
+                storePassword System.getenv('EVERNOISE_STORE_PASSWORD')
+                keyAlias 'evernoise'
+                keyPassword System.getenv('EVERNOISE_KEY_PASSWORD')
+            }
+        }
+    }
+    buildTypes { release { minifyEnabled false; signingConfig signingConfigs.release } }
+    externalNativeBuild { cmake { path 'src/main/cpp/CMakeLists.txt'; version '3.22.1' } }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    sourceSets.main.assets.srcDirs += ['../../shared/visuals']
+    dependenciesInfo { includeInApk false; includeInBundle false }
+}
+
+// Legacy instrumentation API stays in the test APK, never in the shipping app.
+dependencies {
+    androidTestCompileOnly files("${android.sdkDirectory}/platforms/android-36/optional/android.test.runner.jar", "${android.sdkDirectory}/platforms/android-36/optional/android.test.base.jar", "${android.sdkDirectory}/platforms/android-36/optional/android.test.mock.jar")
+}

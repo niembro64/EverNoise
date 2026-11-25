@@ -1,14 +1,24 @@
-.build/
-build/
-DerivedData/
+# Generated output and machine-specific state
 .DS_Store
+.build/
+.swiftpm/
+**/build/
+**/.gradle/
+**/.cxx/
+**/local.properties
+node_modules/
+web/dist/
+web/test-results/
+web/playwright-report/
+DerivedData/
 *.xcuserstate
 xcuserdata/
 *.xcresult/
-.swiftpm/
 __pycache__/
 *.py[cod]
 *.ipa
+*.apk
+*.aab
 *.xcarchive/
 *.dSYM/
 .env
@@ -16,7 +26,14 @@ __pycache__/
 *.p8
 *.p12
 *.mobileprovision
-# Local account/delivery evidence; the public release summaries remain tracked.
-Store/*confirmation*.json
-Store/support-deployment*.json
+*.jks
+*.keystore
+secrets/
+tools/
+artifacts/
+# Local account and delivery evidence
+apple/Store/*confirmation*.json
+apple/Store/support-deployment*.json
 
+web/src/wasm/
+artifacts-*.log

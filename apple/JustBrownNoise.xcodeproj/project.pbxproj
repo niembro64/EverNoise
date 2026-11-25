@@ -1,0 +1,1239 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05A5C1C8BF74D5F202E5F306 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A623DC91377E12201CD3C /* AudioService.swift */; };
+		0FEF7B09CA47E236F1DFB944 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E22D8F55E0141CF544B8EEFD /* Assets.xcassets */; };
+		10AC0522D19147263198DBAB /* BrownNoiseDSP in Frameworks */ = {isa = PBXBuildFile; productRef = F0BB37DC3B1F5E1CF333FFD9 /* BrownNoiseDSP */; };
+		11819CE9AE33743296F99A2A /* RibbonShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A7218FAEEDAE87DA5CE9A532 /* RibbonShaders.metal */; };
+		140AEC4F4690EAB1666ED101 /* EverNoiseTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A284DFAD1727FC159A71F /* EverNoiseTVApp.swift */; };
+		1540C1B7C55C7E1D596E1219 /* JustBrownNoiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE30C4033CD6BA6307C634 /* JustBrownNoiseUITests.swift */; };
+		187D5B5AC3E72F51085ABD06 /* AudioPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B1235AB92F15980F989580 /* AudioPreferencesTests.swift */; };
+		188780866EE1E6841140D069 /* JustBrownNoiseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0367ABEEC499A1244CE577D /* JustBrownNoiseApp.swift */; };
+		1CFA4EAA219694B83AC45452 /* RibbonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717BC5C9A34C454F03B1D995 /* RibbonScene.swift */; };
+		204A030BA56E97B13C71229B /* AnimationPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDC88511A79B0CD7CCBDEB2 /* AnimationPreferencesTests.swift */; };
+		237EC9B00918BD0955D8FD86 /* NoiseGlass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10567F25BD5468FD330B9507 /* NoiseGlass.swift */; };
+		247B1430C74AD34E2F935BEB /* SpectrogramWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3485CA4258EEAE7A8414F246 /* SpectrogramWorkerTests.swift */; };
+		2A5522990A7C8B542DFC2BD2 /* SpectrogramPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276CF3509BFC8C2099B47634 /* SpectrogramPalette.swift */; };
+		2D3ECB8E873A1E158D98F549 /* TVContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D47ABAC7211F4A65E8C6E2D /* TVContentView.swift */; };
+		3247ECB6FE7ADF93CB5325BB /* PlaybackIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418D98F032706103EF8021B /* PlaybackIntents.swift */; };
+		33EAC6760CB23953A4B893AA /* PlaybackIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418D98F032706103EF8021B /* PlaybackIntents.swift */; };
+		3847222E5B4C01A531E5C1A3 /* NoiseGlass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10567F25BD5468FD330B9507 /* NoiseGlass.swift */; };
+		3853DFBF946E06C794311991 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E5C7E2C8D557890CCEE08492 /* PrivacyInfo.xcprivacy */; };
+		38A0E15914E48DC50B918828 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3643F6A487969684D43BC5 /* ContentView.swift */; };
+		3CB4446CA2B79AC23BCFD424 /* BrownNoiseDSP in Frameworks */ = {isa = PBXBuildFile; productRef = 354E7417230FEB2369B15C27 /* BrownNoiseDSP */; };
+		3EF19169DE729A1DFEFBAA9D /* NoiseAudioDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834D91C761D7639961CD647 /* NoiseAudioDriver.swift */; };
+		40A09964021D02786CE8D1C0 /* ChannelConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8FAA6B001201EB18422590 /* ChannelConversionTests.swift */; };
+		428CD0AC5B2C901D03CE77E2 /* VolumeOffsetControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341BB4CC0D05B06213CFB872 /* VolumeOffsetControl.swift */; };
+		42E726F548538AD86459855C /* OutputSampleFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C881EC0A795F878E7A885 /* OutputSampleFeed.swift */; };
+		4AA129136FAB7BAA89271F65 /* VolumeOffsetControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341BB4CC0D05B06213CFB872 /* VolumeOffsetControl.swift */; };
+		4D1A9B0EB53F06575F69120D /* SpectrogramPaletteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1370EB9418E67AEF356AA /* SpectrogramPaletteTests.swift */; };
+		5554EF081B2ADBC7AE2254BA /* NoisePalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEEB8F1E94FC64E47D85D89 /* NoisePalette.swift */; };
+		603030483F081BBC3042664E /* AudioDriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA50B958D70330450A061DAE /* AudioDriverTests.swift */; };
+		6126F4D65ABC40E81E955147 /* OutputSampleFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C881EC0A795F878E7A885 /* OutputSampleFeed.swift */; };
+		64F07EC9DC230BBB2D25A3DF /* LinearColorProbe.metal in Sources */ = {isa = PBXBuildFile; fileRef = E3C5CC7677CF862ED826A3E6 /* LinearColorProbe.metal */; };
+		6C6A9BE516A398D8D17A349A /* BandPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B104FFB5F06BEB0F04F15D8 /* BandPicker.swift */; };
+		6C7A4664D506A0FD9DB281FD /* PlaybackCore in Frameworks */ = {isa = PBXBuildFile; productRef = A03D55A72DB4EBDE73633ED0 /* PlaybackCore */; };
+		6DD277A93EEDE9757958C8F3 /* SystemControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA59F1850DBEF6C2C0142A /* SystemControlsView.swift */; };
+		75AC4C8CBD4DB26A40D8AB31 /* TVPlaybackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0925266DC960898E9212077A /* TVPlaybackUITests.swift */; };
+		76D37307492DC178D10A827D /* RibbonShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A7218FAEEDAE87DA5CE9A532 /* RibbonShaders.metal */; };
+		790C23D5D87F3AB728FCF747 /* FamilyListeningSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D11E48AC11EC95BA0BBC469 /* FamilyListeningSection.swift */; };
+		7AB809F296274FBFC79F5CED /* FluidMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A0E59C4AB8BDDC1B4F289E /* FluidMotion.swift */; };
+		7FAB10E30C92AB41A6AB1299 /* NoisePalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEEB8F1E94FC64E47D85D89 /* NoisePalette.swift */; };
+		8A61C18C29F051734C85C37B /* LinearLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C268B5437B7E8135CF3275F /* LinearLight.swift */; };
+		8B69D73110C7DFAE944FEBB2 /* LinearLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C268B5437B7E8135CF3275F /* LinearLight.swift */; };
+		8E2E7758CBBC60840E125F6A /* NoiseAudioDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834D91C761D7639961CD647 /* NoiseAudioDriver.swift */; };
+		8FD8C45222AC6D9689B0CF21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AF512EB87D67E999F85B89 /* Assets.xcassets */; };
+		9C1514A574A5408C4D0528AD /* FluidMotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA853DBB3ABB115ED56261 /* FluidMotionTests.swift */; };
+		9E17FD16FD4E5D8935051AE0 /* BandNotchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457EE3E4EBF2C3AEB6858 /* BandNotchTests.swift */; };
+		9F10D2D70853633AC62A1C6F /* SystemPlaybackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2AA7F0B6136DD817B790F /* SystemPlaybackTests.swift */; };
+		AA80899FD32648A446692E29 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E5C7E2C8D557890CCEE08492 /* PrivacyInfo.xcprivacy */; };
+		AE0426BAF85851E5E83CBF00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AF512EB87D67E999F85B89 /* Assets.xcassets */; };
+		B04CC9CC0E91620E8626CE3D /* SpectrogramPaletteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1370EB9418E67AEF356AA /* SpectrogramPaletteTests.swift */; };
+		B85459A2114FE0552FACDC3F /* BandNotchPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB78FA711FE246643EA8197 /* BandNotchPicker.swift */; };
+		B99FDE0355524955018013A0 /* FluidMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A0E59C4AB8BDDC1B4F289E /* FluidMotion.swift */; };
+		BA66B95A73FB18F2F6B714C5 /* RibbonSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F854835C1B0D424B90BDE4F6 /* RibbonSurface.swift */; };
+		BB167E0B6FC49AD73EAF1C23 /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627960F34B52B1F1CEFF9850 /* PrivacyView.swift */; };
+		BBA38467CAA862E9AD853665 /* EverNoiseWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AB99CF43F92A85CB3D0852 /* EverNoiseWidgets.swift */; };
+		C2710C697F1DA1A3E70C7412 /* AnimationLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBE9D752037F656857DCA4E /* AnimationLevel.swift */; };
+		C2E24F193D83E8CFECAFEF66 /* RibbonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717BC5C9A34C454F03B1D995 /* RibbonScene.swift */; };
+		C553B0230144BCC4BE2D2A1E /* SpectrumAnalysis in Frameworks */ = {isa = PBXBuildFile; productRef = B9E646C9DF817260954CA380 /* SpectrumAnalysis */; };
+		C55C965081F5D18546EC0743 /* PlaybackCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5647CB50B1FC4F83C1215CEF /* PlaybackCore */; };
+		C62E93C202649CA1A08A6B7E /* BandPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B104FFB5F06BEB0F04F15D8 /* BandPicker.swift */; };
+		C6EEEC49BA9F1999A37C3EF1 /* SpectrogramWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3485CA4258EEAE7A8414F246 /* SpectrogramWorkerTests.swift */; };
+		C79299D95D26416181ECA8B7 /* PlaybackSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD392BD8634BC4501C3715B /* PlaybackSnapshot.swift */; };
+		CDB6BFDBECFBFA74D2476C34 /* AnimationLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBE9D752037F656857DCA4E /* AnimationLevel.swift */; };
+		CF3D635DF3BD63B48B8C387E /* AppTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB74E5EA40CD0433F5C212D /* AppTypography.swift */; };
+		D1CAD55BA1EB1872F0610F52 /* SpectrogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418771ED4AC8BA5237D2C2C6 /* SpectrogramView.swift */; };
+		D2101A7BB68CBAA4109EEF47 /* SpectrumAnalysis in Frameworks */ = {isa = PBXBuildFile; productRef = 61E61B26D18A26566146410D /* SpectrumAnalysis */; };
+		D61A31B27DF7D654B736A230 /* EverNoiseWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B3E0F80784F10ECFD89D3B0F /* EverNoiseWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E3CC0AF8B9B042BA3118D3B0 /* SpectrogramPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276CF3509BFC8C2099B47634 /* SpectrogramPalette.swift */; };
+		E85708F0F22E2ED69B49C36D /* AppTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB74E5EA40CD0433F5C212D /* AppTypography.swift */; };
+		E8956A0E513F4F46DDA4BD2D /* SpectrogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418771ED4AC8BA5237D2C2C6 /* SpectrogramView.swift */; };
+		EBD8A5463D36DB3332C81F35 /* ColorCompositingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918FA5E0B311DE59D4147D40 /* ColorCompositingTests.swift */; };
+		EC786FDDB7046AA1C1E889B0 /* RibbonSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F854835C1B0D424B90BDE4F6 /* RibbonSurface.swift */; };
+		EDE030D596B36DB02F08F832 /* SystemPlayback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B1F7AC106179F5A46BCC43 /* SystemPlayback.swift */; };
+		F2C94C8D40CC903EB21341A5 /* RibbonPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A45E10DDB790759C43C00 /* RibbonPalette.swift */; };
+		F928C39216BEA9BCDB253BE5 /* AudioDriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA50B958D70330450A061DAE /* AudioDriverTests.swift */; };
+		F9DAF85CB9A696EB860B01A5 /* RibbonPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A45E10DDB790759C43C00 /* RibbonPalette.swift */; };
+		FAC9F734BC28D948200E94D0 /* FamilyListeningSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D11E48AC11EC95BA0BBC469 /* FamilyListeningSection.swift */; };
+		FB13023B95CB6A40F2C856D0 /* PlaybackSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD392BD8634BC4501C3715B /* PlaybackSnapshot.swift */; };
+		FB5142AC17049CC9434171C7 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A623DC91377E12201CD3C /* AudioService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18627AE6D98B075A3E0EB496 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4145BE5F1EC3E9CA11FAF32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FE992D02C8D10C5B77552BF;
+			remoteInfo = JustBrownNoise;
+		};
+		20B24BD8A27BF40FFD109761 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4145BE5F1EC3E9CA11FAF32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FE992D02C8D10C5B77552BF;
+			remoteInfo = JustBrownNoise;
+		};
+		254B85D66AC3AC111A5C51C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4145BE5F1EC3E9CA11FAF32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FC28558CFC1156DDC065C20;
+			remoteInfo = EverNoiseTV;
+		};
+		586928F598FD125817A3E33E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4145BE5F1EC3E9CA11FAF32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FB0A2992FFF743B29AD11BF;
+			remoteInfo = EverNoiseWidgets;
+		};
+		FDCE533FD495916653470611 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4145BE5F1EC3E9CA11FAF32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FC28558CFC1156DDC065C20;
+			remoteInfo = EverNoiseTV;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5D078A4DFB506BE1F714AB45 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D61A31B27DF7D654B736A230 /* EverNoiseWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		006A623DC91377E12201CD3C /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		0925266DC960898E9212077A /* TVPlaybackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVPlaybackUITests.swift; sourceTree = "<group>"; };
+		0B104FFB5F06BEB0F04F15D8 /* BandPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandPicker.swift; sourceTree = "<group>"; };
+		10567F25BD5468FD330B9507 /* NoiseGlass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseGlass.swift; sourceTree = "<group>"; };
+		1D11E48AC11EC95BA0BBC469 /* FamilyListeningSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListeningSection.swift; sourceTree = "<group>"; };
+		1FEBC272235140D56081CB4A /* EverNoiseTV.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = EverNoiseTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		204C881EC0A795F878E7A885 /* OutputSampleFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputSampleFeed.swift; sourceTree = "<group>"; };
+		24D457EE3E4EBF2C3AEB6858 /* BandNotchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandNotchTests.swift; sourceTree = "<group>"; };
+		276CF3509BFC8C2099B47634 /* SpectrogramPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrogramPalette.swift; sourceTree = "<group>"; };
+		2E3643F6A487969684D43BC5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2EBE30C4033CD6BA6307C634 /* JustBrownNoiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustBrownNoiseUITests.swift; sourceTree = "<group>"; };
+		341BB4CC0D05B06213CFB872 /* VolumeOffsetControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeOffsetControl.swift; sourceTree = "<group>"; };
+		3485CA4258EEAE7A8414F246 /* SpectrogramWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrogramWorkerTests.swift; sourceTree = "<group>"; };
+		3834D91C761D7639961CD647 /* NoiseAudioDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseAudioDriver.swift; sourceTree = "<group>"; };
+		3D47ABAC7211F4A65E8C6E2D /* TVContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVContentView.swift; sourceTree = "<group>"; };
+		418771ED4AC8BA5237D2C2C6 /* SpectrogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrogramView.swift; sourceTree = "<group>"; };
+		4D2ABC4102A927FCE6A8AAF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4F8FAA6B001201EB18422590 /* ChannelConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelConversionTests.swift; sourceTree = "<group>"; };
+		5EB74E5EA40CD0433F5C212D /* AppTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTypography.swift; sourceTree = "<group>"; };
+		61546844F21887DC47E2A10A /* evernoise */ = {isa = PBXFileReference; lastKnownFileType = folder; name = evernoise; path = ..; sourceTree = SOURCE_ROOT; };
+		627960F34B52B1F1CEFF9850 /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
+		67B1235AB92F15980F989580 /* AudioPreferencesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPreferencesTests.swift; sourceTree = "<group>"; };
+		6AF2AA7F0B6136DD817B790F /* SystemPlaybackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemPlaybackTests.swift; sourceTree = "<group>"; };
+		6EBE9D752037F656857DCA4E /* AnimationLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLevel.swift; sourceTree = "<group>"; };
+		7133E311846A58B11A01430E /* JustBrownNoise.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = JustBrownNoise.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		717BC5C9A34C454F03B1D995 /* RibbonScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RibbonScene.swift; sourceTree = "<group>"; };
+		71BA853DBB3ABB115ED56261 /* FluidMotionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidMotionTests.swift; sourceTree = "<group>"; };
+		912FC950082A5FB48EBBB0D0 /* EverNoiseTVIntegrationTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = EverNoiseTVIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		918FA5E0B311DE59D4147D40 /* ColorCompositingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCompositingTests.swift; sourceTree = "<group>"; };
+		9742FE5DDF9ACBF74E68F192 /* JustBrownNoiseIntegrationTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = JustBrownNoiseIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C268B5437B7E8135CF3275F /* LinearLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearLight.swift; sourceTree = "<group>"; };
+		9DDC88511A79B0CD7CCBDEB2 /* AnimationPreferencesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPreferencesTests.swift; sourceTree = "<group>"; };
+		A2CA59F1850DBEF6C2C0142A /* SystemControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemControlsView.swift; sourceTree = "<group>"; };
+		A5A0E59C4AB8BDDC1B4F289E /* FluidMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidMotion.swift; sourceTree = "<group>"; };
+		A7218FAEEDAE87DA5CE9A532 /* RibbonShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = RibbonShaders.metal; sourceTree = "<group>"; };
+		ABEEB8F1E94FC64E47D85D89 /* NoisePalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoisePalette.swift; sourceTree = "<group>"; };
+		B0367ABEEC499A1244CE577D /* JustBrownNoiseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustBrownNoiseApp.swift; sourceTree = "<group>"; };
+		B3E0F80784F10ECFD89D3B0F /* EverNoiseWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = EverNoiseWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCD392BD8634BC4501C3715B /* PlaybackSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackSnapshot.swift; sourceTree = "<group>"; };
+		C01A45E10DDB790759C43C00 /* RibbonPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RibbonPalette.swift; sourceTree = "<group>"; };
+		C9AF512EB87D67E999F85B89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA50B958D70330450A061DAE /* AudioDriverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDriverTests.swift; sourceTree = "<group>"; };
+		D2D1370EB9418E67AEF356AA /* SpectrogramPaletteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrogramPaletteTests.swift; sourceTree = "<group>"; };
+		D82631F1B178F886EDE46432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E22D8F55E0141CF544B8EEFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3C5CC7677CF862ED826A3E6 /* LinearColorProbe.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = LinearColorProbe.metal; sourceTree = "<group>"; };
+		E5AB99CF43F92A85CB3D0852 /* EverNoiseWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverNoiseWidgets.swift; sourceTree = "<group>"; };
+		E5C7E2C8D557890CCEE08492 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		EDFEFA7AD990D1FBFB0DADA1 /* EverNoiseTVUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = EverNoiseTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10A284DFAD1727FC159A71F /* EverNoiseTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverNoiseTVApp.swift; sourceTree = "<group>"; };
+		F418D98F032706103EF8021B /* PlaybackIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackIntents.swift; sourceTree = "<group>"; };
+		F5B1F7AC106179F5A46BCC43 /* SystemPlayback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemPlayback.swift; sourceTree = "<group>"; };
+		F854835C1B0D424B90BDE4F6 /* RibbonSurface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RibbonSurface.swift; sourceTree = "<group>"; };
+		F9676E8F16DB8C000ABCCA50 /* JustBrownNoiseUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = JustBrownNoiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDB78FA711FE246643EA8197 /* BandNotchPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandNotchPicker.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B2009DCA51900EF30FB0E53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10AC0522D19147263198DBAB /* BrownNoiseDSP in Frameworks */,
+				C55C965081F5D18546EC0743 /* PlaybackCore in Frameworks */,
+				C553B0230144BCC4BE2D2A1E /* SpectrumAnalysis in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9BD9FA3C37D10E553933A74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CB4446CA2B79AC23BCFD424 /* BrownNoiseDSP in Frameworks */,
+				6C7A4664D506A0FD9DB281FD /* PlaybackCore in Frameworks */,
+				D2101A7BB68CBAA4109EEF47 /* SpectrumAnalysis in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0406EBFC2BBD634D54C97544 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				E5AB99CF43F92A85CB3D0852 /* EverNoiseWidgets.swift */,
+				D82631F1B178F886EDE46432 /* Info.plist */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		3D1EE694EF50C5318A42593D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F418D98F032706103EF8021B /* PlaybackIntents.swift */,
+				BCD392BD8634BC4501C3715B /* PlaybackSnapshot.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		4062309D6BEA82D36D213148 = {
+			isa = PBXGroup;
+			children = (
+				836FCE73E550FE7BE36DCEF1 /* App */,
+				C2723EB17AD63DC46F03A777 /* IntegrationTests */,
+				D83B12F954A2D7FA9511C320 /* Packages */,
+				3D1EE694EF50C5318A42593D /* Shared */,
+				4673845C47A22A329040EB15 /* TVApp */,
+				46EAD3D53E28E4ACBBEDDABD /* TVUITests */,
+				8D3CA09F556651A5C82D1A6A /* UITests */,
+				0406EBFC2BBD634D54C97544 /* Widgets */,
+				9A629F1C2F267FBF52FA7E04 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4673845C47A22A329040EB15 /* TVApp */ = {
+			isa = PBXGroup;
+			children = (
+				E22D8F55E0141CF544B8EEFD /* Assets.xcassets */,
+				F10A284DFAD1727FC159A71F /* EverNoiseTVApp.swift */,
+				3D47ABAC7211F4A65E8C6E2D /* TVContentView.swift */,
+			);
+			path = TVApp;
+			sourceTree = "<group>";
+		};
+		46EAD3D53E28E4ACBBEDDABD /* TVUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0925266DC960898E9212077A /* TVPlaybackUITests.swift */,
+			);
+			path = TVUITests;
+			sourceTree = "<group>";
+		};
+		836FCE73E550FE7BE36DCEF1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6EBE9D752037F656857DCA4E /* AnimationLevel.swift */,
+				5EB74E5EA40CD0433F5C212D /* AppTypography.swift */,
+				C9AF512EB87D67E999F85B89 /* Assets.xcassets */,
+				006A623DC91377E12201CD3C /* AudioService.swift */,
+				FDB78FA711FE246643EA8197 /* BandNotchPicker.swift */,
+				0B104FFB5F06BEB0F04F15D8 /* BandPicker.swift */,
+				2E3643F6A487969684D43BC5 /* ContentView.swift */,
+				1D11E48AC11EC95BA0BBC469 /* FamilyListeningSection.swift */,
+				A5A0E59C4AB8BDDC1B4F289E /* FluidMotion.swift */,
+				4D2ABC4102A927FCE6A8AAF8 /* Info.plist */,
+				B0367ABEEC499A1244CE577D /* JustBrownNoiseApp.swift */,
+				9C268B5437B7E8135CF3275F /* LinearLight.swift */,
+				3834D91C761D7639961CD647 /* NoiseAudioDriver.swift */,
+				10567F25BD5468FD330B9507 /* NoiseGlass.swift */,
+				ABEEB8F1E94FC64E47D85D89 /* NoisePalette.swift */,
+				204C881EC0A795F878E7A885 /* OutputSampleFeed.swift */,
+				E5C7E2C8D557890CCEE08492 /* PrivacyInfo.xcprivacy */,
+				627960F34B52B1F1CEFF9850 /* PrivacyView.swift */,
+				C01A45E10DDB790759C43C00 /* RibbonPalette.swift */,
+				717BC5C9A34C454F03B1D995 /* RibbonScene.swift */,
+				A7218FAEEDAE87DA5CE9A532 /* RibbonShaders.metal */,
+				F854835C1B0D424B90BDE4F6 /* RibbonSurface.swift */,
+				276CF3509BFC8C2099B47634 /* SpectrogramPalette.swift */,
+				418771ED4AC8BA5237D2C2C6 /* SpectrogramView.swift */,
+				A2CA59F1850DBEF6C2C0142A /* SystemControlsView.swift */,
+				F5B1F7AC106179F5A46BCC43 /* SystemPlayback.swift */,
+				341BB4CC0D05B06213CFB872 /* VolumeOffsetControl.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8D3CA09F556651A5C82D1A6A /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				2EBE30C4033CD6BA6307C634 /* JustBrownNoiseUITests.swift */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
+		9A629F1C2F267FBF52FA7E04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FEBC272235140D56081CB4A /* EverNoiseTV.app */,
+				912FC950082A5FB48EBBB0D0 /* EverNoiseTVIntegrationTests.xctest */,
+				EDFEFA7AD990D1FBFB0DADA1 /* EverNoiseTVUITests.xctest */,
+				B3E0F80784F10ECFD89D3B0F /* EverNoiseWidgets.appex */,
+				7133E311846A58B11A01430E /* JustBrownNoise.app */,
+				9742FE5DDF9ACBF74E68F192 /* JustBrownNoiseIntegrationTests.xctest */,
+				F9676E8F16DB8C000ABCCA50 /* JustBrownNoiseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C2723EB17AD63DC46F03A777 /* IntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				9DDC88511A79B0CD7CCBDEB2 /* AnimationPreferencesTests.swift */,
+				CA50B958D70330450A061DAE /* AudioDriverTests.swift */,
+				67B1235AB92F15980F989580 /* AudioPreferencesTests.swift */,
+				24D457EE3E4EBF2C3AEB6858 /* BandNotchTests.swift */,
+				4F8FAA6B001201EB18422590 /* ChannelConversionTests.swift */,
+				918FA5E0B311DE59D4147D40 /* ColorCompositingTests.swift */,
+				71BA853DBB3ABB115ED56261 /* FluidMotionTests.swift */,
+				E3C5CC7677CF862ED826A3E6 /* LinearColorProbe.metal */,
+				D2D1370EB9418E67AEF356AA /* SpectrogramPaletteTests.swift */,
+				3485CA4258EEAE7A8414F246 /* SpectrogramWorkerTests.swift */,
+				6AF2AA7F0B6136DD817B790F /* SystemPlaybackTests.swift */,
+			);
+			path = IntegrationTests;
+			sourceTree = "<group>";
+		};
+		D83B12F954A2D7FA9511C320 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				61546844F21887DC47E2A10A /* evernoise */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0FB0A2992FFF743B29AD11BF /* EverNoiseWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 609BC0CDDE4C8CAE0D198410 /* Build configuration list for PBXNativeTarget "EverNoiseWidgets" */;
+			buildPhases = (
+				5E2062728FFEE536F609EF4E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EverNoiseWidgets;
+			packageProductDependencies = (
+			);
+			productName = EverNoiseWidgets;
+			productReference = B3E0F80784F10ECFD89D3B0F /* EverNoiseWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		36F7DBB5D99498535BD6AB35 /* JustBrownNoiseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2C0930E9EFAEB2116967ED2 /* Build configuration list for PBXNativeTarget "JustBrownNoiseUITests" */;
+			buildPhases = (
+				53E845B2AEF34789A4B35895 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25166CC7472FE2BAD6A150B0 /* PBXTargetDependency */,
+			);
+			name = JustBrownNoiseUITests;
+			packageProductDependencies = (
+			);
+			productName = JustBrownNoiseUITests;
+			productReference = F9676E8F16DB8C000ABCCA50 /* JustBrownNoiseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		3745A7AFD218E83303FA8B47 /* EverNoiseTVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55633E05E88BC8CCBEDD5769 /* Build configuration list for PBXNativeTarget "EverNoiseTVUITests" */;
+			buildPhases = (
+				7E81CBC4E130C707118E9B00 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5807860B81BCE19C815EA0D /* PBXTargetDependency */,
+			);
+			name = EverNoiseTVUITests;
+			packageProductDependencies = (
+			);
+			productName = EverNoiseTVUITests;
+			productReference = EDFEFA7AD990D1FBFB0DADA1 /* EverNoiseTVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		3F8B677064FBB7DF18E4DA3A /* EverNoiseTVIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C86E944B687D68E8235C929D /* Build configuration list for PBXNativeTarget "EverNoiseTVIntegrationTests" */;
+			buildPhases = (
+				D7536F69036137C0C28258DA /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01B8D1677E730B18BD404102 /* PBXTargetDependency */,
+			);
+			name = EverNoiseTVIntegrationTests;
+			packageProductDependencies = (
+			);
+			productName = EverNoiseTVIntegrationTests;
+			productReference = 912FC950082A5FB48EBBB0D0 /* EverNoiseTVIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		716DB5A68C6B238CC13BBC1D /* JustBrownNoiseIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 620D1B46AD9B67AD23E25103 /* Build configuration list for PBXNativeTarget "JustBrownNoiseIntegrationTests" */;
+			buildPhases = (
+				73A55534A50253FCA58D9277 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92AE138AA1C58975A84F5760 /* PBXTargetDependency */,
+			);
+			name = JustBrownNoiseIntegrationTests;
+			packageProductDependencies = (
+			);
+			productName = JustBrownNoiseIntegrationTests;
+			productReference = 9742FE5DDF9ACBF74E68F192 /* JustBrownNoiseIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8FC28558CFC1156DDC065C20 /* EverNoiseTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AE3C556FC378B858BECED54 /* Build configuration list for PBXNativeTarget "EverNoiseTV" */;
+			buildPhases = (
+				85A095C336EE42B29C7E47A0 /* Sources */,
+				E1A9E2CA7C523C0F97580AA5 /* Resources */,
+				E9BD9FA3C37D10E553933A74 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EverNoiseTV;
+			packageProductDependencies = (
+				354E7417230FEB2369B15C27 /* BrownNoiseDSP */,
+				A03D55A72DB4EBDE73633ED0 /* PlaybackCore */,
+				61E61B26D18A26566146410D /* SpectrumAnalysis */,
+			);
+			productName = EverNoiseTV;
+			productReference = 1FEBC272235140D56081CB4A /* EverNoiseTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8FE992D02C8D10C5B77552BF /* JustBrownNoise */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFDC3587E1D57663662BF9A3 /* Build configuration list for PBXNativeTarget "JustBrownNoise" */;
+			buildPhases = (
+				9D4B485242E7DEF774FB1E56 /* Sources */,
+				96A516C196D05D83BE7656B2 /* Resources */,
+				7B2009DCA51900EF30FB0E53 /* Frameworks */,
+				5D078A4DFB506BE1F714AB45 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE70C439ADFAB0EF2F8B5CD4 /* PBXTargetDependency */,
+			);
+			name = JustBrownNoise;
+			packageProductDependencies = (
+				F0BB37DC3B1F5E1CF333FFD9 /* BrownNoiseDSP */,
+				5647CB50B1FC4F83C1215CEF /* PlaybackCore */,
+				B9E646C9DF817260954CA380 /* SpectrumAnalysis */,
+			);
+			productName = JustBrownNoise;
+			productReference = 7133E311846A58B11A01430E /* JustBrownNoise.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4145BE5F1EC3E9CA11FAF32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					0FB0A2992FFF743B29AD11BF = {
+						DevelopmentTeam = 82F3X3VDHP;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = "[\"com.apple.ApplicationGroups.iOS\": [\"enabled\": 1]]";
+					};
+					36F7DBB5D99498535BD6AB35 = {
+						DevelopmentTeam = 82F3X3VDHP;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8FE992D02C8D10C5B77552BF;
+					};
+					3745A7AFD218E83303FA8B47 = {
+						DevelopmentTeam = 82F3X3VDHP;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8FC28558CFC1156DDC065C20;
+					};
+					3F8B677064FBB7DF18E4DA3A = {
+						DevelopmentTeam = 82F3X3VDHP;
+						ProvisioningStyle = Automatic;
+					};
+					716DB5A68C6B238CC13BBC1D = {
+						DevelopmentTeam = 82F3X3VDHP;
+						ProvisioningStyle = Automatic;
+					};
+					8FC28558CFC1156DDC065C20 = {
+						DevelopmentTeam = 82F3X3VDHP;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = "[\"com.apple.BackgroundModes\": [\"enabled\": 1]]";
+					};
+					8FE992D02C8D10C5B77552BF = {
+						DevelopmentTeam = 82F3X3VDHP;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = "[\"com.apple.ApplicationGroups.iOS\": [\"enabled\": 1], \"com.apple.BackgroundModes\": [\"enabled\": 1]]";
+					};
+				};
+			};
+			buildConfigurationList = 9B11E1A64B1B2C1D170EB69A /* Build configuration list for PBXProject "JustBrownNoise" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 4062309D6BEA82D36D213148;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				80A92998BCB270A79895FD21 /* XCLocalSwiftPackageReference ".." */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9A629F1C2F267FBF52FA7E04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8FC28558CFC1156DDC065C20 /* EverNoiseTV */,
+				8FE992D02C8D10C5B77552BF /* JustBrownNoise */,
+				0FB0A2992FFF743B29AD11BF /* EverNoiseWidgets */,
+				3F8B677064FBB7DF18E4DA3A /* EverNoiseTVIntegrationTests */,
+				3745A7AFD218E83303FA8B47 /* EverNoiseTVUITests */,
+				36F7DBB5D99498535BD6AB35 /* JustBrownNoiseUITests */,
+				716DB5A68C6B238CC13BBC1D /* JustBrownNoiseIntegrationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96A516C196D05D83BE7656B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FD8C45222AC6D9689B0CF21 /* Assets.xcassets in Resources */,
+				AA80899FD32648A446692E29 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1A9E2CA7C523C0F97580AA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE0426BAF85851E5E83CBF00 /* Assets.xcassets in Resources */,
+				0FEF7B09CA47E236F1DFB944 /* Assets.xcassets in Resources */,
+				3853DFBF946E06C794311991 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53E845B2AEF34789A4B35895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1540C1B7C55C7E1D596E1219 /* JustBrownNoiseUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E2062728FFEE536F609EF4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBA38467CAA862E9AD853665 /* EverNoiseWidgets.swift in Sources */,
+				33EAC6760CB23953A4B893AA /* PlaybackIntents.swift in Sources */,
+				FB13023B95CB6A40F2C856D0 /* PlaybackSnapshot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73A55534A50253FCA58D9277 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				204A030BA56E97B13C71229B /* AnimationPreferencesTests.swift in Sources */,
+				603030483F081BBC3042664E /* AudioDriverTests.swift in Sources */,
+				187D5B5AC3E72F51085ABD06 /* AudioPreferencesTests.swift in Sources */,
+				9E17FD16FD4E5D8935051AE0 /* BandNotchTests.swift in Sources */,
+				40A09964021D02786CE8D1C0 /* ChannelConversionTests.swift in Sources */,
+				EBD8A5463D36DB3332C81F35 /* ColorCompositingTests.swift in Sources */,
+				9C1514A574A5408C4D0528AD /* FluidMotionTests.swift in Sources */,
+				64F07EC9DC230BBB2D25A3DF /* LinearColorProbe.metal in Sources */,
+				4D1A9B0EB53F06575F69120D /* SpectrogramPaletteTests.swift in Sources */,
+				C6EEEC49BA9F1999A37C3EF1 /* SpectrogramWorkerTests.swift in Sources */,
+				9F10D2D70853633AC62A1C6F /* SystemPlaybackTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E81CBC4E130C707118E9B00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75AC4C8CBD4DB26A40D8AB31 /* TVPlaybackUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85A095C336EE42B29C7E47A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2710C697F1DA1A3E70C7412 /* AnimationLevel.swift in Sources */,
+				E85708F0F22E2ED69B49C36D /* AppTypography.swift in Sources */,
+				05A5C1C8BF74D5F202E5F306 /* AudioService.swift in Sources */,
+				C62E93C202649CA1A08A6B7E /* BandPicker.swift in Sources */,
+				140AEC4F4690EAB1666ED101 /* EverNoiseTVApp.swift in Sources */,
+				FAC9F734BC28D948200E94D0 /* FamilyListeningSection.swift in Sources */,
+				B99FDE0355524955018013A0 /* FluidMotion.swift in Sources */,
+				8B69D73110C7DFAE944FEBB2 /* LinearLight.swift in Sources */,
+				3EF19169DE729A1DFEFBAA9D /* NoiseAudioDriver.swift in Sources */,
+				3847222E5B4C01A531E5C1A3 /* NoiseGlass.swift in Sources */,
+				5554EF081B2ADBC7AE2254BA /* NoisePalette.swift in Sources */,
+				42E726F548538AD86459855C /* OutputSampleFeed.swift in Sources */,
+				F2C94C8D40CC903EB21341A5 /* RibbonPalette.swift in Sources */,
+				1CFA4EAA219694B83AC45452 /* RibbonScene.swift in Sources */,
+				11819CE9AE33743296F99A2A /* RibbonShaders.metal in Sources */,
+				EC786FDDB7046AA1C1E889B0 /* RibbonSurface.swift in Sources */,
+				E3CC0AF8B9B042BA3118D3B0 /* SpectrogramPalette.swift in Sources */,
+				E8956A0E513F4F46DDA4BD2D /* SpectrogramView.swift in Sources */,
+				2D3ECB8E873A1E158D98F549 /* TVContentView.swift in Sources */,
+				4AA129136FAB7BAA89271F65 /* VolumeOffsetControl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D4B485242E7DEF774FB1E56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDB6BFDBECFBFA74D2476C34 /* AnimationLevel.swift in Sources */,
+				CF3D635DF3BD63B48B8C387E /* AppTypography.swift in Sources */,
+				FB5142AC17049CC9434171C7 /* AudioService.swift in Sources */,
+				B85459A2114FE0552FACDC3F /* BandNotchPicker.swift in Sources */,
+				6C6A9BE516A398D8D17A349A /* BandPicker.swift in Sources */,
+				38A0E15914E48DC50B918828 /* ContentView.swift in Sources */,
+				790C23D5D87F3AB728FCF747 /* FamilyListeningSection.swift in Sources */,
+				7AB809F296274FBFC79F5CED /* FluidMotion.swift in Sources */,
+				188780866EE1E6841140D069 /* JustBrownNoiseApp.swift in Sources */,
+				8A61C18C29F051734C85C37B /* LinearLight.swift in Sources */,
+				8E2E7758CBBC60840E125F6A /* NoiseAudioDriver.swift in Sources */,
+				237EC9B00918BD0955D8FD86 /* NoiseGlass.swift in Sources */,
+				7FAB10E30C92AB41A6AB1299 /* NoisePalette.swift in Sources */,
+				6126F4D65ABC40E81E955147 /* OutputSampleFeed.swift in Sources */,
+				3247ECB6FE7ADF93CB5325BB /* PlaybackIntents.swift in Sources */,
+				C79299D95D26416181ECA8B7 /* PlaybackSnapshot.swift in Sources */,
+				BB167E0B6FC49AD73EAF1C23 /* PrivacyView.swift in Sources */,
+				F9DAF85CB9A696EB860B01A5 /* RibbonPalette.swift in Sources */,
+				C2E24F193D83E8CFECAFEF66 /* RibbonScene.swift in Sources */,
+				76D37307492DC178D10A827D /* RibbonShaders.metal in Sources */,
+				BA66B95A73FB18F2F6B714C5 /* RibbonSurface.swift in Sources */,
+				2A5522990A7C8B542DFC2BD2 /* SpectrogramPalette.swift in Sources */,
+				D1CAD55BA1EB1872F0610F52 /* SpectrogramView.swift in Sources */,
+				6DD277A93EEDE9757958C8F3 /* SystemControlsView.swift in Sources */,
+				EDE030D596B36DB02F08F832 /* SystemPlayback.swift in Sources */,
+				428CD0AC5B2C901D03CE77E2 /* VolumeOffsetControl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7536F69036137C0C28258DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F928C39216BEA9BCDB253BE5 /* AudioDriverTests.swift in Sources */,
+				B04CC9CC0E91620E8626CE3D /* SpectrogramPaletteTests.swift in Sources */,
+				247B1430C74AD34E2F935BEB /* SpectrogramWorkerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01B8D1677E730B18BD404102 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FC28558CFC1156DDC065C20 /* EverNoiseTV */;
+			targetProxy = 254B85D66AC3AC111A5C51C1 /* PBXContainerItemProxy */;
+		};
+		25166CC7472FE2BAD6A150B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FE992D02C8D10C5B77552BF /* JustBrownNoise */;
+			targetProxy = 18627AE6D98B075A3E0EB496 /* PBXContainerItemProxy */;
+		};
+		92AE138AA1C58975A84F5760 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FE992D02C8D10C5B77552BF /* JustBrownNoise */;
+			targetProxy = 20B24BD8A27BF40FFD109761 /* PBXContainerItemProxy */;
+		};
+		A5807860B81BCE19C815EA0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FC28558CFC1156DDC065C20 /* EverNoiseTV */;
+			targetProxy = FDCE533FD495916653470611 /* PBXContainerItemProxy */;
+		};
+		CE70C439ADFAB0EF2F8B5CD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FB0A2992FFF743B29AD11BF /* EverNoiseWidgets */;
+			targetProxy = 586928F598FD125817A3E33E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0C410CB772113FC3146E901F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = App/EverNoise.entitlements;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Widgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.niemo.JustBrownNoise.Widgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) WIDGET_EXTENSION";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		185FBB7182AA46D8F2AB940D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 31;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 82F3X3VDHP;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		60A684099F42EF3CD9E323EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/EverNoise.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.niemo.JustBrownNoise;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		67CFDCF3996F0E7836E598D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.niemo.JustBrownNoise.UITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JustBrownNoise;
+			};
+			name = Release;
+		};
+		687804353E1BE644FC8B8934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.niemo.JustBrownNoise.IntegrationTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JustBrownNoise.app/JustBrownNoise";
+			};
+			name = Debug;
+		};
+		6CF8898A5B01B473700C725B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/EverNoise.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.niemo.JustBrownNoise;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6FEF2FD516F48ECAB796C3D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EverNoise;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UIBackgroundModes = (
+					audio,
+				);
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.niemo.JustBrownNoise;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Release;
+		};
+		8ABED512142BFE9D4FE494A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.niemo.JustBrownNoise.TVUITests;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = EverNoiseTV;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Release;
+		};
+		8DF260C0D3A2F76954C0021A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.niemo.JustBrownNoise.TVIntegrationTests;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EverNoiseTV.app/EverNoiseTV";
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Debug;
+		};
+		95021D7AEA8F71FC17A31520 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EverNoise;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UIBackgroundModes = (
+					audio,
+				);
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.niemo.JustBrownNoise;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Debug;
+		};
+		9F374C7C9BB6C807FD3D6806 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.niemo.JustBrownNoise.UITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JustBrownNoise;
+			};
+			name = Debug;
+		};
+		CB1EAF3246FB62E5CB1DC05B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = App/EverNoise.entitlements;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Widgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.niemo.JustBrownNoise.Widgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) WIDGET_EXTENSION";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CF391C59764D906FD84E2D4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.niemo.JustBrownNoise.TVUITests;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = EverNoiseTV;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Debug;
+		};
+		F6BC4D367C5981B41EC91EBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.niemo.JustBrownNoise.IntegrationTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JustBrownNoise.app/JustBrownNoise";
+			};
+			name = Release;
+		};
+		F71BD483827449E7746F47CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.niemo.JustBrownNoise.TVIntegrationTests;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EverNoiseTV.app/EverNoiseTV";
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Release;
+		};
+		FD2939DC24686BE4999EEC5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 31;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 82F3X3VDHP;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55633E05E88BC8CCBEDD5769 /* Build configuration list for PBXNativeTarget "EverNoiseTVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF391C59764D906FD84E2D4D /* Debug */,
+				8ABED512142BFE9D4FE494A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		609BC0CDDE4C8CAE0D198410 /* Build configuration list for PBXNativeTarget "EverNoiseWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C410CB772113FC3146E901F /* Debug */,
+				CB1EAF3246FB62E5CB1DC05B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		620D1B46AD9B67AD23E25103 /* Build configuration list for PBXNativeTarget "JustBrownNoiseIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				687804353E1BE644FC8B8934 /* Debug */,
+				F6BC4D367C5981B41EC91EBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7AE3C556FC378B858BECED54 /* Build configuration list for PBXNativeTarget "EverNoiseTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95021D7AEA8F71FC17A31520 /* Debug */,
+				6FEF2FD516F48ECAB796C3D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9B11E1A64B1B2C1D170EB69A /* Build configuration list for PBXProject "JustBrownNoise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				185FBB7182AA46D8F2AB940D /* Debug */,
+				FD2939DC24686BE4999EEC5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C86E944B687D68E8235C929D /* Build configuration list for PBXNativeTarget "EverNoiseTVIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DF260C0D3A2F76954C0021A /* Debug */,
+				F71BD483827449E7746F47CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F2C0930E9EFAEB2116967ED2 /* Build configuration list for PBXNativeTarget "JustBrownNoiseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F374C7C9BB6C807FD3D6806 /* Debug */,
+				67CFDCF3996F0E7836E598D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FFDC3587E1D57663662BF9A3 /* Build configuration list for PBXNativeTarget "JustBrownNoise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CF8898A5B01B473700C725B /* Debug */,
+				60A684099F42EF3CD9E323EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		80A92998BCB270A79895FD21 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		354E7417230FEB2369B15C27 /* BrownNoiseDSP */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrownNoiseDSP;
+		};
+		5647CB50B1FC4F83C1215CEF /* PlaybackCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PlaybackCore;
+		};
+		61E61B26D18A26566146410D /* SpectrumAnalysis */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SpectrumAnalysis;
+		};
+		A03D55A72DB4EBDE73633ED0 /* PlaybackCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PlaybackCore;
+		};
+		B9E646C9DF817260954CA380 /* SpectrumAnalysis */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SpectrumAnalysis;
+		};
+		F0BB37DC3B1F5E1CF333FFD9 /* BrownNoiseDSP */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrownNoiseDSP;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E4145BE5F1EC3E9CA11FAF32 /* Project object */;
+}

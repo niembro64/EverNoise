@@ -1,0 +1,35 @@
+name: Validate all platforms
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  apple-core:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: swift test
+  android-web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: android-actions/setup-android@v3
+      - run: sdkmanager 'platforms;android-36' 'build-tools;36.0.0' 'ndk;27.1.12297006' 'cmake;3.22.1'
+      - run: android/gradlew -p android assembleDebug lintDebug
+      - name: Install pinned Emscripten
+        run: |
+          git clone --depth 1 --branch 4.0.20 https://github.com/emscripten-core/emsdk.git tools/emsdk
+          tools/emsdk/emsdk install 4.0.20
+          tools/emsdk/emsdk activate 4.0.20
+      - run: scripts/build-wasm.sh
+      - run: node --test web/tests/*.test.mjs
+      - run: node web/scripts/build.mjs

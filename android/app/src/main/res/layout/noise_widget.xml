@@ -1,0 +1,7 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal" android:gravity="center_vertical" android:padding="16dp" android:background="#F0101117">
+    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+        <TextView android:id="@+id/widget_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="EverNoise" android:textSize="24sp" android:fontFamily="sans-serif-light" android:textColor="#EEEEF5"/>
+        <TextView android:id="@+id/widget_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Play your sound" android:textSize="12sp" android:textColor="#AAAABA"/>
+    </LinearLayout>
+    <Button android:id="@+id/widget_play" android:layout_width="60dp" android:layout_height="60dp" android:text="▶" android:textSize="24sp" android:textColor="#A6B8EB" android:contentDescription="Start EverNoise"/>
+</LinearLayout>

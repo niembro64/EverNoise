@@ -1,0 +1,105 @@
+<!doctype html><meta charset="utf-8" /><title>
+  EverNoise browser verification
+</title>
+<style>
+  body {
+    background: #111;
+    color: #eee;
+    font: 18px sans-serif;
+    max-width: 700px;
+    margin: 40px auto;
+  }
+  button {
+    font: inherit;
+    padding: 20px;
+  }
+  canvas {
+    width: 500px;
+    height: 200px;
+  }
+  .art {
+    width: 500px;
+    height: 200px;
+  }
+  pre {
+    white-space: pre-wrap;
+  }
+</style>
+<h1>EverNoise browser verification</h1>
+<button id="run">Run audio and graphics checks</button>
+<pre id="out">Ready</pre>
+<div class="art"><canvas id="ribbon"></canvas></div>
+<script type="module">
+  import { NoiseAudio } from "./audio.js";
+  import { RibbonScene } from "./visuals.js";
+  import { DEFAULTS } from "./state.js";
+  for (const r of await navigator.serviceWorker.getRegistrations())
+    await r.unregister();
+  const out = document.getElementById("out"),
+    log = (s) => (out.textContent += "\n" + s);
+  window.onerror = (m) => log("FAIL " + m);
+  const art = document.querySelector(".art"),
+    ribbon = new RibbonScene(document.getElementById("ribbon"), art);
+  ribbon.configure(DEFAULTS, false);
+  try {
+    await ribbon.initialize();
+    if (!ribbon.program) throw Error("WebGL2 unavailable");
+    log("PASS shader compiled and linked");
+  } catch (e) {
+    log("FAIL shader: " + e.message);
+  }
+  document.getElementById("run").onclick = async () => {
+    const audio = new NoiseAudio({ ...DEFAULTS, offset: -18 });
+    try {
+      await audio.play(true);
+      log("PASS AudioWorklet start: " + audio.context.state);
+      const analyzer = audio.context.createAnalyser();
+      analyzer.fftSize = 2048;
+      audio.node.connect(analyzer);
+      const data = new Float32Array(2048);
+      let peak = 0,
+        energy = 0;
+      await new Promise((r) => setTimeout(r, 1500));
+      analyzer.getFloatTimeDomainData(data);
+      for (const x of data) {
+        peak = Math.max(peak, Math.abs(x));
+        energy += x * x;
+      }
+      if (!Number.isFinite(peak) || peak === 0 || peak > 1)
+        throw Error("Invalid PCM " + peak);
+      log(
+        "PASS finite audible PCM peak " +
+          peak.toFixed(5) +
+          " RMS " +
+          Math.sqrt(energy / 2048).toFixed(5),
+      );
+      ribbon.configure(DEFAULTS, true);
+      let cols = 0;
+      audio.addEventListener(
+        "columns",
+        (e) => (cols += e.detail.length / 1024),
+      );
+      audio.analysis(true);
+      await new Promise((r) => setTimeout(r, 10000));
+      audio.analysis(false);
+      log((cols > 0 ? "PASS " : "FAIL ") + "spectrum columns " + cols);
+      await audio.play(false);
+      await new Promise((r) => setTimeout(r, 1000));
+      log(
+        (audio.context.state === "suspended" ? "PASS " : "FAIL ") +
+          "pause suspended: " +
+          audio.context.state,
+      );
+      await audio.play(true);
+      log("PASS resume");
+      await audio.play(false);
+      await new Promise((r) => setTimeout(r, 1000));
+      await audio.context.close();
+      ribbon.configure(DEFAULTS, false);
+      log("DONE");
+    } catch (e) {
+      log("FAIL " + e.stack);
+      audio.context?.close();
+    }
+  };
+</script>

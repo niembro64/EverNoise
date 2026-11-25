@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Your sound. All night. Free, offline noise you shape, with no playback timer."
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <title>EverNoise — Your sound. All night.</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <canvas id="ribbons" aria-hidden="true"></canvas>
+    <main>
+      <header>
+        <h1>EverNoise</h1>
+        <p>Your sound. All night.</p>
+      </header>
+      <section class="artwork" aria-label="Noise visualization">
+        <canvas
+          id="spectrum"
+          aria-label="Spectrogram of the generated stereo output"
+          hidden
+        ></canvas>
+        <div id="frequency-labels" hidden>
+          <span>48k</span><span>2k</span><span>200</span><span>20</span
+          ><span>2 Hz</span>
+        </div>
+        <p id="warming" hidden>Listening to the full spectrum…</p>
+      </section>
+      <section class="mix" aria-label="Sound mix">
+        <div id="high"></div>
+        <div id="mid"></div>
+        <div id="low"></div>
+      </section>
+      <footer>
+        <button id="play" class="glass play" aria-label="Start EverNoise">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path id="play-glyph" d="M11 7 L26 16 L11 25 Z" />
+          </svg></button
+        ><button id="settings" class="gear" aria-label="Settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="m9 3-.6 2-2 .9-1.9-.5-1.5 2.6 1.4 1.5-.2 2.2L3 13l1 2.8 2.1.2 1.4 1.6-.1 2.1 2.8 1 1.4-1.5 2.1-.2 1.7 1.2 2.3-1.9-.8-2 1-1.9 2-.6V11l-2-.6-1-1.9.8-2-2.3-1.9-1.7 1.2-2.1-.2L10.4 3Z"
+            />
+            <circle cx="11.5" cy="12" r="3" />
+          </svg>
+        </button>
+      </footer>
+      <p id="status" role="status">Tap to start your sound.</p>
+    </main>
+    <dialog id="preferences">
+      <form method="dialog">
+        <div class="dialog-heading">
+          <h2>Settings</h2>
+          <button class="close" aria-label="Close settings">×</button>
+        </div>
+      </form>
+      <div class="setting">
+        <h3>Audio</h3>
+        <div
+          id="stereo"
+          class="segments"
+          role="group"
+          aria-label="Audio mode"
+        ></div>
+      </div>
+      <div class="setting">
+        <h3>Animations</h3>
+        <div
+          id="visuals"
+          class="segments"
+          role="group"
+          aria-label="Animations"
+        ></div>
+      </div>
+      <div class="setting">
+        <label for="loudness"
+          >App Loudness <output id="loudness-value"></output></label
+        ><input id="loudness" type="range" min="-18" max="3" step="1" />
+        <p class="hint">
+          Sets EverNoise’s output level. Use your device’s volume buttons for
+          listening volume.
+        </p>
+      </div>
+      <div class="setting">
+        <label class="switch"
+          ><span>Keep screen awake</span><input id="awake" type="checkbox"
+        /></label>
+        <p class="hint">
+          Optional while playing. Uses more battery. Browsers may suspend audio
+          when hidden or locked; use the native app for the most dependable
+          overnight playback.
+        </p>
+      </div>
+      <div class="setting">
+        <button id="install" class="wide glass" hidden>
+          Install EverNoise
+        </button>
+        <p class="hint">
+          On iPhone or iPad, use Share → Add to Home Screen. Works offline after
+          the first complete visit.
+        </p>
+      </div>
+      <details>
+        <summary>For the ones you care for</summary>
+        <p>
+          Shape a broad, gentle blanket of sound for your household. Babies,
+          children and pets may hear frequencies you do not. The sound tapers at
+          the edges of the human audible range; it does not cover the entire
+          hearing range of dogs or cats. Keep the volume quiet, place speakers
+          away from a child’s head, and give pets a quiet place to retreat.
+          Digital peak protection does not limit sound pressure at anyone’s
+          ears.
+        </p>
+      </details>
+      <p class="privacy">
+        Sound is generated on your device. No microphone, account, ads or
+        tracking. Your preferences stay here.
+      </p>
+      <nav>
+        <a href="https://apps.apple.com/app/evernoise/id6834413344">Apple app</a
+        ><a href="./android.html"
+          >Android app</a
+        ><a href="https://github.com/niembro64/EverNoise">Source</a>
+      </nav>
+    </dialog>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

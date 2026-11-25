@@ -1,0 +1,35 @@
+Categories:
+  - Multimedia
+License: MIT
+AuthorName: Eric Niemeyer
+WebSite: https://niembro64.github.io/EverNoise/
+SourceCode: https://github.com/niembro64/EverNoise
+IssueTracker: https://github.com/niembro64/EverNoise/issues
+Changelog: https://github.com/niembro64/EverNoise/releases
+Name: EverNoise
+Summary: Gentle, continuous noise shaped by you
+Description: |-
+  Your sound. All night.
+
+  EverNoise generates continuous noise on your device, with no looping sound files,
+  playback timer, ads, account, microphone access, or tracking.
+
+  * Six mix levels each for high, mid and low frequencies
+  * Independent stereo or mono, saved App Loudness, smooth fades and peak protection
+  * Background playback and Lock Screen/media controls
+  * Home Screen widget and Quick Settings tile
+  * Flowing infinity artwork, optional background ribbons, and a live spectrogram
+  * Off and static visual modes to reduce work and battery use
+
+  Calls, another app taking audio focus, operating-system restrictions, force-stop,
+  and device shutdown can interrupt playback. Keep listening volume comfortable;
+  digital peak protection is not a sound-pressure limit at your ears.
+
+  MIT licensed. Native Android interface and audio service; shared C audio engine
+  with the Apple and web apps. Developed with AI assistance.
+RepoType: git
+Repo: https://github.com/niembro64/EverNoise.git
+AutoUpdateMode: None
+UpdateCheckMode: None
+CurrentVersion: 1.0.0
+CurrentVersionCode: 1

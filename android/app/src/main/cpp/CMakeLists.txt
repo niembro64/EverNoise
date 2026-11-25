@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.22)
+project(evernoise C)
+set(CMAKE_C_STANDARD 11)
+set(SHARED ${CMAKE_CURRENT_LIST_DIR}/../../../../../shared)
+add_library(evernoise SHARED bridge.c ${SHARED}/dsp/BNMixRenderer.c ${SHARED}/analysis/BNCapture.c ${SHARED}/analysis/BNSpectrum.c)
+target_include_directories(evernoise PRIVATE ${SHARED}/dsp/include ${SHARED}/analysis/include)
+target_compile_options(evernoise PRIVATE -O3 -ffp-contract=off -Wall -Wextra)
+target_link_libraries(evernoise m log)
