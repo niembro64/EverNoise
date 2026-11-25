@@ -1,10 +1,10 @@
 {
   "repo": {
-    "timestamp": 1795622743000,
+    "timestamp": 1795623207000,
     "version": 20002,
     "name": "EverNoise",
     "icon": "repo-icon.png",
-    "address": "https://niembro64.github.io/EverNoise/fdroid/repo",
+    "address": "https://niemo.io/evernoise/app/fdroid/repo",
     "description": "Official EverNoise releases from Eric Niemeyer. Free, offline, continuous noise."
   },
   "requests": {
@@ -26,7 +26,7 @@
       "name": "EverNoise",
       "sourceCode": "https://github.com/niembro64/EverNoise",
       "summary": "Gentle, continuous noise shaped by you",
-      "webSite": "https://niembro64.github.io/EverNoise/",
+      "webSite": "https://niemo.io/evernoise/app/",
       "added": 1795622287000,
       "packageName": "io.niemo.evernoise",
       "lastUpdated": 1795622287000,

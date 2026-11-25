@@ -13,8 +13,8 @@
         "size": 9319
       }
     },
-    "address": "https://niembro64.github.io/EverNoise/fdroid/repo",
-    "timestamp": 1795622743000,
+    "address": "https://niemo.io/evernoise/app/fdroid/repo",
+    "timestamp": 1795623207000,
     "categories": {
       "Multimedia": {
         "name": {
@@ -35,7 +35,7 @@
         "lastUpdated": 1795622287000,
         "license": "MIT",
         "sourceCode": "https://github.com/niembro64/EverNoise",
-        "webSite": "https://niembro64.github.io/EverNoise/",
+        "webSite": "https://niemo.io/evernoise/app/",
         "screenshots": {
           "phone": {
             "en-US": [

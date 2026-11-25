@@ -1,10 +1,12 @@
 {
   "repo": {
-    "timestamp": 1795622743000
+    "address": "https://niemo.io/evernoise/app/fdroid/repo",
+    "timestamp": 1795623207000
   },
   "packages": {
     "io.niemo.evernoise": {
       "metadata": {
+        "webSite": "https://niemo.io/evernoise/app/",
         "screenshots": {
           "phone": {
             "en-US": [
