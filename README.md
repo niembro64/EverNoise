@@ -2,10 +2,10 @@
 
 **Your sound. All night.** Free, continuous noise for Apple devices, Android, and the web.
 
-- [Open the web app](https://niembro64.github.io/EverNoise/)
+- [Open the web app](https://niemo.io/evernoise/app/)
 - [Apple App Store](https://apps.apple.com/app/evernoise/id6834413344)
 - [Android downloads](https://github.com/niembro64/EverNoise/releases)
-- [Android installation and F-Droid repository](https://niembro64.github.io/EverNoise/android.html)
+- [Android installation and F-Droid repository](https://niemo.io/evernoise/app/android.html)
 
 Shape Low, Mid, and High with six logarithmic mix choices. Keep your App Loudness,
 choose mono or independent stereo, and use quiet infinity artwork or the live output

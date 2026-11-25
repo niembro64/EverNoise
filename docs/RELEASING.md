@@ -46,14 +46,21 @@ Central F-Droid inclusion requires its separate submission/review process and
 policy checks; MIT licensing alone does not guarantee acceptance. App development
 used AI assistance and that is disclosed rather than hidden from any catalog.
 
-## Web and GitHub Pages
+## Web and hosting
 
 Build WASM, run tests, and `node web/scripts/build.mjs`. The resulting `web/dist/`
 is a static site; no server APIs are required. The production service worker
 pre-caches versioned assets, then waits for older app tabs to close before updating,
 so a deployment does not force-reload active audio. Localhost does not register it.
 
-The `gh-pages` branch contains deployable web files plus `fdroid/repo/`, with no
+The primary app is https://niemo.io/evernoise/app/.
+`python3 scripts/publish-niemo.py` stages only the web build and signed public
+F-Droid output, uploads into a new public release, verifies hashes, checks all
+unrelated existing public files, then atomically switches the public symlink.
+The previous release remains available for rollback. It does not publish private
+notes or replace the existing EverNoise support/privacy pages.
+
+The optional `gh-pages` branch contains deployable web files plus `fdroid/repo/`, with no
 build tools, private configuration, or test harness. GitHub Pages serves that
 branch's root. The source `main` branch retains buildable code and full history.
 `python3 scripts/publish-pages.py` stages only the public output, excludes private
@@ -68,3 +75,6 @@ Use `apple/project.yml` and existing Apple release records. This migration chang
 source paths and adds portable platform guards; it does not change the Apple app's
 version or require resubmitting its current App Store release. Re-run XcodeGen
 from `apple/` after project edits. Root Swift package tests use `swift test`.
+
+GitHub Pages and Releases returned server errors during the November 25 launch
+outage. The primary niemo.io deployment is independent of that service.
